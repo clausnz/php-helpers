@@ -1,7 +1,69 @@
 <?php
 
+namespace CNZ\Helpers;
 
-if (!function_exists('str_contains')) {
+class StringHelpers
+{
+    /**
+     * Return the remainder of a string after a given value.
+     *
+     * @param string $search
+     * @param string $string
+     * @return string
+     */
+    public static function after($search, $string)
+    {
+        return $search === '' ? $string : ltrim(array_reverse(explode($search, $string, 2))[0]);
+    }
+
+    /**
+     * Get the portion of a string before a given value.
+     *
+     * @param string $string
+     * @param string $search
+     * @return string
+     */
+    public static function before($search, $string)
+    {
+        return $search === '' ? $string : rtrim(explode($search, $string)[0]);
+    }
+
+    /**
+     * Limit the number of words in a string. Put value of $end to the string end.
+     *
+     * @param  string $string
+     * @param  int $limit
+     * @param  string $end
+     * @return string
+     */
+    public static function limitWords($string, $limit = 10, $end = '...')
+    {
+        $arrayWords = explode(' ', $string);
+
+        if (sizeof($arrayWords) <= $limit) {
+            return $string;
+        }
+
+        return implode(' ', array_slice($arrayWords, 0, $limit)) . $end;
+    }
+
+    /**
+     * Limit the number of characters in a string. Put value of $end to the string end.
+     *
+     * @param  string $string
+     * @param  int $limit
+     * @param  string $end
+     * @return string
+     */
+    public static function limit($string, $limit = 100, $end = '...')
+    {
+        if (mb_strwidth($string, 'UTF-8') <= $limit) {
+            return $string;
+        }
+
+        return rtrim(mb_strimwidth($string, 0, $limit, '', 'UTF-8')) . $end;
+    }
+
     /**
      * Tests if a string contains a given element
      *
@@ -9,20 +71,17 @@ if (!function_exists('str_contains')) {
      * @param string $haystack
      * @return bool
      */
-    function str_contains($needle, $haystack)
+    public static function contains($needle, $haystack)
     {
         foreach ((array)$needle as $ndl) {
-            if (strstr($haystack, $ndl)) {
+            if (strpos($haystack, $ndl) !== false) {
                 return true;
             }
         }
 
         return false;
     }
-}
 
-
-if (!function_exists('str_icontains')) {
     /**
      * Tests if a string contains a given element. Ignore case sensitivity.
      *
@@ -30,22 +89,17 @@ if (!function_exists('str_icontains')) {
      * @param string $haystack
      * @return bool
      */
-    function str_icontains($needle, $haystack)
+    public static function containsIgnoreCase($needle, $haystack)
     {
-        $hs = strtolower($haystack);
-
         foreach ((array)$needle as $ndl) {
-            if (strstr($hs, strtolower($ndl))) {
+            if (stripos($haystack, $ndl) !== false) {
                 return true;
             }
         }
 
         return false;
     }
-}
 
-
-if (!function_exists('str_starts_with')) {
     /**
      * Determine if a given string starts with a given substring.
      *
@@ -53,7 +107,7 @@ if (!function_exists('str_starts_with')) {
      * @param string $haystack
      * @return bool
      */
-    function str_starts_with($needle, $haystack)
+    public static function startsWith($needle, $haystack)
     {
         foreach ((array)$needle as $ndl) {
             if ($ndl !== '' && substr($haystack, 0, strlen($ndl)) === (string)$ndl) {
@@ -63,10 +117,7 @@ if (!function_exists('str_starts_with')) {
 
         return false;
     }
-}
 
-
-if (!function_exists('str_istarts_with')) {
     /**
      * Determine if a given string starts with a given substring. Ignore case sensitivity.
      *
@@ -74,7 +125,7 @@ if (!function_exists('str_istarts_with')) {
      * @param string $haystack
      * @return bool
      */
-    function str_istarts_with($needle, $haystack)
+    public static function startsWithIgnoreCase($needle, $haystack)
     {
         $hs = strtolower($haystack);
 
@@ -87,10 +138,7 @@ if (!function_exists('str_istarts_with')) {
 
         return false;
     }
-}
 
-
-if (!function_exists('str_ends_with')) {
     /**
      * Determine if a given string ends with a given substring.
      *
@@ -98,7 +146,7 @@ if (!function_exists('str_ends_with')) {
      * @param string $haystack
      * @return bool
      */
-    function str_ends_with($needle, $haystack)
+    public static function endsWith($needle, $haystack)
     {
         foreach ((array)$needle as $ndl) {
             $length = strlen($ndl);
@@ -109,10 +157,7 @@ if (!function_exists('str_ends_with')) {
 
         return false;
     }
-}
 
-
-if (!function_exists('str_iends_with')) {
     /**
      * Determine if a given string ends with a given substring.
      *
@@ -120,7 +165,7 @@ if (!function_exists('str_iends_with')) {
      * @param string $haystack
      * @return bool
      */
-    function str_iends_with($needle, $haystack)
+    public static function endsWithIgnoreCase($needle, $haystack)
     {
         $hs = strtolower($haystack);
 
@@ -135,39 +180,3 @@ if (!function_exists('str_iends_with')) {
         return false;
     }
 }
-
-
-if (!function_exists('to_array')) {
-    /**
-     * Converts an object to an array.
-     *
-     * @param $object
-     * @return array
-     */
-    function to_array($object)
-    {
-        return json_decode(json_encode($object), true);
-    }
-}
-
-
-if (!function_exists('to_object')) {
-    /**
-     * Converts an array to an object.
-     *
-     * @param array $array
-     * @return object
-     */
-    function to_object(array $array)
-    {
-        return json_decode(json_encode($array), false);
-    }
-}
-
-
-
-
-
-
-
-

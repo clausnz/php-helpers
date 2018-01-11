@@ -7,4 +7,7 @@ PROJECT_DIR="$SCRIPTPATH/../"
 phpdoc -d "$PROJECT_DIR/src" -t "$SCRIPTPATH/html" --template="responsive-twig"
 
 # generate README.md
-cat "$SCRIPTPATH"/*.md > "$PROJECT_DIR"/README.md
+cat "$SCRIPTPATH"/Introduction.md \
+    "$SCRIPTPATH"/Table_of_Contents.md \
+    "$SCRIPTPATH"/Mobile_device_helper_functions.md \
+    > "$PROJECT_DIR"/README.md

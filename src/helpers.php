@@ -1,9 +1,127 @@
 <?php
 
 use CNZ\Helpers\ArrayHelpers as arr;
-use CNZ\Helpers\CommonHelpers as hlp;
+use CNZ\Helpers\CommonHelpers as helper;
+use CNZ\Helpers\MobileHelpers as mobile;
 use CNZ\Helpers\StringHelpers as str;
+use CNZ\Helpers\UserHelpers as user;
 
+if (!function_exists('is_ios')) {
+    /**
+     * Determes if the current user agent is running on an iOS operating system.
+     *
+     * @param null $userAgent
+     * @return bool|int|null
+     */
+    function is_ios($userAgent = null)
+    {
+        return mobile::isIOS($userAgent);
+    }
+}
+
+if (!function_exists('is_samsung')) {
+    /**
+     * Determes if the current user agent is running on a Samsung device.
+     *
+     * @param null $userAgent
+     * @return bool|int|null
+     */
+    function is_samsung($userAgent = null)
+    {
+        return mobile::isSamsung($userAgent);
+    }
+}
+
+if (!function_exists('is_android')) {
+    /**
+     * Determes if the current user agent is running on an Android device.
+     *
+     * @param string $userAgent
+     * @return bool
+     */
+    function is_android($userAgent = null)
+    {
+        return mobile::isAndroid($userAgent);
+    }
+}
+
+if (!function_exists('is_iphone')) {
+    /**
+     * Determes if the current user agent is running on an iPhone device.
+     *
+     * @param string $userAgent
+     * @return bool
+     */
+    function is_iphone($userAgent = null)
+    {
+        return mobile::isIphone($userAgent);
+    }
+}
+
+if (!function_exists('is_desktop')) {
+    /**
+     * Determes if the current user agent is a desktop computer.
+     *
+     * @param string $userAgent
+     * @return bool
+     */
+    function is_desktop($userAgent = null)
+    {
+        return mobile::isDesktop($userAgent);
+    }
+}
+
+if (!function_exists('is_touch_device')) {
+    /**
+     * Determes if the current user agent is running on a mobile touch device.
+     *
+     * @param null $userAgent
+     * @return bool
+     */
+    function is_touch_device($userAgent = null)
+    {
+        return mobile::isTouchDevice($userAgent);
+    }
+}
+
+if (!function_exists('is_tablet')) {
+    /**
+     * Determes if the current user agent is a tablet device.
+     *
+     * @param string $userAgent
+     * @return bool
+     */
+    function is_tablet($userAgent = null)
+    {
+        return mobile::isTablet($userAgent);
+    }
+}
+
+if (!function_exists('is_smartphone')) {
+    /**
+     * Determes if the current user agent is running on a smartphone.
+     *
+     * @param null $userAgent
+     * @return bool
+     */
+    function is_smartphone($userAgent = null)
+    {
+        return mobile::isSmartphone($userAgent);
+    }
+}
+
+if (!function_exists('user_ip')) {
+    /**
+     * Returns the user ip-adresse.
+     * See: https://stackoverflow.com/q/3003145/1108161
+     *
+     * @return string
+     */
+    function user_ip()
+    {
+        return user::ip();
+    }
+}
 
 if (!function_exists('is_assoc')) {
     /**
@@ -27,7 +145,7 @@ if (!function_exists('is_mobile')) {
      */
     function is_mobile($userAgent = null)
     {
-        return hlp::isMobile($userAgent);
+        return mobile::isMobile($userAgent);
     }
 }
 
@@ -65,7 +183,7 @@ if (!function_exists('dd')) {
      */
     function dd($var)
     {
-        hlp::dd($var);
+        helper::dd($var);
     }
 }
 
@@ -77,7 +195,7 @@ if (!function_exists('dump')) {
      */
     function dump($var)
     {
-        hlp::dump($var);
+        helper::dump($var);
     }
 }
 

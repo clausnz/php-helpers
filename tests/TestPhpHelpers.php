@@ -3,13 +3,15 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 use CNZ\Helpers\ArrayHelpers as arr;
-use CNZ\Helpers\CommonHelpers as hlp;
+use CNZ\Helpers\MobileHelpers as mobile;
 use CNZ\Helpers\StringHelpers as str;
 use PHPUnit\Framework\TestCase;
 
 class TestPhpHelpers extends TestCase
 {
-    public $testArray = [
+    protected $testString = 'The quick brown fox jumps over the lazy dog';
+
+    protected $testArray = [
         'one' => 'value_one',
         'two' => 'value_two',
         'three' => [
@@ -23,7 +25,196 @@ class TestPhpHelpers extends TestCase
         ]
     ];
 
-    public $testString = 'The quick brown fox jumps over the lazy dog';
+    protected $iphone = 'Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_3 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8J2 Safari/6533.18.5';
+
+    protected $ipod = 'Mozilla/5.0 (iPod; U; CPU iPhone OS 4_3_3 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8J2 Safari/6533.18.5';
+
+    protected $ipad = 'Mozilla/5.0 (iPad; U; CPU OS 4_3_3 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8J2 Safari/6533.18.5';
+
+    protected $android = 'Mozilla/5.0 (Linux; U; Android 2.2.1; en-us; Nexus One Build/FRG83) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1';
+
+    protected $blackberry = 'Mozilla/5.0 (BlackBerry; U; BlackBerry AAAA; en-US) AppleWebKit/534.11+ (KHTML, like Gecko) Version/X.X.X.X Mobile Safari/534.11+';
+
+    protected $windowsPhone = 'Mozilla/5.0 (compatible; MSIE 9.0; Windows Phone OS 7.5; Trident/5.0; IEMobile/9.0;';
+
+    protected $windows = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.246';
+
+    protected $apple = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/601.3.9 (KHTML, like Gecko) Version/9.0.2 Safari/601.3.9';
+
+    protected $linux = 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:15.0) Gecko/20100101 Firefox/15.0.1';
+
+    protected $googleBot = 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)';
+
+    protected $bingBot = 'Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)';
+
+    protected $yahooBot = 'Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)';
+
+
+//    public function test_user_ip()
+//    {
+//        $ips = [
+//            user_ip(),
+//            user::ip()
+//        ];
+//
+//        foreach ($ips as $ip) {
+//
+//            $testArray = [
+//                // expected => parameter
+//                true => str_contains('.', $ip),
+//            ];
+//
+//            foreach ($testArray as $expected => $parameter) {
+//                $this->assertEquals($expected, $parameter);
+//            }
+//        }
+//    }
+
+
+    public function test_is_touch_device()
+    {
+        $isTouchDevice = [
+            $this->ipod,
+            $this->iphone,
+            $this->blackberry,
+            $this->windowsPhone
+        ];
+
+        $isNotTouchDevice = [
+            $this->windows,
+            $this->apple,
+            $this->linux,
+            $this->googleBot,
+            $this->bingBot,
+            $this->yahooBot
+        ];
+
+        foreach ($isTouchDevice as $device) {
+            $this->assertTrue(is_touch_device($device));
+            $this->assertTrue(mobile::isTouchDevice($device));
+        }
+
+        foreach ($isNotTouchDevice as $device) {
+            $this->assertFalse(is_touch_device($device));
+            $this->assertFalse(mobile::isTouchDevice($device));
+        }
+    }
+
+    public function test_is_desktop()
+    {
+        $deviceIsDesktop = [
+            $this->windows,
+            $this->apple,
+            $this->linux,
+            $this->googleBot,
+            $this->bingBot,
+            $this->yahooBot
+        ];
+
+        $deviceIsNotDesktop = [
+            $this->ipod,
+            $this->iphone,
+            $this->blackberry,
+            $this->windowsPhone
+        ];
+
+        foreach ($deviceIsDesktop as $device) {
+            $this->assertTrue(is_desktop($device));
+            $this->assertTrue(mobile::isDesktop($device));
+        }
+
+        foreach ($deviceIsNotDesktop as $device) {
+            $this->assertFalse(is_desktop($device));
+            $this->assertFalse(mobile::isDesktop($device));
+        }
+    }
+
+    public function test_is_tablet()
+    {
+        $deviceIsTablet = [
+            $this->ipad
+        ];
+
+        $deviceIsNotTablet = [
+            $this->windows,
+            $this->apple,
+            $this->linux,
+            $this->googleBot,
+            $this->bingBot,
+            $this->yahooBot,
+            $this->iphone,
+            $this->windowsPhone,
+            $this->ipod
+        ];
+
+        foreach ($deviceIsTablet as $device) {
+            $this->assertTrue(is_tablet($device));
+            $this->assertTrue(mobile::isTablet($device));
+        }
+
+        foreach ($deviceIsNotTablet as $device) {
+            $this->assertFalse(is_tablet($device));
+            $this->assertFalse(mobile::isTablet($device));
+        }
+    }
+
+    public function test_is_smartphone()
+    {
+        $deviceIsSmartphone = [
+            $this->ipod,
+            $this->iphone,
+            $this->windowsPhone,
+        ];
+
+        $deviceIsNotSmartphone = [
+            $this->windows,
+            $this->apple,
+            $this->linux,
+            $this->googleBot,
+            $this->bingBot,
+            $this->yahooBot,
+            $this->ipad,
+        ];
+
+        foreach ($deviceIsSmartphone as $device) {
+            $this->assertTrue(is_smartphone($device));
+            $this->assertTrue(mobile::isSmartphone($device));
+        }
+
+        foreach ($deviceIsNotSmartphone as $device) {
+            $this->assertFalse(is_smartphone($device));
+            $this->assertFalse(mobile::isSmartphone($device));
+        }
+    }
+
+    public function test_is_mobile()
+    {
+        $deviceIsMobile = [
+            $this->ipod,
+            $this->iphone,
+            $this->windowsPhone,
+            $this->ipad
+        ];
+
+        $deviceIsNotMobile = [
+            $this->windows,
+            $this->apple,
+            $this->linux,
+            $this->googleBot,
+            $this->bingBot,
+            $this->yahooBot
+        ];
+
+        foreach ($deviceIsMobile as $device) {
+            $this->assertTrue(is_mobile($device));
+            $this->assertTrue(mobile::isMobile($device));
+        }
+
+        foreach ($deviceIsNotMobile as $device) {
+            $this->assertFalse(is_mobile($device));
+            $this->assertFalse(mobile::isMobile($device));
+        }
+    }
 
     public function test_is_assoc()
     {
@@ -35,105 +226,73 @@ class TestPhpHelpers extends TestCase
 
         $stdArray = ['test1', 'test2', 'test3'];
 
-        $arrayTest = [
-            // expected => parameter
-            true => $assocArray,
-            false => $stdArray,
-            true => $this->testArray,
-            false => 'test',
-            true => [null => null],
-            false => [null]
+        $isAssoc = [
+            // parameter
+            $assocArray,
+            $this->testArray
         ];
 
-        foreach ($arrayTest as $expected => $parameter) {
-            $this->assertEquals($expected, is_assoc($parameter));
-            $this->assertEquals($expected, arr::isAssoc($parameter));
+        $isNotAssoc = [
+            // parameter
+            $stdArray,
+            'test'
+        ];
+
+        foreach ($isAssoc as $assoc) {
+            $this->assertTrue(is_assoc($assoc));
+            $this->assertTrue(arr::isAssoc($assoc));
         }
-    }
 
-    public function test_is_mobile()
-    {
-        $iphone = 'Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_3 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8J2 Safari/6533.18.5';
-        $ipod = 'Mozilla/5.0 (iPod; U; CPU iPhone OS 4_3_3 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8J2 Safari/6533.18.5';
-        $ipad = 'Mozilla/5.0 (iPad; U; CPU OS 4_3_3 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8J2 Safari/6533.18.5';
-        $android = 'Mozilla/5.0 (Linux; U; Android 2.2.1; en-us; Nexus One Build/FRG83) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1';
-        $blackberry = 'Mozilla/5.0 (BlackBerry; U; BlackBerry AAAA; en-US) AppleWebKit/534.11+ (KHTML, like Gecko) Version/X.X.X.X Mobile Safari/534.11+';
-        $windowsPhone = 'Mozilla/5.0 (compatible; MSIE 9.0; Windows Phone OS 7.5; Trident/5.0; IEMobile/9.0;';
-
-        $windows = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.246';
-        $apple = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/601.3.9 (KHTML, like Gecko) Version/9.0.2 Safari/601.3.9';
-        $linux = 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:15.0) Gecko/20100101 Firefox/15.0.1';
-
-        $googleBot = 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)';
-        $bingBot = 'Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)';
-        $yahooBot = 'Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)';
-
-        $arrayTest = [
-            // expected => parameter
-            true => $iphone,
-            true => $ipod,
-            true => $ipad,
-            true => $android,
-            true => $blackberry,
-            true => $windowsPhone,
-            false => $windows,
-            false => $apple,
-            false => $linux,
-            false => $googleBot,
-            false => $bingBot,
-            false => $yahooBot
-        ];
-
-        foreach ($arrayTest as $expected => $parameter) {
-            $this->assertEquals($expected, is_mobile($parameter));
-            $this->assertEquals($expected, hlp::isMobile($parameter));
+        foreach ($isNotAssoc as $notAssoc) {
+            $this->assertFalse(is_assoc($notAssoc));
+            $this->assertFalse(arr::isAssoc($notAssoc));
         }
     }
 
     public function test_array_last()
     {
-        $testArrayEqual = [
-            // expected => parameter
+        $isArrayLast = [
+            // expected => array
             'value_one' => array_reverse($this->testArray),
             'value_three_one' => array_reverse($this->testArray['three'])
         ];
 
-        foreach ($testArrayEqual as $expected => $parameter) {
-            $this->assertEquals($expected, array_last($parameter));
-            $this->assertEquals($expected, arr::last($parameter));
+        foreach ($isArrayLast as $expected => $array) {
+            $this->assertEquals($expected, array_last($array));
+            $this->assertEquals($expected, arr::last($array));
         }
 
-        $testArrayNotEqual = [
-            // expected => parameter
+        $isNotArrayLast = [
+            // expected => array
             'value_two' => array_reverse($this->testArray),
             'value_three_two' => array_reverse($this->testArray['three'])
         ];
 
-        foreach ($testArrayNotEqual as $expected => $parameter) {
-            $this->assertNotEquals($expected, array_last($parameter));
-            $this->assertNotEquals($expected, arr::last($parameter));
+        foreach ($isNotArrayLast as $notExpected => $array) {
+            $this->assertNotEquals($notExpected, array_last($array));
+            $this->assertNotEquals($notExpected, arr::last($array));
         }
     }
 
     public function test_array_first()
     {
-        $testArrayEqual = [
+        $isArrayFirst = [
             // expected
             'value_one'
         ];
 
-        foreach ($testArrayEqual as $expected) {
+        foreach ($isArrayFirst as $expected) {
             $this->assertEquals($expected, array_first($this->testArray));
             $this->assertEquals($expected, arr::first($this->testArray));
         }
 
-        $testArrayNotEqual = [
+        $isNotArrayFirst = [
             // not_expected
             'value_two'
         ];
 
-        foreach ($testArrayNotEqual as $expected) {
-            $this->assertNotEquals($expected, array_first($this->testArray));
+        foreach ($isNotArrayFirst as $notExpected) {
+            $this->assertNotEquals($notExpected, array_first($this->testArray));
         }
 
     }

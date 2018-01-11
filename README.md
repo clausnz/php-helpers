@@ -1,4 +1,4 @@
-### About
+## About
 
 Useful php helper functions for everyday use.
 
@@ -35,7 +35,7 @@ mobile::isMobile() : bool
 
 
 
-##### Touch device detection
+#### Touch device detection
 Detects if the current visitor uses a touch device.
 ```php
 // global function
@@ -47,7 +47,7 @@ mobile::isTouchDevice() : bool
 
 
 
-##### Smartphone detection
+#### Smartphone detection
 Detects if the current visitor uses a smartphone.
 ```php
 // global function
@@ -59,7 +59,7 @@ mobile::isSmartphone() : bool
 
 
 
-##### Tablet detection
+#### Tablet detection
 Detects if the current visitor uses a tablet.
 ```php
 // global function
@@ -71,7 +71,7 @@ mobile::isTablet() : bool
 
 
 
-##### Desktop computer detection
+#### Desktop computer detection
 Detects if the current visitor uses a desktop computer.
 ```php
 // global function
@@ -83,7 +83,7 @@ mobile::isDesktop() : bool
 
 
 
-##### iPhone detection
+#### iPhone detection
 Detects if the current visitor uses an iPhone.
 ```php
 // global function
@@ -95,7 +95,7 @@ mobile::isIphone() : bool
 
 
 
-##### Samsung device detection
+#### Samsung device detection
 Detects if the current visitor uses a mobile Samsung device.
 ```php
 // global function
@@ -107,7 +107,7 @@ mobile::isSamsung() : bool
 
 
 
-##### iOS device detection
+#### iOS device detection
 Detects if the current visitor uses an iOS based device.
 ```php
 // global function
@@ -119,7 +119,7 @@ mobile::isIOS() : bool
 
 
 
-##### Android device detection
+#### Android device detection
 Detects if the current visitor uses an Android based device.
 ```php
 // global function
@@ -131,7 +131,7 @@ mobile::isIOS() : bool
 
 
 
-##### Get Mobile_Detect object
+#### Get Mobile_Detect object
 Get access to all functions of the Mobile_Detect library  
 More info and doku: https://github.com/serbanghita/Mobile-Detect
 ```php

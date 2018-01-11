@@ -1,3 +1,3 @@
 ## Table of Contents
-[Mobile-Device helper functions](Mobile-device-helper-functions)
+[Mobile-Device helper functions](#mobile-device-helper-functions)
 

@@ -10,7 +10,9 @@ todo
 ```
 
 ## Table of Contents
-[Mobile-Device helper functions](Mobile-device-helper-functions)## Mobile device helper functions
+[Mobile-Device helper functions](Mobile-device-helper-functions)
+
+## Mobile device helper functions
 
 Credits:  
 Makes use of the well known Mobile_Detect library of serbanghita:

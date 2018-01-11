@@ -138,7 +138,7 @@ if (!function_exists('is_assoc')) {
 
 if (!function_exists('is_mobile')) {
     /**
-     * Detects if the current browser runs on a mobile device.
+     * Detects if the current user agent is running on a mobile device.
      *
      * @param string $userAgent
      * @return bool

@@ -1,4 +1,12 @@
 <?php
+/**
+ * PHPUnit test class for usefull php helper functions
+ *
+ * @author      Claus Bayer <claus.bayer@gmail.com>
+ * @link        https://github.com/clausnz/php-helpers
+ * @license     MIT
+ *
+ */
 
 require __DIR__ . '/../vendor/autoload.php';
 

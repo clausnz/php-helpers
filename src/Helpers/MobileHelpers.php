@@ -1,4 +1,18 @@
 <?php
+/**
+ * Helper class that provides easy access to useful php functions in conjunction with mobile devices.
+ *
+ * @author      Claus Bayer <claus.bayer@gmail.com>
+ * @version     1.0
+ * @link        https://github.com/clausnz/php-helpers
+ * @license     MIT
+ *
+ * CREDITS:
+ * This class makes use of the well known Mobile_Detect library of serbanghita:
+ * - http://mobiledetect.net/
+ * - https://github.com/serbanghita/Mobile-Detect
+ *
+ */
 
 namespace CNZ\Helpers;
 
@@ -9,9 +23,9 @@ class MobileHelpers
     /**
      * Holds the Mobile_Detect singleton object
      *
-     * @var $mobileInstance
+     * @var $mobileDetectInstance
      */
-    private static $mobileInstance;
+    private static $mobileDetectInstance;
 
     /**
      * Determes if the current user agent is running on a smartphone.
@@ -25,29 +39,31 @@ class MobileHelpers
     }
 
     /**
-     * Detects if the current browser runs on a mobile device.
+     * Detects if the current user agent is running on a mobile device.
      *
      * @param string $userAgent
      * @return bool
      */
     public static function isMobile($userAgent = null)
     {
-        return self::mobile()->isMobile($userAgent);
+        return self::mobileDetect()->isMobile($userAgent);
     }
 
 
     /**
      * Get a singleton Mobile_Detect object to call every method it provides.
+     * Public access for use of outside this class.
+     * Mobile_Detect doku: https://github.com/serbanghita/Mobile-Detect
      *
      * @return Mobile_Detect
      */
-    public static function mobile()
+    public static function mobileDetect()
     {
-        if (self::$mobileInstance == null) {
-            self::$mobileInstance = new Mobile_Detect();
+        if (self::$mobileDetectInstance == null) {
+            self::$mobileDetectInstance = new Mobile_Detect();
         }
 
-        return self::$mobileInstance;
+        return self::$mobileDetectInstance;
     }
 
     /**
@@ -58,7 +74,7 @@ class MobileHelpers
      */
     public static function isTablet($userAgent = null)
     {
-        return self::mobile()->isTablet($userAgent);
+        return self::mobileDetect()->isTablet($userAgent);
     }
 
     /**
@@ -83,14 +99,14 @@ class MobileHelpers
         $userAgentSet = false;
 
         if ($userAgent !== null) {
-            self::mobile()->setUserAgent($userAgent);
+            self::mobileDetect()->setUserAgent($userAgent);
             $userAgentSet = true;
         }
 
-        $version = self::mobile()->version('Android');
+        $version = self::mobileDetect()->version('Android');
 
         if ($userAgentSet) {
-            self::mobile()->setUserAgent($_SERVER['HTTP_USER_AGENT']);
+            self::mobileDetect()->setUserAgent($_SERVER['HTTP_USER_AGENT']);
         }
 
         return isset($version);
@@ -104,7 +120,7 @@ class MobileHelpers
      */
     public static function isIphone($userAgent = null)
     {
-        return self::mobile()->is('iPhone', $userAgent);
+        return self::mobileDetect()->is('iPhone', $userAgent);
     }
 
     /**
@@ -115,7 +131,7 @@ class MobileHelpers
      */
     public static function isSamsung($userAgent = null)
     {
-        return self::mobile()->is('Samsung', $userAgent);
+        return self::mobileDetect()->is('Samsung', $userAgent);
     }
 
     /**
@@ -126,7 +142,7 @@ class MobileHelpers
      */
     public static function isIOS($userAgent = null)
     {
-        return self::mobile()->is('iOS', $userAgent);
+        return self::mobileDetect()->is('iOS', $userAgent);
     }
 
     /**

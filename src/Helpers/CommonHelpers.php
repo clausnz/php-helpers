@@ -1,4 +1,13 @@
 <?php
+/**
+ * Helper class that provides easy access to useful common php functions.
+ *
+ * @author      Claus Bayer <claus.bayer@gmail.com>
+ * @version     1.0
+ * @link        https://github.com/clausnz/php-helpers
+ * @license     MIT
+ *
+ */
 
 namespace CNZ\Helpers;
 

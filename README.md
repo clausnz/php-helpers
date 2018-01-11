@@ -19,7 +19,7 @@ Makes use of the well known Mobile_Detect library of serbanghita:
 - https://github.com/serbanghita/Mobile-Detect
 
 Usage:  
-To get static access to the library functions, make sure to import the namespace:
+To get static access to the library functions, make sure to import the propper namespace:
 ```
 use CNZ\Helpers\MobileHelpers as mobile;
 ```
@@ -125,10 +125,10 @@ mobile::isIOS() : bool
 Detects if the current visitor uses an Android based device.
 ```php
 // global function
-is_ios() : bool
+is_android() : bool
 
 // static access
-mobile::isIOS() : bool
+mobile::isAndroid() : bool
 ```
 
 
@@ -143,4 +143,7 @@ mobile::mobileDetect() : Mobile_Detect
 // example
 $detect = mobile::mobileDetect();
 $androidVersion = $detect->version('Android');
+
+// or
+$androidVersion = mobile::mobileDetect()->version('Android');
 ```

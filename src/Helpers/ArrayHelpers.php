@@ -67,7 +67,7 @@ class ArrayHelpers
      *
      * @param array $array
      * The concerned array.
-     * @return int|string|array|object $mixed
+     * @return mixed
      * The value of the first element. Type could be anything.
      *
      */
@@ -81,7 +81,7 @@ class ArrayHelpers
      *
      * @param array $array
      * The concerned array.
-     * @return mixed $mixed
+     * @return mixed
      * The value of the last element. Type could be anything.
      */
     public static function last($array)

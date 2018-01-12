@@ -139,7 +139,7 @@ An array representation of the converted object.
 Returns the first element of an array.
 
 ```php
-ArrayHelpers::first( array $array ): integer|string|array|object
+ArrayHelpers::first( array $array ): mixed
 ```
 
 
@@ -154,7 +154,6 @@ ArrayHelpers::first( array $array ): integer|string|array|object
 
 **Return Value:**
 
-$mixed
 The value of the first element. Type could be anything.
 
 
@@ -181,7 +180,6 @@ ArrayHelpers::last( array $array ): mixed
 
 **Return Value:**
 
-$mixed
 The value of the last element. Type could be anything.
 
 

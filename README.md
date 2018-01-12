@@ -1,149 +1,619 @@
-## About
+# About
 
-Useful php helper functions for everyday use.
+A Collection of useful php helper functions.
 
 
-## Install
+# Install
 
 ```php
 todo
 ```
 
-## Table of Contents
-- [Mobile device helper functions](#mobile-device-helper-functions)
-## Mobile device helper functions
+API Index
+=========
 
-Credits:  
-Makes use of the well known Mobile_Detect library of serbanghita:
-- http://mobiledetect.net/
-- https://github.com/serbanghita/Mobile-Detect
+* CNZ
+    * CNZ\Helpers
+        * [UserHelpers](CNZ-Helpers-UserHelpers.md)
+        * [MobileHelpers](CNZ-Helpers-MobileHelpers.md)
+        * [StringHelpers](CNZ-Helpers-StringHelpers.md)
+        * [ArrayHelpers](CNZ-Helpers-ArrayHelpers.md)
+        * [CommonHelpers](CNZ-Helpers-CommonHelpers.md)
 
-Usage:  
-To get static access to the library functions, make sure to import the propper namespace:
-```
-use CNZ\Helpers\MobileHelpers as mobile;
-```
-
-
-#### Mobile device detection
-Detects if the current visitor uses a mobile device.
-```php
-// global function
-is_mobile() : bool
-
-// static access
-mobile::isMobile() : bool
-```
+CNZ\Helpers\ArrayHelpers
+===============
 
 
 
-#### Touch device detection
-Detects if the current visitor uses a touch device.
-```php
-// global function
-is_touch_device() : bool
-
-// static access
-mobile::isTouchDevice() : bool
-```
 
 
 
-#### Smartphone detection
-Detects if the current visitor uses a smartphone.
-```php
-// global function
-is_smartphone() : bool
-
-// static access
-mobile::isSmartphone() : bool
-```
+* Class name: ArrayHelpers
+* Namespace: CNZ\Helpers
 
 
 
-#### Tablet detection
-Detects if the current visitor uses a tablet.
-```php
-// global function
-is_tablet() : bool
-
-// static access
-mobile::isTablet() : bool
-```
 
 
 
-#### Desktop computer detection
-Detects if the current visitor uses a desktop computer.
-```php
-// global function
-is_desktop() : bool
 
-// static access
-mobile::isDesktop() : bool
-```
+Methods
+-------
 
 
+### isAssoc
 
-#### iPhone detection
-Detects if the current visitor uses an iPhone.
-```php
-// global function
-is_iphone() : bool
+    boolean CNZ\Helpers\ArrayHelpers::isAssoc(array $array)
 
-// static access
-mobile::isIphone() : bool
-```
+Detects if the given value is an associative array.
 
 
 
-#### Samsung device detection
-Detects if the current visitor uses a mobile Samsung device.
-```php
-// global function
-is_samsung() : bool
+* Visibility: **public**
+* This method is **static**.
 
-// static access
-mobile::isSamsung() : bool
-```
+
+#### Arguments
+* $array **array**
 
 
 
-#### iOS device detection
-Detects if the current visitor uses an iOS based device.
-```php
-// global function
-is_ios() : bool
+### toObject
 
-// static access
-mobile::isIOS() : bool
-```
+    object CNZ\Helpers\ArrayHelpers::toObject(array $array)
+
+Converts an array to an object.
 
 
 
-#### Android device detection
-Detects if the current visitor uses an Android based device.
-```php
-// global function
-is_android() : bool
+* Visibility: **public**
+* This method is **static**.
 
-// static access
-mobile::isAndroid() : bool
-```
+
+#### Arguments
+* $array **array**
 
 
 
-#### Get Mobile_Detect object
-Get access to all functions of the Mobile_Detect library  
-More info and doku: https://github.com/serbanghita/Mobile-Detect
-```php
-// static access
-mobile::mobileDetect() : Mobile_Detect
+### fromObject
 
-// example
-$detect = mobile::mobileDetect();
-$androidVersion = $detect->version('Android');
+    array CNZ\Helpers\ArrayHelpers::fromObject($object)
 
-// or
-$androidVersion = mobile::mobileDetect()->version('Android');
-```
+Converts an object to an array.
+
+
+
+* Visibility: **public**
+* This method is **static**.
+
+
+#### Arguments
+* $object **mixed**
+
+
+
+### first
+
+    mixed CNZ\Helpers\ArrayHelpers::first(array $array)
+
+Returns the first element of an array.
+
+
+
+* Visibility: **public**
+* This method is **static**.
+
+
+#### Arguments
+* $array **array**
+
+
+
+### last
+
+    mixed CNZ\Helpers\ArrayHelpers::last(array $array)
+
+Returns the last element of an array.
+
+
+
+* Visibility: **public**
+* This method is **static**.
+
+
+#### Arguments
+* $array **array**
+
+
+CNZ\Helpers\CommonHelpers
+===============
+
+
+
+
+
+
+* Class name: CommonHelpers
+* Namespace: CNZ\Helpers
+
+
+
+
+
+
+
+Methods
+-------
+
+
+### dd
+
+    mixed CNZ\Helpers\CommonHelpers::dd(mixed $var)
+
+Dumps the content of the given variable and exits the script.
+
+
+
+* Visibility: **public**
+* This method is **static**.
+
+
+#### Arguments
+* $var **mixed**
+
+
+
+### dump
+
+    mixed CNZ\Helpers\CommonHelpers::dump(mixed $var)
+
+Dumps the content of the given variable.
+
+
+
+* Visibility: **public**
+* This method is **static**.
+
+
+#### Arguments
+* $var **mixed**
+
+
+CNZ\Helpers\MobileHelpers
+===============
+
+
+
+
+
+
+* Class name: MobileHelpers
+* Namespace: CNZ\Helpers
+
+
+
+
+
+Properties
+----------
+
+
+### $mobileDetectInstance
+
+    private  $mobileDetectInstance
+
+Holds the Mobile_Detect singleton object
+
+
+
+* Visibility: **private**
+* This property is **static**.
+
+
+Methods
+-------
+
+
+### isSmartphone
+
+    boolean CNZ\Helpers\MobileHelpers::isSmartphone(null $userAgent)
+
+Determes if the current user agent is running on a smartphone.
+
+
+
+* Visibility: **public**
+* This method is **static**.
+
+
+#### Arguments
+* $userAgent **null**
+
+
+
+### isMobile
+
+    boolean CNZ\Helpers\MobileHelpers::isMobile(string $userAgent)
+
+Detects if the current user agent is running on a mobile device.
+
+
+
+* Visibility: **public**
+* This method is **static**.
+
+
+#### Arguments
+* $userAgent **string**
+
+
+
+### mobileDetect
+
+    \Mobile_Detect CNZ\Helpers\MobileHelpers::mobileDetect()
+
+Get a singleton Mobile_Detect object to call every method it provides.
+
+Public access for use of outside this class.
+Mobile_Detect doku: https://github.com/serbanghita/Mobile-Detect
+
+* Visibility: **public**
+* This method is **static**.
+
+
+
+
+### isTablet
+
+    boolean CNZ\Helpers\MobileHelpers::isTablet(string $userAgent)
+
+Determes if the current user agent is a tablet device.
+
+
+
+* Visibility: **public**
+* This method is **static**.
+
+
+#### Arguments
+* $userAgent **string**
+
+
+
+### isDesktop
+
+    boolean CNZ\Helpers\MobileHelpers::isDesktop(string $userAgent)
+
+Determes if the current user agent is a desktop computer.
+
+
+
+* Visibility: **public**
+* This method is **static**.
+
+
+#### Arguments
+* $userAgent **string**
+
+
+
+### isAndroid
+
+    boolean CNZ\Helpers\MobileHelpers::isAndroid(string $userAgent)
+
+Determes if the current user agent is running on an Android device.
+
+
+
+* Visibility: **public**
+* This method is **static**.
+
+
+#### Arguments
+* $userAgent **string**
+
+
+
+### isIphone
+
+    boolean CNZ\Helpers\MobileHelpers::isIphone(string $userAgent)
+
+Determes if the current user agent is running on an iPhone device.
+
+
+
+* Visibility: **public**
+* This method is **static**.
+
+
+#### Arguments
+* $userAgent **string**
+
+
+
+### isSamsung
+
+    boolean|integer|null CNZ\Helpers\MobileHelpers::isSamsung(null $userAgent)
+
+Determes if the current user agent is running on a Samsung device.
+
+
+
+* Visibility: **public**
+* This method is **static**.
+
+
+#### Arguments
+* $userAgent **null**
+
+
+
+### isIOS
+
+    boolean|integer|null CNZ\Helpers\MobileHelpers::isIOS(null $userAgent)
+
+Determes if the current user agent is running on an iOS operating system.
+
+
+
+* Visibility: **public**
+* This method is **static**.
+
+
+#### Arguments
+* $userAgent **null**
+
+
+
+### isTouchDevice
+
+    boolean CNZ\Helpers\MobileHelpers::isTouchDevice(null $userAgent)
+
+Determes if the current user agent is running on a mobile touch device.
+
+
+
+* Visibility: **public**
+* This method is **static**.
+
+
+#### Arguments
+* $userAgent **null**
+
+
+CNZ\Helpers\StringHelpers
+===============
+
+
+
+
+
+
+* Class name: StringHelpers
+* Namespace: CNZ\Helpers
+
+
+
+
+
+
+
+Methods
+-------
+
+
+### after
+
+    string CNZ\Helpers\StringHelpers::after(string $search, string $string)
+
+Return the remainder of a string after a given value.
+
+
+
+* Visibility: **public**
+* This method is **static**.
+
+
+#### Arguments
+* $search **string**
+* $string **string**
+
+
+
+### before
+
+    string CNZ\Helpers\StringHelpers::before(string $search, string $string)
+
+Get the portion of a string before a given value.
+
+
+
+* Visibility: **public**
+* This method is **static**.
+
+
+#### Arguments
+* $search **string**
+* $string **string**
+
+
+
+### limitWords
+
+    string CNZ\Helpers\StringHelpers::limitWords(string $string, integer $limit, string $end)
+
+Limit the number of words in a string. Put value of $end to the string end.
+
+
+
+* Visibility: **public**
+* This method is **static**.
+
+
+#### Arguments
+* $string **string**
+* $limit **integer**
+* $end **string**
+
+
+
+### limit
+
+    string CNZ\Helpers\StringHelpers::limit(string $string, integer $limit, string $end)
+
+Limit the number of characters in a string. Put value of $end to the string end.
+
+
+
+* Visibility: **public**
+* This method is **static**.
+
+
+#### Arguments
+* $string **string**
+* $limit **integer**
+* $end **string**
+
+
+
+### contains
+
+    boolean CNZ\Helpers\StringHelpers::contains(string|array $needle, string $haystack)
+
+Tests if a string contains a given element
+
+
+
+* Visibility: **public**
+* This method is **static**.
+
+
+#### Arguments
+* $needle **string|array**
+* $haystack **string**
+
+
+
+### containsIgnoreCase
+
+    boolean CNZ\Helpers\StringHelpers::containsIgnoreCase(string|array $needle, string $haystack)
+
+Tests if a string contains a given element. Ignore case sensitivity.
+
+
+
+* Visibility: **public**
+* This method is **static**.
+
+
+#### Arguments
+* $needle **string|array**
+* $haystack **string**
+
+
+
+### startsWith
+
+    boolean CNZ\Helpers\StringHelpers::startsWith(string|array $needle, string $haystack)
+
+Determine if a given string starts with a given substring.
+
+
+
+* Visibility: **public**
+* This method is **static**.
+
+
+#### Arguments
+* $needle **string|array**
+* $haystack **string**
+
+
+
+### startsWithIgnoreCase
+
+    boolean CNZ\Helpers\StringHelpers::startsWithIgnoreCase(string|array $needle, string $haystack)
+
+Determine if a given string starts with a given substring. Ignore case sensitivity.
+
+
+
+* Visibility: **public**
+* This method is **static**.
+
+
+#### Arguments
+* $needle **string|array**
+* $haystack **string**
+
+
+
+### endsWith
+
+    boolean CNZ\Helpers\StringHelpers::endsWith(string|array $needle, string $haystack)
+
+Determine if a given string ends with a given substring.
+
+
+
+* Visibility: **public**
+* This method is **static**.
+
+
+#### Arguments
+* $needle **string|array**
+* $haystack **string**
+
+
+
+### endsWithIgnoreCase
+
+    boolean CNZ\Helpers\StringHelpers::endsWithIgnoreCase(string|array $needle, string $haystack)
+
+Determine if a given string ends with a given substring.
+
+
+
+* Visibility: **public**
+* This method is **static**.
+
+
+#### Arguments
+* $needle **string|array**
+* $haystack **string**
+
+
+CNZ\Helpers\UserHelpers
+===============
+
+
+
+
+
+
+* Class name: UserHelpers
+* Namespace: CNZ\Helpers
+
+
+
+
+
+
+
+Methods
+-------
+
+
+### ip
+
+    mixed CNZ\Helpers\UserHelpers::ip()
+
+
+
+
+
+* Visibility: **public**
+* This method is **static**.
+
+
+

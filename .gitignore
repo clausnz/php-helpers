@@ -1,4 +1,5 @@
 /.idea
 /vendor
 /tests/test.php
-/phpDocumentator
+/doc/bin
+!/doc/bin/generate-doc.sh

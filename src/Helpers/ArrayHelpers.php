@@ -67,7 +67,7 @@ class ArrayHelpers
      *
      * @param array $array
      * The concerned array.
-     * @return mixed $mixed
+     * @return int|string|array|object $mixed
      * The value of the first element. Type could be anything.
      *
      */

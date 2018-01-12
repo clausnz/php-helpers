@@ -139,7 +139,7 @@ An array representation of the converted object.
 Returns the first element of an array.
 
 ```php
-ArrayHelpers::first( array $array ): mixed
+ArrayHelpers::first( array $array ): integer|string|array|object
 ```
 
 

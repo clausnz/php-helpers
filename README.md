@@ -71,7 +71,7 @@ ArrayHelpers::isAssoc( array $array ): boolean
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$array` | **array** |  |
+| `$array` | **array** | any array |
 
 
 

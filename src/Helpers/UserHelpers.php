@@ -21,6 +21,12 @@ class UserHelpers
     /**
      * Get the current ip address of the user.
      *
+     * ### user_ip
+     * Related global function.
+     * ```php
+     * user_ip(  ): null|string
+     * ```
+     *
      * @return null|string
      */
     public static function ip()

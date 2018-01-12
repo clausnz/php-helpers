@@ -226,7 +226,7 @@ CommonHelpers::dd( mixed $var )
 ### dd
 Related global function.
 ```php
-dd( mixed var )
+dd( mixed $var )
 ```
 
 * This method is **static**.
@@ -252,7 +252,7 @@ CommonHelpers::dump( mixed $var )
 ### dump
 Related global function.
 ```php
-dump( mixed var )
+dump( mixed $var )
 ```
 
 * This method is **static**.
@@ -863,7 +863,11 @@ Get the current ip address of the user.
 UserHelpers::ip(  ): null|string
 ```
 
-
+### user_ip
+Related global function.
+```php
+user_ip(  ): null|string
+```
 
 * This method is **static**.
 

@@ -25,7 +25,7 @@ class CommonHelpers
      * ### dd
      * Related global function.
      * ```php
-     * dd( mixed var )
+     * dd( mixed $var )
      * ```
      *
      * @param mixed $var
@@ -42,7 +42,7 @@ class CommonHelpers
      * ### dump
      * Related global function.
      * ```php
-     * dump( mixed var )
+     * dump( mixed $var )
      * ```
      *
      * @param mixed $var

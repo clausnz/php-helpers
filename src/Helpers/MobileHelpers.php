@@ -27,7 +27,7 @@ use Mobile_Detect;
 class MobileHelpers
 {
     /**
-     * Holds the Mobile_Detect singleton object
+     * Holds the Mobile_Detect singleton object.
      *
      * @var $mobileDetectInstance
      */
@@ -36,23 +36,39 @@ class MobileHelpers
     /**
      * Determes if the current user agent is running on a smartphone.
      *
-     * @param null $userAgent
+     * ### is_smartphone
+     * Related global function.
+     * ```php
+     * is_smartphone( string $userAgent = null ) : boolean
+     * ```
+     *
+     * @param string $userAgent
+     * If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used.
      * @return bool
+     * True if current visitor uses a smartphone, false otherwise.
      */
     public static function isSmartphone($userAgent = null)
     {
-        return self::isMobile($userAgent) && !self::isTablet($userAgent);
+        return (self::isMobile($userAgent) && !self::isTablet($userAgent));
     }
 
     /**
      * Detects if the current user agent is running on a mobile device.
      *
+     * ### is_mobile
+     * Related global function.
+     * ```php
+     * is_mobile( string $userAgent = null ) : boolean
+     * ```
+     *
      * @param string $userAgent
+     * If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used.
      * @return bool
+     * True if current visitor uses a mobile device, false otherwise.
      */
     public static function isMobile($userAgent = null)
     {
-        return self::mobileDetect()->isMobile($userAgent);
+        return self::mobileDetect()->isMobile($userAgent) ? true : false;
     }
 
 
@@ -60,6 +76,8 @@ class MobileHelpers
      * Get a singleton Mobile_Detect object to call every method it provides.
      * Public access for use of outside this class.
      * Mobile_Detect doku: https://github.com/serbanghita/Mobile-Detect
+     *
+     * ***This method has no related global function!***
      *
      * @return Mobile_Detect
      */
@@ -75,30 +93,54 @@ class MobileHelpers
     /**
      * Determes if the current user agent is a tablet device.
      *
+     * ### is_tablet
+     * Related global function.
+     * ```php
+     * is_tablet( string $userAgent = null ) : boolean
+     * ```
+     *
      * @param string $userAgent
+     * If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used.
      * @return bool
+     * True if current visitor uses a tablet device, false otherwise.
      */
     public static function isTablet($userAgent = null)
     {
-        return self::mobileDetect()->isTablet($userAgent);
+        return self::mobileDetect()->isTablet($userAgent) ? true : false;
     }
 
     /**
      * Determes if the current user agent is a desktop computer.
      *
+     * ### is_desktop
+     * Related global function.
+     * ```php
+     * is_desktop( string $userAgent = null ) : boolean
+     * ```
+     *
      * @param string $userAgent
+     * If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used.
      * @return bool
+     * True if current visitor uses a desktop computer, false otherwise.
      */
     public static function isDesktop($userAgent = null)
     {
-        return !self::isMobile($userAgent) && !self::isTablet($userAgent);
+        return (!self::isMobile($userAgent) && !self::isTablet($userAgent));
     }
 
     /**
      * Determes if the current user agent is running on an Android device.
      *
+     * ### is_android
+     * Related global function.
+     * ```php
+     * is_android( string $userAgent = null ) : boolean
+     * ```
+     *
      * @param string $userAgent
+     * If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used.
      * @return bool
+     * True if current visitor uses an Android based device, false otherwise.
      */
     public static function isAndroid($userAgent = null)
     {
@@ -121,41 +163,73 @@ class MobileHelpers
     /**
      * Determes if the current user agent is running on an iPhone device.
      *
+     * ### is_iphone
+     * Related global function.
+     * ```php
+     * is_iphone( string $userAgent = null ) : boolean
+     * ```
+     *
      * @param string $userAgent
+     * If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used.
      * @return bool
+     * True if current visitor uses an iPhone, false otherwise.
      */
     public static function isIphone($userAgent = null)
     {
-        return self::mobileDetect()->is('iPhone', $userAgent);
+        return self::mobileDetect()->is('iPhone', $userAgent) ? true : false;
     }
 
     /**
      * Determes if the current user agent is running on a Samsung device.
      *
-     * @param null $userAgent
-     * @return bool|int|null
+     * ### is_samsung
+     * Related global function.
+     * ```php
+     * is_samsung( string $userAgent = null ) : boolean
+     * ```
+     *
+     * @param string $userAgent
+     * If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used.
+     * @return bool
+     * True if current visitor uses a Samsung device, false otherwise.
      */
     public static function isSamsung($userAgent = null)
     {
-        return self::mobileDetect()->is('Samsung', $userAgent);
+        return self::mobileDetect()->is('Samsung', $userAgent) ? true : false;
     }
 
     /**
      * Determes if the current user agent is running on an iOS operating system.
      *
-     * @param null $userAgent
-     * @return bool|int|null
+     * ### is_ios
+     * Related global function.
+     * ```php
+     * is_ios( string $userAgent = null ) : boolean
+     * ```
+     *
+     * @param string $userAgent
+     * If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used.
+     * @return bool
+     * True if current visitor uses an iOS device, false otherwise.
      */
     public static function isIOS($userAgent = null)
     {
-        return self::mobileDetect()->is('iOS', $userAgent);
+        return self::mobileDetect()->is('iOS', $userAgent) ? true : false;
     }
 
     /**
      * Determes if the current user agent is running on a mobile touch device.
      *
-     * @param null $userAgent
+     * ### is_touch_device
+     * Related global function.
+     * ```php
+     * is_touch_device( string $userAgent = null ) : boolean
+     * ```
+     *
+     * @param string $userAgent
+     * If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used.
      * @return bool
+     * True if current visitor uses a touch device, false otherwise.
      */
     public static function isTouchDevice($userAgent = null)
     {

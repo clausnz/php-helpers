@@ -212,7 +212,11 @@ Dumps the content of the given variable and exits the script.
 CommonHelpers::dd( mixed $var )
 ```
 
-
+### dd
+Related global function.
+```php
+dd( mixed var )
+```
 
 * This method is **static**.
 **Parameters:**
@@ -234,7 +238,11 @@ Dumps the content of the given variable.
 CommonHelpers::dump( mixed $var )
 ```
 
-
+### dump
+Related global function.
+```php
+dump( mixed var )
+```
 
 * This method is **static**.
 **Parameters:**
@@ -262,18 +270,26 @@ Class MobileHelpers
 Determes if the current user agent is running on a smartphone.
 
 ```php
-MobileHelpers::isSmartphone( null $userAgent = null ): boolean
+MobileHelpers::isSmartphone( string $userAgent = null ): boolean
 ```
 
-
+### is_smartphone
+Related global function.
+```php
+is_smartphone( string $userAgent = null ) : boolean
+```
 
 * This method is **static**.
 **Parameters:**
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$userAgent` | **null** |  |
+| `$userAgent` | **string** | If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used. |
 
+
+**Return Value:**
+
+True if current visitor uses a smartphone, false otherwise.
 
 
 
@@ -287,15 +303,23 @@ Detects if the current user agent is running on a mobile device.
 MobileHelpers::isMobile( string $userAgent = null ): boolean
 ```
 
-
+### is_mobile
+Related global function.
+```php
+is_mobile( string $userAgent = null ) : boolean
+```
 
 * This method is **static**.
 **Parameters:**
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$userAgent` | **string** |  |
+| `$userAgent` | **string** | If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used. |
 
+
+**Return Value:**
+
+True if current visitor uses a mobile device, false otherwise.
 
 
 
@@ -312,6 +336,8 @@ MobileHelpers::mobileDetect(  ): \Mobile_Detect
 Public access for use of outside this class.
 Mobile_Detect doku: https://github.com/serbanghita/Mobile-Detect
 
+***This method has no related global function!***
+
 * This method is **static**.
 
 
@@ -326,15 +352,23 @@ Determes if the current user agent is a tablet device.
 MobileHelpers::isTablet( string $userAgent = null ): boolean
 ```
 
-
+### is_tablet
+Related global function.
+```php
+is_tablet( string $userAgent = null ) : boolean
+```
 
 * This method is **static**.
 **Parameters:**
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$userAgent` | **string** |  |
+| `$userAgent` | **string** | If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used. |
 
+
+**Return Value:**
+
+True if current visitor uses a tablet device, false otherwise.
 
 
 
@@ -348,15 +382,23 @@ Determes if the current user agent is a desktop computer.
 MobileHelpers::isDesktop( string $userAgent = null ): boolean
 ```
 
-
+### is_desktop
+Related global function.
+```php
+is_desktop( string $userAgent = null ) : boolean
+```
 
 * This method is **static**.
 **Parameters:**
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$userAgent` | **string** |  |
+| `$userAgent` | **string** | If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used. |
 
+
+**Return Value:**
+
+True if current visitor uses a desktop computer, false otherwise.
 
 
 
@@ -370,15 +412,23 @@ Determes if the current user agent is running on an Android device.
 MobileHelpers::isAndroid( string $userAgent = null ): boolean
 ```
 
-
+### is_android
+Related global function.
+```php
+is_android( string $userAgent = null ) : boolean
+```
 
 * This method is **static**.
 **Parameters:**
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$userAgent` | **string** |  |
+| `$userAgent` | **string** | If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used. |
 
+
+**Return Value:**
+
+True if current visitor uses an Android based device, false otherwise.
 
 
 
@@ -392,15 +442,23 @@ Determes if the current user agent is running on an iPhone device.
 MobileHelpers::isIphone( string $userAgent = null ): boolean
 ```
 
-
+### is_iphone
+Related global function.
+```php
+is_iphone( string $userAgent = null ) : boolean
+```
 
 * This method is **static**.
 **Parameters:**
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$userAgent` | **string** |  |
+| `$userAgent` | **string** | If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used. |
 
+
+**Return Value:**
+
+True if current visitor uses an iPhone, false otherwise.
 
 
 
@@ -411,18 +469,26 @@ MobileHelpers::isIphone( string $userAgent = null ): boolean
 Determes if the current user agent is running on a Samsung device.
 
 ```php
-MobileHelpers::isSamsung( null $userAgent = null ): boolean|integer|null
+MobileHelpers::isSamsung( string $userAgent = null ): boolean
 ```
 
-
+### is_samsung
+Related global function.
+```php
+is_samsung( string $userAgent = null ) : boolean
+```
 
 * This method is **static**.
 **Parameters:**
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$userAgent` | **null** |  |
+| `$userAgent` | **string** | If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used. |
 
+
+**Return Value:**
+
+True if current visitor uses a Samsung device, false otherwise.
 
 
 
@@ -433,18 +499,26 @@ MobileHelpers::isSamsung( null $userAgent = null ): boolean|integer|null
 Determes if the current user agent is running on an iOS operating system.
 
 ```php
-MobileHelpers::isIOS( null $userAgent = null ): boolean|integer|null
+MobileHelpers::isIOS( string $userAgent = null ): boolean
 ```
 
-
+### is_ios
+Related global function.
+```php
+is_ios( string $userAgent = null ) : boolean
+```
 
 * This method is **static**.
 **Parameters:**
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$userAgent` | **null** |  |
+| `$userAgent` | **string** | If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used. |
 
+
+**Return Value:**
+
+True if current visitor uses an iOS device, false otherwise.
 
 
 
@@ -455,18 +529,26 @@ MobileHelpers::isIOS( null $userAgent = null ): boolean|integer|null
 Determes if the current user agent is running on a mobile touch device.
 
 ```php
-MobileHelpers::isTouchDevice( null $userAgent = null ): boolean
+MobileHelpers::isTouchDevice( string $userAgent = null ): boolean
 ```
 
-
+### is_touch_device
+Related global function.
+```php
+is_touch_device( string $userAgent = null ) : boolean
+```
 
 * This method is **static**.
 **Parameters:**
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$userAgent` | **null** |  |
+| `$userAgent` | **string** | If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used. |
 
+
+**Return Value:**
+
+True if current visitor uses a touch device, false otherwise.
 
 
 

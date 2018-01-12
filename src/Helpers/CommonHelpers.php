@@ -22,6 +22,12 @@ class CommonHelpers
     /**
      * Dumps the content of the given variable and exits the script.
      *
+     * ### dd
+     * Related global function.
+     * ```php
+     * dd( mixed var )
+     * ```
+     *
      * @param mixed $var
      */
     public static function dd($var)
@@ -32,6 +38,12 @@ class CommonHelpers
 
     /**
      * Dumps the content of the given variable.
+     *
+     * ### dump
+     * Related global function.
+     * ```php
+     * dump( mixed var )
+     * ```
      *
      * @param mixed $var
      */

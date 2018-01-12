@@ -99,7 +99,7 @@ class ArrayHelpers
     /**
      * Returns the last element of an array.
      *
-     * **Related global function**
+     * ### Related global function.
      * ```php
      * array_last( array $array ) : mixed
      * ```

@@ -22,9 +22,9 @@ class ArrayHelpers
     /**
      * Detects if the given value is an associative array.
      *
-     * **Additional global function**
+     * **Related global function**
      * ```php
-     * is_assoc(array $array) : bool
+     * is_assoc( array $array ) : boolean
      * ```
      *
      * @param array $array
@@ -44,6 +44,11 @@ class ArrayHelpers
     /**
      * Converts an array to an object.
      *
+     * **Related global function**
+     * ```php
+     * to_object( array $array ) : object
+     * ```
+     *
      * @param array $array
      * The array to be converted.
      * @return object
@@ -56,6 +61,11 @@ class ArrayHelpers
 
     /**
      * Converts an object to an array.
+     *
+     * **Related global function**
+     * ```php
+     * to_object( object $object ) : array
+     * ```
      *
      * @param $object
      * The object to be converted.
@@ -70,6 +80,11 @@ class ArrayHelpers
     /**
      * Returns the first element of an array.
      *
+     * **Related global function**
+     * ```php
+     * array_first( array $array ) : mixed
+     * ```
+     *
      * @param array $array
      * The concerned array.
      * @return mixed
@@ -83,6 +98,11 @@ class ArrayHelpers
 
     /**
      * Returns the last element of an array.
+     *
+     * **Related global function**
+     * ```php
+     * array_last( array $array ) : mixed
+     * ```
      *
      * @param array $array
      * The concerned array.

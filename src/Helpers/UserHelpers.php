@@ -10,9 +10,19 @@
 
 namespace CNZ\Helpers;
 
-
+/**
+ * Helper class that provides easy access to useful php user functions.
+ *
+ * Class UserHelpers
+ * @package CNZ\Helpers
+ */
 class UserHelpers
 {
+    /**
+     * Get the current ip address of the user.
+     *
+     * @return null|string
+     */
     public static function ip()
     {
         if (isset($_SERVER['REMOTE_ADDR'])) {

@@ -1,13 +1,4 @@
 <?php
-/**
- * Helper functions that provide easy access to useful php array functions.
- *
- * @author      Claus Bayer <claus.bayer@gmail.com>
- * @version     1.0
- * @link        https://github.com/clausnz/php-helpers
- * @license     MIT
- *
- */
 
 use CNZ\Helpers\ArrayHelpers as arr;
 use CNZ\Helpers\CommonHelpers as helper;
@@ -226,8 +217,8 @@ if (!function_exists('str_before')) {
     /**
      * Get the portion of a string before a given value.
      *
-     * @param string $search
      * @param string $string
+     * @param string $search
      * @return string
      */
     function str_before($search, $string)
@@ -375,3 +366,4 @@ if (!function_exists('to_object')) {
         return arr::toObject($array);
     }
 }
+

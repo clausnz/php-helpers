@@ -10,6 +10,12 @@
 
 namespace CNZ\Helpers;
 
+/**
+ * Helper class that provides easy access to useful php string functions.
+ *
+ * Class StringHelpers
+ * @package CNZ\Helpers
+ */
 class StringHelpers
 {
     /**
@@ -27,8 +33,8 @@ class StringHelpers
     /**
      * Get the portion of a string before a given value.
      *
-     * @param string $string
      * @param string $search
+     * @param string $string
      * @return string
      */
     public static function before($search, $string)

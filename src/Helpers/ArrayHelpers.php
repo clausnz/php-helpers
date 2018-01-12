@@ -11,7 +11,12 @@
 
 namespace CNZ\Helpers;
 
-
+/**
+ * Helper class that provides easy access to useful php array functions.
+ *
+ * Class ArrayHelpers
+ * @package CNZ\Helpers
+ */
 class ArrayHelpers
 {
     /**

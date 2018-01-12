@@ -18,6 +18,12 @@ namespace CNZ\Helpers;
 
 use Mobile_Detect;
 
+/**
+ * Helper class that provides easy access to useful php functions in conjunction with mobile devices.
+ *
+ * Class MobileHelpers
+ * @package CNZ\Helpers
+ */
 class MobileHelpers
 {
     /**

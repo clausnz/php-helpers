@@ -38,9 +38,9 @@
 
 ## ArrayHelpers
 
+Helper class that provides easy access to useful php array functions.
 
-
-
+Class ArrayHelpers
 
 * Full name: \CNZ\Helpers\ArrayHelpers
 
@@ -165,9 +165,9 @@ $value
 
 ## CommonHelpers
 
+Helper class that provides easy access to useful common php functions.
 
-
-
+Class CommonHelpers
 
 * Full name: \CNZ\Helpers\CommonHelpers
 
@@ -218,9 +218,9 @@ CommonHelpers::dump( mixed $var )
 
 ## MobileHelpers
 
+Helper class that provides easy access to useful php functions in conjunction with mobile devices.
 
-
-
+Class MobileHelpers
 
 * Full name: \CNZ\Helpers\MobileHelpers
 
@@ -442,9 +442,9 @@ MobileHelpers::isTouchDevice( null $userAgent = null ): boolean
 
 ## StringHelpers
 
+Helper class that provides easy access to useful php string functions.
 
-
-
+Class StringHelpers
 
 * Full name: \CNZ\Helpers\StringHelpers
 
@@ -683,19 +683,19 @@ StringHelpers::endsWithIgnoreCase( string|array $needle, string $haystack ): boo
 
 ## UserHelpers
 
+Helper class that provides easy access to useful php user functions.
 
-
-
+Class UserHelpers
 
 * Full name: \CNZ\Helpers\UserHelpers
 
 
 ### ip
 
-
+Get the current ip address of the user.
 
 ```php
-UserHelpers::ip(  )
+UserHelpers::ip(  ): null|string
 ```
 
 

@@ -11,6 +11,12 @@
 
 namespace CNZ\Helpers;
 
+/**
+ * Helper class that provides easy access to useful common php functions.
+ *
+ * Class CommonHelpers
+ * @package CNZ\Helpers
+ */
 class CommonHelpers
 {
     /**

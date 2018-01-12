@@ -25,7 +25,7 @@ class ArrayHelpers
      * ### is_assoc
      * Related global function.
      * ```php
-     * is_assoc( array $array ) : boolean
+     * is_assoc( array $array ): boolean
      * ```
      *
      * @param array $array
@@ -48,7 +48,7 @@ class ArrayHelpers
      * ### to_object
      * Related global function.
      * ```php
-     * to_object( array $array ) : object
+     * to_object( array $array ): object
      * ```
      *
      * @param array $array
@@ -67,10 +67,10 @@ class ArrayHelpers
      * ### to_array
      * Related global function.
      * ```php
-     * to_array( object $object ) : array
+     * to_array( object $object ): array
      * ```
      *
-     * @param $object
+     * @param object $object
      * The object to be converted.
      * @return array
      * An array representation of the converted object.
@@ -86,7 +86,7 @@ class ArrayHelpers
      * ### array_first
      * Related global function.
      * ```php
-     * array_first( array $array ) : mixed
+     * array_first( array $array ): mixed
      * ```
      *
      * @param array $array
@@ -106,7 +106,7 @@ class ArrayHelpers
      * ### array_last
      * Related global function.
      * ```php
-     * array_last( array $array ) : mixed
+     * array_last( array $array ): mixed
      * ```
      *
      * @param array $array

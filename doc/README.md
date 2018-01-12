@@ -56,7 +56,7 @@ ArrayHelpers::isAssoc( array $array ): boolean
 ### is_assoc
 Related global function.
 ```php
-is_assoc( array $array ) : boolean
+is_assoc( array $array ): boolean
 ```
 
 * This method is **static**.
@@ -86,7 +86,7 @@ ArrayHelpers::toObject( array $array ): object
 ### to_object
 Related global function.
 ```php
-to_object( array $array ) : object
+to_object( array $array ): object
 ```
 
 * This method is **static**.
@@ -110,13 +110,13 @@ A std object representation of the converted array.
 Converts an object to an array.
 
 ```php
-ArrayHelpers::toArray(  $object ): array
+ArrayHelpers::toArray( object $object ): array
 ```
 
 ### to_array
 Related global function.
 ```php
-to_array( object $object ) : array
+to_array( object $object ): array
 ```
 
 * This method is **static**.
@@ -124,7 +124,7 @@ to_array( object $object ) : array
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$object` | **** | The object to be converted. |
+| `$object` | **object** | The object to be converted. |
 
 
 **Return Value:**
@@ -146,7 +146,7 @@ ArrayHelpers::first( array $array ): mixed
 ### array_first
 Related global function.
 ```php
-array_first( array $array ) : mixed
+array_first( array $array ): mixed
 ```
 
 * This method is **static**.
@@ -176,7 +176,7 @@ ArrayHelpers::last( array $array ): mixed
 ### array_last
 Related global function.
 ```php
-array_last( array $array ) : mixed
+array_last( array $array ): mixed
 ```
 
 * This method is **static**.
@@ -276,7 +276,7 @@ MobileHelpers::isSmartphone( string $userAgent = null ): boolean
 ### is_smartphone
 Related global function.
 ```php
-is_smartphone( string $userAgent = null ) : boolean
+is_smartphone( string $userAgent = null ): boolean
 ```
 
 * This method is **static**.
@@ -306,7 +306,7 @@ MobileHelpers::isMobile( string $userAgent = null ): boolean
 ### is_mobile
 Related global function.
 ```php
-is_mobile( string $userAgent = null ) : boolean
+is_mobile( string $userAgent = null ): boolean
 ```
 
 * This method is **static**.
@@ -355,7 +355,7 @@ MobileHelpers::isTablet( string $userAgent = null ): boolean
 ### is_tablet
 Related global function.
 ```php
-is_tablet( string $userAgent = null ) : boolean
+is_tablet( string $userAgent = null ): boolean
 ```
 
 * This method is **static**.
@@ -385,7 +385,7 @@ MobileHelpers::isDesktop( string $userAgent = null ): boolean
 ### is_desktop
 Related global function.
 ```php
-is_desktop( string $userAgent = null ) : boolean
+is_desktop( string $userAgent = null ): boolean
 ```
 
 * This method is **static**.
@@ -415,7 +415,7 @@ MobileHelpers::isAndroid( string $userAgent = null ): boolean
 ### is_android
 Related global function.
 ```php
-is_android( string $userAgent = null ) : boolean
+is_android( string $userAgent = null ): boolean
 ```
 
 * This method is **static**.
@@ -445,7 +445,7 @@ MobileHelpers::isIphone( string $userAgent = null ): boolean
 ### is_iphone
 Related global function.
 ```php
-is_iphone( string $userAgent = null ) : boolean
+is_iphone( string $userAgent = null ): boolean
 ```
 
 * This method is **static**.
@@ -475,7 +475,7 @@ MobileHelpers::isSamsung( string $userAgent = null ): boolean
 ### is_samsung
 Related global function.
 ```php
-is_samsung( string $userAgent = null ) : boolean
+is_samsung( string $userAgent = null ): boolean
 ```
 
 * This method is **static**.
@@ -505,7 +505,7 @@ MobileHelpers::isIOS( string $userAgent = null ): boolean
 ### is_ios
 Related global function.
 ```php
-is_ios( string $userAgent = null ) : boolean
+is_ios( string $userAgent = null ): boolean
 ```
 
 * This method is **static**.
@@ -535,7 +535,7 @@ MobileHelpers::isTouchDevice( string $userAgent = null ): boolean
 ### is_touch_device
 Related global function.
 ```php
-is_touch_device( string $userAgent = null ) : boolean
+is_touch_device( string $userAgent = null ): boolean
 ```
 
 * This method is **static**.
@@ -571,7 +571,11 @@ Return the remainder of a string after a given value.
 StringHelpers::after( string $search, string $string ): string
 ```
 
-
+### str_after
+Related global function.
+```php
+str_after( string $search, string $string ): string
+```
 
 * This method is **static**.
 **Parameters:**
@@ -594,7 +598,11 @@ Get the portion of a string before a given value.
 StringHelpers::before( string $search, string $string ): string
 ```
 
-
+### str_before
+Related global function.
+```php
+str_before( string $search, string $string ): string
+```
 
 * This method is **static**.
 **Parameters:**
@@ -617,7 +625,11 @@ Limit the number of words in a string. Put value of $end to the string end.
 StringHelpers::limitWords( string $string, integer $limit = 10, string $end = &#039;...&#039; ): string
 ```
 
-
+### str_limit_words
+Related global function.
+```php
+str_limit_words( string $string, int $limit = 10, string $end = '...' ): string
+```
 
 * This method is **static**.
 **Parameters:**
@@ -641,7 +653,11 @@ Limit the number of characters in a string. Put value of $end to the string end.
 StringHelpers::limit( string $string, integer $limit = 100, string $end = &#039;...&#039; ): string
 ```
 
-
+### str_limit
+Related global function.
+```php
+str_limit( string $string, int $limit = 100, string $end = '...' ): string
+```
 
 * This method is **static**.
 **Parameters:**
@@ -665,7 +681,11 @@ Tests if a string contains a given element
 StringHelpers::contains( string|array $needle, string $haystack ): boolean
 ```
 
-
+### str_contains
+Related global function.
+```php
+str_contains( string|array $needle, string $haystack ): boolean
+```
 
 * This method is **static**.
 **Parameters:**
@@ -688,7 +708,11 @@ Tests if a string contains a given element. Ignore case sensitivity.
 StringHelpers::containsIgnoreCase( string|array $needle, string $haystack ): boolean
 ```
 
-
+### str_icontains
+Related global function.
+```php
+str_icontains( string|array $needle, string $haystack ): boolean
+```
 
 * This method is **static**.
 **Parameters:**
@@ -711,7 +735,11 @@ Determine if a given string starts with a given substring.
 StringHelpers::startsWith( string|array $needle, string $haystack ): boolean
 ```
 
-
+### str_starts_with
+Related global function.
+```php
+str_starts_with( string|array $needle, string $haystack ): boolean
+```
 
 * This method is **static**.
 **Parameters:**
@@ -734,7 +762,11 @@ Determine if a given string starts with a given substring. Ignore case sensitivi
 StringHelpers::startsWithIgnoreCase( string|array $needle, string $haystack ): boolean
 ```
 
-
+### str_istarts_with
+Related global function.
+```php
+str_istarts_with( string|array $needle, string $haystack ): boolean
+```
 
 * This method is **static**.
 **Parameters:**
@@ -757,7 +789,11 @@ Determine if a given string ends with a given substring.
 StringHelpers::endsWith( string|array $needle, string $haystack ): boolean
 ```
 
-
+### str_ends_with
+Related global function.
+```php
+str_ends_with( string|array $needle, string $haystack ): boolean
+```
 
 * This method is **static**.
 **Parameters:**
@@ -780,7 +816,11 @@ Determine if a given string ends with a given substring.
 StringHelpers::endsWithIgnoreCase( string|array $needle, string $haystack ): boolean
 ```
 
-
+### str_iends_with
+Related global function.
+```php
+str_iends_with( string|array $needle, string $haystack ): boolean
+```
 
 * This method is **static**.
 **Parameters:**

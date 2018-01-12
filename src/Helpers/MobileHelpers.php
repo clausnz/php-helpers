@@ -39,7 +39,7 @@ class MobileHelpers
      * ### is_smartphone
      * Related global function.
      * ```php
-     * is_smartphone( string $userAgent = null ) : boolean
+     * is_smartphone( string $userAgent = null ): boolean
      * ```
      *
      * @param string $userAgent
@@ -58,7 +58,7 @@ class MobileHelpers
      * ### is_mobile
      * Related global function.
      * ```php
-     * is_mobile( string $userAgent = null ) : boolean
+     * is_mobile( string $userAgent = null ): boolean
      * ```
      *
      * @param string $userAgent
@@ -96,7 +96,7 @@ class MobileHelpers
      * ### is_tablet
      * Related global function.
      * ```php
-     * is_tablet( string $userAgent = null ) : boolean
+     * is_tablet( string $userAgent = null ): boolean
      * ```
      *
      * @param string $userAgent
@@ -115,7 +115,7 @@ class MobileHelpers
      * ### is_desktop
      * Related global function.
      * ```php
-     * is_desktop( string $userAgent = null ) : boolean
+     * is_desktop( string $userAgent = null ): boolean
      * ```
      *
      * @param string $userAgent
@@ -134,7 +134,7 @@ class MobileHelpers
      * ### is_android
      * Related global function.
      * ```php
-     * is_android( string $userAgent = null ) : boolean
+     * is_android( string $userAgent = null ): boolean
      * ```
      *
      * @param string $userAgent
@@ -166,7 +166,7 @@ class MobileHelpers
      * ### is_iphone
      * Related global function.
      * ```php
-     * is_iphone( string $userAgent = null ) : boolean
+     * is_iphone( string $userAgent = null ): boolean
      * ```
      *
      * @param string $userAgent
@@ -185,7 +185,7 @@ class MobileHelpers
      * ### is_samsung
      * Related global function.
      * ```php
-     * is_samsung( string $userAgent = null ) : boolean
+     * is_samsung( string $userAgent = null ): boolean
      * ```
      *
      * @param string $userAgent
@@ -204,7 +204,7 @@ class MobileHelpers
      * ### is_ios
      * Related global function.
      * ```php
-     * is_ios( string $userAgent = null ) : boolean
+     * is_ios( string $userAgent = null ): boolean
      * ```
      *
      * @param string $userAgent
@@ -223,7 +223,7 @@ class MobileHelpers
      * ### is_touch_device
      * Related global function.
      * ```php
-     * is_touch_device( string $userAgent = null ) : boolean
+     * is_touch_device( string $userAgent = null ): boolean
      * ```
      *
      * @param string $userAgent

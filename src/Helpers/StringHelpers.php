@@ -21,6 +21,12 @@ class StringHelpers
     /**
      * Return the remainder of a string after a given value.
      *
+     * ### str_after
+     * Related global function.
+     * ```php
+     * str_after( string $search, string $string ): string
+     * ```
+     *
      * @param string $search
      * @param string $string
      * @return string
@@ -33,6 +39,12 @@ class StringHelpers
     /**
      * Get the portion of a string before a given value.
      *
+     * ### str_before
+     * Related global function.
+     * ```php
+     * str_before( string $search, string $string ): string
+     * ```
+     *
      * @param string $search
      * @param string $string
      * @return string
@@ -44,6 +56,12 @@ class StringHelpers
 
     /**
      * Limit the number of words in a string. Put value of $end to the string end.
+     *
+     * ### str_limit_words
+     * Related global function.
+     * ```php
+     * str_limit_words( string $string, int $limit = 10, string $end = '...' ): string
+     * ```
      *
      * @param  string $string
      * @param  int $limit
@@ -64,6 +82,12 @@ class StringHelpers
     /**
      * Limit the number of characters in a string. Put value of $end to the string end.
      *
+     * ### str_limit
+     * Related global function.
+     * ```php
+     * str_limit( string $string, int $limit = 100, string $end = '...' ): string
+     * ```
+     *
      * @param  string $string
      * @param  int $limit
      * @param  string $end
@@ -80,6 +104,12 @@ class StringHelpers
 
     /**
      * Tests if a string contains a given element
+     *
+     * ### str_contains
+     * Related global function.
+     * ```php
+     * str_contains( string|array $needle, string $haystack ): boolean
+     * ```
      *
      * @param string|array $needle
      * @param string $haystack
@@ -99,6 +129,12 @@ class StringHelpers
     /**
      * Tests if a string contains a given element. Ignore case sensitivity.
      *
+     * ### str_icontains
+     * Related global function.
+     * ```php
+     * str_icontains( string|array $needle, string $haystack ): boolean
+     * ```
+     *
      * @param string|array $needle
      * @param string $haystack
      * @return bool
@@ -117,6 +153,12 @@ class StringHelpers
     /**
      * Determine if a given string starts with a given substring.
      *
+     * ### str_starts_with
+     * Related global function.
+     * ```php
+     * str_starts_with( string|array $needle, string $haystack ): boolean
+     * ```
+     *
      * @param string|array $needle
      * @param string $haystack
      * @return bool
@@ -134,6 +176,12 @@ class StringHelpers
 
     /**
      * Determine if a given string starts with a given substring. Ignore case sensitivity.
+     *
+     * ### str_istarts_with
+     * Related global function.
+     * ```php
+     * str_istarts_with( string|array $needle, string $haystack ): boolean
+     * ```
      *
      * @param string|array $needle
      * @param string $haystack
@@ -156,6 +204,12 @@ class StringHelpers
     /**
      * Determine if a given string ends with a given substring.
      *
+     * ### str_ends_with
+     * Related global function.
+     * ```php
+     * str_ends_with( string|array $needle, string $haystack ): boolean
+     * ```
+     *
      * @param string|array $needle
      * @param string $haystack
      * @return bool
@@ -174,6 +228,12 @@ class StringHelpers
 
     /**
      * Determine if a given string ends with a given substring.
+     *
+     * ### str_iends_with
+     * Related global function.
+     * ```php
+     * str_iends_with( string|array $needle, string $haystack ): boolean
+     * ```
      *
      * @param string|array $needle
      * @param string $haystack

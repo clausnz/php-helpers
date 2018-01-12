@@ -22,6 +22,11 @@ class ArrayHelpers
     /**
      * Detects if the given value is an associative array.
      *
+     * **Additional global function**
+     * ```php
+     * is_assoc(array $array) : bool
+     * ```
+     *
      * @param array $array
      * Any type of array.
      * @return bool

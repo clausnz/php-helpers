@@ -64,7 +64,10 @@ Detects if the given value is an associative array.
 ArrayHelpers::isAssoc( array $array ): boolean
 ```
 
-
+**Additional global function**
+```php
+is_assoc(array $array) : bool
+```
 
 * This method is **static**.
 **Parameters:**

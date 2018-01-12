@@ -22,8 +22,10 @@ class ArrayHelpers
     /**
      * Detects if the given value is an associative array.
      *
-     * @param array $array any array
-     * @return bool true or false
+     * @param array $array
+     * any array
+     * @return bool
+     * true or false
      */
     public static function isAssoc($array)
     {

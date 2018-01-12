@@ -64,7 +64,8 @@ Detects if the given value is an associative array.
 ArrayHelpers::isAssoc( array $array ): boolean
 ```
 
-**Related global function**
+is_assoc
+Related global function.
 ```php
 is_assoc( array $array ) : boolean
 ```
@@ -93,7 +94,8 @@ Converts an array to an object.
 ArrayHelpers::toObject( array $array ): object
 ```
 
-**Related global function**
+### to_object
+Related global function.
 ```php
 to_object( array $array ) : object
 ```
@@ -122,7 +124,8 @@ Converts an object to an array.
 ArrayHelpers::fromObject(  $object ): array
 ```
 
-**Related global function**
+### to_object
+Related global function.
 ```php
 to_object( object $object ) : array
 ```
@@ -151,7 +154,8 @@ Returns the first element of an array.
 ArrayHelpers::first( array $array ): mixed
 ```
 
-**Related global function**
+### array_first
+Related global function.
 ```php
 array_first( array $array ) : mixed
 ```
@@ -180,7 +184,8 @@ Returns the last element of an array.
 ArrayHelpers::last( array $array ): mixed
 ```
 
-### Related global function.
+### array_last
+Related global function.
 ```php
 array_last( array $array ) : mixed
 ```

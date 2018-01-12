@@ -15,6 +15,20 @@ use CNZ\Helpers\MobileHelpers as mobile;
 use CNZ\Helpers\StringHelpers as str;
 use CNZ\Helpers\UserHelpers as user;
 
+/**
+ * Test function.
+ *
+ * @param string $string
+ * The test string.
+ * @return string
+ * The result string.
+ */
+function test($string)
+{
+    $string .= 'test';
+    return $string;
+}
+
 if (!function_exists('is_ios')) {
     /**
      * Determes if the current user agent is running on an iOS operating system.

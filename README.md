@@ -76,7 +76,7 @@ ArrayHelpers::isAssoc( array $array ): boolean
 
 **Return Value:**
 
-Returns true if array is associative, false otherwise.
+True if the array is associative, false otherwise.
 
 
 
@@ -102,7 +102,7 @@ ArrayHelpers::toObject( array $array ): object
 
 **Return Value:**
 
-Returns a std object representation of the converted array.
+A std object representation of the converted array.
 
 
 
@@ -128,7 +128,7 @@ ArrayHelpers::fromObject(  $object ): array
 
 **Return Value:**
 
-Returns an array representation of the converted object.
+An array representation of the converted object.
 
 
 
@@ -139,7 +139,7 @@ Returns an array representation of the converted object.
 Returns the first element of an array.
 
 ```php
-ArrayHelpers::first( array $array ): integer|string|array|object
+ArrayHelpers::first( array $array ): mixed
 ```
 
 
@@ -154,8 +154,8 @@ ArrayHelpers::first( array $array ): integer|string|array|object
 
 **Return Value:**
 
-$value
-Returns the value of the first element. Type could be anything.
+$mixed
+The value of the first element. Type could be anything.
 
 
 
@@ -166,7 +166,7 @@ Returns the value of the first element. Type could be anything.
 Returns the last element of an array.
 
 ```php
-ArrayHelpers::last( array $array ): integer|string|array|object
+ArrayHelpers::last( array $array ): mixed
 ```
 
 
@@ -181,8 +181,8 @@ ArrayHelpers::last( array $array ): integer|string|array|object
 
 **Return Value:**
 
-$value
-Returns the value of the last element. Type could be anything.
+$mixed
+The value of the last element. Type could be anything.
 
 
 

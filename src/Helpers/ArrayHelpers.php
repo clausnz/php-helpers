@@ -25,7 +25,7 @@ class ArrayHelpers
      * @param array $array
      * Any type of array.
      * @return bool
-     * Returns true if array is associative, false otherwise.
+     * True if the array is associative, false otherwise.
      */
     public static function isAssoc($array)
     {
@@ -42,7 +42,7 @@ class ArrayHelpers
      * @param array $array
      * The array to be converted.
      * @return object
-     * Returns a std object representation of the converted array.
+     * A std object representation of the converted array.
      */
     public static function toObject($array)
     {
@@ -55,7 +55,7 @@ class ArrayHelpers
      * @param $object
      * The object to be converted.
      * @return array
-     * Returns an array representation of the converted object.
+     * An array representation of the converted object.
      */
     public static function fromObject($object)
     {
@@ -67,8 +67,8 @@ class ArrayHelpers
      *
      * @param array $array
      * The concerned array.
-     * @return int|string|array|object $value
-     * Returns the value of the first element. Type could be anything.
+     * @return mixed $mixed
+     * The value of the first element. Type could be anything.
      *
      */
     public static function first($array)
@@ -81,8 +81,8 @@ class ArrayHelpers
      *
      * @param array $array
      * The concerned array.
-     * @return int|string|array|object $value
-     * Returns the value of the last element. Type could be anything.
+     * @return mixed $mixed
+     * The value of the last element. Type could be anything.
      */
     public static function last($array)
     {

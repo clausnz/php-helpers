@@ -74,6 +74,10 @@ ArrayHelpers::isAssoc( array $array ): boolean
 | `$array` | **array** | any array |
 
 
+**Return Value:**
+
+true or false
+
 
 
 ---

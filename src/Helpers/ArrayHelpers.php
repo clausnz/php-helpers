@@ -64,10 +64,10 @@ class ArrayHelpers
     /**
      * Converts an object to an array.
      *
-     * ### to_object
+     * ### to_array
      * Related global function.
      * ```php
-     * to_object( object $object ) : array
+     * to_array( object $object ) : array
      * ```
      *
      * @param $object
@@ -75,7 +75,7 @@ class ArrayHelpers
      * @return array
      * An array representation of the converted object.
      */
-    public static function fromObject($object)
+    public static function toArray($object)
     {
         return json_decode(json_encode($object), true);
     }

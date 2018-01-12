@@ -360,7 +360,7 @@ if (!function_exists('to_array')) {
      */
     function to_array($object)
     {
-        return arr::fromObject($object);
+        return arr::toArray($object);
     }
 }
 

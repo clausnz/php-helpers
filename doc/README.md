@@ -5,7 +5,7 @@
 * [ArrayHelpers](#arrayhelpers)
     * [isAssoc](#isassoc)
     * [toObject](#toobject)
-    * [fromObject](#fromobject)
+    * [toArray](#toarray)
     * [first](#first)
     * [last](#last)
 * [CommonHelpers](#commonhelpers)
@@ -105,18 +105,18 @@ A std object representation of the converted array.
 
 ---
 
-### fromObject
+### toArray
 
 Converts an object to an array.
 
 ```php
-ArrayHelpers::fromObject(  $object ): array
+ArrayHelpers::toArray(  $object ): array
 ```
 
-### to_object
+### to_array
 Related global function.
 ```php
-to_object( object $object ) : array
+to_array( object $object ) : array
 ```
 
 * This method is **static**.

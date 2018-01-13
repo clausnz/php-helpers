@@ -11,6 +11,37 @@ A Collection of useful php helper functions.
 todo
 ```
 
+# Available Global PHP Functions
+
+## Table of Contents
+
+* [is_ios](#is_ios)
+* [is_samsung](#is_samsung)
+* [is_android](#is_android)
+* [is_iphone](#is_iphone)
+* [is_desktop](#is_desktop)
+* [is_touch_device](#is_touch_device)
+* [is_tablet](#is_tablet)
+* [is_smartphone](#is_smartphone)
+* [user_ip](#user_ip)
+* [is_assoc](#is_assoc)
+* [is_mobile](#is_mobile)
+* [array_last](#array_last)
+* [array_first](#array_first)
+* [dd](#dd)
+* [dump](#dump)
+* [str_after](#str_after)
+* [str_before](#str_before)
+* [str_limit_words](#str_limit_words)
+* [str_limit](#str_limit)
+* [str_contains](#str_contains)
+* [str_icontains](#str_icontains)
+* [str_starts_with](#str_starts_with)
+* [str_istarts_with](#str_istarts_with)
+* [str_ends_with](#str_ends_with)
+* [str_iends_with](#str_iends_with)
+* [to_array](#to_array)
+* [to_object](#to_object)
 # API Documentation
 
 ## Table of Contents

@@ -35,7 +35,7 @@ class StringHelpers
     public static function between($left, $right, $string)
     {
         preg_match_all('/' . preg_quote($left, '/') . '(.*?)' . preg_quote($right, '/') . '/', $string, $matches);
-        return $matches[1];
+        return array_map('trim', $matches[1]);
     }
 
     /**

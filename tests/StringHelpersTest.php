@@ -13,6 +13,30 @@ class StringHelpersTest extends TestCase
 {
     protected $testString = 'The quick brown fox jumps over the lazy dog';
 
+    public function test_str_between()
+    {
+        $testArrayEqual = [
+            // expected => parameter
+            'quick' => ['The', 'brown'],
+            'fox' => ['brown', 'jumps']
+        ];
+
+        foreach ($testArrayEqual as $expected => $arrayParameter) {
+            $this->assertEquals($expected, str_between($arrayParameter[0], $arrayParameter[1], $this->testString)[0]);
+        }
+
+        $testArrayEqual = [
+            // parameter
+            ['The', '.'],
+            ['bar', 'baz']
+        ];
+
+        foreach ($testArrayEqual as $arrayParameter) {
+            $this->assertEquals([],
+                str_between($arrayParameter[0], $arrayParameter[1], $this->testString));
+        }
+    }
+
     public function test_str_before()
     {
         $testArrayEqual = [

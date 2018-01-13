@@ -9,7 +9,7 @@
   ],
   "type": "library",
   "require": {
-    "php": ">=5.2.0",
+    "php": ">=5.0.0",
     "mobiledetect/mobiledetectlib": "^2.8"
   },
   "license": "MIT",

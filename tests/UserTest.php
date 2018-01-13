@@ -6,10 +6,10 @@
  * Time: 13:32
  */
 
-use CNZ\Helpers\UserHelpers as user;
+use CNZ\Helpers\User as user;
 use PHPUnit\Framework\TestCase;
 
-class UserHelpersTest extends TestCase
+class UserTest extends TestCase
 {
     public function test_user_ip()
     {

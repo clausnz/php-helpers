@@ -6,10 +6,10 @@
  * Time: 13:21
  */
 
-use CNZ\Helpers\ArrayHelpers as arr;
+use CNZ\Helpers\Arr as arr;
 use PHPUnit\Framework\TestCase;
 
-class ArrayHelpersTest extends TestCase
+class ArrTest extends TestCase
 {
     protected $testArray = [
         'one' => 'value_one',

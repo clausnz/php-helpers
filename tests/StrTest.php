@@ -6,10 +6,10 @@
  * Time: 13:22
  */
 
-use CNZ\Helpers\StringHelpers as str;
+use CNZ\Helpers\Str as str;
 use PHPUnit\Framework\TestCase;
 
-class StringHelpersTest extends TestCase
+class StrTest extends TestCase
 {
     protected $testString = 'The quick brown fox jumps over the lazy dog';
 

@@ -9,75 +9,25 @@
  *
  */
 
-use CNZ\Helpers\ArrayHelpers as arr;
-use CNZ\Helpers\CommonHelpers as helper;
-use CNZ\Helpers\MobileHelpers as mobile;
-use CNZ\Helpers\StringHelpers as str;
-use CNZ\Helpers\UserHelpers as user;
+use CNZ\Helpers\Arr as arr;
+use CNZ\Helpers\Mob as mob;
+use CNZ\Helpers\Str as str;
+use CNZ\Helpers\User as user;
 
+/*
+ * Group: Mobile functions
+ */
 
-if (!function_exists('is_ios')) {
+if (!function_exists('is_mobile')) {
     /**
-     * Determes if the current user agent is running on an iOS operating system.
-     *
-     * @param null $userAgent
-     * @return bool|int|null
-     */
-    function is_ios($userAgent = null)
-    {
-        return mobile::isIOS($userAgent);
-    }
-}
-
-if (!function_exists('is_samsung')) {
-    /**
-     * Determes if the current user agent is running on a Samsung device.
-     *
-     * @param null $userAgent
-     * @return bool|int|null
-     */
-    function is_samsung($userAgent = null)
-    {
-        return mobile::isSamsung($userAgent);
-    }
-}
-
-if (!function_exists('is_android')) {
-    /**
-     * Determes if the current user agent is running on an Android device.
+     * Detects if the current user agent is running on a mobile device.
      *
      * @param string $userAgent
      * @return bool
      */
-    function is_android($userAgent = null)
+    function is_mobile($userAgent = null)
     {
-        return mobile::isAndroid($userAgent);
-    }
-}
-
-if (!function_exists('is_iphone')) {
-    /**
-     * Determes if the current user agent is running on an iPhone device.
-     *
-     * @param string $userAgent
-     * @return bool
-     */
-    function is_iphone($userAgent = null)
-    {
-        return mobile::isIphone($userAgent);
-    }
-}
-
-if (!function_exists('is_desktop')) {
-    /**
-     * Determes if the current user agent is a desktop computer.
-     *
-     * @param string $userAgent
-     * @return bool
-     */
-    function is_desktop($userAgent = null)
-    {
-        return mobile::isDesktop($userAgent);
+        return mob::isMobile($userAgent);
     }
 }
 
@@ -90,7 +40,7 @@ if (!function_exists('is_touch_device')) {
      */
     function is_touch_device($userAgent = null)
     {
-        return mobile::isTouchDevice($userAgent);
+        return mob::isTouchDevice($userAgent);
     }
 }
 
@@ -103,7 +53,7 @@ if (!function_exists('is_tablet')) {
      */
     function is_tablet($userAgent = null)
     {
-        return mobile::isTablet($userAgent);
+        return mob::isTablet($userAgent);
     }
 }
 
@@ -116,9 +66,78 @@ if (!function_exists('is_smartphone')) {
      */
     function is_smartphone($userAgent = null)
     {
-        return mobile::isSmartphone($userAgent);
+        return mob::isSmartphone($userAgent);
     }
 }
+
+if (!function_exists('is_desktop')) {
+    /**
+     * Determes if the current user agent is a desktop computer.
+     *
+     * @param string $userAgent
+     * @return bool
+     */
+    function is_desktop($userAgent = null)
+    {
+        return mob::isDesktop($userAgent);
+    }
+}
+
+if (!function_exists('is_ios')) {
+    /**
+     * Determes if the current user agent is running on an iOS operating system.
+     *
+     * @param null $userAgent
+     * @return bool|int|null
+     */
+    function is_ios($userAgent = null)
+    {
+        return mob::isIOS($userAgent);
+    }
+}
+
+if (!function_exists('is_android')) {
+    /**
+     * Determes if the current user agent is running on an Android device.
+     *
+     * @param string $userAgent
+     * @return bool
+     */
+    function is_android($userAgent = null)
+    {
+        return mob::isAndroid($userAgent);
+    }
+}
+
+if (!function_exists('is_iphone')) {
+    /**
+     * Determes if the current user agent is running on an iPhone device.
+     *
+     * @param string $userAgent
+     * @return bool
+     */
+    function is_iphone($userAgent = null)
+    {
+        return mob::isIphone($userAgent);
+    }
+}
+
+if (!function_exists('is_samsung')) {
+    /**
+     * Determes if the current user agent is running on a Samsung device.
+     *
+     * @param null $userAgent
+     * @return bool|int|null
+     */
+    function is_samsung($userAgent = null)
+    {
+        return mob::isSamsung($userAgent);
+    }
+}
+
+/*
+ * Group: User functions
+ */
 
 if (!function_exists('user_ip')) {
     /**
@@ -134,6 +153,10 @@ if (!function_exists('user_ip')) {
     }
 }
 
+/*
+ * Group: Array functions
+ */
+
 if (!function_exists('is_assoc')) {
     /**
      * Detects if the given value is an associative array.
@@ -144,19 +167,6 @@ if (!function_exists('is_assoc')) {
     function is_assoc($array)
     {
         return arr::isAssoc($array);
-    }
-}
-
-if (!function_exists('is_mobile')) {
-    /**
-     * Detects if the current user agent is running on a mobile device.
-     *
-     * @param string $userAgent
-     * @return bool
-     */
-    function is_mobile($userAgent = null)
-    {
-        return mobile::isMobile($userAgent);
     }
 }
 
@@ -186,29 +196,48 @@ if (!function_exists('array_first')) {
     }
 }
 
-if (!function_exists('dd')) {
+if (!function_exists('to_array')) {
     /**
-     * Dumps the content of the given variable and exits the script.
+     * Converts an object to an array.
      *
-     * @codeCoverageIgnore
-     * @param mixed $var
+     * @param $object
+     * @return array
      */
-    function dd($var)
+    function to_array($object)
     {
-        helper::dd($var);
+        return arr::toArray($object);
     }
 }
 
-if (!function_exists('dump')) {
+if (!function_exists('to_object')) {
     /**
-     * Dumps the content of the given variable.
+     * Converts an array to an object.
      *
-     * @codeCoverageIgnore
-     * @param mixed $var
+     * @param array $array
+     * @return object
      */
-    function dump($var)
+    function to_object($array)
     {
-        helper::dump($var);
+        return arr::toObject($array);
+    }
+}
+
+/*
+ * Group: String functions
+ */
+
+if (!function_exists('str_between')) {
+    /**
+     * Return the content in a string between a left and right element.
+     *
+     * @param string $left
+     * @param string $right
+     * @param string $string
+     * @return array
+     */
+    function str_between($left, $right, $string)
+    {
+        return str::between($left, $right, $string);
     }
 }
 
@@ -354,43 +383,32 @@ if (!function_exists('str_iends_with')) {
     }
 }
 
-if (!function_exists('str_between')) {
+/*
+ * Group: Utilities
+ */
+
+if (!function_exists('dump')) {
     /**
-     * Return the content in a string between a left and right element.
+     * Dumps the content of the given variable.
      *
-     * @param string $left
-     * @param string $right
-     * @param string $string
-     * @return array
+     * @codeCoverageIgnore
+     * @param mixed $var
      */
-    function str_between($left, $right, $string)
+    function dump($var)
     {
-        return str::between($left, $right, $string);
+        util::dump($var);
     }
 }
 
-if (!function_exists('to_array')) {
+if (!function_exists('dd')) {
     /**
-     * Converts an object to an array.
+     * Dumps the content of the given variable and exits the script.
      *
-     * @param $object
-     * @return array
+     * @codeCoverageIgnore
+     * @param mixed $var
      */
-    function to_array($object)
+    function dd($var)
     {
-        return arr::toArray($object);
-    }
-}
-
-if (!function_exists('to_object')) {
-    /**
-     * Converts an array to an object.
-     *
-     * @param array $array
-     * @return object
-     */
-    function to_object($array)
-    {
-        return arr::toObject($array);
+        util::dd($var);
     }
 }

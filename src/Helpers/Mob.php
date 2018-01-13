@@ -21,10 +21,10 @@ use Mobile_Detect;
 /**
  * Helper class that provides easy access to useful php functions in conjunction with mobile devices.
  *
- * Class MobileHelpers
+ * Class Mob
  * @package CNZ\Helpers
  */
-class MobileHelpers
+class Mob
 {
     /**
      * Holds the Mobile_Detect singleton object.

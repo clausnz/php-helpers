@@ -13,10 +13,10 @@ namespace CNZ\Helpers;
 /**
  * Helper class that provides easy access to useful php user functions.
  *
- * Class UserHelpers
+ * Class User
  * @package CNZ\Helpers
  */
-class UserHelpers
+class User
 {
     const LOCALHOST = '127.0.0.1';
 

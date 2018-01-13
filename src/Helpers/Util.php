@@ -14,10 +14,10 @@ namespace CNZ\Helpers;
 /**
  * Helper class that provides easy access to useful common php functions.
  *
- * Class CommonHelpers
+ * Class Util
  * @package CNZ\Helpers
  */
-class CommonHelpers
+class Util
 {
     /**
      * Dumps the content of the given variable and exits the script.

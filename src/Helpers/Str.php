@@ -13,10 +13,10 @@ namespace CNZ\Helpers;
 /**
  * Helper class that provides easy access to useful php string functions.
  *
- * Class StringHelpers
+ * Class Str
  * @package CNZ\Helpers
  */
-class StringHelpers
+class Str
 {
     /**
      * Return the content in a string between a left and right element.

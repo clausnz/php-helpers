@@ -10,9 +10,9 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use CNZ\Helpers\ArrayHelpers as arr;
-use CNZ\Helpers\MobileHelpers as mobile;
-use CNZ\Helpers\StringHelpers as str;
+use CNZ\Helpers\Arr as arr;
+use CNZ\Helpers\Mob as mobile;
+use CNZ\Helpers\Str as str;
 use PHPUnit\Framework\TestCase;
 
 class PhpHelpersTestIgnore extends TestCase

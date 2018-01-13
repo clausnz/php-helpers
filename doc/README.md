@@ -2,21 +2,22 @@
 
 ## Table of Contents
 
-* [is_ios](#is_ios)
-* [is_samsung](#is_samsung)
-* [is_android](#is_android)
-* [is_iphone](#is_iphone)
-* [is_desktop](#is_desktop)
+* [is_mobile](#is_mobile)
 * [is_touch_device](#is_touch_device)
 * [is_tablet](#is_tablet)
 * [is_smartphone](#is_smartphone)
+* [is_desktop](#is_desktop)
+* [is_ios](#is_ios)
+* [is_android](#is_android)
+* [is_iphone](#is_iphone)
+* [is_samsung](#is_samsung)
 * [user_ip](#user_ip)
 * [is_assoc](#is_assoc)
-* [is_mobile](#is_mobile)
 * [array_last](#array_last)
 * [array_first](#array_first)
-* [dd](#dd)
-* [dump](#dump)
+* [to_array](#to_array)
+* [to_object](#to_object)
+* [str_between](#str_between)
 * [str_after](#str_after)
 * [str_before](#str_before)
 * [str_limit_words](#str_limit_words)
@@ -27,23 +28,19 @@
 * [str_istarts_with](#str_istarts_with)
 * [str_ends_with](#str_ends_with)
 * [str_iends_with](#str_iends_with)
-* [str_between](#str_between)
-* [to_array](#to_array)
-* [to_object](#to_object)
+* [dump](#dump)
+* [dd](#dd)
 # API Documentation
 
 ## Table of Contents
 
-* [ArrayHelpers](#arrayhelpers)
+* [Arr](#arr)
     * [isAssoc](#isassoc)
     * [toObject](#toobject)
     * [toArray](#toarray)
     * [first](#first)
     * [last](#last)
-* [CommonHelpers](#commonhelpers)
-    * [dd](#dd)
-    * [dump](#dump)
-* [MobileHelpers](#mobilehelpers)
+* [Mob](#mob)
     * [isSmartphone](#issmartphone)
     * [isMobile](#ismobile)
     * [mobileDetect](#mobiledetect)
@@ -54,7 +51,7 @@
     * [isSamsung](#issamsung)
     * [isIOS](#isios)
     * [isTouchDevice](#istouchdevice)
-* [StringHelpers](#stringhelpers)
+* [Str](#str)
     * [between](#between)
     * [after](#after)
     * [before](#before)
@@ -66,16 +63,19 @@
     * [startsWithIgnoreCase](#startswithignorecase)
     * [endsWith](#endswith)
     * [endsWithIgnoreCase](#endswithignorecase)
-* [UserHelpers](#userhelpers)
+* [User](#user)
     * [ip](#ip)
+* [Util](#util)
+    * [dd](#dd)
+    * [dump](#dump)
 
-## ArrayHelpers
+## Arr
 
 Helper class that provides easy access to useful php array functions.
 
-Class ArrayHelpers
+Class Arr
 
-* Full name: \CNZ\Helpers\ArrayHelpers
+* Full name: \CNZ\Helpers\Arr
 
 
 ### isAssoc
@@ -83,7 +83,7 @@ Class ArrayHelpers
 Detects if the given value is an associative array.
 
 ```php
-ArrayHelpers::isAssoc( array $array ): boolean
+Arr::isAssoc( array $array ): boolean
 ```
 
 ### is_assoc
@@ -113,7 +113,7 @@ True if the array is associative, false otherwise.
 Converts an array to an object.
 
 ```php
-ArrayHelpers::toObject( array $array ): object
+Arr::toObject( array $array ): object
 ```
 
 ### to_object
@@ -143,7 +143,7 @@ A std object representation of the converted array.
 Converts an object to an array.
 
 ```php
-ArrayHelpers::toArray( object $object ): array
+Arr::toArray( object $object ): array
 ```
 
 ### to_array
@@ -173,7 +173,7 @@ An array representation of the converted object.
 Returns the first element of an array.
 
 ```php
-ArrayHelpers::first( array $array ): mixed
+Arr::first( array $array ): mixed
 ```
 
 ### array_first
@@ -203,7 +203,7 @@ The value of the first element. Type could be anything.
 Returns the last element of an array.
 
 ```php
-ArrayHelpers::last( array $array ): mixed
+Arr::last( array $array ): mixed
 ```
 
 ### array_last
@@ -228,74 +228,13 @@ The value of the last element. Type could be anything.
 
 ---
 
-## CommonHelpers
-
-Helper class that provides easy access to useful common php functions.
-
-Class CommonHelpers
-
-* Full name: \CNZ\Helpers\CommonHelpers
-
-
-### dd
-
-Dumps the content of the given variable and exits the script.
-
-```php
-CommonHelpers::dd( mixed $var )
-```
-
-### dd
-Related global function.
-```php
-dd( mixed $var )
-```
-
-* This method is **static**.
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `$var` | **mixed** |  |
-
-
-
-
----
-
-### dump
-
-Dumps the content of the given variable.
-
-```php
-CommonHelpers::dump( mixed $var )
-```
-
-### dump
-Related global function.
-```php
-dump( mixed $var )
-```
-
-* This method is **static**.
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `$var` | **mixed** |  |
-
-
-
-
----
-
-## MobileHelpers
+## Mob
 
 Helper class that provides easy access to useful php functions in conjunction with mobile devices.
 
-Class MobileHelpers
+Class Mob
 
-* Full name: \CNZ\Helpers\MobileHelpers
+* Full name: \CNZ\Helpers\Mob
 
 
 ### isSmartphone
@@ -303,7 +242,7 @@ Class MobileHelpers
 Determes if the current user agent is running on a smartphone.
 
 ```php
-MobileHelpers::isSmartphone( string $userAgent = null ): boolean
+Mob::isSmartphone( string $userAgent = null ): boolean
 ```
 
 ### is_smartphone
@@ -333,7 +272,7 @@ True if current visitor uses a smartphone, false otherwise.
 Detects if the current user agent is running on a mobile device.
 
 ```php
-MobileHelpers::isMobile( string $userAgent = null ): boolean
+Mob::isMobile( string $userAgent = null ): boolean
 ```
 
 ### is_mobile
@@ -363,7 +302,7 @@ True if current visitor uses a mobile device, false otherwise.
 Get a singleton Mobile_Detect object to call every method it provides.
 
 ```php
-MobileHelpers::mobileDetect(  ): \Mobile_Detect
+Mob::mobileDetect(  ): \Mobile_Detect
 ```
 
 Public access for use of outside this class.
@@ -382,7 +321,7 @@ Mobile_Detect doku: https://github.com/serbanghita/Mobile-Detect
 Determes if the current user agent is a tablet device.
 
 ```php
-MobileHelpers::isTablet( string $userAgent = null ): boolean
+Mob::isTablet( string $userAgent = null ): boolean
 ```
 
 ### is_tablet
@@ -412,7 +351,7 @@ True if current visitor uses a tablet device, false otherwise.
 Determes if the current user agent is a desktop computer.
 
 ```php
-MobileHelpers::isDesktop( string $userAgent = null ): boolean
+Mob::isDesktop( string $userAgent = null ): boolean
 ```
 
 ### is_desktop
@@ -442,7 +381,7 @@ True if current visitor uses a desktop computer, false otherwise.
 Determes if the current user agent is running on an Android device.
 
 ```php
-MobileHelpers::isAndroid( string $userAgent = null ): boolean
+Mob::isAndroid( string $userAgent = null ): boolean
 ```
 
 ### is_android
@@ -472,7 +411,7 @@ True if current visitor uses an Android based device, false otherwise.
 Determes if the current user agent is running on an iPhone device.
 
 ```php
-MobileHelpers::isIphone( string $userAgent = null ): boolean
+Mob::isIphone( string $userAgent = null ): boolean
 ```
 
 ### is_iphone
@@ -502,7 +441,7 @@ True if current visitor uses an iPhone, false otherwise.
 Determes if the current user agent is running on a Samsung device.
 
 ```php
-MobileHelpers::isSamsung( string $userAgent = null ): boolean
+Mob::isSamsung( string $userAgent = null ): boolean
 ```
 
 ### is_samsung
@@ -532,7 +471,7 @@ True if current visitor uses a Samsung device, false otherwise.
 Determes if the current user agent is running on an iOS operating system.
 
 ```php
-MobileHelpers::isIOS( string $userAgent = null ): boolean
+Mob::isIOS( string $userAgent = null ): boolean
 ```
 
 ### is_ios
@@ -562,7 +501,7 @@ True if current visitor uses an iOS device, false otherwise.
 Determes if the current user agent is running on a mobile touch device.
 
 ```php
-MobileHelpers::isTouchDevice( string $userAgent = null ): boolean
+Mob::isTouchDevice( string $userAgent = null ): boolean
 ```
 
 ### is_touch_device
@@ -587,13 +526,13 @@ True if current visitor uses a touch device, false otherwise.
 
 ---
 
-## StringHelpers
+## Str
 
 Helper class that provides easy access to useful php string functions.
 
-Class StringHelpers
+Class Str
 
-* Full name: \CNZ\Helpers\StringHelpers
+* Full name: \CNZ\Helpers\Str
 
 
 ### between
@@ -601,7 +540,7 @@ Class StringHelpers
 Return the content in a string between a left and right element.
 
 ```php
-StringHelpers::between( string $left, string $right, string $string ): array
+Str::between( string $left, string $right, string $string ): array
 ```
 
 ### str_between
@@ -629,7 +568,7 @@ str_between( string $left, string $right, string $string ): array
 Return the remainder of a string after a given value.
 
 ```php
-StringHelpers::after( string $search, string $string ): string
+Str::after( string $search, string $string ): string
 ```
 
 ### str_after
@@ -656,7 +595,7 @@ str_after( string $search, string $string ): string
 Get the portion of a string before a given value.
 
 ```php
-StringHelpers::before( string $search, string $string ): string
+Str::before( string $search, string $string ): string
 ```
 
 ### str_before
@@ -683,7 +622,7 @@ str_before( string $search, string $string ): string
 Limit the number of words in a string. Put value of $end to the string end.
 
 ```php
-StringHelpers::limitWords( string $string, integer $limit = 10, string $end = &#039;...&#039; ): string
+Str::limitWords( string $string, integer $limit = 10, string $end = &#039;...&#039; ): string
 ```
 
 ### str_limit_words
@@ -711,7 +650,7 @@ str_limit_words( string $string, int $limit = 10, string $end = '...' ): string
 Limit the number of characters in a string. Put value of $end to the string end.
 
 ```php
-StringHelpers::limit( string $string, integer $limit = 100, string $end = &#039;...&#039; ): string
+Str::limit( string $string, integer $limit = 100, string $end = &#039;...&#039; ): string
 ```
 
 ### str_limit
@@ -739,7 +678,7 @@ str_limit( string $string, int $limit = 100, string $end = '...' ): string
 Tests if a string contains a given element
 
 ```php
-StringHelpers::contains( string|array $needle, string $haystack ): boolean
+Str::contains( string|array $needle, string $haystack ): boolean
 ```
 
 ### str_contains
@@ -766,7 +705,7 @@ str_contains( string|array $needle, string $haystack ): boolean
 Tests if a string contains a given element. Ignore case sensitivity.
 
 ```php
-StringHelpers::containsIgnoreCase( string|array $needle, string $haystack ): boolean
+Str::containsIgnoreCase( string|array $needle, string $haystack ): boolean
 ```
 
 ### str_icontains
@@ -793,7 +732,7 @@ str_icontains( string|array $needle, string $haystack ): boolean
 Determine if a given string starts with a given substring.
 
 ```php
-StringHelpers::startsWith( string|array $needle, string $haystack ): boolean
+Str::startsWith( string|array $needle, string $haystack ): boolean
 ```
 
 ### str_starts_with
@@ -820,7 +759,7 @@ str_starts_with( string|array $needle, string $haystack ): boolean
 Determine if a given string starts with a given substring. Ignore case sensitivity.
 
 ```php
-StringHelpers::startsWithIgnoreCase( string|array $needle, string $haystack ): boolean
+Str::startsWithIgnoreCase( string|array $needle, string $haystack ): boolean
 ```
 
 ### str_istarts_with
@@ -847,7 +786,7 @@ str_istarts_with( string|array $needle, string $haystack ): boolean
 Determine if a given string ends with a given substring.
 
 ```php
-StringHelpers::endsWith( string|array $needle, string $haystack ): boolean
+Str::endsWith( string|array $needle, string $haystack ): boolean
 ```
 
 ### str_ends_with
@@ -874,7 +813,7 @@ str_ends_with( string|array $needle, string $haystack ): boolean
 Determine if a given string ends with a given substring.
 
 ```php
-StringHelpers::endsWithIgnoreCase( string|array $needle, string $haystack ): boolean
+Str::endsWithIgnoreCase( string|array $needle, string $haystack ): boolean
 ```
 
 ### str_iends_with
@@ -896,13 +835,13 @@ str_iends_with( string|array $needle, string $haystack ): boolean
 
 ---
 
-## UserHelpers
+## User
 
 Helper class that provides easy access to useful php user functions.
 
-Class UserHelpers
+Class User
 
-* Full name: \CNZ\Helpers\UserHelpers
+* Full name: \CNZ\Helpers\User
 
 
 ### ip
@@ -910,7 +849,7 @@ Class UserHelpers
 Get the current ip address of the user.
 
 ```php
-UserHelpers::ip( boolean $cli = false ): null|string
+User::ip( boolean $cli = false ): null|string
 ```
 
 ### user_ip
@@ -925,6 +864,67 @@ user_ip(  ): null|string
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `$cli` | **boolean** |  |
+
+
+
+
+---
+
+## Util
+
+Helper class that provides easy access to useful common php functions.
+
+Class Util
+
+* Full name: \CNZ\Helpers\Util
+
+
+### dd
+
+Dumps the content of the given variable and exits the script.
+
+```php
+Util::dd( mixed $var )
+```
+
+### dd
+Related global function.
+```php
+dd( mixed $var )
+```
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$var` | **mixed** |  |
+
+
+
+
+---
+
+### dump
+
+Dumps the content of the given variable.
+
+```php
+Util::dump( mixed $var )
+```
+
+### dump
+Related global function.
+```php
+dump( mixed $var )
+```
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$var` | **mixed** |  |
 
 
 

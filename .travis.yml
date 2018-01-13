@@ -8,7 +8,6 @@ php:
   - 7.0
   - 7.1
   - 7.2
-  - hhvm
 
 # Commands to be run before your environment runs.
 before_script:
@@ -17,13 +16,6 @@ before_script:
 
 # Commands you want to run that will verify your build.
 script: phpunit
-
-# allow_failures: Allow this build to fail under the specified environments.
-# fast_finish: If your build fails do not continue trying to build, just stop.
-matrix:
-  allow_failures:
-    - php: hhvm
-  fast_finish: true
 
 # Customize when the notification emails are sent.
 notifications:

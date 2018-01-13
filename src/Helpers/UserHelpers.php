@@ -18,6 +18,8 @@ namespace CNZ\Helpers;
  */
 class UserHelpers
 {
+    const LOCALHOST = '127.0.0.1';
+
     /**
      * Get the current ip address of the user.
      *
@@ -27,22 +29,15 @@ class UserHelpers
      * user_ip(  ): null|string
      * ```
      *
+     * @param bool $cli
      * @return null|string
      */
-    public static function ip()
+    public static function ip($cli = false)
     {
-        if (isset($_SERVER['REMOTE_ADDR'])) {
-            return $_SERVER['REMOTE_ADDR'];
+        if (php_sapi_name() == 'cli' && $cli) {
+            return self::LOCALHOST;
         }
 
-        if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-            return $_SERVER['HTTP_X_FORWARDED_FOR'];
-        }
-
-        if (isset($_SERVER['HTTP_CLIENT_IP'])) {
-            return $_SERVER['HTTP_CLIENT_IP'];
-        }
-
-        return null;
+        return isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : null;
     }
 }

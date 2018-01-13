@@ -125,11 +125,12 @@ if (!function_exists('user_ip')) {
      * Returns the user ip-adresse.
      * See: https://stackoverflow.com/q/3003145/1108161
      *
+     * @param bool $cli
      * @return string
      */
-    function user_ip()
+    function user_ip($cli = false)
     {
-        return user::ip();
+        return user::ip($cli);
     }
 }
 
@@ -189,6 +190,7 @@ if (!function_exists('dd')) {
     /**
      * Dumps the content of the given variable and exits the script.
      *
+     * @codeCoverageIgnore
      * @param mixed $var
      */
     function dd($var)
@@ -201,6 +203,7 @@ if (!function_exists('dump')) {
     /**
      * Dumps the content of the given variable.
      *
+     * @codeCoverageIgnore
      * @param mixed $var
      */
     function dump($var)

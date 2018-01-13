@@ -28,6 +28,7 @@ class CommonHelpers
      * dd( mixed $var )
      * ```
      *
+     * @codeCoverageIgnore
      * @param mixed $var
      */
     public static function dd($var)
@@ -45,6 +46,7 @@ class CommonHelpers
      * dump( mixed $var )
      * ```
      *
+     * @codeCoverageIgnore
      * @param mixed $var
      */
     public static function dump($var)
@@ -55,5 +57,4 @@ class CommonHelpers
             highlight_string("<?php\n" . var_export($var, true));
         }
     }
-
 }

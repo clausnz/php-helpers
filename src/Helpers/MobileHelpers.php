@@ -68,7 +68,7 @@ class MobileHelpers
      */
     public static function isMobile($userAgent = null)
     {
-        return self::mobileDetect()->isMobile($userAgent) ? true : false;
+        return self::mobileDetect()->isMobile($userAgent) !== false;
     }
 
 
@@ -106,7 +106,7 @@ class MobileHelpers
      */
     public static function isTablet($userAgent = null)
     {
-        return self::mobileDetect()->isTablet($userAgent) ? true : false;
+        return self::mobileDetect()->isTablet($userAgent) !== false;
     }
 
     /**
@@ -144,20 +144,20 @@ class MobileHelpers
      */
     public static function isAndroid($userAgent = null)
     {
-        $userAgentSet = false;
+        $tmpUserAgent = null;
 
         if ($userAgent !== null) {
+            $tmpUserAgent = self::mobileDetect()->getUserAgent();
             self::mobileDetect()->setUserAgent($userAgent);
-            $userAgentSet = true;
         }
 
         $version = self::mobileDetect()->version('Android');
 
-        if ($userAgentSet) {
-            self::mobileDetect()->setUserAgent($_SERVER['HTTP_USER_AGENT']);
+        if (isset($tmpUserAgent)) {
+            self::mobileDetect()->setUserAgent($tmpUserAgent);
         }
 
-        return isset($version);
+        return ($version !== false);
     }
 
     /**
@@ -176,7 +176,7 @@ class MobileHelpers
      */
     public static function isIphone($userAgent = null)
     {
-        return self::mobileDetect()->is('iPhone', $userAgent) ? true : false;
+        return self::mobileDetect()->is('iPhone', $userAgent) !== false;
     }
 
     /**
@@ -195,7 +195,7 @@ class MobileHelpers
      */
     public static function isSamsung($userAgent = null)
     {
-        return self::mobileDetect()->is('Samsung', $userAgent) ? true : false;
+        return self::mobileDetect()->is('Samsung', $userAgent) !== false;
     }
 
     /**
@@ -214,7 +214,7 @@ class MobileHelpers
      */
     public static function isIOS($userAgent = null)
     {
-        return self::mobileDetect()->is('iOS', $userAgent) ? true : false;
+        return self::mobileDetect()->is('iOS', $userAgent) !== false;
     }
 
     /**

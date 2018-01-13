@@ -1,5 +1,6 @@
 /.idea
 /vendor
-/tests/test.php
+/test.php
 /doc/bin
 !/doc/bin/generate-doc.sh
+/build

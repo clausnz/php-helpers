@@ -15,7 +15,7 @@ use CNZ\Helpers\MobileHelpers as mobile;
 use CNZ\Helpers\StringHelpers as str;
 use PHPUnit\Framework\TestCase;
 
-class TestPhpHelpers extends TestCase
+class PhpHelpersTestIgnore extends TestCase
 {
     protected $testString = 'The quick brown fox jumps over the lazy dog';
 
@@ -445,7 +445,7 @@ class TestPhpHelpers extends TestCase
 
         $arrayTest = [
             to_array($object),
-            arr::fromObject($object)
+            arr::toArray($object)
         ];
 
         foreach ($arrayTest as $test) {

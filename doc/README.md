@@ -1,4 +1,4 @@
-# Available Global PHP Functions
+# Available PHP Functions
 
 ## Table of Contents
 

@@ -11,7 +11,7 @@ A Collection of useful php helper functions.
 todo
 ```
 
-# Available Global PHP Functions
+# Available PHP Functions
 
 ## Table of Contents
 

@@ -4,7 +4,9 @@ language: php
 # Versions of PHP you want your project run with.
 php:
   - 5.0
+    dist: precise
   - 5.2
+    dist: precise
   - 5.4
   - 5.6
   - 7.0

@@ -27,6 +27,7 @@
 * [str_istarts_with](#str_istarts_with)
 * [str_ends_with](#str_ends_with)
 * [str_iends_with](#str_iends_with)
+* [str_between](#str_between)
 * [to_array](#to_array)
 * [to_object](#to_object)
 # API Documentation
@@ -54,6 +55,7 @@
     * [isIOS](#isios)
     * [isTouchDevice](#istouchdevice)
 * [StringHelpers](#stringhelpers)
+    * [between](#between)
     * [after](#after)
     * [before](#before)
     * [limitWords](#limitwords)
@@ -593,6 +595,34 @@ Class StringHelpers
 
 * Full name: \CNZ\Helpers\StringHelpers
 
+
+### between
+
+Return the content in a string between a left and right element.
+
+```php
+StringHelpers::between( string $left, string $right, string $string ): array
+```
+
+### str_between
+Related global function.
+```php
+str_between( string $left, string $right, string $string ): array
+```
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$left` | **string** |  |
+| `$right` | **string** |  |
+| `$string` | **string** |  |
+
+
+
+
+---
 
 ### after
 

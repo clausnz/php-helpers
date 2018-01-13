@@ -354,6 +354,21 @@ if (!function_exists('str_iends_with')) {
     }
 }
 
+if (!function_exists('str_between')) {
+    /**
+     * Return the content in a string between a left and right element.
+     *
+     * @param string $left
+     * @param string $right
+     * @param string $string
+     * @return array
+     */
+    function str_between($left, $right, $string)
+    {
+        return str::between($left, $right, $string);
+    }
+}
+
 if (!function_exists('to_array')) {
     /**
      * Converts an object to an array.

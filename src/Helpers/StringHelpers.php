@@ -19,6 +19,26 @@ namespace CNZ\Helpers;
 class StringHelpers
 {
     /**
+     * Return the content in a string between a left and right element.
+     *
+     * ### str_between
+     * Related global function.
+     * ```php
+     * str_between( string $left, string $right, string $string ): array
+     * ```
+     *
+     * @param string $left
+     * @param string $right
+     * @param string $string
+     * @return array
+     */
+    public static function between($left, $right, $string)
+    {
+        preg_match_all('/' . preg_quote($left, '/') . '(.*?)' . preg_quote($right, '/') . '/', $string, $matches);
+        return $matches[1];
+    }
+
+    /**
      * Return the remainder of a string after a given value.
      *
      * ### str_after

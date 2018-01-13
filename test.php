@@ -3,24 +3,23 @@
 require __DIR__ . '/vendor/autoload.php';
 
 
-$testArray = [
-    'one' => 'value_one',
-    'two' => 'value_two',
-    'three' => [
-        'three_one' => 'value_three_one',
-        'three_two' => 'value_three_two',
-        'three_three' => [
-            'three_three_one' => 'value_three_three_one',
-            'three_three_two' => 'value_three_three_two',
-            'three_three_three' => 'value_three_three_three'
-        ]
-    ]
-];
+$match = "/function_exists\(\'(.*?)\'\)/";
+$helperFile = "./src/helpers.php";
+$mdFile = "./doc/Table_of_Content_Functions.md";
 
 
+$content = file_get_contents($helperFile);
+preg_match_all($match, $content, $matches);
 
+$md = fopen($mdFile, 'w+');
 
+$result = [];
 
+fwrite($md, "# Global Functions\n\n");
+fwrite($md, "## Table of Contents\n\n");
 
+foreach ($matches[1] as $funcName) {
+    fwrite($md, "* [$funcName](#$funcName)\n");
+}
 
-
+fclose($md);

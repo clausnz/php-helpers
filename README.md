@@ -2,6 +2,8 @@
 
 A Collection of useful php helper functions.
 
+[![Build Status](https://travis-ci.org/clausnz/php-helpers.svg?branch=master)](https://travis-ci.org/clausnz/php-helpers)
+
 
 # Install
 
@@ -860,7 +862,7 @@ Class UserHelpers
 Get the current ip address of the user.
 
 ```php
-UserHelpers::ip(  ): null|string
+UserHelpers::ip( boolean $cli = false ): null|string
 ```
 
 ### user_ip
@@ -870,6 +872,12 @@ user_ip(  ): null|string
 ```
 
 * This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$cli` | **boolean** |  |
+
 
 
 
@@ -878,4 +886,4 @@ user_ip(  ): null|string
 
 
 --------
-> This document was automatically generated from source code comments on 2018-01-12 using [phpDocumentor](http://www.phpdoc.org/) and [cvuorinen/phpdoc-markdown-public](https://github.com/cvuorinen/phpdoc-markdown-public)
+> This document was automatically generated from source code comments on 2018-01-13 using [phpDocumentor](http://www.phpdoc.org/) and [cvuorinen/phpdoc-markdown-public](https://github.com/cvuorinen/phpdoc-markdown-public)

@@ -28,6 +28,16 @@ class Arr
      * ```php
      * is_assoc( array $array ): boolean
      * ```
+     * #### Example
+     * ```php
+     * $array = [
+     * 'foo' => 'bar'
+     * ];
+     *
+     * echo is_assoc($array) ? 'true' : 'false';
+     *
+     * // true
+     * ```
      *
      * @param array $array
      * Any type of array.

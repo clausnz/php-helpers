@@ -108,6 +108,16 @@ Related global function (description see above).
 ```php
 is_assoc( array $array ): boolean
 ```
+#### Example
+```php
+$array = [
+'foo' => 'bar'
+];
+
+echo is_assoc($array) ? 'true' : 'false';
+
+// true
+```
 
 * This method is **static**.
 **Parameters:**

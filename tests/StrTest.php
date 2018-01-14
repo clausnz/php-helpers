@@ -13,6 +13,33 @@ class StrTest extends TestCase
 {
     protected $testString = 'The quick brown fox jumps over the lazy dog';
 
+    public function test_str_insert()
+    {
+        $string = 'This is a quick :type with lot of :item.';
+        $result = 'This is a quick test with lot of words.';
+
+        $arrayTrue = [
+            ':type' => 'test',
+            ':item' => 'words'
+        ];
+
+        $this->assertEquals($result, str_insert($arrayTrue, $string));
+
+        $arrayFalse = [
+            ':type' => 'test',
+            ':item' => 'abc'
+        ];
+
+        $this->assertNotEquals($result, str_insert($arrayFalse, $string));
+
+        $arrayFalse = [
+            ':type' => 'abc',
+            ':item' => 'abc'
+        ];
+
+        $this->assertNotEquals($result, str_insert($arrayFalse, $string));
+    }
+
     public function test_str_between()
     {
         $testArrayEqual = [

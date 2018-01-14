@@ -21,6 +21,24 @@ class User
     const LOCALHOST = '127.0.0.1';
 
     /**
+     * Validate a given email address.
+     *
+     * ### is_email
+     * Related global function (description see above).
+     * #### [( jump back )](#available-php-functions)
+     * ```php
+     * is_email( string $email ): boolean
+     * ```
+     *
+     * @param string $email
+     * @return boolean
+     */
+    public static function is_email($email)
+    {
+        return (filter_var($email, FILTER_VALIDATE_EMAIL) !== false) ? true : false;
+    }
+
+    /**
      * Get the current ip address of the user.
      *
      * ### user_ip

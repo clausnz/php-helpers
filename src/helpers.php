@@ -141,6 +141,19 @@ if (!function_exists('is_samsung')) {
 
 if (!function_exists('user_ip')) {
     /**
+     * Validate a given email address.
+     *
+     * @param string $email
+     * @return boolean
+     */
+    function is_email($email)
+    {
+        return user::is_email($email);
+    }
+}
+
+if (!function_exists('user_ip')) {
+    /**
      * Returns the user ip-adresse.
      * See: https://stackoverflow.com/q/3003145/1108161
      *

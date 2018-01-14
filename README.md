@@ -25,6 +25,7 @@ todo
     * [is_samsung](#is_samsung)
 * [User](#user_ip)
     * [user_ip](#user_ip)
+    * [user_ip](#user_ip)
 * [Array](#is_assoc)
     * [is_assoc](#is_assoc)
     * [array_last](#array_last)
@@ -82,6 +83,7 @@ todo
     * [endsWith](#endswith)
     * [endsWithIgnoreCase](#endswithignorecase)
 * [User](#user)
+    * [is_email](#is_email)
     * [ip](#ip)
 * [Util](#util)
     * [dd](#dd)
@@ -925,6 +927,33 @@ Class User
 
 * Full name: \CNZ\Helpers\User
 
+
+### is_email
+
+Validate a given email address.
+
+```php
+User::is_email( string $email ): boolean
+```
+
+### is_email
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
+```php
+is_email( string $email ): boolean
+```
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$email` | **string** |  |
+
+
+
+
+---
 
 ### ip
 

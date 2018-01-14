@@ -10,6 +10,8 @@
 
 namespace CNZ\Helpers;
 
+use Jaybizzle\CrawlerDetect\CrawlerDetect;
+
 /**
  * Helper class that provides easy access to useful php user functions.
  *
@@ -19,6 +21,13 @@ namespace CNZ\Helpers;
 class User
 {
     const LOCALHOST = '127.0.0.1';
+
+    /**
+     * Holds the Crawler-Detect singleton object.
+     *
+     * @var $crawlerDetectInstance
+     */
+    private static $crawlerDetectInstance;
 
     /**
      * Validate a given email address.
@@ -58,6 +67,47 @@ class User
         }
 
         return isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : null;
+    }
+
+    /**
+     * Determes if the current visitor is a bot/crawler/spider.
+     * CREDITS:
+     * This class makes use of the well known Crawler-Detect library of JayBizzle:
+     * - http://crawlerdetect.io
+     * - https://github.com/JayBizzle/Crawler-Detect
+     *
+     * ### is_robot
+     * Related global function (description see above).
+     * #### [( jump back )](#available-php-functions)
+     * ```php
+     * is_robot( string $userAgent = null ): boolean
+     * ```
+     *
+     * @param string $userAgent
+     * @return boolean
+     */
+    public static function isRobot($userAgent = null)
+    {
+        return self::crawlerDetect()->isCrawler($userAgent);
+    }
+
+    /**
+     * Get a singleton CrawlerDetect object to call every method it provides.
+     * Public access for use of outside this class.
+     * Crawler-Detect doku: https://github.com/JayBizzle/Crawler-Detect
+     *
+     * ***This method has no related global function!***
+     * #### [( jump back )](#available-php-functions)
+     *
+     * @return CrawlerDetect
+     */
+    public static function crawlerDetect()
+    {
+        if (self::$crawlerDetectInstance == null) {
+            self::$crawlerDetectInstance = new CrawlerDetect();
+        }
+
+        return self::$crawlerDetectInstance;
     }
 
     /**

@@ -1,3 +1,3 @@
 # About
 
-A Collection of 32 useful php helper functions.
+A Collection of 33 useful php helper functions.

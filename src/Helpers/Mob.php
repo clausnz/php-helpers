@@ -44,7 +44,7 @@ class Mob
      * ```
      *
      * @param string $userAgent
-     * If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used.
+     * The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used.
      * @return bool
      * True if current visitor uses a smartphone, false otherwise.
      */
@@ -64,7 +64,7 @@ class Mob
      * ```
      *
      * @param string $userAgent
-     * If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used.
+     * The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used.
      * @return bool
      * True if current visitor uses a mobile device, false otherwise.
      */
@@ -104,7 +104,7 @@ class Mob
      * ```
      *
      * @param string $userAgent
-     * If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used.
+     * The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used.
      * @return bool
      * True if current visitor uses a tablet device, false otherwise.
      */
@@ -124,7 +124,7 @@ class Mob
      * ```
      *
      * @param string $userAgent
-     * If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used.
+     * The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used.
      * @return bool
      * True if current visitor uses a desktop computer, false otherwise.
      */
@@ -144,7 +144,7 @@ class Mob
      * ```
      *
      * @param string $userAgent
-     * If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used.
+     * The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used.
      * @return bool
      * True if current visitor uses an Android based device, false otherwise.
      */
@@ -177,7 +177,7 @@ class Mob
      * ```
      *
      * @param string $userAgent
-     * If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used.
+     * The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used.
      * @return bool
      * True if current visitor uses an iPhone, false otherwise.
      */
@@ -197,7 +197,7 @@ class Mob
      * ```
      *
      * @param string $userAgent
-     * If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used.
+     * The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used.
      * @return bool
      * True if current visitor uses a Samsung device, false otherwise.
      */
@@ -217,7 +217,7 @@ class Mob
      * ```
      *
      * @param string $userAgent
-     * If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used.
+     * The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used.
      * @return bool
      * True if current visitor uses an iOS device, false otherwise.
      */
@@ -237,7 +237,7 @@ class Mob
      * ```
      *
      * @param string $userAgent
-     * If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used.
+     * The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used.
      * @return bool
      * True if current visitor uses a touch device, false otherwise.
      */

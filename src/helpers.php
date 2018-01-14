@@ -166,6 +166,19 @@ if (!function_exists('user_ip')) {
     }
 }
 
+if (!function_exists('is_robot')) {
+    /**
+     * Determes if the current visitor is a bot/crawler/spider.
+     *
+     * @param string $userAgent
+     * @return boolean
+     */
+    function is_robot($userAgent = null)
+    {
+        return user::isRobot($userAgent);
+    }
+}
+
 if (!function_exists('crypt_password')) {
     /**
      * Creates a secure hash from a given password. Use the CRYPT_BLOWFISH algorithm.

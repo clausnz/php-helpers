@@ -11,6 +11,46 @@ use PHPUnit\Framework\TestCase;
 
 class UserTest extends TestCase
 {
+    protected $iphone = 'Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_3 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8J2 Safari/6533.18.5';
+
+    protected $ipad = 'Mozilla/5.0 (iPad; U; CPU OS 4_3_3 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8J2 Safari/6533.18.5';
+
+    protected $android = 'Mozilla/5.0 (Linux; U; Android 2.2.1; en-us; Nexus One Build/FRG83) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1';
+
+    protected $windowsPhone = 'Mozilla/5.0 (compatible; MSIE 9.0; Windows Phone OS 7.5; Trident/5.0; IEMobile/9.0;';
+
+    protected $googleBot = 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)';
+
+    protected $bingBot = 'Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)';
+
+    protected $yahooBot = 'Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)';
+
+    public function test_is_robot()
+    {
+        $userIsRobot = [
+            $this->googleBot,
+            $this->bingBot,
+            $this->yahooBot
+        ];
+
+        foreach ($userIsRobot as $robot) {
+            $this->assertTrue(is_robot($robot));
+            $this->assertTrue(user::isRobot($robot));
+        }
+
+        $userIsNotRobot = [
+            $this->iphone,
+            $this->ipad,
+            $this->android,
+            $this->windowsPhone
+        ];
+
+        foreach ($userIsNotRobot as $robot) {
+            $this->assertFalse(is_robot($robot));
+            $this->assertFalse(user::isRobot($robot));
+        }
+    }
+
     public function test_crypt_password_is_password()
     {
         $password = 'My_Secret_Password#123';

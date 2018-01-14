@@ -15,6 +15,7 @@
 * [User](#is_email)
     * [is_email](#is_email)
     * [user_ip](#user_ip)
+    * [is_robot](#is_robot)
     * [crypt_password](#crypt_password)
     * [is_password](#is_password)
 * [Array](#array_first)
@@ -76,6 +77,8 @@
 * [User](#user)
     * [isEmail](#isemail)
     * [ip](#ip)
+    * [isRobot](#isrobot)
+    * [crawlerDetect](#crawlerdetect)
     * [cryptPassword](#cryptpassword)
     * [isPassword](#ispassword)
 * [Util](#util)
@@ -275,7 +278,7 @@ is_smartphone( string $userAgent = null ): boolean
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$userAgent` | **string** | If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used. |
+| `$userAgent` | **string** | The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used. |
 
 
 **Return Value:**
@@ -306,7 +309,7 @@ is_mobile( string $userAgent = null ): boolean
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$userAgent` | **string** | If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used. |
+| `$userAgent` | **string** | The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used. |
 
 
 **Return Value:**
@@ -357,7 +360,7 @@ is_tablet( string $userAgent = null ): boolean
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$userAgent` | **string** | If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used. |
+| `$userAgent` | **string** | The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used. |
 
 
 **Return Value:**
@@ -388,7 +391,7 @@ is_desktop( string $userAgent = null ): boolean
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$userAgent` | **string** | If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used. |
+| `$userAgent` | **string** | The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used. |
 
 
 **Return Value:**
@@ -419,7 +422,7 @@ is_android( string $userAgent = null ): boolean
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$userAgent` | **string** | If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used. |
+| `$userAgent` | **string** | The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used. |
 
 
 **Return Value:**
@@ -450,7 +453,7 @@ is_iphone( string $userAgent = null ): boolean
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$userAgent` | **string** | If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used. |
+| `$userAgent` | **string** | The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used. |
 
 
 **Return Value:**
@@ -481,7 +484,7 @@ is_samsung( string $userAgent = null ): boolean
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$userAgent` | **string** | If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used. |
+| `$userAgent` | **string** | The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used. |
 
 
 **Return Value:**
@@ -512,7 +515,7 @@ is_ios( string $userAgent = null ): boolean
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$userAgent` | **string** | If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used. |
+| `$userAgent` | **string** | The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used. |
 
 
 **Return Value:**
@@ -543,7 +546,7 @@ is_touch_device( string $userAgent = null ): boolean
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$userAgent` | **string** | If $userAgent is not set, $_SERVER ['HTTP_USER_AGENT'] will be used. |
+| `$userAgent` | **string** | The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used. |
 
 
 **Return Value:**
@@ -970,6 +973,58 @@ user_ip(  ): null|string
 |-----------|------|-------------|
 | `$cli` | **boolean** |  |
 
+
+
+
+---
+
+### isRobot
+
+Determes if the current visitor is a bot/crawler/spider.
+
+```php
+User::isRobot( string $userAgent = null ): boolean
+```
+
+CREDITS:
+This class makes use of the well known Crawler-Detect library of JayBizzle:
+- http://crawlerdetect.io
+- https://github.com/JayBizzle/Crawler-Detect
+
+### is_robot
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
+```php
+is_robot( string $userAgent = null ): boolean
+```
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$userAgent` | **string** |  |
+
+
+
+
+---
+
+### crawlerDetect
+
+Get a singleton CrawlerDetect object to call every method it provides.
+
+```php
+User::crawlerDetect(  ): \Jaybizzle\CrawlerDetect\CrawlerDetect
+```
+
+Public access for use of outside this class.
+Crawler-Detect doku: https://github.com/JayBizzle/Crawler-Detect
+
+***This method has no related global function!***
+#### [( jump back )](#available-php-functions)
+
+* This method is **static**.
 
 
 

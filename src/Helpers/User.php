@@ -82,16 +82,16 @@ class User
     /**
      * Verifies that a password matches a crypted password (CRYPT_BLOWFISH algorithm).
      *
-     * ### crypt_password
+     * ### is_password
      * Related global function (description see above).
      * #### [( jump back )](#available-php-functions)
      * ```php
-     * crypt_password( string $password, string $cryptedPassword ): string
+     * is_password( string $password, string $cryptedPassword ): boolean
      * ```
      *
      * @param string $password
      * @param string $cryptedPassword
-     * @return string
+     * @return boolean
      */
     public static function isPassword($password, $cryptedPassword)
     {

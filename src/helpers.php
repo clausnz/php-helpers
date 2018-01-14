@@ -185,7 +185,7 @@ if (!function_exists('is_password')) {
      *
      * @param string $password
      * @param $cryptedPassword
-     * @return string
+     * @return boolean
      */
     function is_password($password, $cryptedPassword)
     {

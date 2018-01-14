@@ -1020,14 +1020,14 @@ crypt_password( string $password ): string
 Verifies that a password matches a crypted password (CRYPT_BLOWFISH algorithm).
 
 ```php
-User::isPassword( string $password, string $cryptedPassword ): string
+User::isPassword( string $password, string $cryptedPassword ): boolean
 ```
 
-### crypt_password
+### is_password
 Related global function (description see above).
 #### [( jump back )](#available-php-functions)
 ```php
-crypt_password( string $password, string $cryptedPassword ): string
+is_password( string $password, string $cryptedPassword ): boolean
 ```
 
 * This method is **static**.

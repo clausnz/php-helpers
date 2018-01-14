@@ -55,3 +55,12 @@ $description = "A Collection of :number useful php helper functions.\n";
 $fileAboutContent .= str_insert([':number' => file_get_contents($fileNumberFunctions)], $description);
 
 file_put_contents($fileAbout, $fileAboutContent);
+
+/**
+ * Clean README.md from &#039; = '
+ */
+
+$readmeFile = PROJECT_DIR . "doc/README.md";
+$readmeContent = file_get_contents($readmeFile);
+$readmeContent = str_replace('&#039;', '...', $readmeContent);
+file_put_contents($readmeFile, $readmeContent);

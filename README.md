@@ -702,7 +702,7 @@ str_before( string $search, string $string ): string
 Limit the number of words in a string. Put value of $end to the string end.
 
 ```php
-Str::limitWords( string $string, integer $limit = 10, string $end = &#039;...&#039; ): string
+Str::limitWords( string $string, integer $limit = 10, string $end = ......... ): string
 ```
 
 ### str_limit_words
@@ -731,7 +731,7 @@ str_limit_words( string $string, int $limit = 10, string $end = '...' ): string
 Limit the number of characters in a string. Put value of $end to the string end.
 
 ```php
-Str::limit( string $string, integer $limit = 100, string $end = &#039;...&#039; ): string
+Str::limit( string $string, integer $limit = 100, string $end = ......... ): string
 ```
 
 ### str_limit

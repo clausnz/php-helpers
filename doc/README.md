@@ -15,6 +15,8 @@
 * [User](#is_email)
     * [is_email](#is_email)
     * [user_ip](#user_ip)
+    * [crypt_password](#crypt_password)
+    * [is_password](#is_password)
 * [Array](#array_first)
     * [array_first](#array_first)
     * [array_last](#array_last)
@@ -74,6 +76,8 @@
 * [User](#user)
     * [isEmail](#isemail)
     * [ip](#ip)
+    * [cryptPassword](#cryptpassword)
+    * [isPassword](#ispassword)
 * [Util](#util)
     * [dd](#dd)
     * [dump](#dump)
@@ -965,6 +969,63 @@ user_ip(  ): null|string
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `$cli` | **boolean** |  |
+
+
+
+
+---
+
+### cryptPassword
+
+Creates a secure hash from a given password. Use the CRYPT_BLOWFISH algorithm.
+
+```php
+User::cryptPassword( string $password ): string
+```
+
+Note: 255 characters for database column recommended!
+
+### crypt_password
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
+```php
+crypt_password( string $password ): string
+```
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$password` | **string** |  |
+
+
+
+
+---
+
+### isPassword
+
+Verifies that a password matches a crypted password (CRYPT_BLOWFISH algorithm).
+
+```php
+User::isPassword( string $password, string $cryptedPassword ): boolean
+```
+
+### crypt_password
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
+```php
+crypt_password( string $password, string $crypted_password ): boolean
+```
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$password` | **string** |  |
+| `$cryptedPassword` | **string** |  |
 
 
 

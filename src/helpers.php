@@ -166,6 +166,33 @@ if (!function_exists('user_ip')) {
     }
 }
 
+if (!function_exists('crypt_password')) {
+    /**
+     * Creates a secure hash from a given password. Use the CRYPT_BLOWFISH algorithm.
+     *
+     * @param string $password
+     * @return string
+     */
+    function crypt_password($password)
+    {
+        return user::cryptPassword($password);
+    }
+}
+
+if (!function_exists('is_password')) {
+    /**
+     * Verifies that a password matches a crypted password (CRYPT_BLOWFISH algorithm).
+     *
+     * @param string $password
+     * @param $crypted_password
+     * @return string
+     */
+    function is_password($password, $crypted_password)
+    {
+        return user::isPassword($password, $crypted_password);
+    }
+}
+
 // @endgroup(User)
 
 // @group(Array)

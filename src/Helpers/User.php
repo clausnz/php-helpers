@@ -59,4 +59,42 @@ class User
 
         return isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : null;
     }
+
+    /**
+     * Creates a secure hash from a given password. Use the CRYPT_BLOWFISH algorithm.
+     * Note: 255 characters for database column recommended!
+     *
+     * ### crypt_password
+     * Related global function (description see above).
+     * #### [( jump back )](#available-php-functions)
+     * ```php
+     * crypt_password( string $password ): string
+     * ```
+     *
+     * @param string $password
+     * @return string
+     */
+    public static function cryptPassword($password)
+    {
+        return password_hash($password, PASSWORD_BCRYPT);
+    }
+
+    /**
+     * Verifies that a password matches a crypted password (CRYPT_BLOWFISH algorithm).
+     *
+     * ### crypt_password
+     * Related global function (description see above).
+     * #### [( jump back )](#available-php-functions)
+     * ```php
+     * crypt_password( string $password, string $crypted_password ): boolean
+     * ```
+     *
+     * @param string $password
+     * @param string $cryptedPassword
+     * @return boolean
+     */
+    public static function isPassword($password, $cryptedPassword)
+    {
+        return password_verify($password, $cryptedPassword);
+    }
 }

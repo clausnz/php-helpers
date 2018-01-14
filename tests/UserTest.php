@@ -11,6 +11,22 @@ use PHPUnit\Framework\TestCase;
 
 class UserTest extends TestCase
 {
+    public function test_crypt_password_is_password()
+    {
+        $password = 'My_Secret_Password#123';
+        $cryptedPassword = crypt_password($password);
+
+        $this->assertTrue(is_password($password, $cryptedPassword));
+        $this->assertFalse(is_password($cryptedPassword, $cryptedPassword));
+
+        $cryptedPassword = user::cryptPassword($password);
+
+        $this->assertTrue(user::isPassword($password, $cryptedPassword));
+        $this->assertFalse(user::isPassword($cryptedPassword, $cryptedPassword));
+
+        $this->assertNotEquals($password, $cryptedPassword);
+    }
+
     public function test_is_email()
     {
         $trueEmails = [

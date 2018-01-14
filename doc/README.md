@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-* [Mobile](is_mobile)
+* [Mobile](#is_mobile)
     * [is_mobile](#is_mobile)
     * [is_touch_device](#is_touch_device)
     * [is_tablet](#is_tablet)
@@ -12,15 +12,15 @@
     * [is_android](#is_android)
     * [is_iphone](#is_iphone)
     * [is_samsung](#is_samsung)
-* [User](user_ip)
+* [User](#user_ip)
     * [user_ip](#user_ip)
-* [Array](is_assoc)
+* [Array](#is_assoc)
     * [is_assoc](#is_assoc)
     * [array_last](#array_last)
     * [array_first](#array_first)
     * [to_array](#to_array)
     * [to_object](#to_object)
-* [String](str_between)
+* [String](#str_between)
     * [str_between](#str_between)
     * [str_after](#str_after)
     * [str_before](#str_before)
@@ -32,7 +32,7 @@
     * [str_istarts_with](#str_istarts_with)
     * [str_ends_with](#str_ends_with)
     * [str_iends_with](#str_iends_with)
-* [Utils](dump)
+* [Utils](#dump)
     * [dump](#dump)
     * [dd](#dd)
 # API Documentation

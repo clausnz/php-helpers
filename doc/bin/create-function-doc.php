@@ -24,7 +24,7 @@ foreach ($groupNames as $key => $groupName) {
     $right = "'))";
     $functionNames = str_between($left, $right, str_between($leftContent, $rightContent, $helperContent)[0]);
 
-    fwrite($md, "* [$groupName]($functionNames[0])\n");
+    fwrite($md, "* [$groupName](#$functionNames[0])\n");
     foreach ($functionNames as $functionName) {
         fwrite($md, "    * [$functionName](#$functionName)\n");
     }

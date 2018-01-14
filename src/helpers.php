@@ -44,19 +44,6 @@ if (!function_exists('is_touch_device')) {
     }
 }
 
-if (!function_exists('is_tablet')) {
-    /**
-     * Determes if the current user agent is a tablet device.
-     *
-     * @param string $userAgent
-     * @return bool
-     */
-    function is_tablet($userAgent = null)
-    {
-        return mob::isTablet($userAgent);
-    }
-}
-
 if (!function_exists('is_smartphone')) {
     /**
      * Determes if the current user agent is running on a smartphone.
@@ -67,6 +54,19 @@ if (!function_exists('is_smartphone')) {
     function is_smartphone($userAgent = null)
     {
         return mob::isSmartphone($userAgent);
+    }
+}
+
+if (!function_exists('is_tablet')) {
+    /**
+     * Determes if the current user agent is a tablet device.
+     *
+     * @param string $userAgent
+     * @return bool
+     */
+    function is_tablet($userAgent = null)
+    {
+        return mob::isTablet($userAgent);
     }
 }
 
@@ -170,16 +170,16 @@ if (!function_exists('user_ip')) {
 
 // @group(Array)
 
-if (!function_exists('is_assoc')) {
+if (!function_exists('array_first')) {
     /**
-     * Detects if the given value is an associative array.
+     * Returns the first element of an array.
      *
      * @param array $array
-     * @return bool
+     * @return mixed $value
      */
-    function is_assoc($array)
+    function array_first($array)
     {
-        return arr::isAssoc($array);
+        return arr::first($array);
     }
 }
 
@@ -193,19 +193,6 @@ if (!function_exists('array_last')) {
     function array_last($array)
     {
         return arr::last($array);
-    }
-}
-
-if (!function_exists('array_first')) {
-    /**
-     * Returns the first element of an array.
-     *
-     * @param array $array
-     * @return mixed $value
-     */
-    function array_first($array)
-    {
-        return arr::first($array);
     }
 }
 
@@ -235,22 +222,34 @@ if (!function_exists('to_object')) {
     }
 }
 
+if (!function_exists('is_assoc')) {
+    /**
+     * Detects if the given value is an associative array.
+     *
+     * @param array $array
+     * @return bool
+     */
+    function is_assoc($array)
+    {
+        return arr::isAssoc($array);
+    }
+}
+
 // @endgroup(Array)
 
 // @group(String)
 
-if (!function_exists('str_between')) {
+if (!function_exists('str_before')) {
     /**
-     * Return the content in a string between a left and right element.
+     * Get the portion of a string before a given value.
      *
-     * @param string $left
-     * @param string $right
+     * @param string $search
      * @param string $string
-     * @return array
+     * @return string
      */
-    function str_between($left, $right, $string)
+    function str_before($search, $string)
     {
-        return str::between($left, $right, $string);
+        return str::before($search, $string);
     }
 }
 
@@ -268,32 +267,32 @@ if (!function_exists('str_after')) {
     }
 }
 
-if (!function_exists('str_before')) {
+if (!function_exists('str_between')) {
     /**
-     * Get the portion of a string before a given value.
+     * Return the content in a string between a left and right element.
      *
-     * @param string $search
+     * @param string $left
+     * @param string $right
      * @param string $string
-     * @return string
+     * @return array
      */
-    function str_before($search, $string)
+    function str_between($left, $right, $string)
     {
-        return str::before($search, $string);
+        return str::between($left, $right, $string);
     }
 }
 
-if (!function_exists('str_limit_words')) {
+if (!function_exists('str_insert')) {
     /**
-     * Limit the number of words in a string. Put value of $end to the string end.
+     * Inserts one or more strings into another string on a defined position.
      *
-     * @param  string $string
-     * @param  int $limit
-     * @param  string $end
+     * @param array $inserts
+     * @param string $string
      * @return string
      */
-    function str_limit_words($string, $limit = 10, $end = '...')
+    function str_insert($inserts, $string)
     {
-        return str::limitWords($string, $limit, $end);
+        return str::insert($inserts, $string);
     }
 }
 
@@ -309,6 +308,21 @@ if (!function_exists('str_limit')) {
     function str_limit($string, $limit = 100, $end = '...')
     {
         return str::limit($string, $limit, $end);
+    }
+}
+
+if (!function_exists('str_limit_words')) {
+    /**
+     * Limit the number of words in a string. Put value of $end to the string end.
+     *
+     * @param  string $string
+     * @param  int $limit
+     * @param  string $end
+     * @return string
+     */
+    function str_limit_words($string, $limit = 10, $end = '...')
+    {
+        return str::limitWords($string, $limit, $end);
     }
 }
 
@@ -393,20 +407,6 @@ if (!function_exists('str_iends_with')) {
     function str_iends_with($needle, $haystack)
     {
         return str::endsWithIgnoreCase($needle, $haystack);
-    }
-}
-
-if (!function_exists('str_insert')) {
-    /**
-     * Inserts one or more strings into another string on a defined position.
-     *
-     * @param array $inserts
-     * @param string $string
-     * @return string
-     */
-    function str_insert($inserts, $string)
-    {
-        return str::insert($inserts, $string);
     }
 }
 

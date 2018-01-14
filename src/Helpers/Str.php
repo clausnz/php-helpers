@@ -43,15 +43,13 @@ class Str
      */
     public static function insert($inserts, $string)
     {
-        $result = '';
-
         if (is_assoc($inserts)) {
             foreach ($inserts as $search => $replace) {
-                $result .= str_replace($search, $replace, $string);
+                $string = str_replace($search, $replace, $string);
             }
         }
 
-        return $result;
+        return $string;
     }
 
     /**

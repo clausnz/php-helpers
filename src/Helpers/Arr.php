@@ -24,7 +24,7 @@ class Arr
      *
      * ### is_assoc
      * Related global function (description see above).
-     * #### ( [jump back](#available-php-functions) )
+     * #### [( jump back )](#available-php-functions)
      * ```php
      * is_assoc( array $array ): boolean
      * ```
@@ -48,7 +48,7 @@ class Arr
      *
      * ### to_object
      * Related global function (description see above).
-     * #### ( [jump back](#available-php-functions) )
+     * #### [( jump back )](#available-php-functions)
      * ```php
      * to_object( array $array ): object
      * ```
@@ -68,7 +68,7 @@ class Arr
      *
      * ### to_array
      * Related global function (description see above).
-     * #### ( [jump back](#available-php-functions) )
+     * #### [( jump back )](#available-php-functions)
      * ```php
      * to_array( object $object ): array
      * ```
@@ -88,7 +88,7 @@ class Arr
      *
      * ### array_first
      * Related global function (description see above).
-     * #### ( [jump back](#available-php-functions) )
+     * #### [( jump back )](#available-php-functions)
      * ```php
      * array_first( array $array ): mixed
      * ```
@@ -109,7 +109,7 @@ class Arr
      *
      * ### array_last
      * Related global function (description see above).
-     * #### ( [jump back](#available-php-functions) )
+     * #### [( jump back )](#available-php-functions)
      * ```php
      * array_last( array $array ): mixed
      * ```

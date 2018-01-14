@@ -575,11 +575,11 @@ str_insert( $string, $inserts ): array
 ```php
 $name = 'John';
 $age = 25;
-$string = 'My name is :name and I am :age years old.';
+$string = 'His name is :name. :name is :age years old.';
 
 echo str_insert([':name' => $name, ':age' => $age], $string);
 
-// My name is John and I am 25 years old.
+// His name is John. John is 25 years old.
 ```
 
 * This method is **static**.

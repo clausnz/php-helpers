@@ -106,7 +106,7 @@ Arr::isAssoc( array $array ): boolean
 
 ### is_assoc
 Related global function (description see above).
-### [( jump back )](#available-php-functions)
+#### [( jump back )](#available-php-functions)
 ```php
 is_assoc( array $array ): boolean
 ```
@@ -137,7 +137,7 @@ Arr::toObject( array $array ): object
 
 ### to_object
 Related global function (description see above).
-### [( jump back )](#available-php-functions)
+#### [( jump back )](#available-php-functions)
 ```php
 to_object( array $array ): object
 ```
@@ -168,7 +168,7 @@ Arr::toArray( object $object ): array
 
 ### to_array
 Related global function (description see above).
-### [( jump back )](#available-php-functions)
+#### [( jump back )](#available-php-functions)
 ```php
 to_array( object $object ): array
 ```
@@ -199,7 +199,7 @@ Arr::first( array $array ): mixed
 
 ### array_first
 Related global function (description see above).
-### [( jump back )](#available-php-functions)
+#### [( jump back )](#available-php-functions)
 ```php
 array_first( array $array ): mixed
 ```
@@ -230,7 +230,7 @@ Arr::last( array $array ): mixed
 
 ### array_last
 Related global function (description see above).
-### [( jump back )](#available-php-functions)
+#### [( jump back )](#available-php-functions)
 ```php
 array_last( array $array ): mixed
 ```
@@ -269,7 +269,8 @@ Mob::isSmartphone( string $userAgent = null ): boolean
 ```
 
 ### is_smartphone
-Related global function.
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
 ```php
 is_smartphone( string $userAgent = null ): boolean
 ```
@@ -299,7 +300,8 @@ Mob::isMobile( string $userAgent = null ): boolean
 ```
 
 ### is_mobile
-Related global function.
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
 ```php
 is_mobile( string $userAgent = null ): boolean
 ```
@@ -332,6 +334,7 @@ Public access for use of outside this class.
 Mobile_Detect doku: https://github.com/serbanghita/Mobile-Detect
 
 ***This method has no related global function!***
+#### [( jump back )](#available-php-functions)
 
 * This method is **static**.
 
@@ -348,7 +351,8 @@ Mob::isTablet( string $userAgent = null ): boolean
 ```
 
 ### is_tablet
-Related global function.
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
 ```php
 is_tablet( string $userAgent = null ): boolean
 ```
@@ -378,7 +382,8 @@ Mob::isDesktop( string $userAgent = null ): boolean
 ```
 
 ### is_desktop
-Related global function.
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
 ```php
 is_desktop( string $userAgent = null ): boolean
 ```
@@ -408,7 +413,8 @@ Mob::isAndroid( string $userAgent = null ): boolean
 ```
 
 ### is_android
-Related global function.
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
 ```php
 is_android( string $userAgent = null ): boolean
 ```
@@ -438,7 +444,8 @@ Mob::isIphone( string $userAgent = null ): boolean
 ```
 
 ### is_iphone
-Related global function.
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
 ```php
 is_iphone( string $userAgent = null ): boolean
 ```
@@ -468,7 +475,8 @@ Mob::isSamsung( string $userAgent = null ): boolean
 ```
 
 ### is_samsung
-Related global function.
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
 ```php
 is_samsung( string $userAgent = null ): boolean
 ```
@@ -498,7 +506,8 @@ Mob::isIOS( string $userAgent = null ): boolean
 ```
 
 ### is_ios
-Related global function.
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
 ```php
 is_ios( string $userAgent = null ): boolean
 ```
@@ -528,7 +537,8 @@ Mob::isTouchDevice( string $userAgent = null ): boolean
 ```
 
 ### is_touch_device
-Related global function.
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
 ```php
 is_touch_device( string $userAgent = null ): boolean
 ```
@@ -567,7 +577,8 @@ Str::between( string $left, string $right, string $string ): array
 ```
 
 ### str_between
-Related global function.
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
 ```php
 str_between( string $left, string $right, string $string ): array
 ```
@@ -595,7 +606,8 @@ Str::after( string $search, string $string ): string
 ```
 
 ### str_after
-Related global function.
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
 ```php
 str_after( string $search, string $string ): string
 ```
@@ -622,7 +634,8 @@ Str::before( string $search, string $string ): string
 ```
 
 ### str_before
-Related global function.
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
 ```php
 str_before( string $search, string $string ): string
 ```
@@ -649,7 +662,8 @@ Str::limitWords( string $string, integer $limit = 10, string $end = &#039;...&#0
 ```
 
 ### str_limit_words
-Related global function.
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
 ```php
 str_limit_words( string $string, int $limit = 10, string $end = '...' ): string
 ```
@@ -677,7 +691,8 @@ Str::limit( string $string, integer $limit = 100, string $end = &#039;...&#039; 
 ```
 
 ### str_limit
-Related global function.
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
 ```php
 str_limit( string $string, int $limit = 100, string $end = '...' ): string
 ```
@@ -705,7 +720,8 @@ Str::contains( string|array $needle, string $haystack ): boolean
 ```
 
 ### str_contains
-Related global function.
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
 ```php
 str_contains( string|array $needle, string $haystack ): boolean
 ```
@@ -732,7 +748,8 @@ Str::containsIgnoreCase( string|array $needle, string $haystack ): boolean
 ```
 
 ### str_icontains
-Related global function.
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
 ```php
 str_icontains( string|array $needle, string $haystack ): boolean
 ```
@@ -759,7 +776,8 @@ Str::startsWith( string|array $needle, string $haystack ): boolean
 ```
 
 ### str_starts_with
-Related global function.
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
 ```php
 str_starts_with( string|array $needle, string $haystack ): boolean
 ```
@@ -786,7 +804,8 @@ Str::startsWithIgnoreCase( string|array $needle, string $haystack ): boolean
 ```
 
 ### str_istarts_with
-Related global function.
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
 ```php
 str_istarts_with( string|array $needle, string $haystack ): boolean
 ```
@@ -813,7 +832,8 @@ Str::endsWith( string|array $needle, string $haystack ): boolean
 ```
 
 ### str_ends_with
-Related global function.
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
 ```php
 str_ends_with( string|array $needle, string $haystack ): boolean
 ```
@@ -840,7 +860,8 @@ Str::endsWithIgnoreCase( string|array $needle, string $haystack ): boolean
 ```
 
 ### str_iends_with
-Related global function.
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
 ```php
 str_iends_with( string|array $needle, string $haystack ): boolean
 ```
@@ -876,7 +897,8 @@ User::ip( boolean $cli = false ): null|string
 ```
 
 ### user_ip
-Related global function.
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
 ```php
 user_ip(  ): null|string
 ```
@@ -911,7 +933,8 @@ Util::dd( mixed $var )
 ```
 
 ### dd
-Related global function.
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
 ```php
 dd( mixed $var )
 ```
@@ -937,7 +960,8 @@ Util::dump( mixed $var )
 ```
 
 ### dump
-Related global function.
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
 ```php
 dump( mixed $var )
 ```

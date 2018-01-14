@@ -37,7 +37,8 @@ class Mob
      * Determes if the current user agent is running on a smartphone.
      *
      * ### is_smartphone
-     * Related global function.
+     * Related global function (description see above).
+     * #### [( jump back )](#available-php-functions)
      * ```php
      * is_smartphone( string $userAgent = null ): boolean
      * ```
@@ -56,7 +57,8 @@ class Mob
      * Detects if the current user agent is running on a mobile device.
      *
      * ### is_mobile
-     * Related global function.
+     * Related global function (description see above).
+     * #### [( jump back )](#available-php-functions)
      * ```php
      * is_mobile( string $userAgent = null ): boolean
      * ```
@@ -78,6 +80,7 @@ class Mob
      * Mobile_Detect doku: https://github.com/serbanghita/Mobile-Detect
      *
      * ***This method has no related global function!***
+     * #### [( jump back )](#available-php-functions)
      *
      * @return Mobile_Detect
      */
@@ -94,7 +97,8 @@ class Mob
      * Determes if the current user agent is a tablet device.
      *
      * ### is_tablet
-     * Related global function.
+     * Related global function (description see above).
+     * #### [( jump back )](#available-php-functions)
      * ```php
      * is_tablet( string $userAgent = null ): boolean
      * ```
@@ -113,7 +117,8 @@ class Mob
      * Determes if the current user agent is a desktop computer.
      *
      * ### is_desktop
-     * Related global function.
+     * Related global function (description see above).
+     * #### [( jump back )](#available-php-functions)
      * ```php
      * is_desktop( string $userAgent = null ): boolean
      * ```
@@ -132,7 +137,8 @@ class Mob
      * Determes if the current user agent is running on an Android device.
      *
      * ### is_android
-     * Related global function.
+     * Related global function (description see above).
+     * #### [( jump back )](#available-php-functions)
      * ```php
      * is_android( string $userAgent = null ): boolean
      * ```
@@ -164,7 +170,8 @@ class Mob
      * Determes if the current user agent is running on an iPhone device.
      *
      * ### is_iphone
-     * Related global function.
+     * Related global function (description see above).
+     * #### [( jump back )](#available-php-functions)
      * ```php
      * is_iphone( string $userAgent = null ): boolean
      * ```
@@ -183,7 +190,8 @@ class Mob
      * Determes if the current user agent is running on a Samsung device.
      *
      * ### is_samsung
-     * Related global function.
+     * Related global function (description see above).
+     * #### [( jump back )](#available-php-functions)
      * ```php
      * is_samsung( string $userAgent = null ): boolean
      * ```
@@ -202,7 +210,8 @@ class Mob
      * Determes if the current user agent is running on an iOS operating system.
      *
      * ### is_ios
-     * Related global function.
+     * Related global function (description see above).
+     * #### [( jump back )](#available-php-functions)
      * ```php
      * is_ios( string $userAgent = null ): boolean
      * ```
@@ -221,7 +230,8 @@ class Mob
      * Determes if the current user agent is running on a mobile touch device.
      *
      * ### is_touch_device
-     * Related global function.
+     * Related global function (description see above).
+     * #### [( jump back )](#available-php-functions)
      * ```php
      * is_touch_device( string $userAgent = null ): boolean
      * ```

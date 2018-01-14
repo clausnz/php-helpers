@@ -24,7 +24,8 @@ class User
      * Get the current ip address of the user.
      *
      * ### user_ip
-     * Related global function.
+     * Related global function (description see above).
+     * #### [( jump back )](#available-php-functions)
      * ```php
      * user_ip(  ): null|string
      * ```

@@ -22,7 +22,8 @@ class Str
      * Return the content in a string between a left and right element.
      *
      * ### str_between
-     * Related global function.
+     * Related global function (description see above).
+     * #### [( jump back )](#available-php-functions)
      * ```php
      * str_between( string $left, string $right, string $string ): array
      * ```
@@ -42,7 +43,8 @@ class Str
      * Return the remainder of a string after a given value.
      *
      * ### str_after
-     * Related global function.
+     * Related global function (description see above).
+     * #### [( jump back )](#available-php-functions)
      * ```php
      * str_after( string $search, string $string ): string
      * ```
@@ -60,7 +62,8 @@ class Str
      * Get the portion of a string before a given value.
      *
      * ### str_before
-     * Related global function.
+     * Related global function (description see above).
+     * #### [( jump back )](#available-php-functions)
      * ```php
      * str_before( string $search, string $string ): string
      * ```
@@ -78,7 +81,8 @@ class Str
      * Limit the number of words in a string. Put value of $end to the string end.
      *
      * ### str_limit_words
-     * Related global function.
+     * Related global function (description see above).
+     * #### [( jump back )](#available-php-functions)
      * ```php
      * str_limit_words( string $string, int $limit = 10, string $end = '...' ): string
      * ```
@@ -103,7 +107,8 @@ class Str
      * Limit the number of characters in a string. Put value of $end to the string end.
      *
      * ### str_limit
-     * Related global function.
+     * Related global function (description see above).
+     * #### [( jump back )](#available-php-functions)
      * ```php
      * str_limit( string $string, int $limit = 100, string $end = '...' ): string
      * ```
@@ -126,7 +131,8 @@ class Str
      * Tests if a string contains a given element
      *
      * ### str_contains
-     * Related global function.
+     * Related global function (description see above).
+     * #### [( jump back )](#available-php-functions)
      * ```php
      * str_contains( string|array $needle, string $haystack ): boolean
      * ```
@@ -150,7 +156,8 @@ class Str
      * Tests if a string contains a given element. Ignore case sensitivity.
      *
      * ### str_icontains
-     * Related global function.
+     * Related global function (description see above).
+     * #### [( jump back )](#available-php-functions)
      * ```php
      * str_icontains( string|array $needle, string $haystack ): boolean
      * ```
@@ -174,7 +181,8 @@ class Str
      * Determine if a given string starts with a given substring.
      *
      * ### str_starts_with
-     * Related global function.
+     * Related global function (description see above).
+     * #### [( jump back )](#available-php-functions)
      * ```php
      * str_starts_with( string|array $needle, string $haystack ): boolean
      * ```
@@ -198,7 +206,8 @@ class Str
      * Determine if a given string starts with a given substring. Ignore case sensitivity.
      *
      * ### str_istarts_with
-     * Related global function.
+     * Related global function (description see above).
+     * #### [( jump back )](#available-php-functions)
      * ```php
      * str_istarts_with( string|array $needle, string $haystack ): boolean
      * ```
@@ -225,7 +234,8 @@ class Str
      * Determine if a given string ends with a given substring.
      *
      * ### str_ends_with
-     * Related global function.
+     * Related global function (description see above).
+     * #### [( jump back )](#available-php-functions)
      * ```php
      * str_ends_with( string|array $needle, string $haystack ): boolean
      * ```
@@ -250,7 +260,8 @@ class Str
      * Determine if a given string ends with a given substring.
      *
      * ### str_iends_with
-     * Related global function.
+     * Related global function (description see above).
+     * #### [( jump back )](#available-php-functions)
      * ```php
      * str_iends_with( string|array $needle, string $haystack ): boolean
      * ```

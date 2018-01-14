@@ -23,7 +23,8 @@ class Util
      * Dumps the content of the given variable and exits the script.
      *
      * ### dd
-     * Related global function.
+     * Related global function (description see above).
+     * #### [( jump back )](#available-php-functions)
      * ```php
      * dd( mixed $var )
      * ```
@@ -41,7 +42,8 @@ class Util
      * Dumps the content of the given variable.
      *
      * ### dump
-     * Related global function.
+     * Related global function (description see above).
+     * #### [( jump back )](#available-php-functions)
      * ```php
      * dump( mixed $var )
      * ```

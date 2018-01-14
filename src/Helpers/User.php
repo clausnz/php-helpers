@@ -86,12 +86,12 @@ class User
      * Related global function (description see above).
      * #### [( jump back )](#available-php-functions)
      * ```php
-     * crypt_password( string $password, string $crypted_password ): boolean
+     * crypt_password( string $password, string $cryptedPassword ): string
      * ```
      *
      * @param string $password
      * @param string $cryptedPassword
-     * @return boolean
+     * @return string
      */
     public static function isPassword($password, $cryptedPassword)
     {

@@ -184,12 +184,12 @@ if (!function_exists('is_password')) {
      * Verifies that a password matches a crypted password (CRYPT_BLOWFISH algorithm).
      *
      * @param string $password
-     * @param $crypted_password
+     * @param $cryptedPassword
      * @return string
      */
-    function is_password($password, $crypted_password)
+    function is_password($password, $cryptedPassword)
     {
-        return user::isPassword($password, $crypted_password);
+        return user::isPassword($password, $cryptedPassword);
     }
 }
 

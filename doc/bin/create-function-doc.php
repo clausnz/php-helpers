@@ -62,5 +62,5 @@ file_put_contents($fileAbout, $fileAboutContent);
 
 $readmeFile = PROJECT_DIR . "doc/README.md";
 $readmeContent = file_get_contents($readmeFile);
-$readmeContent = str_replace('&#039;', '...', $readmeContent);
+$readmeContent = str_replace('&#039;', '\'', $readmeContent);
 file_put_contents($readmeFile, $readmeContent);

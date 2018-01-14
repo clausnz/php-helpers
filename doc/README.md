@@ -1032,7 +1032,7 @@ Crawler-Detect doku: https://github.com/JayBizzle/Crawler-Detect
 
 ### cryptPassword
 
-Creates a secure hash from a given password. Use the CRYPT_BLOWFISH algorithm.
+Creates a secure hash from a given password. Uses the CRYPT_BLOWFISH algorithm.
 
 ```php
 User::cryptPassword( string $password ): string

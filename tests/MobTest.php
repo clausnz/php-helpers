@@ -164,17 +164,17 @@ class MobTest extends TestCase
         $deviceIsDesktop = [
             $this->windows,
             $this->apple,
-            $this->linux,
-            $this->googleBot,
-            $this->bingBot,
-            $this->yahooBot
+            $this->linux
         ];
 
         $deviceIsNotDesktop = [
             $this->ipod,
             $this->iphone,
             $this->blackberry,
-            $this->windowsPhone
+            $this->windowsPhone,
+            $this->googleBot,
+            $this->bingBot,
+            $this->yahooBot
         ];
 
         foreach ($deviceIsDesktop as $device) {

@@ -111,7 +111,7 @@ class User
     }
 
     /**
-     * Creates a secure hash from a given password. Use the CRYPT_BLOWFISH algorithm.
+     * Creates a secure hash from a given password. Uses the CRYPT_BLOWFISH algorithm.
      * Note: 255 characters for database column recommended!
      *
      * ### crypt_password

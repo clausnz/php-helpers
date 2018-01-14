@@ -16,6 +16,7 @@
 
 namespace CNZ\Helpers;
 
+use CNZ\Helpers\User as user;
 use Mobile_Detect;
 
 /**
@@ -130,7 +131,7 @@ class Mob
      */
     public static function isDesktop($userAgent = null)
     {
-        return (!self::isMobile($userAgent) && !self::isTablet($userAgent));
+        return (!self::isMobile($userAgent) && !self::isTablet($userAgent) && !user::isRobot($userAgent));
     }
 
     /**

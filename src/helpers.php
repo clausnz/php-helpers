@@ -181,7 +181,7 @@ if (!function_exists('is_robot')) {
 
 if (!function_exists('crypt_password')) {
     /**
-     * Creates a secure hash from a given password. Use the CRYPT_BLOWFISH algorithm.
+     * Creates a secure hash from a given password. Uses the CRYPT_BLOWFISH algorithm.
      *
      * @param string $password
      * @return string

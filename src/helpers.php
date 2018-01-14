@@ -13,10 +13,10 @@ use CNZ\Helpers\Arr as arr;
 use CNZ\Helpers\Mob as mob;
 use CNZ\Helpers\Str as str;
 use CNZ\Helpers\User as user;
+use CNZ\Helpers\Util as util;
 
-/*
- * Group: Mobile functions
- */
+
+// @group(Mobile)
 
 if (!function_exists('is_mobile')) {
     /**
@@ -135,9 +135,9 @@ if (!function_exists('is_samsung')) {
     }
 }
 
-/*
- * Group: User functions
- */
+// @endgroup(Mobile)
+
+// @group(User)
 
 if (!function_exists('user_ip')) {
     /**
@@ -153,9 +153,9 @@ if (!function_exists('user_ip')) {
     }
 }
 
-/*
- * Group: Array functions
- */
+// @endgroup(User)
+
+// @group(Array)
 
 if (!function_exists('is_assoc')) {
     /**
@@ -222,9 +222,9 @@ if (!function_exists('to_object')) {
     }
 }
 
-/*
- * Group: String functions
- */
+// @endgroup(Array)
+
+// @group(String)
 
 if (!function_exists('str_between')) {
     /**
@@ -383,9 +383,9 @@ if (!function_exists('str_iends_with')) {
     }
 }
 
-/*
- * Group: Utilities
- */
+// @endgroup(String)
+
+// @group(Utils)
 
 if (!function_exists('dump')) {
     /**
@@ -412,3 +412,5 @@ if (!function_exists('dd')) {
         util::dd($var);
     }
 }
+
+// @endgroup(Utils)

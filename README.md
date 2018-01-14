@@ -104,8 +104,8 @@ Detects if the given value is an associative array.
 Arr::isAssoc( array $array ): boolean
 ```
 
-### is_assoc
-Related global function.
+### is_assoc ( [jump to top](#available-php-functions) )
+Related global function. Description see above.
 ```php
 is_assoc( array $array ): boolean
 ```
@@ -134,7 +134,7 @@ Converts an array to an object.
 Arr::toObject( array $array ): object
 ```
 
-### to_object
+### to_object ( [jump to top](#available-php-functions) )
 Related global function.
 ```php
 to_object( array $array ): object
@@ -164,7 +164,7 @@ Converts an object to an array.
 Arr::toArray( object $object ): array
 ```
 
-### to_array
+### to_array ( [jump to top](#available-php-functions) )
 Related global function.
 ```php
 to_array( object $object ): array
@@ -194,7 +194,7 @@ Returns the first element of an array.
 Arr::first( array $array ): mixed
 ```
 
-### array_first
+### array_first ( [jump to top](#available-php-functions) )
 Related global function.
 ```php
 array_first( array $array ): mixed
@@ -224,7 +224,7 @@ Returns the last element of an array.
 Arr::last( array $array ): mixed
 ```
 
-### array_last
+### array_last ( [jump to top](#available-php-functions) )
 Related global function.
 ```php
 array_last( array $array ): mixed

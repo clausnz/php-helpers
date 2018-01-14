@@ -1,6 +1,4 @@
 /.idea
 /vendor
 /test.php
-/doc/bin
-!/doc/bin/generate-doc.sh
 /build

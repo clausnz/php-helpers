@@ -148,7 +148,7 @@ if (!function_exists('is_email')) {
      */
     function is_email($email)
     {
-        return user::is_email($email);
+        return user::isEmail($email);
     }
 }
 

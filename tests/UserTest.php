@@ -24,7 +24,7 @@ class UserTest extends TestCase
 
         foreach ($trueEmails as $email) {
             $this->assertTrue(is_email($email));
-            $this->assertTrue(user::is_email($email));
+            $this->assertTrue(user::isEmail($email));
         }
 
         $falseEmails = [
@@ -36,7 +36,7 @@ class UserTest extends TestCase
 
         foreach ($falseEmails as $email) {
             $this->assertFalse(is_email($email));
-            $this->assertFalse(user::is_email($email));
+            $this->assertFalse(user::isEmail($email));
         }
     }
 

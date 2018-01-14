@@ -72,7 +72,7 @@
     * [endsWith](#endswith)
     * [endsWithIgnoreCase](#endswithignorecase)
 * [User](#user)
-    * [is_email](#is_email)
+    * [isEmail](#isemail)
     * [ip](#ip)
 * [Util](#util)
     * [dd](#dd)
@@ -917,12 +917,12 @@ Class User
 * Full name: \CNZ\Helpers\User
 
 
-### is_email
+### isEmail
 
 Validate a given email address.
 
 ```php
-User::is_email( string $email ): boolean
+User::isEmail( string $email ): boolean
 ```
 
 ### is_email

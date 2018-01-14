@@ -33,7 +33,7 @@ class User
      * @param string $email
      * @return boolean
      */
-    public static function is_email($email)
+    public static function isEmail($email)
     {
         return (filter_var($email, FILTER_VALIDATE_EMAIL) !== false) ? true : false;
     }

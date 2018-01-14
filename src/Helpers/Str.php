@@ -27,6 +27,14 @@ class Str
      * ```php
      * str_insert( $string, $inserts ): array
      * ```
+     * #### Example
+     * ```php
+     * $name = 'John';
+     * $age = 25;
+     * $string = 'My name is :name and I am :age years old.';
+     * echo str_insert([':name' => $name, ':age' => $age], $string);
+     * // My name is John and I am 25 years old.
+     * ```
      *
      * @param array $inserts
      * @param string $string

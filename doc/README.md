@@ -111,7 +111,7 @@ is_assoc( array $array ): boolean
 #### Example
 ```php
 $array = [
-'foo' => 'bar'
+    'foo' => 'bar'
 ];
 
 echo is_assoc($array) ? 'true' : 'false';
@@ -148,6 +148,19 @@ Related global function (description see above).
 #### [( jump back )](#available-php-functions)
 ```php
 to_object( array $array ): object
+```
+#### Example
+```php
+$array = [
+    'foo' => [
+         'bar' => 'baz'
+    ]
+];
+
+$obj = to_object($array);
+echo $obj->foo->bar;
+
+// baz
 ```
 
 * This method is **static**.

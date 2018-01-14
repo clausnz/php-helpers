@@ -139,7 +139,7 @@ if (!function_exists('is_samsung')) {
 
 // @group(User)
 
-if (!function_exists('user_ip')) {
+if (!function_exists('is_email')) {
     /**
      * Validate a given email address.
      *

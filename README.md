@@ -105,7 +105,7 @@ Arr::isAssoc( array $array ): boolean
 ```
 
 ### is_assoc
-Related global function. Description see above.
+Related global function (description see above).
 #### ( [jump back](#available-php-functions) )
 ```php
 is_assoc( array $array ): boolean
@@ -136,7 +136,7 @@ Arr::toObject( array $array ): object
 ```
 
 ### to_object
-Related global function.
+Related global function (description see above).
 #### ( [jump back](#available-php-functions) )
 ```php
 to_object( array $array ): object
@@ -167,7 +167,7 @@ Arr::toArray( object $object ): array
 ```
 
 ### to_array
-Related global function.
+Related global function (description see above).
 #### ( [jump back](#available-php-functions) )
 ```php
 to_array( object $object ): array
@@ -198,7 +198,7 @@ Arr::first( array $array ): mixed
 ```
 
 ### array_first
-Related global function.
+Related global function (description see above).
 #### ( [jump back](#available-php-functions) )
 ```php
 array_first( array $array ): mixed
@@ -229,7 +229,7 @@ Arr::last( array $array ): mixed
 ```
 
 ### array_last
-Related global function.
+Related global function (description see above).
 #### ( [jump back](#available-php-functions) )
 ```php
 array_last( array $array ): mixed

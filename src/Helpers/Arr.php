@@ -23,7 +23,7 @@ class Arr
      * Detects if the given value is an associative array.
      *
      * ### is_assoc
-     * Related global function. Description see above.
+     * Related global function (description see above).
      * #### ( [jump back](#available-php-functions) )
      * ```php
      * is_assoc( array $array ): boolean
@@ -47,7 +47,7 @@ class Arr
      * Converts an array to an object.
      *
      * ### to_object
-     * Related global function.
+     * Related global function (description see above).
      * #### ( [jump back](#available-php-functions) )
      * ```php
      * to_object( array $array ): object
@@ -67,7 +67,7 @@ class Arr
      * Converts an object to an array.
      *
      * ### to_array
-     * Related global function.
+     * Related global function (description see above).
      * #### ( [jump back](#available-php-functions) )
      * ```php
      * to_array( object $object ): array
@@ -87,7 +87,7 @@ class Arr
      * Returns the first element of an array.
      *
      * ### array_first
-     * Related global function.
+     * Related global function (description see above).
      * #### ( [jump back](#available-php-functions) )
      * ```php
      * array_first( array $array ): mixed
@@ -108,7 +108,7 @@ class Arr
      * Returns the last element of an array.
      *
      * ### array_last
-     * Related global function.
+     * Related global function (description see above).
      * #### ( [jump back](#available-php-functions) )
      * ```php
      * array_last( array $array ): mixed

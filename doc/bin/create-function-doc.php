@@ -54,4 +54,4 @@ $fileAboutContent = "# About\n\n";
 $description = "A Collection of :number useful php helper functions.\n";
 $fileAboutContent .= str_insert([':number' => file_get_contents($fileNumberFunctions)], $description);
 
-file_put_contents($fileNumberFunctions, $fileAboutContent);
+file_put_contents($fileAbout, $fileAboutContent);

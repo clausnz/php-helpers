@@ -1,6 +1,6 @@
 # About
 
-A Collection of 29 useful php helper functions.
+A Collection of 30 useful php helper functions.
 
 [![Build Status](https://travis-ci.org/clausnz/php-helpers.svg?branch=master)](https://travis-ci.org/clausnz/php-helpers)
 

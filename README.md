@@ -1,16 +1,13 @@
 # About
 
-A Collection of useful php helper functions.
-
+A Collection of 29 useful php helper functions.
 [![Build Status](https://travis-ci.org/clausnz/php-helpers.svg?branch=master)](https://travis-ci.org/clausnz/php-helpers)
-
 
 # Install
 
 ```php
 todo
 ```
-
 # Available PHP Functions
 
 ## Table of Contents
@@ -45,6 +42,7 @@ todo
     * [str_istarts_with](#str_istarts_with)
     * [str_ends_with](#str_ends_with)
     * [str_iends_with](#str_iends_with)
+    * [str_insert](#str_insert)
 * [Utils](#dump)
     * [dump](#dump)
     * [dd](#dd)
@@ -70,6 +68,7 @@ todo
     * [isIOS](#isios)
     * [isTouchDevice](#istouchdevice)
 * [Str](#str)
+    * [insert](#insert)
     * [between](#between)
     * [after](#after)
     * [before](#before)
@@ -567,6 +566,34 @@ Class Str
 
 * Full name: \CNZ\Helpers\Str
 
+
+### insert
+
+Inserts one or more strings into another string on a defined position.
+
+```php
+Str::insert( array $inserts, string $string ): string
+```
+
+### str_insert
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
+```php
+str_insert( $string, $inserts ): array
+```
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$inserts` | **array** |  |
+| `$string` | **string** |  |
+
+
+
+
+---
 
 ### between
 

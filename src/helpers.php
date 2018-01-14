@@ -383,6 +383,20 @@ if (!function_exists('str_iends_with')) {
     }
 }
 
+if (!function_exists('str_insert')) {
+    /**
+     * Inserts one or more strings into another string on a defined position.
+     *
+     * @param array $inserts
+     * @param string $string
+     * @return string
+     */
+    function str_insert($inserts, $string)
+    {
+        return str::insert($inserts, $string);
+    }
+}
+
 // @endgroup(String)
 
 // @group(Utils)

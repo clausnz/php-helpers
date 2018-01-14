@@ -35,7 +35,8 @@ rm "$PROJECT_DIR"/doc/"$README" \
 mv "$PROJECT_DIR"/doc/"$README".tmp "$PROJECT_DIR"/doc/"$README"
 
 # generate public GitHub README.md
-cat "$PROJECT_DIR"/doc/Introduction.md \
+cat "$PROJECT_DIR"/doc/About.md \
+    "$PROJECT_DIR"/doc/Install.md \
     "$PROJECT_DIR"/doc/"$README" \
     > "$PROJECT_DIR"/"$README"
 

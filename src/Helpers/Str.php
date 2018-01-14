@@ -19,6 +19,33 @@ namespace CNZ\Helpers;
 class Str
 {
     /**
+     * Inserts one or more strings into another string on a defined position.
+     *
+     * ### str_insert
+     * Related global function (description see above).
+     * #### [( jump back )](#available-php-functions)
+     * ```php
+     * str_insert( $string, $inserts ): array
+     * ```
+     *
+     * @param array $inserts
+     * @param string $string
+     * @return string
+     */
+    public static function insert($inserts, $string)
+    {
+        $result = '';
+
+        if (is_assoc($inserts)) {
+            foreach ($inserts as $search => $replace) {
+                $result .= str_replace($search, $replace, $string);
+            }
+        }
+
+        return $result;
+    }
+
+    /**
      * Return the content in a string between a left and right element.
      *
      * ### str_between

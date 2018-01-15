@@ -2,22 +2,17 @@
 
 ## Table of Contents
 
-* [Mobile](#is_mobile)
+* [User](#is_mobile)
     * [is_mobile](#is_mobile)
     * [is_touch_device](#is_touch_device)
     * [is_smartphone](#is_smartphone)
     * [is_tablet](#is_tablet)
     * [is_desktop](#is_desktop)
+    * [is_robot](#is_robot)
     * [is_ios](#is_ios)
     * [is_android](#is_android)
     * [is_iphone](#is_iphone)
     * [is_samsung](#is_samsung)
-* [User](#is_email)
-    * [is_email](#is_email)
-    * [user_ip](#user_ip)
-    * [is_robot](#is_robot)
-    * [crypt_password](#crypt_password)
-    * [is_password](#is_password)
 * [Array](#array_first)
     * [array_first](#array_first)
     * [array_last](#array_last)
@@ -37,7 +32,11 @@
     * [str_istarts_with](#str_istarts_with)
     * [str_ends_with](#str_ends_with)
     * [str_iends_with](#str_iends_with)
-* [Utils](#dump)
+* [Utils](#is_email)
+    * [is_email](#is_email)
+    * [crypt_password](#crypt_password)
+    * [is_password](#is_password)
+    * [ip](#ip)
     * [dump](#dump)
     * [dd](#dd)
 # API Documentation
@@ -50,17 +49,6 @@
     * [toArray](#toarray)
     * [first](#first)
     * [last](#last)
-* [Mob](#mob)
-    * [isSmartphone](#issmartphone)
-    * [isMobile](#ismobile)
-    * [mobileDetect](#mobiledetect)
-    * [isTablet](#istablet)
-    * [isDesktop](#isdesktop)
-    * [isAndroid](#isandroid)
-    * [isIphone](#isiphone)
-    * [isSamsung](#issamsung)
-    * [isIOS](#isios)
-    * [isTouchDevice](#istouchdevice)
 * [Str](#str)
     * [insert](#insert)
     * [between](#between)
@@ -75,13 +63,23 @@
     * [endsWith](#endswith)
     * [endsWithIgnoreCase](#endswithignorecase)
 * [User](#user)
-    * [isEmail](#isemail)
-    * [ip](#ip)
+    * [isSmartphone](#issmartphone)
+    * [isMobile](#ismobile)
+    * [mobileDetect](#mobiledetect)
+    * [isTablet](#istablet)
+    * [isDesktop](#isdesktop)
     * [isRobot](#isrobot)
     * [crawlerDetect](#crawlerdetect)
+    * [isAndroid](#isandroid)
+    * [isIphone](#isiphone)
+    * [isSamsung](#issamsung)
+    * [isIOS](#isios)
+    * [isTouchDevice](#istouchdevice)
+* [Util](#util)
+    * [isEmail](#isemail)
+    * [ip](#ip)
     * [cryptPassword](#cryptpassword)
     * [isPassword](#ispassword)
-* [Util](#util)
     * [dd](#dd)
     * [dump](#dump)
 
@@ -267,314 +265,6 @@ array_last( array $array ): mixed
 **Return Value:**
 
 The value of the last element. Type could be anything.
-
-
-
----
-
-## Mob
-
-Helper class that provides easy access to useful php functions in conjunction with mobile devices.
-
-Class Mob
-
-* Full name: \CNZ\Helpers\Mob
-
-
-### isSmartphone
-
-Determes if the current user agent is running on a smartphone.
-
-```php
-Mob::isSmartphone( string $userAgent = null ): boolean
-```
-
-### is_smartphone
-Related global function (description see above).
-#### [( jump back )](#available-php-functions)
-```php
-is_smartphone( string $userAgent = null ): boolean
-```
-
-* This method is **static**.
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `$userAgent` | **string** | The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used. |
-
-
-**Return Value:**
-
-True if current visitor uses a smartphone, false otherwise.
-
-
-
----
-
-### isMobile
-
-Detects if the current user agent is running on a mobile device.
-
-```php
-Mob::isMobile( string $userAgent = null ): boolean
-```
-
-### is_mobile
-Related global function (description see above).
-#### [( jump back )](#available-php-functions)
-```php
-is_mobile( string $userAgent = null ): boolean
-```
-
-* This method is **static**.
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `$userAgent` | **string** | The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used. |
-
-
-**Return Value:**
-
-True if current visitor uses a mobile device, false otherwise.
-
-
-
----
-
-### mobileDetect
-
-Get a singleton Mobile_Detect object to call every method it provides.
-
-```php
-Mob::mobileDetect(  ): \Mobile_Detect
-```
-
-Public access for use of outside this class.
-Mobile_Detect doku: https://github.com/serbanghita/Mobile-Detect
-
-***This method has no related global function!***
-#### [( jump back )](#available-php-functions)
-
-* This method is **static**.
-
-
-
----
-
-### isTablet
-
-Determes if the current user agent is a tablet device.
-
-```php
-Mob::isTablet( string $userAgent = null ): boolean
-```
-
-### is_tablet
-Related global function (description see above).
-#### [( jump back )](#available-php-functions)
-```php
-is_tablet( string $userAgent = null ): boolean
-```
-
-* This method is **static**.
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `$userAgent` | **string** | The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used. |
-
-
-**Return Value:**
-
-True if current visitor uses a tablet device, false otherwise.
-
-
-
----
-
-### isDesktop
-
-Determes if the current user agent is a desktop computer.
-
-```php
-Mob::isDesktop( string $userAgent = null ): boolean
-```
-
-### is_desktop
-Related global function (description see above).
-#### [( jump back )](#available-php-functions)
-```php
-is_desktop( string $userAgent = null ): boolean
-```
-
-* This method is **static**.
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `$userAgent` | **string** | The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used. |
-
-
-**Return Value:**
-
-True if current visitor uses a desktop computer, false otherwise.
-
-
-
----
-
-### isAndroid
-
-Determes if the current user agent is running on an Android device.
-
-```php
-Mob::isAndroid( string $userAgent = null ): boolean
-```
-
-### is_android
-Related global function (description see above).
-#### [( jump back )](#available-php-functions)
-```php
-is_android( string $userAgent = null ): boolean
-```
-
-* This method is **static**.
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `$userAgent` | **string** | The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used. |
-
-
-**Return Value:**
-
-True if current visitor uses an Android based device, false otherwise.
-
-
-
----
-
-### isIphone
-
-Determes if the current user agent is running on an iPhone device.
-
-```php
-Mob::isIphone( string $userAgent = null ): boolean
-```
-
-### is_iphone
-Related global function (description see above).
-#### [( jump back )](#available-php-functions)
-```php
-is_iphone( string $userAgent = null ): boolean
-```
-
-* This method is **static**.
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `$userAgent` | **string** | The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used. |
-
-
-**Return Value:**
-
-True if current visitor uses an iPhone, false otherwise.
-
-
-
----
-
-### isSamsung
-
-Determes if the current user agent is running on a Samsung device.
-
-```php
-Mob::isSamsung( string $userAgent = null ): boolean
-```
-
-### is_samsung
-Related global function (description see above).
-#### [( jump back )](#available-php-functions)
-```php
-is_samsung( string $userAgent = null ): boolean
-```
-
-* This method is **static**.
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `$userAgent` | **string** | The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used. |
-
-
-**Return Value:**
-
-True if current visitor uses a Samsung device, false otherwise.
-
-
-
----
-
-### isIOS
-
-Determes if the current user agent is running on an iOS operating system.
-
-```php
-Mob::isIOS( string $userAgent = null ): boolean
-```
-
-### is_ios
-Related global function (description see above).
-#### [( jump back )](#available-php-functions)
-```php
-is_ios( string $userAgent = null ): boolean
-```
-
-* This method is **static**.
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `$userAgent` | **string** | The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used. |
-
-
-**Return Value:**
-
-True if current visitor uses an iOS device, false otherwise.
-
-
-
----
-
-### isTouchDevice
-
-Determes if the current user agent is running on a mobile touch device.
-
-```php
-Mob::isTouchDevice( string $userAgent = null ): boolean
-```
-
-### is_touch_device
-Related global function (description see above).
-#### [( jump back )](#available-php-functions)
-```php
-is_touch_device( string $userAgent = null ): boolean
-```
-
-* This method is **static**.
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `$userAgent` | **string** | The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used. |
-
-
-**Return Value:**
-
-True if current visitor uses a touch device, false otherwise.
 
 
 
@@ -940,26 +630,26 @@ str_iends_with( string|array $needle, string $haystack ): boolean
 
 ## User
 
-Helper class that provides easy access to useful php user functions.
+Helper class that provides easy access to useful php functions in conjunction with the user agent.
 
 Class User
 
 * Full name: \CNZ\Helpers\User
 
 
-### isEmail
+### isSmartphone
 
-Validate a given email address.
+Determes if the current user agent is running on a smartphone.
 
 ```php
-User::isEmail( string $email ): boolean
+User::isSmartphone( string $userAgent = null ): boolean
 ```
 
-### is_email
+### is_smartphone
 Related global function (description see above).
 #### [( jump back )](#available-php-functions)
 ```php
-is_email( string $email ): boolean
+is_smartphone( string $userAgent = null ): boolean
 ```
 
 * This method is **static**.
@@ -967,26 +657,30 @@ is_email( string $email ): boolean
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$email` | **string** |  |
+| `$userAgent` | **string** | The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used. |
 
+
+**Return Value:**
+
+True if current visitor uses a smartphone, false otherwise.
 
 
 
 ---
 
-### ip
+### isMobile
 
-Get the current ip address of the user.
+Detects if the current user agent is running on a mobile device.
 
 ```php
-User::ip( boolean $cli = false ): null|string
+User::isMobile( string $userAgent = null ): boolean
 ```
 
-### user_ip
+### is_mobile
 Related global function (description see above).
 #### [( jump back )](#available-php-functions)
 ```php
-user_ip(  ): null|string
+is_mobile( string $userAgent = null ): boolean
 ```
 
 * This method is **static**.
@@ -994,8 +688,94 @@ user_ip(  ): null|string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$cli` | **boolean** |  |
+| `$userAgent` | **string** | The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used. |
 
+
+**Return Value:**
+
+True if current visitor uses a mobile device, false otherwise.
+
+
+
+---
+
+### mobileDetect
+
+Get a singleton Mobile_Detect object to call every method it provides.
+
+```php
+User::mobileDetect(  ): \Mobile_Detect
+```
+
+Public access for use of outside this class.
+Mobile_Detect doku: https://github.com/serbanghita/Mobile-Detect
+
+***This method has no related global function!***
+#### [( jump back )](#available-php-functions)
+
+* This method is **static**.
+
+
+
+---
+
+### isTablet
+
+Determes if the current user agent is a tablet device.
+
+```php
+User::isTablet( string $userAgent = null ): boolean
+```
+
+### is_tablet
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
+```php
+is_tablet( string $userAgent = null ): boolean
+```
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$userAgent` | **string** | The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used. |
+
+
+**Return Value:**
+
+True if current visitor uses a tablet device, false otherwise.
+
+
+
+---
+
+### isDesktop
+
+Determes if the current user agent is a desktop computer.
+
+```php
+User::isDesktop( string $userAgent = null ): boolean
+```
+
+### is_desktop
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
+```php
+is_desktop( string $userAgent = null ): boolean
+```
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$userAgent` | **string** | The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used. |
+
+
+**Return Value:**
+
+True if current visitor uses a desktop computer, false otherwise.
 
 
 
@@ -1008,11 +788,6 @@ Determes if the current visitor is a bot/crawler/spider.
 ```php
 User::isRobot( string $userAgent = null ): boolean
 ```
-
-CREDITS:
-This class makes use of the well known Crawler-Detect library of JayBizzle:
-- http://crawlerdetect.io
-- https://github.com/JayBizzle/Crawler-Detect
 
 ### is_robot
 Related global function (description see above).
@@ -1053,12 +828,230 @@ Crawler-Detect doku: https://github.com/JayBizzle/Crawler-Detect
 
 ---
 
+### isAndroid
+
+Determes if the current user agent is running on an Android device.
+
+```php
+User::isAndroid( string $userAgent = null ): boolean
+```
+
+### is_android
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
+```php
+is_android( string $userAgent = null ): boolean
+```
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$userAgent` | **string** | The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used. |
+
+
+**Return Value:**
+
+True if current visitor uses an Android based device, false otherwise.
+
+
+
+---
+
+### isIphone
+
+Determes if the current user agent is running on an iPhone device.
+
+```php
+User::isIphone( string $userAgent = null ): boolean
+```
+
+### is_iphone
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
+```php
+is_iphone( string $userAgent = null ): boolean
+```
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$userAgent` | **string** | The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used. |
+
+
+**Return Value:**
+
+True if current visitor uses an iPhone, false otherwise.
+
+
+
+---
+
+### isSamsung
+
+Determes if the current user agent is running on a Samsung device.
+
+```php
+User::isSamsung( string $userAgent = null ): boolean
+```
+
+### is_samsung
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
+```php
+is_samsung( string $userAgent = null ): boolean
+```
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$userAgent` | **string** | The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used. |
+
+
+**Return Value:**
+
+True if current visitor uses a Samsung device, false otherwise.
+
+
+
+---
+
+### isIOS
+
+Determes if the current user agent is running on an iOS operating system.
+
+```php
+User::isIOS( string $userAgent = null ): boolean
+```
+
+### is_ios
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
+```php
+is_ios( string $userAgent = null ): boolean
+```
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$userAgent` | **string** | The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used. |
+
+
+**Return Value:**
+
+True if current visitor uses an iOS device, false otherwise.
+
+
+
+---
+
+### isTouchDevice
+
+Determes if the current user agent is running on a mobile touch device.
+
+```php
+User::isTouchDevice( string $userAgent = null ): boolean
+```
+
+### is_touch_device
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
+```php
+is_touch_device( string $userAgent = null ): boolean
+```
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$userAgent` | **string** | The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used. |
+
+
+**Return Value:**
+
+True if current visitor uses a touch device, false otherwise.
+
+
+
+---
+
+## Util
+
+Helper class that provides easy access to useful common php functions.
+
+Class Util
+
+* Full name: \CNZ\Helpers\Util
+
+
+### isEmail
+
+Validate a given email address.
+
+```php
+Util::isEmail( string $email ): boolean
+```
+
+### is_email
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
+```php
+is_email( string $email ): boolean
+```
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$email` | **string** |  |
+
+
+
+
+---
+
+### ip
+
+Get the current ip address of the user.
+
+```php
+Util::ip( boolean $cli = false ): null|string
+```
+
+### user_ip
+Related global function (description see above).
+#### [( jump back )](#available-php-functions)
+```php
+user_ip(  ): null|string
+```
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$cli` | **boolean** |  |
+
+
+
+
+---
+
 ### cryptPassword
 
 Creates a secure hash from a given password. Uses the CRYPT_BLOWFISH algorithm.
 
 ```php
-User::cryptPassword( string $password ): string
+Util::cryptPassword( string $password ): string
 ```
 
 Note: 255 characters for database column recommended!
@@ -1087,7 +1080,7 @@ crypt_password( string $password ): string
 Verifies that a password matches a crypted password (CRYPT_BLOWFISH algorithm).
 
 ```php
-User::isPassword( string $password, string $cryptedPassword ): boolean
+Util::isPassword( string $password, string $cryptedPassword ): boolean
 ```
 
 ### is_password
@@ -1109,15 +1102,6 @@ is_password( string $password, string $cryptedPassword ): boolean
 
 
 ---
-
-## Util
-
-Helper class that provides easy access to useful common php functions.
-
-Class Util
-
-* Full name: \CNZ\Helpers\Util
-
 
 ### dd
 
@@ -1176,4 +1160,4 @@ dump( mixed $var )
 
 
 --------
-> This document was automatically generated from source code comments on 2018-01-14 using [phpDocumentor](http://www.phpdoc.org/) and [cvuorinen/phpdoc-markdown-public](https://github.com/cvuorinen/phpdoc-markdown-public)
+> This document was automatically generated from source code comments on 2018-01-15 using [phpDocumentor](http://www.phpdoc.org/) and [cvuorinen/phpdoc-markdown-public](https://github.com/cvuorinen/phpdoc-markdown-public)

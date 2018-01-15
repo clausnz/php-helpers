@@ -6,22 +6,32 @@
  * @link        https://github.com/clausnz/php-helpers
  * @license     MIT
  *
+ * CREDITS:
+ * This class makes use of the following brilliant libraries:
+ *
+ * serbanghita/Mobile-Detect:
+ * - http://mobiledetect.net/
+ * - https://github.com/serbanghita/Mobile-Detect
+ *
+ * JayBizzle/Crawler-Detect:
+ * - http://crawlerdetect.io
+ * - https://github.com/JayBizzle/Crawler-Detect
  */
 
 namespace CNZ\Helpers;
 
 use Jaybizzle\CrawlerDetect\CrawlerDetect;
+use Mobile_Detect;
 
 /**
- * Helper class that provides easy access to useful php user functions.
+ * Helper class that provides easy access to useful php functions in conjunction with the user agent.
  *
  * Class User
+ *
  * @package CNZ\Helpers
  */
 class User
 {
-    const LOCALHOST = '127.0.0.1';
-
     /**
      * Holds the Crawler-Detect singleton object.
      *
@@ -30,51 +40,114 @@ class User
     private static $crawlerDetectInstance;
 
     /**
-     * Validate a given email address.
+     * Holds the Mobile_Detect singleton object.
      *
-     * ### is_email
+     * @var $mobileDetectInstance
+     */
+    private static $mobileDetectInstance;
+
+    /**
+     * Determes if the current user agent is running on a smartphone.
+     *
+     * ### is_smartphone
      * Related global function (description see above).
      * #### [( jump back )](#available-php-functions)
      * ```php
-     * is_email( string $email ): boolean
+     * is_smartphone( string $userAgent = null ): boolean
      * ```
      *
-     * @param string $email
-     * @return boolean
+     * @param string $userAgent
+     * The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used.
+     * @return bool
+     * True if current visitor uses a smartphone, false otherwise.
      */
-    public static function isEmail($email)
+    public static function isSmartphone($userAgent = null)
     {
-        return (filter_var($email, FILTER_VALIDATE_EMAIL) !== false) ? true : false;
+        return (self::isMobile($userAgent) && !self::isTablet($userAgent));
     }
 
     /**
-     * Get the current ip address of the user.
+     * Detects if the current user agent is running on a mobile device.
      *
-     * ### user_ip
+     * ### is_mobile
      * Related global function (description see above).
      * #### [( jump back )](#available-php-functions)
      * ```php
-     * user_ip(  ): null|string
+     * is_mobile( string $userAgent = null ): boolean
      * ```
      *
-     * @param bool $cli
-     * @return null|string
+     * @param string $userAgent
+     * The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used.
+     * @return bool
+     * True if current visitor uses a mobile device, false otherwise.
      */
-    public static function ip($cli = false)
+    public static function isMobile($userAgent = null)
     {
-        if (php_sapi_name() == 'cli' && $cli) {
-            return self::LOCALHOST;
+        return self::mobileDetect()->isMobile($userAgent) !== false;
+    }
+
+
+    /**
+     * Get a singleton Mobile_Detect object to call every method it provides.
+     * Public access for use of outside this class.
+     * Mobile_Detect doku: https://github.com/serbanghita/Mobile-Detect
+     *
+     * ***This method has no related global function!***
+     * #### [( jump back )](#available-php-functions)
+     *
+     * @return Mobile_Detect
+     */
+    public static function mobileDetect()
+    {
+        if (self::$mobileDetectInstance == null) {
+            self::$mobileDetectInstance = new Mobile_Detect();
         }
 
-        return isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : null;
+        return self::$mobileDetectInstance;
+    }
+
+    /**
+     * Determes if the current user agent is a tablet device.
+     *
+     * ### is_tablet
+     * Related global function (description see above).
+     * #### [( jump back )](#available-php-functions)
+     * ```php
+     * is_tablet( string $userAgent = null ): boolean
+     * ```
+     *
+     * @param string $userAgent
+     * The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used.
+     * @return bool
+     * True if current visitor uses a tablet device, false otherwise.
+     */
+    public static function isTablet($userAgent = null)
+    {
+        return self::mobileDetect()->isTablet($userAgent) !== false;
+    }
+
+    /**
+     * Determes if the current user agent is a desktop computer.
+     *
+     * ### is_desktop
+     * Related global function (description see above).
+     * #### [( jump back )](#available-php-functions)
+     * ```php
+     * is_desktop( string $userAgent = null ): boolean
+     * ```
+     *
+     * @param string $userAgent
+     * The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used.
+     * @return bool
+     * True if current visitor uses a desktop computer, false otherwise.
+     */
+    public static function isDesktop($userAgent = null)
+    {
+        return (!self::isMobile($userAgent) && !self::isTablet($userAgent) && !self::isRobot($userAgent));
     }
 
     /**
      * Determes if the current visitor is a bot/crawler/spider.
-     * CREDITS:
-     * This class makes use of the well known Crawler-Detect library of JayBizzle:
-     * - http://crawlerdetect.io
-     * - https://github.com/JayBizzle/Crawler-Detect
      *
      * ### is_robot
      * Related global function (description see above).
@@ -84,6 +157,7 @@ class User
      * ```
      *
      * @param string $userAgent
+     *
      * @return boolean
      */
     public static function isRobot($userAgent = null)
@@ -111,40 +185,115 @@ class User
     }
 
     /**
-     * Creates a secure hash from a given password. Uses the CRYPT_BLOWFISH algorithm.
-     * Note: 255 characters for database column recommended!
+     * Determes if the current user agent is running on an Android device.
      *
-     * ### crypt_password
+     * ### is_android
      * Related global function (description see above).
      * #### [( jump back )](#available-php-functions)
      * ```php
-     * crypt_password( string $password ): string
+     * is_android( string $userAgent = null ): boolean
      * ```
      *
-     * @param string $password
-     * @return string
+     * @param string $userAgent
+     * The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used.
+     * @return bool
+     * True if current visitor uses an Android based device, false otherwise.
      */
-    public static function cryptPassword($password)
+    public static function isAndroid($userAgent = null)
     {
-        return password_hash($password, PASSWORD_BCRYPT);
+        $tmpUserAgent = null;
+
+        if ($userAgent !== null) {
+            $tmpUserAgent = self::mobileDetect()->getUserAgent();
+            self::mobileDetect()->setUserAgent($userAgent);
+        }
+
+        $version = self::mobileDetect()->version('Android');
+
+        if (isset($tmpUserAgent)) {
+            self::mobileDetect()->setUserAgent($tmpUserAgent);
+        }
+
+        return ($version !== false);
     }
 
     /**
-     * Verifies that a password matches a crypted password (CRYPT_BLOWFISH algorithm).
+     * Determes if the current user agent is running on an iPhone device.
      *
-     * ### is_password
+     * ### is_iphone
      * Related global function (description see above).
      * #### [( jump back )](#available-php-functions)
      * ```php
-     * is_password( string $password, string $cryptedPassword ): boolean
+     * is_iphone( string $userAgent = null ): boolean
      * ```
      *
-     * @param string $password
-     * @param string $cryptedPassword
-     * @return boolean
+     * @param string $userAgent
+     * The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used.
+     * @return bool
+     * True if current visitor uses an iPhone, false otherwise.
      */
-    public static function isPassword($password, $cryptedPassword)
+    public static function isIphone($userAgent = null)
     {
-        return password_verify($password, $cryptedPassword);
+        return self::mobileDetect()->is('iPhone', $userAgent) !== false;
+    }
+
+    /**
+     * Determes if the current user agent is running on a Samsung device.
+     *
+     * ### is_samsung
+     * Related global function (description see above).
+     * #### [( jump back )](#available-php-functions)
+     * ```php
+     * is_samsung( string $userAgent = null ): boolean
+     * ```
+     *
+     * @param string $userAgent
+     * The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used.
+     * @return bool
+     * True if current visitor uses a Samsung device, false otherwise.
+     */
+    public static function isSamsung($userAgent = null)
+    {
+        return self::mobileDetect()->is('Samsung', $userAgent) !== false;
+    }
+
+    /**
+     * Determes if the current user agent is running on an iOS operating system.
+     *
+     * ### is_ios
+     * Related global function (description see above).
+     * #### [( jump back )](#available-php-functions)
+     * ```php
+     * is_ios( string $userAgent = null ): boolean
+     * ```
+     *
+     * @param string $userAgent
+     * The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used.
+     * @return bool
+     * True if current visitor uses an iOS device, false otherwise.
+     */
+    public static function isIOS($userAgent = null)
+    {
+        return self::mobileDetect()->is('iOS', $userAgent) !== false;
+    }
+
+    /**
+     * Determes if the current user agent is running on a mobile touch device.
+     *
+     * ### is_touch_device
+     * Related global function (description see above).
+     * #### [( jump back )](#available-php-functions)
+     * ```php
+     * is_touch_device( string $userAgent = null ): boolean
+     * ```
+     *
+     * @param string $userAgent
+     * The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used.
+     * @return bool
+     * True if current visitor uses a touch device, false otherwise.
+     */
+    public static function isTouchDevice($userAgent = null)
+    {
+        return (self::isMobile($userAgent) || self::isTablet($userAgent));
     }
 }

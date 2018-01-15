@@ -23,7 +23,7 @@ class Str
      *
      * ### str_insert
      * Related global function (description see above).
-     * #### [( jump back )](#available-php-functions)
+     * > #### [( jump back )](#available-php-functions)
      * ```php
      * str_insert( $string, $inserts ): array
      * ```
@@ -38,7 +38,7 @@ class Str
      * // His name is John. John is 25 years old.
      * ```
      *
-     * @param array $inserts
+     * @param array  $inserts
      * @param string $string
      * @return string
      */
@@ -58,7 +58,7 @@ class Str
      *
      * ### str_between
      * Related global function (description see above).
-     * #### [( jump back )](#available-php-functions)
+     * > #### [( jump back )](#available-php-functions)
      * ```php
      * str_between( string $left, string $right, string $string ): array
      * ```
@@ -79,7 +79,7 @@ class Str
      *
      * ### str_after
      * Related global function (description see above).
-     * #### [( jump back )](#available-php-functions)
+     * > #### [( jump back )](#available-php-functions)
      * ```php
      * str_after( string $search, string $string ): string
      * ```
@@ -98,7 +98,7 @@ class Str
      *
      * ### str_before
      * Related global function (description see above).
-     * #### [( jump back )](#available-php-functions)
+     * > #### [( jump back )](#available-php-functions)
      * ```php
      * str_before( string $search, string $string ): string
      * ```
@@ -117,13 +117,13 @@ class Str
      *
      * ### str_limit_words
      * Related global function (description see above).
-     * #### [( jump back )](#available-php-functions)
+     * > #### [( jump back )](#available-php-functions)
      * ```php
      * str_limit_words( string $string, int $limit = 10, string $end = '...' ): string
      * ```
      *
      * @param  string $string
-     * @param  int $limit
+     * @param  int    $limit
      * @param  string $end
      * @return string
      */
@@ -143,13 +143,13 @@ class Str
      *
      * ### str_limit
      * Related global function (description see above).
-     * #### [( jump back )](#available-php-functions)
+     * > #### [( jump back )](#available-php-functions)
      * ```php
      * str_limit( string $string, int $limit = 100, string $end = '...' ): string
      * ```
      *
      * @param  string $string
-     * @param  int $limit
+     * @param  int    $limit
      * @param  string $end
      * @return string
      */
@@ -167,13 +167,13 @@ class Str
      *
      * ### str_contains
      * Related global function (description see above).
-     * #### [( jump back )](#available-php-functions)
+     * > #### [( jump back )](#available-php-functions)
      * ```php
      * str_contains( string|array $needle, string $haystack ): boolean
      * ```
      *
      * @param string|array $needle
-     * @param string $haystack
+     * @param string       $haystack
      * @return bool
      */
     public static function contains($needle, $haystack)
@@ -192,13 +192,13 @@ class Str
      *
      * ### str_icontains
      * Related global function (description see above).
-     * #### [( jump back )](#available-php-functions)
+     * > #### [( jump back )](#available-php-functions)
      * ```php
      * str_icontains( string|array $needle, string $haystack ): boolean
      * ```
      *
      * @param string|array $needle
-     * @param string $haystack
+     * @param string       $haystack
      * @return bool
      */
     public static function containsIgnoreCase($needle, $haystack)
@@ -217,13 +217,13 @@ class Str
      *
      * ### str_starts_with
      * Related global function (description see above).
-     * #### [( jump back )](#available-php-functions)
+     * > #### [( jump back )](#available-php-functions)
      * ```php
      * str_starts_with( string|array $needle, string $haystack ): boolean
      * ```
      *
      * @param string|array $needle
-     * @param string $haystack
+     * @param string       $haystack
      * @return bool
      */
     public static function startsWith($needle, $haystack)
@@ -242,13 +242,13 @@ class Str
      *
      * ### str_istarts_with
      * Related global function (description see above).
-     * #### [( jump back )](#available-php-functions)
+     * > #### [( jump back )](#available-php-functions)
      * ```php
      * str_istarts_with( string|array $needle, string $haystack ): boolean
      * ```
      *
      * @param string|array $needle
-     * @param string $haystack
+     * @param string       $haystack
      * @return bool
      */
     public static function startsWithIgnoreCase($needle, $haystack)
@@ -270,13 +270,13 @@ class Str
      *
      * ### str_ends_with
      * Related global function (description see above).
-     * #### [( jump back )](#available-php-functions)
+     * > #### [( jump back )](#available-php-functions)
      * ```php
      * str_ends_with( string|array $needle, string $haystack ): boolean
      * ```
      *
      * @param string|array $needle
-     * @param string $haystack
+     * @param string       $haystack
      * @return bool
      */
     public static function endsWith($needle, $haystack)
@@ -296,13 +296,13 @@ class Str
      *
      * ### str_iends_with
      * Related global function (description see above).
-     * #### [( jump back )](#available-php-functions)
+     * > #### [( jump back )](#available-php-functions)
      * ```php
      * str_iends_with( string|array $needle, string $haystack ): boolean
      * ```
      *
      * @param string|array $needle
-     * @param string $haystack
+     * @param string       $haystack
      * @return bool
      */
     public static function endsWithIgnoreCase($needle, $haystack)

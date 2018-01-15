@@ -111,7 +111,7 @@ Arr::isAssoc( array $array ): boolean
 
 ### is_assoc
 Related global function (description see above).
-#### [( jump back )](#available-php-functions)
+> #### [( jump back )](#available-php-functions)
 ```php
 is_assoc( array $array ): boolean
 ```
@@ -152,7 +152,7 @@ Arr::toObject( array $array ): object
 
 ### to_object
 Related global function (description see above).
-#### [( jump back )](#available-php-functions)
+> #### [( jump back )](#available-php-functions)
 ```php
 to_object( array $array ): object
 ```
@@ -196,7 +196,7 @@ Arr::toArray( object $object ): array
 
 ### to_array
 Related global function (description see above).
-#### [( jump back )](#available-php-functions)
+> #### [( jump back )](#available-php-functions)
 ```php
 to_array( object $object ): array
 ```
@@ -227,7 +227,7 @@ Arr::first( array $array ): mixed
 
 ### array_first
 Related global function (description see above).
-#### [( jump back )](#available-php-functions)
+> #### [( jump back )](#available-php-functions)
 ```php
 array_first( array $array ): mixed
 ```
@@ -258,7 +258,7 @@ Arr::last( array $array ): mixed
 
 ### array_last
 Related global function (description see above).
-#### [( jump back )](#available-php-functions)
+> #### [( jump back )](#available-php-functions)
 ```php
 array_last( array $array ): mixed
 ```
@@ -298,7 +298,7 @@ Dev::isSmartphone(  ): boolean
 
 ### is_smartphone
 Related global function (description see above).
-#### [( jump back )](#available-php-functions)
+> #### [( jump back )](#available-php-functions)
 ```php
 is_smartphone(  ): boolean
 ```
@@ -323,7 +323,7 @@ Dev::isMobile(  ): boolean
 
 ### is_mobile
 Related global function (description see above).
-#### [( jump back )](#available-php-functions)
+> #### [( jump back )](#available-php-functions)
 ```php
 is_mobile(  ): boolean
 ```
@@ -350,7 +350,7 @@ Public access for use of outside this class.
 Mobile_Detect doku: https://github.com/serbanghita/Mobile-Detect
 
 ***This method has no related global function!***
-#### [( jump back )](#available-php-functions)
+> #### [( jump back )](#available-php-functions)
 
 * This method is **static**.
 
@@ -368,7 +368,7 @@ Dev::isTablet(  ): boolean
 
 ### is_tablet
 Related global function (description see above).
-#### [( jump back )](#available-php-functions)
+> #### [( jump back )](#available-php-functions)
 ```php
 is_tablet(  ): boolean
 ```
@@ -393,7 +393,7 @@ Dev::isDesktop(  ): boolean
 
 ### is_desktop
 Related global function (description see above).
-#### [( jump back )](#available-php-functions)
+> #### [( jump back )](#available-php-functions)
 ```php
 is_desktop(  ): boolean
 ```
@@ -418,7 +418,7 @@ Dev::isRobot(  ): boolean
 
 ### is_robot
 Related global function (description see above).
-#### [( jump back )](#available-php-functions)
+> #### [( jump back )](#available-php-functions)
 ```php
 is_robot(  ): boolean
 ```
@@ -441,7 +441,7 @@ Public access for use of outside this class.
 Crawler-Detect doku: https://github.com/JayBizzle/Crawler-Detect
 
 ***This method has no related global function!***
-#### [( jump back )](#available-php-functions)
+> #### [( jump back )](#available-php-functions)
 
 * This method is **static**.
 
@@ -459,7 +459,7 @@ Dev::isAndroid(  ): boolean
 
 ### is_android
 Related global function (description see above).
-#### [( jump back )](#available-php-functions)
+> #### [( jump back )](#available-php-functions)
 ```php
 is_android(  ): boolean
 ```
@@ -484,7 +484,7 @@ Dev::isIphone(  ): boolean
 
 ### is_iphone
 Related global function (description see above).
-#### [( jump back )](#available-php-functions)
+> #### [( jump back )](#available-php-functions)
 ```php
 is_iphone(  ): boolean
 ```
@@ -509,7 +509,7 @@ Dev::isSamsung(  ): boolean
 
 ### is_samsung
 Related global function (description see above).
-#### [( jump back )](#available-php-functions)
+> #### [( jump back )](#available-php-functions)
 ```php
 is_samsung(  ): boolean
 ```
@@ -534,7 +534,7 @@ Dev::isIOS(  ): boolean
 
 ### is_ios
 Related global function (description see above).
-#### [( jump back )](#available-php-functions)
+> #### [( jump back )](#available-php-functions)
 ```php
 is_ios(  ): boolean
 ```
@@ -568,7 +568,7 @@ Str::insert( array $inserts, string $string ): string
 
 ### str_insert
 Related global function (description see above).
-#### [( jump back )](#available-php-functions)
+> #### [( jump back )](#available-php-functions)
 ```php
 str_insert( $string, $inserts ): array
 ```
@@ -606,7 +606,7 @@ Str::between( string $left, string $right, string $string ): array
 
 ### str_between
 Related global function (description see above).
-#### [( jump back )](#available-php-functions)
+> #### [( jump back )](#available-php-functions)
 ```php
 str_between( string $left, string $right, string $string ): array
 ```
@@ -635,7 +635,7 @@ Str::after( string $search, string $string ): string
 
 ### str_after
 Related global function (description see above).
-#### [( jump back )](#available-php-functions)
+> #### [( jump back )](#available-php-functions)
 ```php
 str_after( string $search, string $string ): string
 ```
@@ -663,7 +663,7 @@ Str::before( string $search, string $string ): string
 
 ### str_before
 Related global function (description see above).
-#### [( jump back )](#available-php-functions)
+> #### [( jump back )](#available-php-functions)
 ```php
 str_before( string $search, string $string ): string
 ```
@@ -691,7 +691,7 @@ Str::limitWords( string $string, integer $limit = 10, string $end = '...' ): str
 
 ### str_limit_words
 Related global function (description see above).
-#### [( jump back )](#available-php-functions)
+> #### [( jump back )](#available-php-functions)
 ```php
 str_limit_words( string $string, int $limit = 10, string $end = '...' ): string
 ```
@@ -720,7 +720,7 @@ Str::limit( string $string, integer $limit = 100, string $end = '...' ): string
 
 ### str_limit
 Related global function (description see above).
-#### [( jump back )](#available-php-functions)
+> #### [( jump back )](#available-php-functions)
 ```php
 str_limit( string $string, int $limit = 100, string $end = '...' ): string
 ```
@@ -749,7 +749,7 @@ Str::contains( string|array $needle, string $haystack ): boolean
 
 ### str_contains
 Related global function (description see above).
-#### [( jump back )](#available-php-functions)
+> #### [( jump back )](#available-php-functions)
 ```php
 str_contains( string|array $needle, string $haystack ): boolean
 ```
@@ -777,7 +777,7 @@ Str::containsIgnoreCase( string|array $needle, string $haystack ): boolean
 
 ### str_icontains
 Related global function (description see above).
-#### [( jump back )](#available-php-functions)
+> #### [( jump back )](#available-php-functions)
 ```php
 str_icontains( string|array $needle, string $haystack ): boolean
 ```
@@ -805,7 +805,7 @@ Str::startsWith( string|array $needle, string $haystack ): boolean
 
 ### str_starts_with
 Related global function (description see above).
-#### [( jump back )](#available-php-functions)
+> #### [( jump back )](#available-php-functions)
 ```php
 str_starts_with( string|array $needle, string $haystack ): boolean
 ```
@@ -833,7 +833,7 @@ Str::startsWithIgnoreCase( string|array $needle, string $haystack ): boolean
 
 ### str_istarts_with
 Related global function (description see above).
-#### [( jump back )](#available-php-functions)
+> #### [( jump back )](#available-php-functions)
 ```php
 str_istarts_with( string|array $needle, string $haystack ): boolean
 ```
@@ -861,7 +861,7 @@ Str::endsWith( string|array $needle, string $haystack ): boolean
 
 ### str_ends_with
 Related global function (description see above).
-#### [( jump back )](#available-php-functions)
+> #### [( jump back )](#available-php-functions)
 ```php
 str_ends_with( string|array $needle, string $haystack ): boolean
 ```
@@ -889,7 +889,7 @@ Str::endsWithIgnoreCase( string|array $needle, string $haystack ): boolean
 
 ### str_iends_with
 Related global function (description see above).
-#### [( jump back )](#available-php-functions)
+> #### [( jump back )](#available-php-functions)
 ```php
 str_iends_with( string|array $needle, string $haystack ): boolean
 ```
@@ -926,7 +926,7 @@ Util::isEmail( string $email ): boolean
 
 ### is_email
 Related global function (description see above).
-#### [( jump back )](#available-php-functions)
+> #### [( jump back )](#available-php-functions)
 ```php
 is_email( string $email ): boolean
 ```
@@ -953,7 +953,7 @@ Util::ip( boolean $cli = false ): null|string
 
 ### user_ip
 Related global function (description see above).
-#### [( jump back )](#available-php-functions)
+> #### [( jump back )](#available-php-functions)
 ```php
 user_ip(  ): null|string
 ```
@@ -982,7 +982,7 @@ Note: 255 characters for database column recommended!
 
 ### crypt_password
 Related global function (description see above).
-#### [( jump back )](#available-php-functions)
+> #### [( jump back )](#available-php-functions)
 ```php
 crypt_password( string $password ): string
 ```
@@ -1009,7 +1009,7 @@ Util::isPassword( string $password, string $cryptedPassword ): boolean
 
 ### is_password
 Related global function (description see above).
-#### [( jump back )](#available-php-functions)
+> #### [( jump back )](#available-php-functions)
 ```php
 is_password( string $password, string $cryptedPassword ): boolean
 ```
@@ -1037,7 +1037,7 @@ Util::dd( mixed $var )
 
 ### dd
 Related global function (description see above).
-#### [( jump back )](#available-php-functions)
+> #### [( jump back )](#available-php-functions)
 ```php
 dd( mixed $var )
 ```
@@ -1064,7 +1064,7 @@ Util::dump( mixed $var )
 
 ### dump
 Related global function (description see above).
-#### [( jump back )](#available-php-functions)
+> #### [( jump back )](#available-php-functions)
 ```php
 dump( mixed $var )
 ```

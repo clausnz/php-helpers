@@ -325,7 +325,7 @@ Dev::isMobile(  ): boolean
 Related global function (description see above).
 #### [( jump back )](#available-php-functions)
 ```php
-is_mobile(   ): boolean
+is_mobile(  ): boolean
 ```
 
 * This method is **static**.
@@ -370,7 +370,7 @@ Dev::isTablet(  ): boolean
 Related global function (description see above).
 #### [( jump back )](#available-php-functions)
 ```php
-is_tablet(   ): boolean
+is_tablet(  ): boolean
 ```
 
 * This method is **static**.
@@ -395,7 +395,7 @@ Dev::isDesktop(  ): boolean
 Related global function (description see above).
 #### [( jump back )](#available-php-functions)
 ```php
-is_desktop(   ): boolean
+is_desktop(  ): boolean
 ```
 
 * This method is **static**.
@@ -420,7 +420,7 @@ Dev::isRobot(  ): boolean
 Related global function (description see above).
 #### [( jump back )](#available-php-functions)
 ```php
-is_robot(   ): boolean
+is_robot(  ): boolean
 ```
 
 * This method is **static**.
@@ -461,7 +461,7 @@ Dev::isAndroid(  ): boolean
 Related global function (description see above).
 #### [( jump back )](#available-php-functions)
 ```php
-is_android(   ): boolean
+is_android(  ): boolean
 ```
 
 * This method is **static**.
@@ -511,7 +511,7 @@ Dev::isSamsung(  ): boolean
 Related global function (description see above).
 #### [( jump back )](#available-php-functions)
 ```php
-is_samsung(   ): boolean
+is_samsung(  ): boolean
 ```
 
 * This method is **static**.
@@ -536,7 +536,7 @@ Dev::isIOS(  ): boolean
 Related global function (description see above).
 #### [( jump back )](#available-php-functions)
 ```php
-is_ios(   ): boolean
+is_ios(  ): boolean
 ```
 
 * This method is **static**.

@@ -83,7 +83,7 @@ class Dev
      * Related global function (description see above).
      * #### [( jump back )](#available-php-functions)
      * ```php
-     * is_mobile(   ): boolean
+     * is_mobile(  ): boolean
      * ```
      *
      * @return bool
@@ -120,7 +120,7 @@ class Dev
      * Related global function (description see above).
      * #### [( jump back )](#available-php-functions)
      * ```php
-     * is_tablet(   ): boolean
+     * is_tablet(  ): boolean
      * ```
      *
      * @return bool
@@ -138,7 +138,7 @@ class Dev
      * Related global function (description see above).
      * #### [( jump back )](#available-php-functions)
      * ```php
-     * is_desktop(   ): boolean
+     * is_desktop(  ): boolean
      * ```
      *
      * @return bool
@@ -156,7 +156,7 @@ class Dev
      * Related global function (description see above).
      * #### [( jump back )](#available-php-functions)
      * ```php
-     * is_robot(   ): boolean
+     * is_robot(  ): boolean
      * ```
      *
      * @return boolean
@@ -192,7 +192,7 @@ class Dev
      * Related global function (description see above).
      * #### [( jump back )](#available-php-functions)
      * ```php
-     * is_android(   ): boolean
+     * is_android(  ): boolean
      * ```
      *
      * @return bool
@@ -228,7 +228,7 @@ class Dev
      * Related global function (description see above).
      * #### [( jump back )](#available-php-functions)
      * ```php
-     * is_samsung(   ): boolean
+     * is_samsung(  ): boolean
      * ```
      *
      * @return bool
@@ -246,7 +246,7 @@ class Dev
      * Related global function (description see above).
      * #### [( jump back )](#available-php-functions)
      * ```php
-     * is_ios(   ): boolean
+     * is_ios(  ): boolean
      * ```
      *
      * @return bool

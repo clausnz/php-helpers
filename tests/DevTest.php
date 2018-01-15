@@ -129,13 +129,15 @@ class DevTest extends TestCase
         }
     }
 
-    public function test_is_touch_device()
+    public function test_is_touch()
     {
         $isTouchDevice = [
             $this->ipod,
             $this->iphone,
             $this->blackberry,
-            $this->windowsPhone
+            $this->windowsPhone,
+            $this->ipad,
+            $this->android
         ];
 
         $isNotTouchDevice = [
@@ -148,13 +150,13 @@ class DevTest extends TestCase
         ];
 
         foreach ($isTouchDevice as $device) {
-            $this->assertTrue(is_touch_device($device));
-            $this->assertTrue(dev::isTouchDevice($device));
+            $this->assertTrue(is_touch($device));
+            $this->assertTrue(dev::isTouch($device));
         }
 
         foreach ($isNotTouchDevice as $device) {
-            $this->assertFalse(is_touch_device($device));
-            $this->assertFalse(dev::isTouchDevice($device));
+            $this->assertFalse(is_touch($device));
+            $this->assertFalse(dev::isTouch($device));
         }
     }
 

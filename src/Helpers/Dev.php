@@ -67,7 +67,7 @@ class Dev
     }
 
     /**
-     * Detects if the current user agent is running on a mobile device.
+     * Detects if the current user agent is running on a mobile device (Smartphone/Tablet/Handheld).
      *
      * ### is_mobile
      * Related global function (description see above).
@@ -275,25 +275,5 @@ class Dev
     public static function isIOS($userAgent = null)
     {
         return self::mobileDetect()->is('iOS', $userAgent) !== false;
-    }
-
-    /**
-     * Determes if the current user agent is running on a mobile touch device.
-     *
-     * ### is_touch_device
-     * Related global function (description see above).
-     * #### [( jump back )](#available-php-functions)
-     * ```php
-     * is_touch_device( string $userAgent = null ): boolean
-     * ```
-     *
-     * @param string $userAgent
-     * The Dev Agent to be analyzed. By default, the value of HTTP Dev-Agent header is used.
-     * @return bool
-     * True if current visitor uses a touch device, false otherwise.
-     */
-    public static function isTouchDevice($userAgent = null)
-    {
-        return (self::isMobile($userAgent) || self::isTablet($userAgent));
     }
 }

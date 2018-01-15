@@ -19,7 +19,7 @@ use CNZ\Helpers\Util as util;
 
 if (!function_exists('is_mobile')) {
     /**
-     * Detects if the current user agent is running on a mobile device.
+     * Detects if the current user agent is running on a mobile device (Smartphone/Tablet/Handheld).
      *
      * @param string $userAgent
      *
@@ -28,20 +28,6 @@ if (!function_exists('is_mobile')) {
     function is_mobile($userAgent = null)
     {
         return dev::isMobile($userAgent);
-    }
-}
-
-if (!function_exists('is_touch_device')) {
-    /**
-     * Determes if the current user agent is running on a mobile touch device.
-     *
-     * @param null $userAgent
-     *
-     * @return bool
-     */
-    function is_touch_device($userAgent = null)
-    {
-        return dev::isTouchDevice($userAgent);
     }
 }
 

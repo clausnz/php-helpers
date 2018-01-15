@@ -4,7 +4,6 @@
 
 * [Device](#is_mobile)
     * [is_mobile](#is_mobile)
-    * [is_touch_device](#is_touch_device)
     * [is_smartphone](#is_smartphone)
     * [is_tablet](#is_tablet)
     * [is_desktop](#is_desktop)
@@ -61,7 +60,6 @@
     * [isIphone](#isiphone)
     * [isSamsung](#issamsung)
     * [isIOS](#isios)
-    * [isTouchDevice](#istouchdevice)
 * [Str](#str)
     * [insert](#insert)
     * [between](#between)
@@ -312,7 +310,7 @@ True if current visitor uses a smartphone, false otherwise.
 
 ### isMobile
 
-Detects if the current user agent is running on a mobile device.
+Detects if the current user agent is running on a mobile device (Smartphone/Tablet/Handheld).
 
 ```php
 Dev::isMobile( string $userAgent = null ): boolean
@@ -589,37 +587,6 @@ is_ios( string $userAgent = null ): boolean
 **Return Value:**
 
 True if current visitor uses an iOS device, false otherwise.
-
-
-
----
-
-### isTouchDevice
-
-Determes if the current user agent is running on a mobile touch device.
-
-```php
-Dev::isTouchDevice( string $userAgent = null ): boolean
-```
-
-### is_touch_device
-Related global function (description see above).
-#### [( jump back )](#available-php-functions)
-```php
-is_touch_device( string $userAgent = null ): boolean
-```
-
-* This method is **static**.
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `$userAgent` | **string** | The Dev Agent to be analyzed. By default, the value of HTTP Dev-Agent header is used. |
-
-
-**Return Value:**
-
-True if current visitor uses a touch device, false otherwise.
 
 
 

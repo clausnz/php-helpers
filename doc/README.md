@@ -32,13 +32,13 @@
     * [str_istarts_with](#str_istarts_with)
     * [str_ends_with](#str_ends_with)
     * [str_iends_with](#str_iends_with)
-* [Utils](#is_email)
-    * [is_email](#is_email)
-    * [crypt_password](#crypt_password)
-    * [is_password](#is_password)
+* [Utils](#ip)
     * [ip](#ip)
+    * [is_email](#is_email)
     * [dump](#dump)
     * [dd](#dd)
+    * [crypt_password](#crypt_password)
+    * [is_password](#is_password)
 # API Documentation
 
 ## Table of Contents

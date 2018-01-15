@@ -422,6 +422,21 @@ if (!function_exists('str_iends_with')) {
 
 // @group(Utils)
 
+if (!function_exists('ip')) {
+    /**
+     * Returns the user ip-adresse.
+     * See: https://stackoverflow.com/q/3003145/1108161
+     *
+     * @param bool $cli
+     *
+     * @return string
+     */
+    function ip($cli = false)
+    {
+        return util::ip($cli);
+    }
+}
+
 if (!function_exists('is_email')) {
     /**
      * Validate a given email address.
@@ -433,6 +448,34 @@ if (!function_exists('is_email')) {
     function is_email($email)
     {
         return util::isEmail($email);
+    }
+}
+
+if (!function_exists('dump')) {
+    /**
+     * Dumps the content of the given variable.
+     *
+     * @codeCoverageIgnore
+     *
+     * @param mixed $var
+     */
+    function dump($var)
+    {
+        util::dump($var);
+    }
+}
+
+if (!function_exists('dd')) {
+    /**
+     * Dumps the content of the given variable and exits the script.
+     *
+     * @codeCoverageIgnore
+     *
+     * @param mixed $var
+     */
+    function dd($var)
+    {
+        util::dd($var);
     }
 }
 
@@ -462,49 +505,6 @@ if (!function_exists('is_password')) {
     function is_password($password, $cryptedPassword)
     {
         return util::isPassword($password, $cryptedPassword);
-    }
-}
-
-if (!function_exists('ip')) {
-    /**
-     * Returns the user ip-adresse.
-     * See: https://stackoverflow.com/q/3003145/1108161
-     *
-     * @param bool $cli
-     *
-     * @return string
-     */
-    function ip($cli = false)
-    {
-        return util::ip($cli);
-    }
-}
-
-if (!function_exists('dump')) {
-    /**
-     * Dumps the content of the given variable.
-     *
-     * @codeCoverageIgnore
-     *
-     * @param mixed $var
-     */
-    function dump($var)
-    {
-        util::dump($var);
-    }
-}
-
-if (!function_exists('dd')) {
-    /**
-     * Dumps the content of the given variable and exits the script.
-     *
-     * @codeCoverageIgnore
-     *
-     * @param mixed $var
-     */
-    function dd($var)
-    {
-        util::dd($var);
     }
 }
 

@@ -20,8 +20,8 @@
 
 namespace CNZ\Helpers;
 
+use Detection\MobileDetect;
 use Jaybizzle\CrawlerDetect\CrawlerDetect;
-use Mobile_Detect;
 
 /**
  * Helper class that provides easy access to useful php functions in conjunction with the user agent.
@@ -88,19 +88,19 @@ class Dev
 
 
     /**
-     * Get a singleton Mobile_Detect object to call every method it provides.
+     * Get a singleton MobileDetect object to call every method it provides.
      * Public access for use of outside this class.
      * Mobile_Detect doku: https://github.com/serbanghita/Mobile-Detect
      *
      * ***This method has no related global function!***
      * #### [( jump back )](#available-php-functions)
      *
-     * @return Mobile_Detect
+     * @return MobileDetect
      */
     public static function mobileDetect()
     {
         if (self::$mobileDetectInstance == null) {
-            self::$mobileDetectInstance = new Mobile_Detect();
+            self::$mobileDetectInstance = new MobileDetect();
         }
 
         return self::$mobileDetectInstance;

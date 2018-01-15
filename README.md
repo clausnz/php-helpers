@@ -352,10 +352,10 @@ True if current visitor uses a mobile device, false otherwise.
 
 ### mobileDetect
 
-Get a singleton Mobile_Detect object to call every method it provides.
+Get a singleton MobileDetect object to call every method it provides.
 
 ```php
-Dev::mobileDetect(  ): \Mobile_Detect
+Dev::mobileDetect(  ): \Detection\MobileDetect
 ```
 
 Public access for use of outside this class.

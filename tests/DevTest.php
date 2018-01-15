@@ -37,6 +37,14 @@ class DevTest extends TestCase
 
     protected $yahooBot = 'Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)';
 
+    protected $kindl = 'Mozilla/5.0 (X11; U; Linux armv7l like Android; en-us) AppleWebKit/531.2+ (KHTML, like Gecko) Version/5.0 Safari/533.2+ Kindle/3.0+';
+
+    protected $playstation = 'Mozilla/5.0 (PlayStation 4 3.11) AppleWebKit/537.73 (KHTML, like Gecko)';
+
+    protected $amazonFireTv = 'Mozilla/5.0 (Linux; Android 4.2.2; AFTB Build/JDQ39) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.173 Mobile Safari/537.22';
+
+    protected $tablet = 'Mozilla/5.0 (Linux; Android 5.0.2; LG-V410/V41020c Build/LRX22G) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/34.0.1847.118 Safari/537.36';
+
     public function test_is_ios()
     {
         $isIOS = [
@@ -129,37 +137,6 @@ class DevTest extends TestCase
         }
     }
 
-    public function test_is_touch()
-    {
-        $isTouchDevice = [
-            $this->ipod,
-            $this->iphone,
-            $this->blackberry,
-            $this->windowsPhone,
-            $this->ipad,
-            $this->android
-        ];
-
-        $isNotTouchDevice = [
-            $this->windows,
-            $this->apple,
-            $this->linux,
-            $this->googleBot,
-            $this->bingBot,
-            $this->yahooBot
-        ];
-
-        foreach ($isTouchDevice as $device) {
-            $this->assertTrue(is_touch($device));
-            $this->assertTrue(dev::isTouch($device));
-        }
-
-        foreach ($isNotTouchDevice as $device) {
-            $this->assertFalse(is_touch($device));
-            $this->assertFalse(dev::isTouch($device));
-        }
-    }
-
     public function test_is_desktop()
     {
         $deviceIsDesktop = [
@@ -175,7 +152,9 @@ class DevTest extends TestCase
             $this->windowsPhone,
             $this->googleBot,
             $this->bingBot,
-            $this->yahooBot
+            $this->yahooBot,
+            $this->amazonFireTv,
+            $this->tablet
         ];
 
         foreach ($deviceIsDesktop as $device) {
@@ -192,7 +171,8 @@ class DevTest extends TestCase
     public function test_is_tablet()
     {
         $deviceIsTablet = [
-            $this->ipad
+            $this->ipad,
+            $this->tablet
         ];
 
         $deviceIsNotTablet = [
@@ -204,7 +184,8 @@ class DevTest extends TestCase
             $this->yahooBot,
             $this->iphone,
             $this->windowsPhone,
-            $this->ipod
+            $this->ipod,
+            $this->amazonFireTv
         ];
 
         foreach ($deviceIsTablet as $device) {
@@ -234,6 +215,7 @@ class DevTest extends TestCase
             $this->bingBot,
             $this->yahooBot,
             $this->ipad,
+            $this->tablet
         ];
 
         foreach ($deviceIsSmartphone as $device) {
@@ -253,7 +235,8 @@ class DevTest extends TestCase
             $this->ipod,
             $this->iphone,
             $this->windowsPhone,
-            $this->ipad
+            $this->ipad,
+            $this->tablet
         ];
 
         $deviceIsNotMobile = [
@@ -293,7 +276,9 @@ class DevTest extends TestCase
             $this->iphone,
             $this->ipad,
             $this->android,
-            $this->windowsPhone
+            $this->windowsPhone,
+            $this->amazonFireTv,
+            $this->tablet
         ];
 
         foreach ($userIsNotRobot as $robot) {

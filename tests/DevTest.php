@@ -60,13 +60,15 @@ class DevTest extends TestCase
         ];
 
         foreach ($isIOS as $device) {
-            $this->assertTrue(is_ios($device));
-            $this->assertTrue(dev::isIOS($device));
+            dev::setUserAgent($device);
+            $this->assertTrue(is_ios());
+            $this->assertTrue(dev::isIOS());
         }
 
         foreach ($isNotIOS as $device) {
-            $this->assertFalse(is_ios($device));
-            $this->assertFalse(dev::isIOS($device));
+            dev::setUserAgent($device);
+            $this->assertFalse(is_ios());
+            $this->assertFalse(dev::isIOS());
         }
     }
 
@@ -83,13 +85,15 @@ class DevTest extends TestCase
         ];
 
         foreach ($isSamsung as $device) {
-            $this->assertTrue(is_samsung($device));
-            $this->assertTrue(dev::isSamsung($device));
+            dev::setUserAgent($device);
+            $this->assertTrue(is_samsung());
+            $this->assertTrue(dev::isSamsung());
         }
 
         foreach ($isNotSamsung as $device) {
-            $this->assertFalse(is_samsung($device));
-            $this->assertFalse(dev::isSamsung($device));
+            dev::setUserAgent($device);
+            $this->assertFalse(is_samsung());
+            $this->assertFalse(dev::isSamsung());
         }
     }
 
@@ -105,13 +109,15 @@ class DevTest extends TestCase
         ];
 
         foreach ($isIphone as $device) {
-            $this->assertTrue(is_iphone($device));
-            $this->assertTrue(dev::isIphone($device));
+            dev::setUserAgent($device);
+            $this->assertTrue(is_iphone());
+            $this->assertTrue(dev::isIphone());
         }
 
         foreach ($isNotIphone as $device) {
-            $this->assertFalse(is_iphone($device));
-            $this->assertFalse(dev::isIphone($device));
+            dev::setUserAgent($device);
+            $this->assertFalse(is_iphone());
+            $this->assertFalse(dev::isIphone());
         }
     }
 
@@ -127,13 +133,15 @@ class DevTest extends TestCase
         ];
 
         foreach ($isAndroid as $device) {
-            $this->assertTrue(is_android($device));
-            $this->assertTrue(dev::isAndroid($device));
+            dev::setUserAgent($device);
+            $this->assertTrue(is_android());
+            $this->assertTrue(dev::isAndroid());
         }
 
         foreach ($isNotAndroid as $device) {
-            $this->assertFalse(is_android($device));
-            $this->assertFalse(dev::isAndroid($device));
+            dev::setUserAgent($device);
+            $this->assertFalse(is_android());
+            $this->assertFalse(dev::isAndroid());
         }
     }
 
@@ -158,13 +166,15 @@ class DevTest extends TestCase
         ];
 
         foreach ($deviceIsDesktop as $device) {
-            $this->assertTrue(is_desktop($device));
-            $this->assertTrue(dev::isDesktop($device));
+            dev::setUserAgent($device);
+            $this->assertTrue(is_desktop());
+            $this->assertTrue(dev::isDesktop());
         }
 
         foreach ($deviceIsNotDesktop as $device) {
-            $this->assertFalse(is_desktop($device));
-            $this->assertFalse(dev::isDesktop($device));
+            dev::setUserAgent($device);
+            $this->assertFalse(is_desktop());
+            $this->assertFalse(dev::isDesktop());
         }
     }
 
@@ -189,13 +199,15 @@ class DevTest extends TestCase
         ];
 
         foreach ($deviceIsTablet as $device) {
-            $this->assertTrue(is_tablet($device));
-            $this->assertTrue(dev::isTablet($device));
+            dev::setUserAgent($device);
+            $this->assertTrue(is_tablet());
+            $this->assertTrue(dev::isTablet());
         }
 
         foreach ($deviceIsNotTablet as $device) {
-            $this->assertFalse(is_tablet($device));
-            $this->assertFalse(dev::isTablet($device));
+            dev::setUserAgent($device);
+            $this->assertFalse(is_tablet());
+            $this->assertFalse(dev::isTablet());
         }
     }
 
@@ -219,13 +231,15 @@ class DevTest extends TestCase
         ];
 
         foreach ($deviceIsSmartphone as $device) {
-            $this->assertTrue(is_smartphone($device));
-            $this->assertTrue(dev::isSmartphone($device));
+            dev::setUserAgent($device);
+            $this->assertTrue(is_smartphone());
+            $this->assertTrue(dev::isSmartphone());
         }
 
         foreach ($deviceIsNotSmartphone as $device) {
-            $this->assertFalse(is_smartphone($device));
-            $this->assertFalse(dev::isSmartphone($device));
+            dev::setUserAgent($device);
+            $this->assertFalse(is_smartphone());
+            $this->assertFalse(dev::isSmartphone());
         }
     }
 
@@ -249,13 +263,15 @@ class DevTest extends TestCase
         ];
 
         foreach ($deviceIsMobile as $device) {
-            $this->assertTrue(is_mobile($device));
-            $this->assertTrue(dev::isMobile($device));
+            dev::setUserAgent($device);
+            $this->assertTrue(is_mobile());
+            $this->assertTrue(dev::isMobile());
         }
 
         foreach ($deviceIsNotMobile as $device) {
-            $this->assertFalse(is_mobile($device));
-            $this->assertFalse(dev::isMobile($device));
+            dev::setUserAgent($device);
+            $this->assertFalse(is_mobile());
+            $this->assertFalse(dev::isMobile());
         }
     }
 
@@ -267,9 +283,10 @@ class DevTest extends TestCase
             $this->yahooBot
         ];
 
-        foreach ($userIsRobot as $robot) {
-            $this->assertTrue(is_robot($robot));
-            $this->assertTrue(dev::isRobot($robot));
+        foreach ($userIsRobot as $device) {
+            dev::setUserAgent($device);
+            $this->assertTrue(is_robot());
+            $this->assertTrue(dev::isRobot());
         }
 
         $userIsNotRobot = [
@@ -281,9 +298,10 @@ class DevTest extends TestCase
             $this->tablet
         ];
 
-        foreach ($userIsNotRobot as $robot) {
-            $this->assertFalse(is_robot($robot));
-            $this->assertFalse(dev::isRobot($robot));
+        foreach ($userIsNotRobot as $device) {
+            dev::setUserAgent($device);
+            $this->assertFalse(is_robot());
+            $this->assertFalse(dev::isRobot());
         }
     }
 }

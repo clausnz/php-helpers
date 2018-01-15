@@ -19,127 +19,109 @@ use CNZ\Helpers\Util as util;
 
 if (!function_exists('is_mobile')) {
     /**
-     * Detects if the current user agent is running on a mobile device (Smartphone/Tablet/Handheld).
-     *
-     * @param string $userAgent
+     * Detects if the current device is a mobile device (Smartphone/Tablet/Handheld).
      *
      * @return bool
      */
-    function is_mobile($userAgent = null)
+    function is_mobile()
     {
-        return dev::isMobile($userAgent);
+        return dev::isMobile();
     }
 }
 
 if (!function_exists('is_smartphone')) {
     /**
-     * Determes if the current user agent is running on a smartphone.
-     *
-     * @param null $userAgent
+     * Determes if the current device is a smartphone.
      *
      * @return bool
      */
-    function is_smartphone($userAgent = null)
+    function is_smartphone()
     {
-        return dev::isSmartphone($userAgent);
+        return dev::isSmartphone();
     }
 }
 
 if (!function_exists('is_tablet')) {
     /**
-     * Determes if the current user agent is a tablet device.
-     *
-     * @param string $userAgent
+     * Determes if the current device is a tablet.
      *
      * @return bool
      */
-    function is_tablet($userAgent = null)
+    function is_tablet()
     {
-        return dev::isTablet($userAgent);
+        return dev::isTablet();
     }
 }
 
 if (!function_exists('is_desktop')) {
     /**
-     * Determes if the current user agent is a desktop computer.
-     *
-     * @param string $userAgent
+     * Determes if the current device is a desktop computer.
      *
      * @return bool
      */
-    function is_desktop($userAgent = null)
+    function is_desktop()
     {
-        return dev::isDesktop($userAgent);
+        return dev::isDesktop();
     }
 }
 
 if (!function_exists('is_robot')) {
     /**
-     * Determes if the current visitor is a bot/crawler/spider.
+     * Determes if the current device is a bot/crawler/spider.
      *
-     * @param string $userAgent
-     *
-     * @return boolean
+     * @return bool
      */
-    function is_robot($userAgent = null)
+    function is_robot()
     {
-        return dev::isRobot($userAgent);
+        return dev::isRobot();
     }
 }
 
 if (!function_exists('is_ios')) {
     /**
-     * Determes if the current user agent is running on an iOS operating system.
+     * Determes if the current device is running an iOS operating system.
      *
-     * @param null $userAgent
-     *
-     * @return bool|int|null
+     * @return bool
      */
-    function is_ios($userAgent = null)
+    function is_ios()
     {
-        return dev::isIOS($userAgent);
+        return dev::isIOS();
     }
 }
 
 if (!function_exists('is_android')) {
     /**
-     * Determes if the current user agent is running on an Android device.
-     *
-     * @param string $userAgent
+     * Determes if the current device is running an Android operating system.
      *
      * @return bool
      */
-    function is_android($userAgent = null)
+    function is_android()
     {
-        return dev::isAndroid($userAgent);
+        return dev::isAndroid();
     }
 }
 
 if (!function_exists('is_iphone')) {
     /**
-     * Determes if the current user agent is running on an iPhone device.
-     *
-     * @param string $userAgent
+     * Determes if the current device is an iPhone.
      *
      * @return bool
      */
-    function is_iphone($userAgent = null)
+    function is_iphone()
     {
-        return dev::isIphone($userAgent);
+        return dev::isIphone();
     }
 }
 
 if (!function_exists('is_samsung')) {
     /**
-     * Determes if the current user agent is running on a Samsung device.
+     * Determes if the current device is from Samsung.
      *
-     * @param null $userAgent
-     *
-     * @return bool|int|null
+     * @return bool
      */
-    function is_samsung($userAgent = null)
+    function is_samsung()
     {
-        return dev::isSamsung($userAgent);
+        return dev::isSamsung();
     }
 }
 
@@ -429,7 +411,7 @@ if (!function_exists('is_email')) {
      *
      * @param string $email
      *
-     * @return boolean
+     * @return bool
      */
     function is_email($email)
     {
@@ -486,7 +468,7 @@ if (!function_exists('is_password')) {
      * @param string $password
      * @param        $cryptedPassword
      *
-     * @return boolean
+     * @return bool
      */
     function is_password($password, $cryptedPassword)
     {

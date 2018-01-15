@@ -293,23 +293,17 @@ Class Dev
 Determes if the current user agent is running on a smartphone.
 
 ```php
-Dev::isSmartphone( string $userAgent = null ): boolean
+Dev::isSmartphone(  ): boolean
 ```
 
 ### is_smartphone
 Related global function (description see above).
 #### [( jump back )](#available-php-functions)
 ```php
-is_smartphone( string $userAgent = null ): boolean
+is_smartphone(  ): boolean
 ```
 
 * This method is **static**.
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `$userAgent` | **string** | The Dev Agent to be analyzed. By default, the value of HTTP Dev-Agent header is used. |
-
 
 **Return Value:**
 
@@ -324,23 +318,17 @@ True if current visitor uses a smartphone, false otherwise.
 Detects if the current user agent is running on a mobile device (Smartphone/Tablet/Handheld).
 
 ```php
-Dev::isMobile( string $userAgent = null ): boolean
+Dev::isMobile(  ): boolean
 ```
 
 ### is_mobile
 Related global function (description see above).
 #### [( jump back )](#available-php-functions)
 ```php
-is_mobile( string $userAgent = null ): boolean
+is_mobile(   ): boolean
 ```
 
 * This method is **static**.
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `$userAgent` | **string** | The Dev Agent to be analyzed. By default, the value of HTTP Dev-Agent header is used. |
-
 
 **Return Value:**
 
@@ -375,23 +363,17 @@ Mobile_Detect doku: https://github.com/serbanghita/Mobile-Detect
 Determes if the current user agent is a tablet device.
 
 ```php
-Dev::isTablet( string $userAgent = null ): boolean
+Dev::isTablet(  ): boolean
 ```
 
 ### is_tablet
 Related global function (description see above).
 #### [( jump back )](#available-php-functions)
 ```php
-is_tablet( string $userAgent = null ): boolean
+is_tablet(   ): boolean
 ```
 
 * This method is **static**.
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `$userAgent` | **string** | The Dev Agent to be analyzed. By default, the value of HTTP Dev-Agent header is used. |
-
 
 **Return Value:**
 
@@ -406,23 +388,17 @@ True if current visitor uses a tablet device, false otherwise.
 Determes if the current user agent is a desktop computer.
 
 ```php
-Dev::isDesktop( string $userAgent = null ): boolean
+Dev::isDesktop(  ): boolean
 ```
 
 ### is_desktop
 Related global function (description see above).
 #### [( jump back )](#available-php-functions)
 ```php
-is_desktop( string $userAgent = null ): boolean
+is_desktop(   ): boolean
 ```
 
 * This method is **static**.
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `$userAgent` | **string** | The Dev Agent to be analyzed. By default, the value of HTTP Dev-Agent header is used. |
-
 
 **Return Value:**
 
@@ -437,23 +413,17 @@ True if current visitor uses a desktop computer, false otherwise.
 Determes if the current visitor is a bot/crawler/spider.
 
 ```php
-Dev::isRobot( string $userAgent = null ): boolean
+Dev::isRobot(  ): boolean
 ```
 
 ### is_robot
 Related global function (description see above).
 #### [( jump back )](#available-php-functions)
 ```php
-is_robot( string $userAgent = null ): boolean
+is_robot(   ): boolean
 ```
 
 * This method is **static**.
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `$userAgent` | **string** |  |
-
 
 
 
@@ -484,23 +454,17 @@ Crawler-Detect doku: https://github.com/JayBizzle/Crawler-Detect
 Determes if the current user agent is running on an Android device.
 
 ```php
-Dev::isAndroid( string $userAgent = null ): boolean
+Dev::isAndroid(  ): boolean
 ```
 
 ### is_android
 Related global function (description see above).
 #### [( jump back )](#available-php-functions)
 ```php
-is_android( string $userAgent = null ): boolean
+is_android(   ): boolean
 ```
 
 * This method is **static**.
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `$userAgent` | **string** | The Dev Agent to be analyzed. By default, the value of HTTP Dev-Agent header is used. |
-
 
 **Return Value:**
 
@@ -515,23 +479,17 @@ True if current visitor uses an Android based device, false otherwise.
 Determes if the current user agent is running on an iPhone device.
 
 ```php
-Dev::isIphone( string $userAgent = null ): boolean
+Dev::isIphone(  ): boolean
 ```
 
 ### is_iphone
 Related global function (description see above).
 #### [( jump back )](#available-php-functions)
 ```php
-is_iphone( string $userAgent = null ): boolean
+is_iphone(  ): boolean
 ```
 
 * This method is **static**.
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `$userAgent` | **string** | The Dev Agent to be analyzed. By default, the value of HTTP Dev-Agent header is used. |
-
 
 **Return Value:**
 
@@ -546,23 +504,17 @@ True if current visitor uses an iPhone, false otherwise.
 Determes if the current user agent is running on a Samsung device.
 
 ```php
-Dev::isSamsung( string $userAgent = null ): boolean
+Dev::isSamsung(  ): boolean
 ```
 
 ### is_samsung
 Related global function (description see above).
 #### [( jump back )](#available-php-functions)
 ```php
-is_samsung( string $userAgent = null ): boolean
+is_samsung(   ): boolean
 ```
 
 * This method is **static**.
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `$userAgent` | **string** | The Dev Agent to be analyzed. By default, the value of HTTP Dev-Agent header is used. |
-
 
 **Return Value:**
 
@@ -577,23 +529,17 @@ True if current visitor uses a Samsung device, false otherwise.
 Determes if the current user agent is running on an iOS operating system.
 
 ```php
-Dev::isIOS( string $userAgent = null ): boolean
+Dev::isIOS(  ): boolean
 ```
 
 ### is_ios
 Related global function (description see above).
 #### [( jump back )](#available-php-functions)
 ```php
-is_ios( string $userAgent = null ): boolean
+is_ios(   ): boolean
 ```
 
 * This method is **static**.
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `$userAgent` | **string** | The Dev Agent to be analyzed. By default, the value of HTTP Dev-Agent header is used. |
-
 
 **Return Value:**
 

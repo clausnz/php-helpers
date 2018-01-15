@@ -38,7 +38,6 @@ class Dev
      * @var $crawlerDetectInstance
      */
     private static $crawlerDetectInstance;
-
     /**
      * Holds the Mobile_Detect singleton object.
      *
@@ -47,23 +46,28 @@ class Dev
     private static $mobileDetectInstance;
 
     /**
+     * Holds the $userAgent variable (for testing).
+     *
+     * @var $userAgent
+     */
+    private static $userAgent;
+
+    /**
      * Determes if the current user agent is running on a smartphone.
      *
      * ### is_smartphone
      * Related global function (description see above).
      * #### [( jump back )](#available-php-functions)
      * ```php
-     * is_smartphone( string $userAgent = null ): boolean
+     * is_smartphone(  ): boolean
      * ```
      *
-     * @param string $userAgent
-     * The Dev Agent to be analyzed. By default, the value of HTTP Dev-Agent header is used.
      * @return bool
      * True if current visitor uses a smartphone, false otherwise.
      */
-    public static function isSmartphone($userAgent = null)
+    public static function isSmartphone()
     {
-        return (self::isMobile($userAgent) && !self::isTablet($userAgent));
+        return (self::isMobile() && !self::isTablet());
     }
 
     /**
@@ -73,19 +77,16 @@ class Dev
      * Related global function (description see above).
      * #### [( jump back )](#available-php-functions)
      * ```php
-     * is_mobile( string $userAgent = null ): boolean
+     * is_mobile(   ): boolean
      * ```
      *
-     * @param string $userAgent
-     * The Dev Agent to be analyzed. By default, the value of HTTP Dev-Agent header is used.
      * @return bool
      * True if current visitor uses a mobile device, false otherwise.
      */
-    public static function isMobile($userAgent = null)
+    public static function isMobile()
     {
-        return self::mobileDetect()->isMobile($userAgent) !== false;
+        return self::mobileDetect()->isMobile() !== false;
     }
-
 
     /**
      * Get a singleton MobileDetect object to call every method it provides.
@@ -113,17 +114,15 @@ class Dev
      * Related global function (description see above).
      * #### [( jump back )](#available-php-functions)
      * ```php
-     * is_tablet( string $userAgent = null ): boolean
+     * is_tablet(   ): boolean
      * ```
      *
-     * @param string $userAgent
-     * The Dev Agent to be analyzed. By default, the value of HTTP Dev-Agent header is used.
      * @return bool
      * True if current visitor uses a tablet device, false otherwise.
      */
-    public static function isTablet($userAgent = null)
+    public static function isTablet()
     {
-        return self::mobileDetect()->isTablet($userAgent) !== false;
+        return self::mobileDetect()->isTablet() !== false;
     }
 
     /**
@@ -133,17 +132,15 @@ class Dev
      * Related global function (description see above).
      * #### [( jump back )](#available-php-functions)
      * ```php
-     * is_desktop( string $userAgent = null ): boolean
+     * is_desktop(   ): boolean
      * ```
      *
-     * @param string $userAgent
-     * The Dev Agent to be analyzed. By default, the value of HTTP Dev-Agent header is used.
      * @return bool
      * True if current visitor uses a desktop computer, false otherwise.
      */
-    public static function isDesktop($userAgent = null)
+    public static function isDesktop()
     {
-        return (!self::isMobile($userAgent) && !self::isTablet($userAgent) && !self::isRobot($userAgent));
+        return (!self::isMobile() && !self::isTablet() && !self::isRobot());
     }
 
     /**
@@ -153,16 +150,14 @@ class Dev
      * Related global function (description see above).
      * #### [( jump back )](#available-php-functions)
      * ```php
-     * is_robot( string $userAgent = null ): boolean
+     * is_robot(   ): boolean
      * ```
-     *
-     * @param string $userAgent
      *
      * @return boolean
      */
-    public static function isRobot($userAgent = null)
+    public static function isRobot()
     {
-        return self::crawlerDetect()->isCrawler($userAgent);
+        return self::crawlerDetect()->isCrawler(self::$userAgent);
     }
 
     /**
@@ -191,30 +186,15 @@ class Dev
      * Related global function (description see above).
      * #### [( jump back )](#available-php-functions)
      * ```php
-     * is_android( string $userAgent = null ): boolean
+     * is_android(   ): boolean
      * ```
      *
-     * @param string $userAgent
-     * The Dev Agent to be analyzed. By default, the value of HTTP Dev-Agent header is used.
      * @return bool
      * True if current visitor uses an Android based device, false otherwise.
      */
-    public static function isAndroid($userAgent = null)
+    public static function isAndroid()
     {
-        $tmpUserAgent = null;
-
-        if ($userAgent !== null) {
-            $tmpUserAgent = self::mobileDetect()->getUserAgent();
-            self::mobileDetect()->setUserAgent($userAgent);
-        }
-
-        $version = self::mobileDetect()->version('Android');
-
-        if (isset($tmpUserAgent)) {
-            self::mobileDetect()->setUserAgent($tmpUserAgent);
-        }
-
-        return ($version !== false);
+        return self::mobileDetect()->version('Android') !== false;
     }
 
     /**
@@ -224,17 +204,15 @@ class Dev
      * Related global function (description see above).
      * #### [( jump back )](#available-php-functions)
      * ```php
-     * is_iphone( string $userAgent = null ): boolean
+     * is_iphone(  ): boolean
      * ```
      *
-     * @param string $userAgent
-     * The Dev Agent to be analyzed. By default, the value of HTTP Dev-Agent header is used.
      * @return bool
      * True if current visitor uses an iPhone, false otherwise.
      */
-    public static function isIphone($userAgent = null)
+    public static function isIphone()
     {
-        return self::mobileDetect()->is('iPhone', $userAgent) !== false;
+        return self::mobileDetect()->is('iPhone') !== false;
     }
 
     /**
@@ -244,17 +222,15 @@ class Dev
      * Related global function (description see above).
      * #### [( jump back )](#available-php-functions)
      * ```php
-     * is_samsung( string $userAgent = null ): boolean
+     * is_samsung(   ): boolean
      * ```
      *
-     * @param string $userAgent
-     * The Dev Agent to be analyzed. By default, the value of HTTP Dev-Agent header is used.
      * @return bool
      * True if current visitor uses a Samsung device, false otherwise.
      */
-    public static function isSamsung($userAgent = null)
+    public static function isSamsung()
     {
-        return self::mobileDetect()->is('Samsung', $userAgent) !== false;
+        return self::mobileDetect()->is('Samsung') !== false;
     }
 
     /**
@@ -264,16 +240,28 @@ class Dev
      * Related global function (description see above).
      * #### [( jump back )](#available-php-functions)
      * ```php
-     * is_ios( string $userAgent = null ): boolean
+     * is_ios(   ): boolean
      * ```
      *
-     * @param string $userAgent
-     * The Dev Agent to be analyzed. By default, the value of HTTP Dev-Agent header is used.
      * @return bool
      * True if current visitor uses an iOS device, false otherwise.
      */
-    public static function isIOS($userAgent = null)
+    public static function isIOS()
     {
-        return self::mobileDetect()->is('iOS', $userAgent) !== false;
+        return self::mobileDetect()->is('iOS') !== false;
+    }
+
+    /**
+     * Sets the $userAgent (for testing).
+     *
+     * @ignore
+     * @codeCoverageIgnore
+     *
+     * @param $userAgent
+     */
+    public static function setUserAgent($userAgent)
+    {
+        self::mobileDetect()->setUserAgent($userAgent);
+        self::$userAgent = $userAgent;
     }
 }

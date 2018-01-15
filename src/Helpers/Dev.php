@@ -26,11 +26,11 @@ use Mobile_Detect;
 /**
  * Helper class that provides easy access to useful php functions in conjunction with the user agent.
  *
- * Class User
+ * Class Dev
  *
  * @package CNZ\Helpers
  */
-class User
+class Dev
 {
     /**
      * Holds the Crawler-Detect singleton object.
@@ -57,7 +57,7 @@ class User
      * ```
      *
      * @param string $userAgent
-     * The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used.
+     * The Dev Agent to be analyzed. By default, the value of HTTP Dev-Agent header is used.
      * @return bool
      * True if current visitor uses a smartphone, false otherwise.
      */
@@ -77,7 +77,7 @@ class User
      * ```
      *
      * @param string $userAgent
-     * The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used.
+     * The Dev Agent to be analyzed. By default, the value of HTTP Dev-Agent header is used.
      * @return bool
      * True if current visitor uses a mobile device, false otherwise.
      */
@@ -117,7 +117,7 @@ class User
      * ```
      *
      * @param string $userAgent
-     * The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used.
+     * The Dev Agent to be analyzed. By default, the value of HTTP Dev-Agent header is used.
      * @return bool
      * True if current visitor uses a tablet device, false otherwise.
      */
@@ -137,7 +137,7 @@ class User
      * ```
      *
      * @param string $userAgent
-     * The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used.
+     * The Dev Agent to be analyzed. By default, the value of HTTP Dev-Agent header is used.
      * @return bool
      * True if current visitor uses a desktop computer, false otherwise.
      */
@@ -195,7 +195,7 @@ class User
      * ```
      *
      * @param string $userAgent
-     * The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used.
+     * The Dev Agent to be analyzed. By default, the value of HTTP Dev-Agent header is used.
      * @return bool
      * True if current visitor uses an Android based device, false otherwise.
      */
@@ -228,7 +228,7 @@ class User
      * ```
      *
      * @param string $userAgent
-     * The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used.
+     * The Dev Agent to be analyzed. By default, the value of HTTP Dev-Agent header is used.
      * @return bool
      * True if current visitor uses an iPhone, false otherwise.
      */
@@ -248,7 +248,7 @@ class User
      * ```
      *
      * @param string $userAgent
-     * The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used.
+     * The Dev Agent to be analyzed. By default, the value of HTTP Dev-Agent header is used.
      * @return bool
      * True if current visitor uses a Samsung device, false otherwise.
      */
@@ -268,7 +268,7 @@ class User
      * ```
      *
      * @param string $userAgent
-     * The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used.
+     * The Dev Agent to be analyzed. By default, the value of HTTP Dev-Agent header is used.
      * @return bool
      * True if current visitor uses an iOS device, false otherwise.
      */
@@ -288,7 +288,7 @@ class User
      * ```
      *
      * @param string $userAgent
-     * The User Agent to be analyzed. By default, the value of HTTP User-Agent header is used.
+     * The Dev Agent to be analyzed. By default, the value of HTTP Dev-Agent header is used.
      * @return bool
      * True if current visitor uses a touch device, false otherwise.
      */

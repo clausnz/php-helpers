@@ -10,12 +10,12 @@
  */
 
 use CNZ\Helpers\Arr as arr;
+use CNZ\Helpers\Dev as dev;
 use CNZ\Helpers\Str as str;
-use CNZ\Helpers\User as user;
 use CNZ\Helpers\Util as util;
 
 
-// @group(User)
+// @group(Device)
 
 if (!function_exists('is_mobile')) {
     /**
@@ -27,7 +27,7 @@ if (!function_exists('is_mobile')) {
      */
     function is_mobile($userAgent = null)
     {
-        return user::isMobile($userAgent);
+        return dev::isMobile($userAgent);
     }
 }
 
@@ -41,7 +41,7 @@ if (!function_exists('is_touch_device')) {
      */
     function is_touch_device($userAgent = null)
     {
-        return user::isTouchDevice($userAgent);
+        return dev::isTouchDevice($userAgent);
     }
 }
 
@@ -55,7 +55,7 @@ if (!function_exists('is_smartphone')) {
      */
     function is_smartphone($userAgent = null)
     {
-        return user::isSmartphone($userAgent);
+        return dev::isSmartphone($userAgent);
     }
 }
 
@@ -69,7 +69,7 @@ if (!function_exists('is_tablet')) {
      */
     function is_tablet($userAgent = null)
     {
-        return user::isTablet($userAgent);
+        return dev::isTablet($userAgent);
     }
 }
 
@@ -83,7 +83,7 @@ if (!function_exists('is_desktop')) {
      */
     function is_desktop($userAgent = null)
     {
-        return user::isDesktop($userAgent);
+        return dev::isDesktop($userAgent);
     }
 }
 
@@ -97,7 +97,7 @@ if (!function_exists('is_robot')) {
      */
     function is_robot($userAgent = null)
     {
-        return user::isRobot($userAgent);
+        return dev::isRobot($userAgent);
     }
 }
 
@@ -111,7 +111,7 @@ if (!function_exists('is_ios')) {
      */
     function is_ios($userAgent = null)
     {
-        return user::isIOS($userAgent);
+        return dev::isIOS($userAgent);
     }
 }
 
@@ -125,7 +125,7 @@ if (!function_exists('is_android')) {
      */
     function is_android($userAgent = null)
     {
-        return user::isAndroid($userAgent);
+        return dev::isAndroid($userAgent);
     }
 }
 
@@ -139,7 +139,7 @@ if (!function_exists('is_iphone')) {
      */
     function is_iphone($userAgent = null)
     {
-        return user::isIphone($userAgent);
+        return dev::isIphone($userAgent);
     }
 }
 
@@ -153,11 +153,11 @@ if (!function_exists('is_samsung')) {
      */
     function is_samsung($userAgent = null)
     {
-        return user::isSamsung($userAgent);
+        return dev::isSamsung($userAgent);
     }
 }
 
-// @endgroup(User)
+// @endgroup(Device)
 
 // @group(Array)
 

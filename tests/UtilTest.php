@@ -1,12 +1,12 @@
 <?php
 /**
  * Project php-helpers
- * User: claus
+ * Dev: claus
  * Date: 15.01.18
  * Time: 13:00
  */
 
-use CNZ\Helpers\Util;
+use CNZ\Helpers\Util as util;
 use PHPUnit\Framework\TestCase;
 
 class UtilTest extends TestCase

@@ -1,15 +1,15 @@
 <?php
 /**
  * Project php-helpers
- * User: claus
+ * Dev: claus
  * Date: 13.01.18
  * Time: 13:32
  */
 
-use CNZ\Helpers\User as user;
+use CNZ\Helpers\Dev as dev;
 use PHPUnit\Framework\TestCase;
 
-class UserTest extends TestCase
+class DevTest extends TestCase
 {
     protected $iphone = 'Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_3 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8J2 Safari/6533.18.5';
 
@@ -53,12 +53,12 @@ class UserTest extends TestCase
 
         foreach ($isIOS as $device) {
             $this->assertTrue(is_ios($device));
-            $this->assertTrue(user::isIOS($device));
+            $this->assertTrue(dev::isIOS($device));
         }
 
         foreach ($isNotIOS as $device) {
             $this->assertFalse(is_ios($device));
-            $this->assertFalse(user::isIOS($device));
+            $this->assertFalse(dev::isIOS($device));
         }
     }
 
@@ -76,12 +76,12 @@ class UserTest extends TestCase
 
         foreach ($isSamsung as $device) {
             $this->assertTrue(is_samsung($device));
-            $this->assertTrue(user::isSamsung($device));
+            $this->assertTrue(dev::isSamsung($device));
         }
 
         foreach ($isNotSamsung as $device) {
             $this->assertFalse(is_samsung($device));
-            $this->assertFalse(user::isSamsung($device));
+            $this->assertFalse(dev::isSamsung($device));
         }
     }
 
@@ -98,12 +98,12 @@ class UserTest extends TestCase
 
         foreach ($isIphone as $device) {
             $this->assertTrue(is_iphone($device));
-            $this->assertTrue(user::isIphone($device));
+            $this->assertTrue(dev::isIphone($device));
         }
 
         foreach ($isNotIphone as $device) {
             $this->assertFalse(is_iphone($device));
-            $this->assertFalse(user::isIphone($device));
+            $this->assertFalse(dev::isIphone($device));
         }
     }
 
@@ -120,12 +120,12 @@ class UserTest extends TestCase
 
         foreach ($isAndroid as $device) {
             $this->assertTrue(is_android($device));
-            $this->assertTrue(user::isAndroid($device));
+            $this->assertTrue(dev::isAndroid($device));
         }
 
         foreach ($isNotAndroid as $device) {
             $this->assertFalse(is_android($device));
-            $this->assertFalse(user::isAndroid($device));
+            $this->assertFalse(dev::isAndroid($device));
         }
     }
 
@@ -149,12 +149,12 @@ class UserTest extends TestCase
 
         foreach ($isTouchDevice as $device) {
             $this->assertTrue(is_touch_device($device));
-            $this->assertTrue(user::isTouchDevice($device));
+            $this->assertTrue(dev::isTouchDevice($device));
         }
 
         foreach ($isNotTouchDevice as $device) {
             $this->assertFalse(is_touch_device($device));
-            $this->assertFalse(user::isTouchDevice($device));
+            $this->assertFalse(dev::isTouchDevice($device));
         }
     }
 
@@ -178,12 +178,12 @@ class UserTest extends TestCase
 
         foreach ($deviceIsDesktop as $device) {
             $this->assertTrue(is_desktop($device));
-            $this->assertTrue(user::isDesktop($device));
+            $this->assertTrue(dev::isDesktop($device));
         }
 
         foreach ($deviceIsNotDesktop as $device) {
             $this->assertFalse(is_desktop($device));
-            $this->assertFalse(user::isDesktop($device));
+            $this->assertFalse(dev::isDesktop($device));
         }
     }
 
@@ -207,12 +207,12 @@ class UserTest extends TestCase
 
         foreach ($deviceIsTablet as $device) {
             $this->assertTrue(is_tablet($device));
-            $this->assertTrue(user::isTablet($device));
+            $this->assertTrue(dev::isTablet($device));
         }
 
         foreach ($deviceIsNotTablet as $device) {
             $this->assertFalse(is_tablet($device));
-            $this->assertFalse(user::isTablet($device));
+            $this->assertFalse(dev::isTablet($device));
         }
     }
 
@@ -236,12 +236,12 @@ class UserTest extends TestCase
 
         foreach ($deviceIsSmartphone as $device) {
             $this->assertTrue(is_smartphone($device));
-            $this->assertTrue(user::isSmartphone($device));
+            $this->assertTrue(dev::isSmartphone($device));
         }
 
         foreach ($deviceIsNotSmartphone as $device) {
             $this->assertFalse(is_smartphone($device));
-            $this->assertFalse(user::isSmartphone($device));
+            $this->assertFalse(dev::isSmartphone($device));
         }
     }
 
@@ -265,12 +265,12 @@ class UserTest extends TestCase
 
         foreach ($deviceIsMobile as $device) {
             $this->assertTrue(is_mobile($device));
-            $this->assertTrue(user::isMobile($device));
+            $this->assertTrue(dev::isMobile($device));
         }
 
         foreach ($deviceIsNotMobile as $device) {
             $this->assertFalse(is_mobile($device));
-            $this->assertFalse(user::isMobile($device));
+            $this->assertFalse(dev::isMobile($device));
         }
     }
 
@@ -284,7 +284,7 @@ class UserTest extends TestCase
 
         foreach ($userIsRobot as $robot) {
             $this->assertTrue(is_robot($robot));
-            $this->assertTrue(user::isRobot($robot));
+            $this->assertTrue(dev::isRobot($robot));
         }
 
         $userIsNotRobot = [
@@ -296,7 +296,7 @@ class UserTest extends TestCase
 
         foreach ($userIsNotRobot as $robot) {
             $this->assertFalse(is_robot($robot));
-            $this->assertFalse(user::isRobot($robot));
+            $this->assertFalse(dev::isRobot($robot));
         }
     }
 }

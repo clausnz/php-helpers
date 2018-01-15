@@ -35,11 +35,15 @@ class Dev
     /**
      * Holds the Crawler-Detect singleton object.
      *
+     * @ognore
+     *
      * @var $crawlerDetectInstance
      */
     private static $crawlerDetectInstance;
     /**
      * Holds the Mobile_Detect singleton object.
+     *
+     * @ignore
      *
      * @var $mobileDetectInstance
      */
@@ -47,6 +51,8 @@ class Dev
 
     /**
      * Holds the $userAgent variable (for testing).
+     *
+     * @ignore
      *
      * @var $userAgent
      */

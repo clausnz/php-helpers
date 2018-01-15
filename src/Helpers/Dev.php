@@ -59,7 +59,7 @@ class Dev
     private static $userAgent;
 
     /**
-     * Determes if the current user agent is running on a smartphone.
+     * Determes if the current device is a smartphone.
      *
      * ### is_smartphone
      * Related global function (description see above).
@@ -77,7 +77,7 @@ class Dev
     }
 
     /**
-     * Detects if the current user agent is running on a mobile device (Smartphone/Tablet/Handheld).
+     * Detects if the current visitor uses a mobile device (Smartphone/Tablet/Handheld).
      *
      * ### is_mobile
      * Related global function (description see above).
@@ -114,7 +114,7 @@ class Dev
     }
 
     /**
-     * Determes if the current user agent is a tablet device.
+     * Determes if the current visitor uses a tablet device.
      *
      * ### is_tablet
      * Related global function (description see above).
@@ -132,7 +132,7 @@ class Dev
     }
 
     /**
-     * Determes if the current user agent is a desktop computer.
+     * Determes if the current visitor uses a desktop computer.
      *
      * ### is_desktop
      * Related global function (description see above).
@@ -186,7 +186,7 @@ class Dev
     }
 
     /**
-     * Determes if the current user agent is running on an Android device.
+     * Determes if the current device is running an Android operating system.
      *
      * ### is_android
      * Related global function (description see above).
@@ -204,7 +204,7 @@ class Dev
     }
 
     /**
-     * Determes if the current user agent is running on an iPhone device.
+     * Determes if the current device is an iPhone.
      *
      * ### is_iphone
      * Related global function (description see above).
@@ -222,7 +222,7 @@ class Dev
     }
 
     /**
-     * Determes if the current user agent is running on a Samsung device.
+     * Determes if the current device is from Samsung.
      *
      * ### is_samsung
      * Related global function (description see above).
@@ -240,7 +240,7 @@ class Dev
     }
 
     /**
-     * Determes if the current user agent is running on an iOS operating system.
+     * Determes if the current device is running an iOS operating system.
      *
      * ### is_ios
      * Related global function (description see above).

@@ -290,7 +290,7 @@ Class Dev
 
 ### isSmartphone
 
-Determes if the current user agent is running on a smartphone.
+Determes if the current device is a smartphone.
 
 ```php
 Dev::isSmartphone(  ): boolean
@@ -315,7 +315,7 @@ True if current visitor uses a smartphone, false otherwise.
 
 ### isMobile
 
-Detects if the current user agent is running on a mobile device (Smartphone/Tablet/Handheld).
+Detects if the current visitor uses a mobile device (Smartphone/Tablet/Handheld).
 
 ```php
 Dev::isMobile(  ): boolean
@@ -360,7 +360,7 @@ Mobile_Detect doku: https://github.com/serbanghita/Mobile-Detect
 
 ### isTablet
 
-Determes if the current user agent is a tablet device.
+Determes if the current visitor uses a tablet device.
 
 ```php
 Dev::isTablet(  ): boolean
@@ -385,7 +385,7 @@ True if current visitor uses a tablet device, false otherwise.
 
 ### isDesktop
 
-Determes if the current user agent is a desktop computer.
+Determes if the current visitor uses a desktop computer.
 
 ```php
 Dev::isDesktop(  ): boolean
@@ -451,7 +451,7 @@ Crawler-Detect doku: https://github.com/JayBizzle/Crawler-Detect
 
 ### isAndroid
 
-Determes if the current user agent is running on an Android device.
+Determes if the current device is running an Android operating system.
 
 ```php
 Dev::isAndroid(  ): boolean
@@ -476,7 +476,7 @@ True if current visitor uses an Android based device, false otherwise.
 
 ### isIphone
 
-Determes if the current user agent is running on an iPhone device.
+Determes if the current device is an iPhone.
 
 ```php
 Dev::isIphone(  ): boolean
@@ -501,7 +501,7 @@ True if current visitor uses an iPhone, false otherwise.
 
 ### isSamsung
 
-Determes if the current user agent is running on a Samsung device.
+Determes if the current device is from Samsung.
 
 ```php
 Dev::isSamsung(  ): boolean
@@ -526,7 +526,7 @@ True if current visitor uses a Samsung device, false otherwise.
 
 ### isIOS
 
-Determes if the current user agent is running on an iOS operating system.
+Determes if the current device is running an iOS operating system.
 
 ```php
 Dev::isIOS(  ): boolean

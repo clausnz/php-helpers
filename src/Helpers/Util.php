@@ -52,9 +52,9 @@ class Util
      * ```php
      * $email = 'foobar@example.com';
      *
-     * echo is_email( $email ) ? 'true' : 'false';
+     * dump( is_email( $email ) );
      *
-     * // true
+     * // bool(true)
      * ```
      *
      * @param string $email
@@ -163,9 +163,9 @@ class Util
      * $password = 'foobar';
      * $cryptedPassword = '$2y$10$6qKwbwTgwQNcmcaw04eSf.QpP3.4T0..bEnY62dd1ozM8L61nb8AC';
      *
-     * echo is_password( $password, $cryptedPassword ) ? 'true' : 'false';
+     * dump( is_password( $password, $cryptedPassword ) );
      *
-     * // true
+     * // bool(true)
      * ```
      *
      * @param string $password

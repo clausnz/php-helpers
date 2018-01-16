@@ -1340,9 +1340,9 @@ is_email( string $email ): boolean
 ```php
 $email = 'foobar@example.com';
 
-echo is_email( $email ) ? 'true' : 'false';
+dump( is_email( $email ) );
 
-// true
+// bool(true)
 ```
 
 * This method is **static**.
@@ -1461,9 +1461,9 @@ is_password( string $password, string $cryptedPassword ): boolean
 $password = 'foobar';
 $cryptedPassword = '$2y$10$6qKwbwTgwQNcmcaw04eSf.QpP3.4T0..bEnY62dd1ozM8L61nb8AC';
 
-echo is_password( $password, $cryptedPassword ) ? 'true' : 'false';
+dump( is_password( $password, $cryptedPassword ) );
 
-// true
+// bool(true)
 ```
 
 * This method is **static**.

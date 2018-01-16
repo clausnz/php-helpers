@@ -26,7 +26,8 @@ Make sure to require your composer autoload file:
 
 ```php
 require __DIR__ . '/vendor/autoload.php';
-```# Available PHP Functions
+```
+# Available PHP Functions
 
 ## Table of Contents
 

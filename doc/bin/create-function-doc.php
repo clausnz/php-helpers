@@ -49,10 +49,12 @@ file_put_contents($fileNumberFunctions, $functionCounter);
 
 // write About.md
 $fileAbout = PROJECT_DIR . "doc/About.md";
+$fileAboutTemplate = PROJECT_DIR . "doc/template/About.tmpl.md";
 
-$fileAboutContent = "# About\n\n";
-$description = "A Collection of :number useful php helper functions.\n";
-$fileAboutContent .= str_insert([':number' => file_get_contents($fileNumberFunctions)], $description);
+$fileAboutContent = file_get_contents($fileAboutTemplate);
+$nrFunctions = file_get_contents($fileNumberFunctions);
+
+$fileAboutContent = str_insert([':nr_functions' => $nrFunctions], $fileAboutContent);
 
 file_put_contents($fileAbout, $fileAboutContent);
 

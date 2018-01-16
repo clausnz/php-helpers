@@ -1,7 +1,7 @@
 # About
 
-The library clausnz/php-helpers is a collection of :nr_functions useful php helper functions.  
-Once installed, the global functions are accessable from everywhere in your code, without any use-statement.
+The library `clausnz/php-helpers`  is a collection of `:nr_functions useful php helper functions.  
+Once installed, the global functions are accessable from **everywhere** in your code, without the need of any use-statement.
 
 ```php
 <?php

@@ -126,9 +126,9 @@ $array = [
     'foo' => 'bar'
 ];
 
-echo is_assoc( $array ) ? 'true' : 'false';
+dump( is_assoc( $array ) );
 
-// true
+// bool(true)
 ```
 
 * This method is **static**.

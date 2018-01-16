@@ -37,9 +37,9 @@ class Arr
      *     'foo' => 'bar'
      * ];
      *
-     * echo is_assoc( $array ) ? 'true' : 'false';
+     * dump( is_assoc( $array ) );
      *
-     * // true
+     * // bool(true)
      * ```
      *
      * @param array $array

@@ -4,11 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ea460208e0b7336d2bb8c0e02509f8ca",
+    "content-hash": "d8b1c5ce466687fd7397f1dcf025166f",
     "packages": [
         {
             "name": "jaybizzle/crawler-detect",
-            "version": "dev-master",
+            "version": "v1.2.55",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JayBizzle/Crawler-Detect.git",
@@ -1886,12 +1886,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "cbb36a6b4926faf84254b0fe5f846aa99dd9b402"
+                "reference": "9f10a4cedf118b9196325cab3033f5c060c4d35b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/cbb36a6b4926faf84254b0fe5f846aa99dd9b402",
-                "reference": "cbb36a6b4926faf84254b0fe5f846aa99dd9b402",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/9f10a4cedf118b9196325cab3033f5c060c4d35b",
+                "reference": "9f10a4cedf118b9196325cab3033f5c060c4d35b",
                 "shasum": ""
             },
             "require": {
@@ -1962,7 +1962,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-01-06T07:02:14+00:00"
+            "time": "2018-01-14T15:48:34+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -2881,12 +2881,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "a4bd0f02ea156cf7b5138774a7ba0ab44d8da4fe"
+                "reference": "64bcecdcdd4e29e53463cd648a81ebda4c4fa064"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/a4bd0f02ea156cf7b5138774a7ba0ab44d8da4fe",
-                "reference": "a4bd0f02ea156cf7b5138774a7ba0ab44d8da4fe",
+                "url": "https://api.github.com/repos/symfony/console/zipball/64bcecdcdd4e29e53463cd648a81ebda4c4fa064",
+                "reference": "64bcecdcdd4e29e53463cd648a81ebda4c4fa064",
                 "shasum": ""
             },
             "require": {
@@ -2934,7 +2934,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2018-01-03T07:36:31+00:00"
+            "time": "2018-01-13T13:56:42+00:00"
         },
         {
             "name": "symfony/debug",
@@ -3378,12 +3378,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/validator.git",
-                "reference": "e6da867bf86ba5009381d59718071329359ddbff"
+                "reference": "3f7e4b6787d3f01e6dc704ce34d2e26b39611f57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/validator/zipball/e6da867bf86ba5009381d59718071329359ddbff",
-                "reference": "e6da867bf86ba5009381d59718071329359ddbff",
+                "url": "https://api.github.com/repos/symfony/validator/zipball/3f7e4b6787d3f01e6dc704ce34d2e26b39611f57",
+                "reference": "3f7e4b6787d3f01e6dc704ce34d2e26b39611f57",
                 "shasum": ""
             },
             "require": {
@@ -3443,7 +3443,7 @@
             ],
             "description": "Symfony Validator Component",
             "homepage": "https://symfony.com",
-            "time": "2018-01-03T17:12:09+00:00"
+            "time": "2018-01-13T13:56:42+00:00"
         },
         {
             "name": "theseer/tokenizer",
@@ -4252,9 +4252,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "jaybizzle/crawler-detect": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

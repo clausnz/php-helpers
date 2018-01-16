@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/clausnz/php-helpers.svg?branch=master)](https://travis-ci.org/clausnz/php-helpers)
+
 # About
 
 The library `clausnz/php-helpers`  is a collection of **:nr_functions** useful php helper functions.  

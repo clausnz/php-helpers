@@ -100,10 +100,13 @@ Arr::isAssoc( array $array ): boolean
 
 ### is_assoc
 Related global function (description see above).
+
 > #### [( jump back )](#available-php-functions)
+
 ```php
 is_assoc( array $array ): boolean
 ```
+
 #### Example
 ```php
 $array = [
@@ -141,10 +144,13 @@ Arr::toObject( array $array ): object
 
 ### to_object
 Related global function (description see above).
+
 > #### [( jump back )](#available-php-functions)
+
 ```php
 to_object( array $array ): object
 ```
+
 #### Example
 ```php
 $array = [
@@ -185,10 +191,13 @@ Arr::toArray(  $var ): mixed
 
 ### to_array
 Related global function (description see above).
+
 > #### [( jump back )](#available-php-functions)
+
 ```php
 to_array( object $object ): array
 ```
+
 #### Example
 ```php
 $var = 'php';
@@ -236,10 +245,13 @@ Arr::first( array $array ): mixed
 
 ### array_first
 Related global function (description see above).
+
 > #### [( jump back )](#available-php-functions)
+
 ```php
 array_first( array $array ): mixed
 ```
+
 #### Example
 ```php
 $array = [
@@ -278,10 +290,13 @@ Arr::last( array $array ): mixed
 
 ### array_last
 Related global function (description see above).
+
 > #### [( jump back )](#available-php-functions)
+
 ```php
 array_last( array $array ): mixed
 ```
+
 #### Example
 ```php
 $array = [
@@ -329,10 +344,13 @@ Dev::isSmartphone(  ): boolean
 
 ### is_smartphone
 Related global function (description see above).
+
 > #### [( jump back )](#available-php-functions)
+
 ```php
 is_smartphone(  ): boolean
 ```
+
 #### Example
 ```php
 if ( is_smartphone() ) {
@@ -360,10 +378,13 @@ Dev::isMobile(  ): boolean
 
 ### is_mobile
 Related global function (description see above).
+
 > #### [( jump back )](#available-php-functions)
+
 ```php
 is_mobile(  ): boolean
 ```
+
 #### Example
 ```php
 if ( is_mobile() ) {
@@ -422,10 +443,13 @@ Dev::isTablet(  ): boolean
 
 ### is_tablet
 Related global function (description see above).
+
 > #### [( jump back )](#available-php-functions)
+
 ```php
 is_tablet(  ): boolean
 ```
+
 #### Example
 ```php
 if ( is_tablet() ) {
@@ -453,10 +477,13 @@ Dev::isDesktop(  ): boolean
 
 ### is_desktop
 Related global function (description see above).
+
 > #### [( jump back )](#available-php-functions)
+
 ```php
 is_desktop(  ): boolean
 ```
+
 #### Example
 ```php
 if ( is_desktop() ) {
@@ -484,10 +511,13 @@ Dev::isRobot(  ): boolean
 
 ### is_robot
 Related global function (description see above).
+
 > #### [( jump back )](#available-php-functions)
+
 ```php
 is_robot(  ): boolean
 ```
+
 #### Example
 ```php
 if ( is_robot() ) {
@@ -513,6 +543,7 @@ Public access for use of outside this class.
 Crawler-Detect doku: https://github.com/JayBizzle/Crawler-Detect
 
 ***This method has no related global function!***
+
 > #### [( jump back )](#available-php-functions)
 
 #### Example
@@ -538,7 +569,9 @@ Dev::isAndroid(  ): boolean
 
 ### is_android
 Related global function (description see above).
+
 > #### [( jump back )](#available-php-functions)
+
 ```php
 is_android(  ): boolean
 ```
@@ -570,7 +603,9 @@ Dev::isIphone(  ): boolean
 
 ### is_iphone
 Related global function (description see above).
+
 > #### [( jump back )](#available-php-functions)
+
 ```php
 is_iphone(  ): boolean
 ```
@@ -602,7 +637,9 @@ Dev::isSamsung(  ): boolean
 
 ### is_samsung
 Related global function (description see above).
+
 > #### [( jump back )](#available-php-functions)
+
 ```php
 is_samsung(  ): boolean
 ```
@@ -634,7 +671,9 @@ Dev::isIOS(  ): boolean
 
 ### is_ios
 Related global function (description see above).
+
 > #### [( jump back )](#available-php-functions)
+
 ```php
 is_ios(  ): boolean
 ```
@@ -675,19 +714,24 @@ Str::insert( array $inserts, string $string ): string
 
 ### str_insert
 Related global function (description see above).
+
 > #### [( jump back )](#available-php-functions)
+
 ```php
 str_insert( $string, $inserts ): array
 ```
+
 #### Example
 ```php
-$name = 'John';
-$age = 25;
-$string = 'His name is :name. :name is :age years old.';
+$array = [
+     ':name' => 'John',
+     ':age' => 25
+]
+$string = 'But :name is older. :name is :age years old.';
 
-echo str_insert([':name' => $name, ':age' => $age], $string);
+echo str_insert( $array, $string );
 
-// His name is John. John is 25 years old.
+// But John is older. John is 25 years old.
 ```
 
 * This method is **static**.
@@ -695,9 +739,13 @@ echo str_insert([':name' => $name, ':age' => $age], $string);
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$inserts` | **array** |  |
-| `$string` | **string** |  |
+| `$inserts` | **array** | An associative array with key => value pairs. |
+| `$string` | **string** | The text with the strings to be replaced. |
 
+
+**Return Value:**
+
+The replaced string.
 
 
 
@@ -713,9 +761,23 @@ Str::between( string $left, string $right, string $string ): array
 
 ### str_between
 Related global function (description see above).
+
 > #### [( jump back )](#available-php-functions)
+
 ```php
 str_between( string $left, string $right, string $string ): array
+```
+
+#### Example
+```php
+$string = '<tag>foo</tag>foobar<tag>bar</tag>'
+
+dump( str_between( '<tag>', '</tag>' $string ) );
+
+// (
+     [0] => foo
+     [1] => bar
+)
 ```
 
 * This method is **static**.
@@ -723,10 +785,14 @@ str_between( string $left, string $right, string $string ): array
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$left` | **string** |  |
-| `$right` | **string** |  |
-| `$string` | **string** |  |
+| `$left` | **string** | The left element of the string to search. |
+| `$right` | **string** | The right element of the string to search. |
+| `$string` | **string** | The string to search in. |
 
+
+**Return Value:**
+
+A result array with all matches of the search.
 
 
 
@@ -734,7 +800,7 @@ str_between( string $left, string $right, string $string ): array
 
 ### after
 
-Return the remainder of a string after a given value.
+Return the part of a string after a given value.
 
 ```php
 Str::after( string $search, string $string ): string
@@ -742,9 +808,20 @@ Str::after( string $search, string $string ): string
 
 ### str_after
 Related global function (description see above).
+
 > #### [( jump back )](#available-php-functions)
+
 ```php
 str_after( string $search, string $string ): string
+```
+
+#### Example
+```php
+$string = 'The quick brown fox jumps over the lazy dog';
+
+echo str_after( 'fox' $string );
+
+// jumps over the lazy dog
 ```
 
 * This method is **static**.
@@ -752,9 +829,13 @@ str_after( string $search, string $string ): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$search` | **string** |  |
-| `$string` | **string** |  |
+| `$search` | **string** | The string to search for. |
+| `$string` | **string** | The string to search in. |
 
+
+**Return Value:**
+
+The found string after the search string. Whitespaces at beginning will be removed.
 
 
 
@@ -762,7 +843,7 @@ str_after( string $search, string $string ): string
 
 ### before
 
-Get the portion of a string before a given value.
+Get the part of a string before a given value.
 
 ```php
 Str::before( string $search, string $string ): string
@@ -770,9 +851,20 @@ Str::before( string $search, string $string ): string
 
 ### str_before
 Related global function (description see above).
+
 > #### [( jump back )](#available-php-functions)
+
 ```php
 str_before( string $search, string $string ): string
+```
+
+#### Example
+```php
+$string = 'The quick brown fox jumps over the lazy dog';
+
+echo str_before( 'fox' $string );
+
+// The quick brown
 ```
 
 * This method is **static**.
@@ -780,9 +872,13 @@ str_before( string $search, string $string ): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$search` | **string** |  |
-| `$string` | **string** |  |
+| `$search` | **string** | The string to search for. |
+| `$string` | **string** | The string to search in. |
 
+
+**Return Value:**
+
+The found string before the search string. Whitespaces at end will be removed.
 
 
 
@@ -798,9 +894,20 @@ Str::limitWords( string $string, integer $limit = 10, string $end = '...' ): str
 
 ### str_limit_words
 Related global function (description see above).
+
 > #### [( jump back )](#available-php-functions)
+
 ```php
 str_limit_words( string $string, int $limit = 10, string $end = '...' ): string
+```
+
+#### Example
+```php
+$string = 'The quick brown fox jumps over the lazy dog';
+
+echo str_limit_words( $string, 3 );
+
+// The quick brown...
 ```
 
 * This method is **static**.
@@ -808,10 +915,14 @@ str_limit_words( string $string, int $limit = 10, string $end = '...' ): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$string` | **string** |  |
-| `$limit` | **integer** |  |
-| `$end` | **string** |  |
+| `$string` | **string** | The string to limit the words. |
+| `$limit` | **integer** | The number of words to limit. Defaults to 10. |
+| `$end` | **string** | The string to end the cut string. Defaults to '...' |
 
+
+**Return Value:**
+
+The limited string with $end at the end.
 
 
 
@@ -827,9 +938,20 @@ Str::limit( string $string, integer $limit = 100, string $end = '...' ): string
 
 ### str_limit
 Related global function (description see above).
+
 > #### [( jump back )](#available-php-functions)
+
 ```php
 str_limit( string $string, int $limit = 100, string $end = '...' ): string
+```
+
+#### Example
+```php
+$string = 'The quick brown fox jumps over the lazy dog';
+
+echo str_limit( $string, 15 );
+
+// The quick brown...
 ```
 
 * This method is **static**.
@@ -837,10 +959,14 @@ str_limit( string $string, int $limit = 100, string $end = '...' ): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$string` | **string** |  |
-| `$limit` | **integer** |  |
-| `$end` | **string** |  |
+| `$string` | **string** | The string to limit the characters. |
+| `$limit` | **integer** | The number of characters to limit. |
+| `$end` | **string** | The string to end the cut string. Defaults to '...' |
 
+
+**Return Value:**
+
+The limited string with $end at the end.
 
 
 
@@ -856,9 +982,24 @@ Str::contains( string|array $needle, string $haystack ): boolean
 
 ### str_contains
 Related global function (description see above).
+
 > #### [( jump back )](#available-php-functions)
+
 ```php
 str_contains( string|array $needle, string $haystack ): boolean
+```
+
+#### Example
+```php
+$string = 'The quick brown fox jumps over the lazy dog';
+$array = [
+     'cat',
+     'fox'
+];
+
+echo str_contains( $array, $string ) ? 'true' : 'false';
+
+// true
 ```
 
 * This method is **static**.
@@ -866,9 +1007,13 @@ str_contains( string|array $needle, string $haystack ): boolean
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$needle` | **string&#124;array** |  |
-| `$haystack` | **string** |  |
+| `$needle` | **string&#124;array** | A string or an array of strings. |
+| `$haystack` | **string** | The string to search in. |
 
+
+**Return Value:**
+
+True if $needle is found, false otherwise.
 
 
 
@@ -884,9 +1029,24 @@ Str::containsIgnoreCase( string|array $needle, string $haystack ): boolean
 
 ### str_icontains
 Related global function (description see above).
+
 > #### [( jump back )](#available-php-functions)
+
 ```php
 str_icontains( string|array $needle, string $haystack ): boolean
+```
+
+#### Example
+```php
+$string = 'The quick brown fox jumps over the lazy dog';
+$array = [
+     'Cat',
+     'Fox'
+];
+
+echo str_icontains( $array, $string ) ? 'true' : 'false';
+
+// true
 ```
 
 * This method is **static**.
@@ -894,9 +1054,13 @@ str_icontains( string|array $needle, string $haystack ): boolean
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$needle` | **string&#124;array** |  |
-| `$haystack` | **string** |  |
+| `$needle` | **string&#124;array** | A string or an array of strings. |
+| `$haystack` | **string** | The string to search in. |
 
+
+**Return Value:**
+
+True if $needle is found, false otherwise.
 
 
 
@@ -912,9 +1076,24 @@ Str::startsWith( string|array $needle, string $haystack ): boolean
 
 ### str_starts_with
 Related global function (description see above).
+
 > #### [( jump back )](#available-php-functions)
+
 ```php
 str_starts_with( string|array $needle, string $haystack ): boolean
+```
+
+#### Example
+````php
+$string = 'The quick brown fox jumps over the lazy dog';
+$array = [
+     'Cat',
+     'The'
+];
+
+echo str_starts_with( $array, $string ) ? 'true' : 'false';
+
+// true
 ```
 
 * This method is **static**.
@@ -922,9 +1101,13 @@ str_starts_with( string|array $needle, string $haystack ): boolean
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$needle` | **string&#124;array** |  |
-| `$haystack` | **string** |  |
+| `$needle` | **string&#124;array** | The string or array of strings to search for. |
+| `$haystack` | **string** | The string to search in. |
 
+
+**Return Value:**
+
+True if $needle was found, false otherwise.
 
 
 
@@ -940,9 +1123,24 @@ Str::startsWithIgnoreCase( string|array $needle, string $haystack ): boolean
 
 ### str_istarts_with
 Related global function (description see above).
+
 > #### [( jump back )](#available-php-functions)
+
 ```php
 str_istarts_with( string|array $needle, string $haystack ): boolean
+```
+
+#### Example
+````php
+$string = 'The quick brown fox jumps over the lazy dog';
+$array = [
+     'cat',
+     'the'
+];
+
+echo str_istarts_with( $array, $string ) ? 'true' : 'false';
+
+// true
 ```
 
 * This method is **static**.
@@ -950,9 +1148,13 @@ str_istarts_with( string|array $needle, string $haystack ): boolean
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$needle` | **string&#124;array** |  |
-| `$haystack` | **string** |  |
+| `$needle` | **string&#124;array** | The string or array of strings to search for. |
+| `$haystack` | **string** | The string to search in. |
 
+
+**Return Value:**
+
+True if $needle was found, false otherwise.
 
 
 
@@ -968,9 +1170,24 @@ Str::endsWith( string|array $needle, string $haystack ): boolean
 
 ### str_ends_with
 Related global function (description see above).
+
 > #### [( jump back )](#available-php-functions)
+
 ```php
 str_ends_with( string|array $needle, string $haystack ): boolean
+```
+
+#### Example
+````php
+$string = 'The quick brown fox jumps over the lazy dog';
+$array = [
+     'cat',
+     'dog'
+];
+
+echo str_ends_with( $array, $string ) ? 'true' : 'false';
+
+// true
 ```
 
 * This method is **static**.
@@ -978,9 +1195,13 @@ str_ends_with( string|array $needle, string $haystack ): boolean
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$needle` | **string&#124;array** |  |
-| `$haystack` | **string** |  |
+| `$needle` | **string&#124;array** | The string or array of strings to search for. |
+| `$haystack` | **string** | The string to search in. |
 
+
+**Return Value:**
+
+True if $needle was found, false otherwise.
 
 
 
@@ -996,9 +1217,24 @@ Str::endsWithIgnoreCase( string|array $needle, string $haystack ): boolean
 
 ### str_iends_with
 Related global function (description see above).
+
 > #### [( jump back )](#available-php-functions)
+
 ```php
 str_iends_with( string|array $needle, string $haystack ): boolean
+```
+
+#### Example
+````php
+$string = 'The quick brown fox jumps over the lazy dog';
+$array = [
+     'Cat',
+     'Dog'
+];
+
+echo str_istarts_with( $array, $string ) ? 'true' : 'false';
+
+// true
 ```
 
 * This method is **static**.
@@ -1006,9 +1242,13 @@ str_iends_with( string|array $needle, string $haystack ): boolean
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$needle` | **string&#124;array** |  |
-| `$haystack` | **string** |  |
+| `$needle` | **string&#124;array** | The string or array of strings to search for. |
+| `$haystack` | **string** | The string to search in. |
 
+
+**Return Value:**
+
+True if $needle was found, false otherwise.
 
 
 

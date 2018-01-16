@@ -24,10 +24,13 @@ class Arr
      *
      * ### is_assoc
      * Related global function (description see above).
+     *
      * > #### [( jump back )](#available-php-functions)
+     *
      * ```php
      * is_assoc( array $array ): boolean
      * ```
+     *
      * #### Example
      * ```php
      * $array = [
@@ -58,10 +61,13 @@ class Arr
      *
      * ### to_object
      * Related global function (description see above).
+     *
      * > #### [( jump back )](#available-php-functions)
+     *
      * ```php
      * to_object( array $array ): object
      * ```
+     *
      * #### Example
      * ```php
      * $array = [
@@ -91,10 +97,13 @@ class Arr
      *
      * ### to_array
      * Related global function (description see above).
+     *
      * > #### [( jump back )](#available-php-functions)
+     *
      * ```php
      * to_array( object $object ): array
      * ```
+     *
      * #### Example
      * ```php
      * $var = 'php';
@@ -139,10 +148,13 @@ class Arr
      *
      * ### array_first
      * Related global function (description see above).
+     *
      * > #### [( jump back )](#available-php-functions)
+     *
      * ```php
      * array_first( array $array ): mixed
      * ```
+     *
      * #### Example
      * ```php
      * $array = [
@@ -171,10 +183,13 @@ class Arr
      *
      * ### array_last
      * Related global function (description see above).
+     *
      * > #### [( jump back )](#available-php-functions)
+     *
      * ```php
      * array_last( array $array ): mixed
      * ```
+     *
      * #### Example
      * ```php
      * $array = [

@@ -23,24 +23,32 @@ class Str
      *
      * ### str_insert
      * Related global function (description see above).
+     *
      * > #### [( jump back )](#available-php-functions)
+     *
      * ```php
      * str_insert( $string, $inserts ): array
      * ```
+     *
      * #### Example
      * ```php
-     * $name = 'John';
-     * $age = 25;
-     * $string = 'His name is :name. :name is :age years old.';
+     * $array = [
+     *      ':name' => 'John',
+     *      ':age' => 25
+     * ]
+     * $string = 'But :name is older. :name is :age years old.';
      *
-     * echo str_insert([':name' => $name, ':age' => $age], $string);
+     * echo str_insert( $array, $string );
      *
-     * // His name is John. John is 25 years old.
+     * // But John is older. John is 25 years old.
      * ```
      *
      * @param array  $inserts
+     * An associative array with key => value pairs.
      * @param string $string
+     * The text with the strings to be replaced.
      * @return string
+     * The replaced string.
      */
     public static function insert($inserts, $string)
     {
@@ -58,15 +66,34 @@ class Str
      *
      * ### str_between
      * Related global function (description see above).
+     *
      * > #### [( jump back )](#available-php-functions)
+     *
      * ```php
      * str_between( string $left, string $right, string $string ): array
      * ```
      *
+     * #### Example
+     * ```php
+     * $string = '<tag>foo</tag>foobar<tag>bar</tag>'
+     *
+     * dump( str_between( '<tag>', '</tag>' $string ) );
+     *
+     * // (
+     *      [0] => foo
+     *      [1] => bar
+     * )
+     * ```
+     *
+     *
      * @param string $left
+     * The left element of the string to search.
      * @param string $right
+     * The right element of the string to search.
      * @param string $string
+     * The string to search in.
      * @return array
+     * A result array with all matches of the search.
      */
     public static function between($left, $right, $string)
     {
@@ -75,18 +102,34 @@ class Str
     }
 
     /**
-     * Return the remainder of a string after a given value.
+     * Return the part of a string after a given value.
      *
      * ### str_after
      * Related global function (description see above).
+     *
      * > #### [( jump back )](#available-php-functions)
+     *
      * ```php
      * str_after( string $search, string $string ): string
      * ```
      *
+     * #### Example
+     * ```php
+     * $string = 'The quick brown fox jumps over the lazy dog';
+     *
+     * echo str_after( 'fox' $string );
+     *
+     * // jumps over the lazy dog
+     * ```
+     *
      * @param string $search
+     * The string to search for.
+     *
      * @param string $string
+     * The string to search in.
+     *
      * @return string
+     * The found string after the search string. Whitespaces at beginning will be removed.
      */
     public static function after($search, $string)
     {
@@ -94,18 +137,34 @@ class Str
     }
 
     /**
-     * Get the portion of a string before a given value.
+     * Get the part of a string before a given value.
      *
      * ### str_before
      * Related global function (description see above).
+     *
      * > #### [( jump back )](#available-php-functions)
+     *
      * ```php
      * str_before( string $search, string $string ): string
      * ```
      *
+     * #### Example
+     * ```php
+     * $string = 'The quick brown fox jumps over the lazy dog';
+     *
+     * echo str_before( 'fox' $string );
+     *
+     * // The quick brown
+     * ```
+     *
      * @param string $search
+     * The string to search for.
+     *
      * @param string $string
+     * The string to search in.
+     *
      * @return string
+     * The found string before the search string. Whitespaces at end will be removed.
      */
     public static function before($search, $string)
     {
@@ -117,15 +176,33 @@ class Str
      *
      * ### str_limit_words
      * Related global function (description see above).
+     *
      * > #### [( jump back )](#available-php-functions)
+     *
      * ```php
      * str_limit_words( string $string, int $limit = 10, string $end = '...' ): string
      * ```
      *
+     * #### Example
+     * ```php
+     * $string = 'The quick brown fox jumps over the lazy dog';
+     *
+     * echo str_limit_words( $string, 3 );
+     *
+     * // The quick brown...
+     * ```
+     *
      * @param  string $string
+     * The string to limit the words.
+     *
      * @param  int    $limit
+     * The number of words to limit. Defaults to 10.
+     *
      * @param  string $end
+     * The string to end the cut string. Defaults to '...'
+     *
      * @return string
+     * The limited string with $end at the end.
      */
     public static function limitWords($string, $limit = 10, $end = '...')
     {
@@ -143,15 +220,33 @@ class Str
      *
      * ### str_limit
      * Related global function (description see above).
+     *
      * > #### [( jump back )](#available-php-functions)
+     *
      * ```php
      * str_limit( string $string, int $limit = 100, string $end = '...' ): string
      * ```
      *
+     * #### Example
+     * ```php
+     * $string = 'The quick brown fox jumps over the lazy dog';
+     *
+     * echo str_limit( $string, 15 );
+     *
+     * // The quick brown...
+     * ```
+     *
      * @param  string $string
+     * The string to limit the characters.
+     *
      * @param  int    $limit
+     * The number of characters to limit.
+     *
      * @param  string $end
+     * The string to end the cut string. Defaults to '...'
+     *
      * @return string
+     * The limited string with $end at the end.
      */
     public static function limit($string, $limit = 100, $end = '...')
     {
@@ -167,14 +262,34 @@ class Str
      *
      * ### str_contains
      * Related global function (description see above).
+     *
      * > #### [( jump back )](#available-php-functions)
+     *
      * ```php
      * str_contains( string|array $needle, string $haystack ): boolean
      * ```
      *
+     * #### Example
+     * ```php
+     * $string = 'The quick brown fox jumps over the lazy dog';
+     * $array = [
+     *      'cat',
+     *      'fox'
+     * ];
+     *
+     * echo str_contains( $array, $string ) ? 'true' : 'false';
+     *
+     * // true
+     * ```
+     *
      * @param string|array $needle
+     * A string or an array of strings.
+     *
      * @param string       $haystack
+     * The string to search in.
+     *
      * @return bool
+     * True if $needle is found, false otherwise.
      */
     public static function contains($needle, $haystack)
     {
@@ -192,14 +307,34 @@ class Str
      *
      * ### str_icontains
      * Related global function (description see above).
+     *
      * > #### [( jump back )](#available-php-functions)
+     *
      * ```php
      * str_icontains( string|array $needle, string $haystack ): boolean
      * ```
      *
+     * #### Example
+     * ```php
+     * $string = 'The quick brown fox jumps over the lazy dog';
+     * $array = [
+     *      'Cat',
+     *      'Fox'
+     * ];
+     *
+     * echo str_icontains( $array, $string ) ? 'true' : 'false';
+     *
+     * // true
+     * ```
+     *
      * @param string|array $needle
+     * A string or an array of strings.
+     *
      * @param string       $haystack
+     * The string to search in.
+     *
      * @return bool
+     * True if $needle is found, false otherwise.
      */
     public static function containsIgnoreCase($needle, $haystack)
     {
@@ -217,14 +352,34 @@ class Str
      *
      * ### str_starts_with
      * Related global function (description see above).
+     *
      * > #### [( jump back )](#available-php-functions)
+     *
      * ```php
      * str_starts_with( string|array $needle, string $haystack ): boolean
      * ```
      *
+     * #### Example
+     * ````php
+     * $string = 'The quick brown fox jumps over the lazy dog';
+     * $array = [
+     *      'Cat',
+     *      'The'
+     * ];
+     *
+     * echo str_starts_with( $array, $string ) ? 'true' : 'false';
+     *
+     * // true
+     * ```
+     *
      * @param string|array $needle
+     * The string or array of strings to search for.
+     *
      * @param string       $haystack
+     * The string to search in.
+     *
      * @return bool
+     * True if $needle was found, false otherwise.
      */
     public static function startsWith($needle, $haystack)
     {
@@ -242,14 +397,34 @@ class Str
      *
      * ### str_istarts_with
      * Related global function (description see above).
+     *
      * > #### [( jump back )](#available-php-functions)
+     *
      * ```php
      * str_istarts_with( string|array $needle, string $haystack ): boolean
      * ```
      *
+     * #### Example
+     * ````php
+     * $string = 'The quick brown fox jumps over the lazy dog';
+     * $array = [
+     *      'cat',
+     *      'the'
+     * ];
+     *
+     * echo str_istarts_with( $array, $string ) ? 'true' : 'false';
+     *
+     * // true
+     * ```
+     *
      * @param string|array $needle
+     * The string or array of strings to search for.
+     *
      * @param string       $haystack
+     * The string to search in.
+     *
      * @return bool
+     * True if $needle was found, false otherwise.
      */
     public static function startsWithIgnoreCase($needle, $haystack)
     {
@@ -270,14 +445,34 @@ class Str
      *
      * ### str_ends_with
      * Related global function (description see above).
+     *
      * > #### [( jump back )](#available-php-functions)
+     *
      * ```php
      * str_ends_with( string|array $needle, string $haystack ): boolean
      * ```
      *
+     * #### Example
+     * ````php
+     * $string = 'The quick brown fox jumps over the lazy dog';
+     * $array = [
+     *      'cat',
+     *      'dog'
+     * ];
+     *
+     * echo str_ends_with( $array, $string ) ? 'true' : 'false';
+     *
+     * // true
+     * ```
+     *
      * @param string|array $needle
+     * The string or array of strings to search for.
+     *
      * @param string       $haystack
+     * The string to search in.
+     *
      * @return bool
+     * True if $needle was found, false otherwise.
      */
     public static function endsWith($needle, $haystack)
     {
@@ -296,14 +491,34 @@ class Str
      *
      * ### str_iends_with
      * Related global function (description see above).
+     *
      * > #### [( jump back )](#available-php-functions)
+     *
      * ```php
      * str_iends_with( string|array $needle, string $haystack ): boolean
      * ```
      *
+     * #### Example
+     * ````php
+     * $string = 'The quick brown fox jumps over the lazy dog';
+     * $array = [
+     *      'Cat',
+     *      'Dog'
+     * ];
+     *
+     * echo str_istarts_with( $array, $string ) ? 'true' : 'false';
+     *
+     * // true
+     * ```
+     *
      * @param string|array $needle
+     * The string or array of strings to search for.
+     *
      * @param string       $haystack
+     * The string to search in.
+     *
      * @return bool
+     * True if $needle was found, false otherwise.
      */
     public static function endsWithIgnoreCase($needle, $haystack)
     {

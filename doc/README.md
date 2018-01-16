@@ -1232,7 +1232,7 @@ $array = [
      'Dog'
 ];
 
-echo str_istarts_with( $array, $string ) ? 'true' : 'false';
+echo str_iends_with( $array, $string ) ? 'true' : 'false';
 
 // true
 ```
@@ -1273,9 +1273,20 @@ Util::isEmail( string $email ): boolean
 
 ### is_email
 Related global function (description see above).
+
 > #### [( jump back )](#available-php-functions)
+
 ```php
 is_email( string $email ): boolean
+```
+
+#### Example
+```php
+$email = 'foobar@example.com';
+
+echo is_email( $email ) ? 'true' : 'false';
+
+// true
 ```
 
 * This method is **static**.
@@ -1283,8 +1294,12 @@ is_email( string $email ): boolean
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$email` | **string** |  |
+| `$email` | **string** | The email address to test. |
 
+
+**Return Value:**
+
+True if given string is a valid email address, false otherwise.
 
 
 
@@ -1295,23 +1310,30 @@ is_email( string $email ): boolean
 Get the current ip address of the user.
 
 ```php
-Util::ip( boolean $cli = false ): null|string
+Util::ip(  ): null|string
 ```
 
 ### user_ip
 Related global function (description see above).
+
 > #### [( jump back )](#available-php-functions)
+
 ```php
-user_ip(  ): null|string
+ip(  ): null|string
+```
+
+#### Example
+```php
+echo ip();
+
+// 127.0.0.1
 ```
 
 * This method is **static**.
-**Parameters:**
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `$cli` | **boolean** |  |
+**Return Value:**
 
+The detected ip address, null if the ip was not detected.
 
 
 
@@ -1329,9 +1351,20 @@ Note: 255 characters for database column recommended!
 
 ### crypt_password
 Related global function (description see above).
+
 > #### [( jump back )](#available-php-functions)
+
 ```php
 crypt_password( string $password ): string
+```
+
+#### Example
+```php
+$password = 'foobar';
+
+echo crypt_password( $password );
+
+// $2y$10$6qKwbwTgwQNcmcaw04eSf.QpP3.4T0..bEnY62dd1ozM8L61nb8AC
 ```
 
 * This method is **static**.
@@ -1339,8 +1372,12 @@ crypt_password( string $password ): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$password` | **string** |  |
+| `$password` | **string** | The password to crypt. |
 
+
+**Return Value:**
+
+The crypted password.
 
 
 
@@ -1356,9 +1393,21 @@ Util::isPassword( string $password, string $cryptedPassword ): boolean
 
 ### is_password
 Related global function (description see above).
+
 > #### [( jump back )](#available-php-functions)
+
 ```php
 is_password( string $password, string $cryptedPassword ): boolean
+```
+
+#### Example
+```php
+$password = 'foobar';
+$cryptedPassword = '$2y$10$6qKwbwTgwQNcmcaw04eSf.QpP3.4T0..bEnY62dd1ozM8L61nb8AC';
+
+echo is_password( $password, $cryptedPassword ) ? 'true' : 'false';
+
+// true
 ```
 
 * This method is **static**.
@@ -1384,9 +1433,26 @@ Util::dd( mixed $var )
 
 ### dd
 Related global function (description see above).
+
 > #### [( jump back )](#available-php-functions)
+
 ```php
 dd( mixed $var )
+```
+
+#### Example
+```php
+$array = [
+     'foo' => 'bar',
+     'baz' => 'qux'
+];
+
+dd( $array );
+
+// (
+     [foo] => bar
+     [baz] => qux
+)
 ```
 
 * This method is **static**.
@@ -1394,7 +1460,7 @@ dd( mixed $var )
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$var` | **mixed** |  |
+| `$var` | **mixed** | The var to dump out. |
 
 
 
@@ -1403,7 +1469,7 @@ dd( mixed $var )
 
 ### dump
 
-Dumps the content of the given variable.
+Dumps the content of the given variable. Script does NOT stop after call.
 
 ```php
 Util::dump( mixed $var )
@@ -1411,9 +1477,26 @@ Util::dump( mixed $var )
 
 ### dump
 Related global function (description see above).
+
 > #### [( jump back )](#available-php-functions)
+
 ```php
 dump( mixed $var )
+```
+
+#### Example
+```php
+$array = [
+     'foo' => 'bar',
+     'baz' => 'qux'
+];
+
+dump( $array );
+
+// (
+     [foo] => bar
+     [baz] => qux
+)
 ```
 
 * This method is **static**.
@@ -1421,7 +1504,7 @@ dump( mixed $var )
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$var` | **mixed** |  |
+| `$var` | **mixed** | The var to dump out. |
 
 
 

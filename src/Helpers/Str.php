@@ -45,8 +45,10 @@ class Str
      *
      * @param array  $inserts
      * An associative array with key => value pairs.
+     *
      * @param string $string
      * The text with the strings to be replaced.
+     *
      * @return string
      * The replaced string.
      */
@@ -88,10 +90,13 @@ class Str
      *
      * @param string $left
      * The left element of the string to search.
+     *
      * @param string $right
      * The right element of the string to search.
+     *
      * @param string $string
      * The string to search in.
+     *
      * @return array
      * A result array with all matches of the search.
      */
@@ -506,7 +511,7 @@ class Str
      *      'Dog'
      * ];
      *
-     * echo str_istarts_with( $array, $string ) ? 'true' : 'false';
+     * echo str_iends_with( $array, $string ) ? 'true' : 'false';
      *
      * // true
      * ```

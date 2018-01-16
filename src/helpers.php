@@ -395,13 +395,12 @@ if (!function_exists('ip')) {
      * Returns the user ip-adresse.
      * See: https://stackoverflow.com/q/3003145/1108161
      *
-     * @param bool $cli
-     *
-     * @return string
+     * @return string|null
+     * The detected ip address, false otherwise.
      */
-    function ip($cli = false)
+    function ip()
     {
-        return util::ip($cli);
+        return util::ip();
     }
 }
 

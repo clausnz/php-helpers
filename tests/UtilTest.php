@@ -58,9 +58,11 @@ class UtilTest extends TestCase
 
     public function test_ip()
     {
+        util::setCli();
+
         $ips = [
-            ip(true),
-            util::ip(true)
+            ip(),
+            util::ip()
         ];
 
         foreach ($ips as $ip) {
@@ -70,6 +72,8 @@ class UtilTest extends TestCase
             $this->assertFalse(empty($ip));
             $this->assertFalse(is_array($ip));
         }
+
+        util::setCli(false);
 
         $this->assertNull(ip());
         $this->assertNull(util::ip());

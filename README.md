@@ -30,7 +30,7 @@ Make sure to require your composer autoload file:
 require __DIR__ . '/vendor/autoload.php';
 ```
 
-Now the new global PHP functions are immediately available in your code. To also access the static functions in the helper classes, add an approbiate use statement to your file:
+Now the new global PHP functions are immediately available everywhere in your code. To also access the static functions in the helper classes, add an approbiate use statement to your file:
 
 #### Example
  ```php

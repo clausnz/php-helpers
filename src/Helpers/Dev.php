@@ -67,6 +67,12 @@ class Dev
      * ```php
      * is_smartphone(  ): boolean
      * ```
+     * #### Example
+     * ```php
+     * if ( is_smartphone() ) {
+     *      // I am a smartphone
+     * }
+     * ```
      *
      * @return bool
      * True if current visitor uses a smartphone, false otherwise.
@@ -85,6 +91,12 @@ class Dev
      * ```php
      * is_mobile(  ): boolean
      * ```
+     * #### Example
+     * ```php
+     * if ( is_mobile() ) {
+     *      // I am a mobile device (smartphone/tablet or handheld)
+     * }
+     * ```
      *
      * @return bool
      * True if current visitor uses a mobile device, false otherwise.
@@ -102,7 +114,15 @@ class Dev
      * ***This method has no related global function!***
      * > #### [( jump back )](#available-php-functions)
      *
+     * #### Example
+     * ```php
+     * echo Dev::mobileDetect()->version('Android');
+     *
+     * // 8.1
+     * ```
+     *
      * @return MobileDetect
+     * A singleton MobileDetect object to call every method it provides.
      */
     public static function mobileDetect()
     {
@@ -122,6 +142,12 @@ class Dev
      * ```php
      * is_tablet(  ): boolean
      * ```
+     * #### Example
+     * ```php
+     * if ( is_tablet() ) {
+     *      // I am a tablet
+     * }
+     * ```
      *
      * @return bool
      * True if current visitor uses a tablet device, false otherwise.
@@ -140,6 +166,12 @@ class Dev
      * ```php
      * is_desktop(  ): boolean
      * ```
+     * #### Example
+     * ```php
+     * if ( is_mobile() ) {
+     *      // I am a desktop computer (Mac, Linux, Windows)
+     * }
+     * ```
      *
      * @return bool
      * True if current visitor uses a desktop computer, false otherwise.
@@ -150,13 +182,19 @@ class Dev
     }
 
     /**
-     * Determes if the current visitor is a bot/crawler/spider.
+     * Determes if the current visitor is a search engine/bot/crawler/spider.
      *
      * ### is_robot
      * Related global function (description see above).
      * > #### [( jump back )](#available-php-functions)
      * ```php
      * is_robot(  ): boolean
+     * ```
+     * #### Example
+     * ```php
+     * if ( is_robot() ) {
+     *      // I am a robot (search engine, bot, crawler, spider)
+     * }
      * ```
      *
      * @return boolean
@@ -173,6 +211,13 @@ class Dev
      *
      * ***This method has no related global function!***
      * > #### [( jump back )](#available-php-functions)
+     *
+     * #### Example
+     * ```php
+     * echo Dev::crawlerDetect()->getMatches();
+     *
+     * // Output the name of the bot that matched (if any)
+     * ```
      *
      * @return CrawlerDetect
      */
@@ -195,6 +240,13 @@ class Dev
      * is_android(  ): boolean
      * ```
      *
+     * #### Example
+     * ```php
+     * if ( is_android() ) {
+     *      // I am an Android based device
+     * }
+     * ```
+     *
      * @return bool
      * True if current visitor uses an Android based device, false otherwise.
      */
@@ -211,6 +263,13 @@ class Dev
      * > #### [( jump back )](#available-php-functions)
      * ```php
      * is_iphone(  ): boolean
+     * ```
+     *
+     * #### Example
+     * ```php
+     * if ( is_iphone() ) {
+     *      // I am an iPhone
+     * }
      * ```
      *
      * @return bool
@@ -231,6 +290,13 @@ class Dev
      * is_samsung(  ): boolean
      * ```
      *
+     * #### Example
+     * ```php
+     * if ( is_samsung() ) {
+     *      // I am a device from Samsung
+     * }
+     * ```
+     *
      * @return bool
      * True if current visitor uses a Samsung device, false otherwise.
      */
@@ -247,6 +313,13 @@ class Dev
      * > #### [( jump back )](#available-php-functions)
      * ```php
      * is_ios(  ): boolean
+     * ```
+     *
+     * #### Example
+     * ```php
+     * if ( is_ios() ) {
+     *      // I am an iOS based device
+     * }
      * ```
      *
      * @return bool

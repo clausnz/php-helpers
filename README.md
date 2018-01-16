@@ -344,6 +344,12 @@ Related global function (description see above).
 ```php
 is_smartphone(  ): boolean
 ```
+#### Example
+```php
+if ( is_smartphone() ) {
+     // I am a smartphone
+}
+```
 
 * This method is **static**.
 
@@ -368,6 +374,12 @@ Related global function (description see above).
 > #### [( jump back )](#available-php-functions)
 ```php
 is_mobile(  ): boolean
+```
+#### Example
+```php
+if ( is_mobile() ) {
+     // I am a mobile device (smartphone/tablet or handheld)
+}
 ```
 
 * This method is **static**.
@@ -394,7 +406,18 @@ Mobile_Detect doku: https://github.com/serbanghita/Mobile-Detect
 ***This method has no related global function!***
 > #### [( jump back )](#available-php-functions)
 
+#### Example
+```php
+echo Dev::mobileDetect()->version('Android');
+
+// 8.1
+```
+
 * This method is **static**.
+
+**Return Value:**
+
+A singleton MobileDetect object to call every method it provides.
 
 
 
@@ -413,6 +436,12 @@ Related global function (description see above).
 > #### [( jump back )](#available-php-functions)
 ```php
 is_tablet(  ): boolean
+```
+#### Example
+```php
+if ( is_tablet() ) {
+     // I am a tablet
+}
 ```
 
 * This method is **static**.
@@ -439,6 +468,12 @@ Related global function (description see above).
 ```php
 is_desktop(  ): boolean
 ```
+#### Example
+```php
+if ( is_mobile() ) {
+     // I am a desktop computer (Mac, Linux, Windows)
+}
+```
 
 * This method is **static**.
 
@@ -452,7 +487,7 @@ True if current visitor uses a desktop computer, false otherwise.
 
 ### isRobot
 
-Determes if the current visitor is a bot/crawler/spider.
+Determes if the current visitor is a search engine/bot/crawler/spider.
 
 ```php
 Dev::isRobot(  ): boolean
@@ -463,6 +498,12 @@ Related global function (description see above).
 > #### [( jump back )](#available-php-functions)
 ```php
 is_robot(  ): boolean
+```
+#### Example
+```php
+if ( is_robot() ) {
+     // I am a robot (search engine, bot, crawler, spider)
+}
 ```
 
 * This method is **static**.
@@ -485,6 +526,13 @@ Crawler-Detect doku: https://github.com/JayBizzle/Crawler-Detect
 ***This method has no related global function!***
 > #### [( jump back )](#available-php-functions)
 
+#### Example
+```php
+echo Dev::crawlerDetect()->getMatches();
+
+// Output the name of the bot that matched (if any)
+```
+
 * This method is **static**.
 
 
@@ -504,6 +552,13 @@ Related global function (description see above).
 > #### [( jump back )](#available-php-functions)
 ```php
 is_android(  ): boolean
+```
+
+#### Example
+```php
+if ( is_android() ) {
+     // I am an Android based device
+}
 ```
 
 * This method is **static**.
@@ -531,6 +586,13 @@ Related global function (description see above).
 is_iphone(  ): boolean
 ```
 
+#### Example
+```php
+if ( is_iphone() ) {
+     // I am an iPhone
+}
+```
+
 * This method is **static**.
 
 **Return Value:**
@@ -556,6 +618,13 @@ Related global function (description see above).
 is_samsung(  ): boolean
 ```
 
+#### Example
+```php
+if ( is_samsung() ) {
+     // I am a device from Samsung
+}
+```
+
 * This method is **static**.
 
 **Return Value:**
@@ -579,6 +648,13 @@ Related global function (description see above).
 > #### [( jump back )](#available-php-functions)
 ```php
 is_ios(  ): boolean
+```
+
+#### Example
+```php
+if ( is_ios() ) {
+     // I am an iOS based device
+}
 ```
 
 * This method is **static**.

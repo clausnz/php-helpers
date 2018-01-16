@@ -1095,7 +1095,7 @@ str_starts_with( string|array $needle, string $haystack ): boolean
 ```
 
 #### Example
-````php
+```php
 $string = 'The quick brown fox jumps over the lazy dog';
 $array = [
      'Cat',
@@ -1142,7 +1142,7 @@ str_istarts_with( string|array $needle, string $haystack ): boolean
 ```
 
 #### Example
-````php
+```php
 $string = 'The quick brown fox jumps over the lazy dog';
 $array = [
      'cat',
@@ -1189,7 +1189,7 @@ str_ends_with( string|array $needle, string $haystack ): boolean
 ```
 
 #### Example
-````php
+```php
 $string = 'The quick brown fox jumps over the lazy dog';
 $array = [
      'cat',
@@ -1236,7 +1236,7 @@ str_iends_with( string|array $needle, string $haystack ): boolean
 ```
 
 #### Example
-````php
+```php
 $string = 'The quick brown fox jumps over the lazy dog';
 $array = [
      'Cat',

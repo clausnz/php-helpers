@@ -360,7 +360,7 @@ class Str
      * ```
      *
      * #### Example
-     * ````php
+     * ```php
      * $string = 'The quick brown fox jumps over the lazy dog';
      * $array = [
      *      'Cat',
@@ -405,7 +405,7 @@ class Str
      * ```
      *
      * #### Example
-     * ````php
+     * ```php
      * $string = 'The quick brown fox jumps over the lazy dog';
      * $array = [
      *      'cat',
@@ -453,7 +453,7 @@ class Str
      * ```
      *
      * #### Example
-     * ````php
+     * ```php
      * $string = 'The quick brown fox jumps over the lazy dog';
      * $array = [
      *      'cat',
@@ -499,7 +499,7 @@ class Str
      * ```
      *
      * #### Example
-     * ````php
+     * ```php
      * $string = 'The quick brown fox jumps over the lazy dog';
      * $array = [
      *      'Cat',

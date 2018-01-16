@@ -3,6 +3,7 @@
 The library `clausnz/php-helpers`  is a collection of **:nr_functions** useful php helper functions.  
 Once installed, the global functions are accessable from **everywhere** in your code:
 
+#### Example
 ```php
 <?php
 
@@ -13,6 +14,7 @@ If a function with the same name already exists in the list of your project's de
 
 Nevertheless, every function is also accessable it in a static way with the approbiate use-statement:
 
+#### Example
 ```php
 <?php
 

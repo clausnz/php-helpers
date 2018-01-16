@@ -282,9 +282,9 @@ class Str
      *      'fox'
      * ];
      *
-     * echo str_contains( $array, $string ) ? 'true' : 'false';
+     * dump( str_contains( $array, $string ) );
      *
-     * // true
+     * // bool(true)
      * ```
      *
      * @param string|array $needle
@@ -327,9 +327,9 @@ class Str
      *      'Fox'
      * ];
      *
-     * echo str_icontains( $array, $string ) ? 'true' : 'false';
+     * dump( str_icontains( $array, $string ) );
      *
-     * // true
+     * // bool(true)
      * ```
      *
      * @param string|array $needle
@@ -372,9 +372,9 @@ class Str
      *      'The'
      * ];
      *
-     * echo str_starts_with( $array, $string ) ? 'true' : 'false';
+     * dump( str_starts_with( $array, $string ) );
      *
-     * // true
+     * // bool(true)
      * ```
      *
      * @param string|array $needle
@@ -417,9 +417,9 @@ class Str
      *      'the'
      * ];
      *
-     * echo str_istarts_with( $array, $string ) ? 'true' : 'false';
+     * dump( str_istarts_with( $array, $string ) );
      *
-     * // true
+     * // bool(true)
      * ```
      *
      * @param string|array $needle
@@ -465,9 +465,9 @@ class Str
      *      'dog'
      * ];
      *
-     * echo str_ends_with( $array, $string ) ? 'true' : 'false';
+     * dump( str_ends_with( $array, $string ) );
      *
-     * // true
+     * // bool(true)
      * ```
      *
      * @param string|array $needle
@@ -511,9 +511,9 @@ class Str
      *      'Dog'
      * ];
      *
-     * echo str_iends_with( $array, $string ) ? 'true' : 'false';
+     * dump( str_iends_with( $array, $string ) );
      *
-     * // true
+     * // bool(true)
      * ```
      *
      * @param string|array $needle

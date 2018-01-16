@@ -253,6 +253,10 @@ class Util
      */
     public static function dump($var)
     {
+        if (is_bool($var)) {
+            $var = 'bool(' . ($var ? 'true' : 'false') . ')';
+        }
+
         if (php_sapi_name() == 'cli') {
             print_r($var);
         } else {

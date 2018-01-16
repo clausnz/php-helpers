@@ -1010,9 +1010,9 @@ $array = [
      'fox'
 ];
 
-echo str_contains( $array, $string ) ? 'true' : 'false';
+dump( str_contains( $array, $string ) );
 
-// true
+// bool(true)
 ```
 
 * This method is **static**.
@@ -1057,9 +1057,9 @@ $array = [
      'Fox'
 ];
 
-echo str_icontains( $array, $string ) ? 'true' : 'false';
+dump( str_icontains( $array, $string ) );
 
-// true
+// bool(true)
 ```
 
 * This method is **static**.
@@ -1104,9 +1104,9 @@ $array = [
      'The'
 ];
 
-echo str_starts_with( $array, $string ) ? 'true' : 'false';
+dump( str_starts_with( $array, $string ) );
 
-// true
+// bool(true)
 ```
 
 * This method is **static**.
@@ -1151,9 +1151,9 @@ $array = [
      'the'
 ];
 
-echo str_istarts_with( $array, $string ) ? 'true' : 'false';
+dump( str_istarts_with( $array, $string ) );
 
-// true
+// bool(true)
 ```
 
 * This method is **static**.
@@ -1198,9 +1198,9 @@ $array = [
      'dog'
 ];
 
-echo str_ends_with( $array, $string ) ? 'true' : 'false';
+dump( str_ends_with( $array, $string ) );
 
-// true
+// bool(true)
 ```
 
 * This method is **static**.
@@ -1245,9 +1245,9 @@ $array = [
      'Dog'
 ];
 
-echo str_iends_with( $array, $string ) ? 'true' : 'false';
+dump( str_iends_with( $array, $string ) );
 
-// true
+// bool(true)
 ```
 
 * This method is **static**.

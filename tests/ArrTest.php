@@ -169,5 +169,19 @@ class ArrTest extends TestCase
                 $this->assertNotEquals($expected, $parameter);
             }
         }
+
+        $var = 'test';
+
+        $global = to_array($var);
+        $static = arr::toArray($var);
+
+        for ($i = 0; $i < strlen($var); $i++) {
+            $this->assertEquals($global[$i], $static[$i]);
+        }
+
+        $var = 10;
+
+        $this->assertNull(to_array($var));
+        $this->assertNull(arr::toArray($var));
     }
 }

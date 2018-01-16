@@ -172,7 +172,7 @@ class Util
      * The password to test.
      *
      * @param string $cryptedPassword
-     * The crypted password (e.g. stored in the database)
+     * The crypted password (e.g. stored in the database).
      *
      * @return boolean
      */

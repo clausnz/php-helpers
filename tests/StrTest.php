@@ -116,6 +116,34 @@ class StrTest extends TestCase
         }
     }
 
+    public function test_str_after_last()
+    {
+        $testString = "/var/www/html/public/img/background.jpg";
+
+        $testArrayEqual = [
+            // expected => parameter
+            'background.jpg' => '/',
+            'jpg' => '.',
+            'ckground.jpg' => 'a'
+        ];
+
+        foreach ($testArrayEqual as $expected => $parameter) {
+            $this->assertEquals($expected, str_after_last($parameter, $testString));
+            $this->assertEquals($expected, str::afterLast($parameter, $testString));
+        }
+
+        $testArrayNotEqual = [
+            // not_expected => parameter
+            'cat' => 'fox',
+            'cats' => '.'
+        ];
+
+        foreach ($testArrayNotEqual as $expected => $parameter) {
+            $this->assertNotEquals($expected, str_after_last($parameter, $this->testString));
+            $this->assertNotEquals($expected, str::afterLast($parameter, $this->testString));
+        }
+    }
+
     public function test_str_limit_words()
     {
         $testArrayEqual = [

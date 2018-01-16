@@ -245,7 +245,7 @@ class Str
      * The string to limit the characters.
      *
      * @param  int    $limit
-     * The number of characters to limit.
+     * The number of characters to limit. Defaults to 100.
      *
      * @param  string $end
      * The string to end the cut string. Defaults to '...'
@@ -538,5 +538,40 @@ class Str
         }
 
         return false;
+    }
+
+    /**
+     * Return the part of a string after the last occurrence of a given search value.
+     *
+     * ### str_after_last
+     * Related global function (description see above).
+     *
+     * > #### [( jump back )](#available-php-functions)
+     *
+     * ```php
+     * str_after_last( string $search, string $string ): string
+     * ```
+     *
+     * #### Example
+     * ```php
+     * $path = "/var/www/html/public/img/image.jpg";
+     *
+     * echo str_after_last( '/' $path );
+     *
+     * // image.jpg
+     * ```
+     *
+     * @param string $search
+     * The string to search for.
+     *
+     * @param string $string
+     * The string to search in.
+     *
+     * @return string
+     * The found string after the last occurrence of the search string. Whitespaces at beginning will be removed.
+     */
+    public static function afterLast($search, $string)
+    {
+        return $search === '' ? $string : ltrim(array_reverse(explode($search, $string))[0]);
     }
 }

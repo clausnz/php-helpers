@@ -233,6 +233,21 @@ if (!function_exists('str_after')) {
     }
 }
 
+if (!function_exists('str_after_last')) {
+    /**
+     * Return the remainder of a string after the last occurrence of a search value.
+     *
+     * @param string $search
+     * @param string $string
+     *
+     * @return string
+     */
+    function str_after_last($search, $string)
+    {
+        return str::afterLast($search, $string);
+    }
+}
+
 if (!function_exists('str_between')) {
     /**
      * Return the content in a string between a left and right element.

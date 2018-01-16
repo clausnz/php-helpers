@@ -1,6 +1,6 @@
 # About
 
-A Collection of 32 useful php helper functions.
+A Collection of 33 useful php helper functions.
 
 [![Build Status](https://travis-ci.org/clausnz/php-helpers.svg?branch=master)](https://travis-ci.org/clausnz/php-helpers)
 
@@ -32,6 +32,7 @@ todo
 * [String](#str_before)
     * [str_before](#str_before)
     * [str_after](#str_after)
+    * [str_after_last](#str_after_last)
     * [str_between](#str_between)
     * [str_insert](#str_insert)
     * [str_limit](#str_limit)
@@ -84,6 +85,7 @@ todo
     * [startsWithIgnoreCase](#startswithignorecase)
     * [endsWith](#endswith)
     * [endsWithIgnoreCase](#endswithignorecase)
+    * [afterLast](#afterlast)
 * [Util](#util)
     * [isEmail](#isemail)
     * [ip](#ip)
@@ -971,7 +973,7 @@ echo str_limit( $string, 15 );
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `$string` | **string** | The string to limit the characters. |
-| `$limit` | **integer** | The number of characters to limit. |
+| `$limit` | **integer** | The number of characters to limit. Defaults to 100. |
 | `$end` | **string** | The string to end the cut string. Defaults to '...' |
 
 
@@ -1265,6 +1267,49 @@ True if $needle was found, false otherwise.
 
 ---
 
+### afterLast
+
+Return the part of a string after the last occurrence of a given search value.
+
+```php
+Str::afterLast( string $search, string $string ): string
+```
+
+### str_after_last
+Related global function (description see above).
+
+> #### [( jump back )](#available-php-functions)
+
+```php
+str_after_last( string $search, string $string ): string
+```
+
+#### Example
+```php
+$path = "/var/www/html/public/img/image.jpg";
+
+echo str_after_last( '/' $path );
+
+// image.jpg
+```
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$search` | **string** | The string to search for. |
+| `$string` | **string** | The string to search in. |
+
+
+**Return Value:**
+
+The found string after the last occurrence of the search string. Whitespaces at beginning will be removed.
+
+
+
+---
+
 ## Util
 
 Helper class that provides easy access to useful common php functions.
@@ -1427,7 +1472,7 @@ echo is_password( $password, $cryptedPassword ) ? 'true' : 'false';
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `$password` | **string** | The password to test. |
-| `$cryptedPassword` | **string** | The crypted password (e.g. stored in the database) |
+| `$cryptedPassword` | **string** | The crypted password (e.g. stored in the database). |
 
 
 

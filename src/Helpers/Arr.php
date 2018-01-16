@@ -34,7 +34,7 @@ class Arr
      *     'foo' => 'bar'
      * ];
      *
-     * echo is_assoc($array) ? 'true' : 'false';
+     * echo is_assoc( $array ) ? 'true' : 'false';
      *
      * // true
      * ```
@@ -87,7 +87,7 @@ class Arr
     }
 
     /**
-     * Converts an object to an array.
+     * Converts a string or an object to an array.
      *
      * ### to_array
      * Related global function (description see above).
@@ -95,15 +95,43 @@ class Arr
      * ```php
      * to_array( object $object ): array
      * ```
+     * #### Example
+     * ```php
+     * $var = 'php';
+     * dump( $var );
      *
-     * @param object $object
-     * The object to be converted.
-     * @return array
-     * An array representation of the converted object.
+     * // (
+     *      [0] => p
+     *      [1] => h
+     *      [2] => p
+     * )
+     *
+     * $var = new stdClass;
+     * $var->foo = 'bar';
+     * dump( $var );
+     *
+     * // (
+     *      [foo] => bar
+     * )
+     * ```
+     *
+     * @param $var
+     * Array or string.
+     * @return mixed
+     * An array representation of the converted string or object.
+     * Returns null if $var is no a string or array.
      */
-    public static function toArray($object)
+    public static function toArray($var)
     {
-        return json_decode(json_encode($object), true);
+        if (is_string($var)) {
+            return str_split($var);
+        }
+
+        if (is_object($var)) {
+            return json_decode(json_encode($var), true);
+        }
+
+        return null;
     }
 
     /**
@@ -115,11 +143,22 @@ class Arr
      * ```php
      * array_first( array $array ): mixed
      * ```
+     * #### Example
+     * ```php
+     * $array = [
+     *      'foo' => 'bar',
+     *      'baz' => 'qux'
+     * ];
+     *
+     * dump( array_first( $array ) )
+     *
+     * // bar
+     * ```
      *
      * @param array $array
      * The concerned array.
      * @return mixed
-     * The value of the first element. Type could be anything.
+     * The value of the first element, without key. Mixed type.
      *
      */
     public static function first($array)
@@ -136,11 +175,22 @@ class Arr
      * ```php
      * array_last( array $array ): mixed
      * ```
+     * #### Example
+     * ```php
+     * $array = [
+     *      'foo' => 'bar',
+     *      'baz' => 'qux'
+     * ];
+     *
+     * dump( array_last( $array ) )
+     *
+     * // qux
+     * ```
      *
      * @param array $array
      * The concerned array.
      * @return mixed
-     * The value of the last element. Type could be anything.
+     * The value of the last element, without key. Mixed type.
      */
     public static function last($array)
     {

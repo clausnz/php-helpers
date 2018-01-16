@@ -159,15 +159,15 @@ if (!function_exists('array_last')) {
 
 if (!function_exists('to_array')) {
     /**
-     * Converts an object to an array.
+     * Converts a string or an object to an array.
      *
-     * @param $object
+     * @param $var
      *
-     * @return array
+     * @return mixed
      */
-    function to_array($object)
+    function to_array($var)
     {
-        return arr::toArray($object);
+        return arr::toArray($var);
     }
 }
 

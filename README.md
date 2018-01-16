@@ -121,7 +121,7 @@ $array = [
     'foo' => 'bar'
 ];
 
-echo is_assoc($array) ? 'true' : 'false';
+echo is_assoc( $array ) ? 'true' : 'false';
 
 // true
 ```
@@ -188,10 +188,10 @@ A std object representation of the converted array.
 
 ### toArray
 
-Converts an object to an array.
+Converts a string or an object to an array.
 
 ```php
-Arr::toArray( object $object ): array
+Arr::toArray(  $var ): mixed
 ```
 
 ### to_array
@@ -200,18 +200,38 @@ Related global function (description see above).
 ```php
 to_array( object $object ): array
 ```
+#### Example
+```php
+$var = 'php';
+dump( $var );
+
+// (
+     [0] => p
+     [1] => h
+     [2] => p
+)
+
+$var = new stdClass;
+$var->foo = 'bar';
+dump( $var );
+
+// (
+     [foo] => bar
+)
+```
 
 * This method is **static**.
 **Parameters:**
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$object` | **object** | The object to be converted. |
+| `$var` | **** | Array or string. |
 
 
 **Return Value:**
 
-An array representation of the converted object.
+An array representation of the converted string or object.
+Returns null if $var is no a string or array.
 
 
 
@@ -231,6 +251,17 @@ Related global function (description see above).
 ```php
 array_first( array $array ): mixed
 ```
+#### Example
+```php
+$array = [
+     'foo' => 'bar',
+     'baz' => 'qux'
+];
+
+dump( array_first( $array ) )
+
+// bar
+```
 
 * This method is **static**.
 **Parameters:**
@@ -242,7 +273,7 @@ array_first( array $array ): mixed
 
 **Return Value:**
 
-The value of the first element. Type could be anything.
+The value of the first element, without key. Mixed type.
 
 
 
@@ -262,6 +293,17 @@ Related global function (description see above).
 ```php
 array_last( array $array ): mixed
 ```
+#### Example
+```php
+$array = [
+     'foo' => 'bar',
+     'baz' => 'qux'
+];
+
+dump( array_last( $array ) )
+
+// qux
+```
 
 * This method is **static**.
 **Parameters:**
@@ -273,7 +315,7 @@ array_last( array $array ): mixed
 
 **Return Value:**
 
-The value of the last element. Type could be anything.
+The value of the last element, without key. Mixed type.
 
 
 
@@ -1084,4 +1126,4 @@ dump( mixed $var )
 
 
 --------
-> This document was automatically generated from source code comments on 2018-01-15 using [phpDocumentor](http://www.phpdoc.org/) and [cvuorinen/phpdoc-markdown-public](https://github.com/cvuorinen/phpdoc-markdown-public)
+> This document was automatically generated from source code comments on 2018-01-16 using [phpDocumentor](http://www.phpdoc.org/) and [cvuorinen/phpdoc-markdown-public](https://github.com/cvuorinen/phpdoc-markdown-public)

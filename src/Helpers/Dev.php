@@ -63,10 +63,13 @@ class Dev
      *
      * ### is_smartphone
      * Related global function (description see above).
+     *
      * > #### [( jump back )](#available-php-functions)
+     *
      * ```php
      * is_smartphone(  ): boolean
      * ```
+     *
      * #### Example
      * ```php
      * if ( is_smartphone() ) {
@@ -87,10 +90,13 @@ class Dev
      *
      * ### is_mobile
      * Related global function (description see above).
+     *
      * > #### [( jump back )](#available-php-functions)
+     *
      * ```php
      * is_mobile(  ): boolean
      * ```
+     *
      * #### Example
      * ```php
      * if ( is_mobile() ) {
@@ -138,10 +144,13 @@ class Dev
      *
      * ### is_tablet
      * Related global function (description see above).
+     *
      * > #### [( jump back )](#available-php-functions)
+     *
      * ```php
      * is_tablet(  ): boolean
      * ```
+     *
      * #### Example
      * ```php
      * if ( is_tablet() ) {
@@ -162,10 +171,13 @@ class Dev
      *
      * ### is_desktop
      * Related global function (description see above).
+     *
      * > #### [( jump back )](#available-php-functions)
+     *
      * ```php
      * is_desktop(  ): boolean
      * ```
+     *
      * #### Example
      * ```php
      * if ( is_desktop() ) {
@@ -186,10 +198,13 @@ class Dev
      *
      * ### is_robot
      * Related global function (description see above).
+     *
      * > #### [( jump back )](#available-php-functions)
+     *
      * ```php
      * is_robot(  ): boolean
      * ```
+     *
      * #### Example
      * ```php
      * if ( is_robot() ) {
@@ -210,6 +225,7 @@ class Dev
      * Crawler-Detect doku: https://github.com/JayBizzle/Crawler-Detect
      *
      * ***This method has no related global function!***
+     *
      * > #### [( jump back )](#available-php-functions)
      *
      * #### Example
@@ -235,7 +251,9 @@ class Dev
      *
      * ### is_android
      * Related global function (description see above).
+     *
      * > #### [( jump back )](#available-php-functions)
+     *
      * ```php
      * is_android(  ): boolean
      * ```
@@ -260,7 +278,9 @@ class Dev
      *
      * ### is_iphone
      * Related global function (description see above).
+     *
      * > #### [( jump back )](#available-php-functions)
+     *
      * ```php
      * is_iphone(  ): boolean
      * ```
@@ -285,7 +305,9 @@ class Dev
      *
      * ### is_samsung
      * Related global function (description see above).
+     *
      * > #### [( jump back )](#available-php-functions)
+     *
      * ```php
      * is_samsung(  ): boolean
      * ```
@@ -310,7 +332,9 @@ class Dev
      *
      * ### is_ios
      * Related global function (description see above).
+     *
      * > #### [( jump back )](#available-php-functions)
+     *
      * ```php
      * is_ios(  ): boolean
      * ```

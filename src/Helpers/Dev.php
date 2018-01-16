@@ -168,7 +168,7 @@ class Dev
      * ```
      * #### Example
      * ```php
-     * if ( is_mobile() ) {
+     * if ( is_desktop() ) {
      *      // I am a desktop computer (Mac, Linux, Windows)
      * }
      * ```

@@ -6,10 +6,27 @@ A Collection of 33 useful php helper functions.
 
 # Install
 
-```php
-todo
+To install the latest clausnz/php-helper library, add the following lines to your composer.json: 
+
+```json
+{
+  "repositories": [
+    {
+      "url": "https://github.com/clausnz/php-helpers",
+      "type": "git"
+    }
+  ],
+  "require": {
+    "clausnz/php-helpers": "dev-master"
+  }
+}
 ```
-# Available PHP Functions
+
+Make sure to require your composer autoload file:
+
+```php
+require __DIR__ . '/vendor/autoload.php';
+```# Available PHP Functions
 
 ## Table of Contents
 

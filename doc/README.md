@@ -1415,8 +1415,8 @@ echo is_password( $password, $cryptedPassword ) ? 'true' : 'false';
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$password` | **string** |  |
-| `$cryptedPassword` | **string** |  |
+| `$password` | **string** | The password to test. |
+| `$cryptedPassword` | **string** | The crypted password (e.g. stored in the database) |
 
 
 

@@ -10,7 +10,8 @@ dump( 'any content' );
 ```
 
 If a function with the same name already exists in the list of your project's defined functions ( built-in and user-defined ), it will simply not be registered in your environment.  
-Nevertheless, it is still accessable it in a static way with the approbiate use-statement:
+
+Nevertheless, every function is also accessable it in a static way with the approbiate use-statement:
 
 ```php
 <?php

@@ -38,7 +38,7 @@ Every function is automatically tested against a number of unit-tests and PHP Ve
 [![Build Status](https://travis-ci.org/clausnz/php-helpers.svg?branch=master)](https://travis-ci.org/clausnz/php-helpers)
 # Install
 
-To install the latest `clausnz/php-helper` library, simply add the following lines to your `composer.json` and run a `composer update`: 
+To install the latest `clausnz/php-helper` library, simply add the following lines to your `composer.json` and run `composer update`: 
 
 #### Example
 ```json

@@ -2,8 +2,8 @@
 
 # About
 
-The library `clausnz/php-helpers`  is a collection of **:nr_functions** useful php helper functions.  
-Once installed with `composer`, the global functions are accessable from **everywhere** in your code:
+The library `clausnz/php-helpers`  is a collection of **:nr_functions** useful php helper functions `(PHP 5.6, 7.0, 7.1, 7.2)`.  
+After installation with `composer`, the global functions are accessable from **everywhere** in your code:
 
 #### Example
 ```php
@@ -34,5 +34,5 @@ This library makes use of the following brilliant and well known libraries:
 
 ## Unit Tests
 
-With every commit to the repository, **every** function is automatically tested against a number of unit-tests and PHP Versions. 
+Every function is automatically tested against a number of unit-tests and PHP Versions. 
 [![Build Status](https://travis-ci.org/clausnz/php-helpers.svg?branch=master)](https://travis-ci.org/clausnz/php-helpers)

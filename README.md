@@ -26,7 +26,7 @@ util::dump( 'any content' );
 ```
 # Install
 
-To install the latest clausnz/php-helper library, add the following lines to your composer.json: 
+To install the latest clausnz/php-helper library, simply add the following lines to your composer.json and run a `composer update`: 
 
 #### Example
 ```json
@@ -43,7 +43,7 @@ To install the latest clausnz/php-helper library, add the following lines to you
 }
 ```
 
-Make sure to require your composer autoload file:
+Also make sure to require your composer autoload file:
 
 #### Example
 ```php

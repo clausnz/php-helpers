@@ -25,6 +25,13 @@ use CNZ\Helpers\Util as util;
 util::dump( 'any content' );
 ```
 
+## CREDITS
+
+This library makes use of the following brilliant and well known libraries:
+
+- https://github.com/serbanghita/Mobile-Detect
+- https://github.com/JayBizzle/Crawler-Detect
+
 ## Unit Tests
 
 With every commit to the repository, **every** function is automatically tested against a number of unit-tests and PHP Versions. 

@@ -14,7 +14,7 @@ dump( 'any content' );
 
 If a function with the same name already exists in the list of your project's defined functions ( built-in and user-defined ), it will simply not be registered in your environment.  
 
-Nevertheless, every function is also accessable it in a static way with the approbiate use-statement:
+Nevertheless, every function is also accessable it in a static way with the appropriate use-statement:
 
 #### Example
 ```php
@@ -1624,4 +1624,4 @@ dump( $array );
 
 
 --------
-> This document was automatically generated from source code comments on 2018-01-16 using [phpDocumentor](http://www.phpdoc.org/) and [cvuorinen/phpdoc-markdown-public](https://github.com/cvuorinen/phpdoc-markdown-public)
+> This document was automatically generated from source code comments on 2018-01-17 using [phpDocumentor](http://www.phpdoc.org/) and [cvuorinen/phpdoc-markdown-public](https://github.com/cvuorinen/phpdoc-markdown-public)

@@ -2,7 +2,7 @@
 
 # About
 
-The library `clausnz/php-helpers`  is a collection of **:nr_functions** useful php helper functions `(PHP 5.6, 7.0, 7.1, 7.2)`.  
+The library `clausnz/php-helpers`  is a collection of **:nr_functions** useful php helper functions `(PHP 5.6, 7.*)`.  
 After installation with `composer`, the global functions are accessable from **everywhere** in your code:
 
 #### Example

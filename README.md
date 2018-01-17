@@ -25,9 +25,10 @@ use CNZ\Helpers\Util as util;
 util::dump( 'any content' );
 ```
 
-#### Unit Tests
+## Unit Tests
 
-With every commit to the repository, every function is automatically tested against a number of unit-tests and PHP Versions.
+With every commit to the repository, every function is automatically tested against a number of unit-tests and PHP Versions. 
+[![Build Status](https://travis-ci.org/clausnz/php-helpers.svg?branch=master)](https://travis-ci.org/clausnz/php-helpers)
 # Install
 
 To install the latest clausnz/php-helper library, simply add the following lines to your `composer.json` and run a `composer update`: 

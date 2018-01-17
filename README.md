@@ -12,7 +12,7 @@ Once installed with `composer`, the global functions are accessable from **every
 dump( 'any content' );
 ```
 
-If a function with the same name already exists in the list of your project's defined functions ( built-in and user-defined ), it will simply not be registered in your environment. Therefore, no conflicts will appear.  
+If a function with the same name already exists in the list of your project's defined functions ( built-in and user-defined ), it will simply not be registered in your environment. Therefore, **no conflicts** will ever appear.  
 
 Nevertheless, every function is still accessable it in a static way with the appropriate use-statement:
 
@@ -24,9 +24,13 @@ use CNZ\Helpers\Util as util;
 
 util::dump( 'any content' );
 ```
+
+#### Unit Tests
+
+With every commit to the repository, every function is automatically tested against a number of unit-tests and PHP Versions.
 # Install
 
-To install the latest clausnz/php-helper library, simply add the following lines to your composer.json and run a `composer update`: 
+To install the latest clausnz/php-helper library, simply add the following lines to your `composer.json` and run a `composer update`: 
 
 #### Example
 ```json
@@ -50,7 +54,7 @@ Also make sure to require your composer autoload file:
 require __DIR__ . '/vendor/autoload.php';
 ```
 
-Now the new global PHP functions are immediately available everywhere in your code. To also access the static functions in the helper classes, add an approbiate use statement to your file:
+After installation, the new global PHP functions are immediately available everywhere in your code. To also access the ( almost identical ) static functions in the helper classes, add an approbiate use statement to your file:
 
 #### Example
  ```php
@@ -62,7 +66,6 @@ if( dev::isIphone() ) {
     // Do something here
 }
  ```
- 
  # Available PHP Functions
 
 ## Table of Contents

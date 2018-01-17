@@ -1,6 +1,6 @@
 # Install
 
-To install the latest clausnz/php-helper library, simply add the following lines to your `composer.json` and run a `composer update`: 
+To install the latest `clausnz/php-helper` library, simply add the following lines to your `composer.json` and run a `composer update`: 
 
 #### Example
 ```json

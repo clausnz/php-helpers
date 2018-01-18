@@ -51,9 +51,7 @@ class Yml
      *     'foo' => 'bar'
      * ];
      *
-     * dump( to_yml_file( $array, '/path/to/file.yml' ) );
-     *
-     * // bool(true)
+     * to_yml_file( $array, '/path/to/file.yml' );
      * ```
      *
      * @codeCoverageIgnore

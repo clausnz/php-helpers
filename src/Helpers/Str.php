@@ -33,14 +33,14 @@ class Str
      * #### Example
      * ```php
      * $array = [
-     *      ':name' => 'John',
-     *      ':age' => 25
+     *      ':color' => 'brown',
+     *      ':animal' => 'dog'
      * ]
-     * $string = 'But :name is older. :name is :age years old.';
+     * $string = 'The quick :color fox jumps over the lazy :animal.';
      *
      * echo str_insert( $array, $string );
      *
-     * // But John is older. John is 25 years old.
+     * // The quick brown fox jumps over the lazy dog.
      * ```
      *
      * @param array  $inserts

@@ -104,20 +104,22 @@ class Arr
      * to_array( object $object ): array
      * ```
      *
-     * #### Example
+     * #### Example 1 (string)
      * ```php
      * $var = 'php';
-     * dump( $var );
+     * dump( to_array( $var ) );
      *
      * // (
      *      [0] => p
      *      [1] => h
      *      [2] => p
      * )
-     *
+     * ```
+     * #### Example 2 (object)
+     * ```php
      * $var = new stdClass;
      * $var->foo = 'bar';
-     * dump( $var );
+     * dump( to_array( $var ) );
      *
      * // (
      *      [foo] => bar

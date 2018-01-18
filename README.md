@@ -276,20 +276,22 @@ Related global function (description see above).
 to_array( object $object ): array
 ```
 
-#### Example
+#### Example 1 (string)
 ```php
 $var = 'php';
-dump( $var );
+dump( to_array( $var ) );
 
 // (
      [0] => p
      [1] => h
      [2] => p
 )
-
+```
+#### Example 2 (object)
+```php
 $var = new stdClass;
 $var->foo = 'bar';
-dump( $var );
+dump( to_array( $var ) );
 
 // (
      [foo] => bar
@@ -802,14 +804,14 @@ str_insert( $string, $inserts ): array
 #### Example
 ```php
 $array = [
-     ':name' => 'John',
-     ':age' => 25
+     ':color' => 'brown',
+     ':animal' => 'dog'
 ]
-$string = 'But :name is older. :name is :age years old.';
+$string = 'The quick :color fox jumps over the lazy :animal.';
 
 echo str_insert( $array, $string );
 
-// But John is older. John is 25 years old.
+// The quick brown fox jumps over the lazy dog.
 ```
 
 * This method is **static**.

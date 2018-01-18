@@ -13,6 +13,7 @@ use CNZ\Helpers\Arr as arr;
 use CNZ\Helpers\Dev as dev;
 use CNZ\Helpers\Str as str;
 use CNZ\Helpers\Util as util;
+use CNZ\Helpers\Yml as yml;
 
 
 // @group(Device)
@@ -480,7 +481,7 @@ if (!function_exists('is_password')) {
      * Verifies that a password matches a crypted password (CRYPT_BLOWFISH algorithm).
      *
      * @param string $password
-     * @param        $cryptedPassword
+     * @param string $cryptedPassword
      *
      * @return bool
      */
@@ -491,3 +492,94 @@ if (!function_exists('is_password')) {
 }
 
 // @endgroup(Utils)
+
+// @group(Yml)
+
+if (!function_exists('to_yml')) {
+    /**
+     * Transformes a given array to a yaml string.
+     *
+     * @param array|object $var
+     * @param int          $indent
+     * @return bool
+     */
+    function to_yml($var, $indent = 2)
+    {
+        return yml::toYml($var, $indent);
+    }
+}
+
+if (!function_exists('to_yml_file')) {
+    /**
+     * Transformes a given array to yaml syntax and puts its content into a given file.
+     *
+     * @codeCoverageIgnore
+     *
+     * @param array  $array
+     * @param string $filename
+     * @param int    $indent
+     * @return bool
+     */
+    function to_yml_file($array, $filename, $indent = 2)
+    {
+        return yml::toYmlFile($array, $filename, $indent);
+    }
+}
+
+if (!function_exists('yml_parse')) {
+    /**
+     * Transforms a given yaml string into an array.
+     *
+     * @param string $yml
+     * @return array
+     */
+    function yml_parse($yml)
+    {
+        return yml::parseYml($yml);
+    }
+}
+
+if (!function_exists('yml_parse_file')) {
+    /**
+     * Loads the content of a yaml file into an array.
+     *
+     * @codeCoverageIgnore
+     *
+     * @param $ymlFile
+     * @return array
+     */
+    function yml_parse_file($ymlFile)
+    {
+        return yml::parseYmlFile($ymlFile);
+    }
+}
+
+if (!function_exists('is_yml')) {
+    /**
+     * Loads the content of a yaml file into an array.
+     *
+     * @param $string
+     * @return bool
+     */
+    function is_yml($string)
+    {
+        return yml::isYml($string);
+    }
+}
+
+if (!function_exists('is_yml_file')) {
+    /**
+     * Validates if a given file contains yaml syntax.
+     *
+     * @codeCoverageIgnore
+     *
+     * @param $string
+     * @return bool
+     */
+    function is_yml_file($string)
+    {
+        return yml::isYmlFile($string);
+    }
+}
+
+// @endgroup(Yml)

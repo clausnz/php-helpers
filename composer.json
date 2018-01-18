@@ -12,7 +12,8 @@
   "require": {
     "php": ">=5.6.0",
     "mobiledetect/mobiledetectlib": "^2.8",
-    "jaybizzle/crawler-detect": "1.2.*"
+    "jaybizzle/crawler-detect": "1.2.*",
+    "mustangostang/spyc": "^0.5.0@dev"
   },
   "license": "MIT",
   "authors": [

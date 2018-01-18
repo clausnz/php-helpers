@@ -2,7 +2,7 @@
 
 # About
 
-The library `clausnz/php-helpers`  is a collection of **33** useful php helper functions `(PHP 5.6, 7.*)`.  
+The library `clausnz/php-helpers`  is a collection of **39** useful php helper functions `(PHP 5.6, 7.*)`.  
 After installation with `composer`, the global functions are accessable from everywhere in your code:
 
 #### Example
@@ -115,6 +115,13 @@ if( dev::isIphone() ) {
     * [dd](#dd)
     * [crypt_password](#crypt_password)
     * [is_password](#is_password)
+* [Yml](#to_yml)
+    * [to_yml](#to_yml)
+    * [to_yml_file](#to_yml_file)
+    * [yml_parse](#yml_parse)
+    * [yml_parse_file](#yml_parse_file)
+    * [is_yml](#is_yml)
+    * [is_yml_file](#is_yml_file)
 # API Documentation
 
 ## Table of Contents
@@ -158,6 +165,13 @@ if( dev::isIphone() ) {
     * [isPassword](#ispassword)
     * [dd](#dd)
     * [dump](#dump)
+* [Yml](#yml)
+    * [toYmlFile](#toymlfile)
+    * [toYml](#toyml)
+    * [parseYmlFile](#parseymlfile)
+    * [parseYml](#parseyml)
+    * [isYmlFile](#isymlfile)
+    * [isYml](#isyml)
 
 ## Arr
 
@@ -1629,6 +1643,174 @@ dump( $array );
 |-----------|------|-------------|
 | `$var` | **mixed** | The var to dump out. |
 
+
+
+
+---
+
+## Yml
+
+Helper class that provides easy access to useful php yml functions.
+
+Class Yml
+
+* Full name: \CNZ\Helpers\Yml
+
+
+### toYmlFile
+
+Transformes a given array to yaml syntax and puts its content into a given file.
+
+```php
+Yml::toYmlFile( array|object $var, string $filename, integer $indent = 2 ): boolean
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$var` | **array&#124;object** | The array to transform. |
+| `$filename` | **string** | The path to the file to write the yaml string into. |
+| `$indent` | **integer** | The indent of the converted yaml. Defaults to 2. |
+
+
+**Return Value:**
+
+True on success, false otherwise.
+
+
+
+---
+
+### toYml
+
+Transformes a given array to a yaml string.
+
+```php
+Yml::toYml( array|object $var, integer $indent = 2 ): string|null
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$var` | **array&#124;object** | The array or object to transform. |
+| `$indent` | **integer** | The indent of the converted yaml. Defaults to 2. |
+
+
+**Return Value:**
+
+The converted yaml string. If $var is not an array or object, null is returned.
+
+
+
+---
+
+### parseYmlFile
+
+Loads the content of a yaml file into an array.
+
+```php
+Yml::parseYmlFile(  $ymlFile ): array
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$ymlFile` | **** | The path of the file to read from. |
+
+
+**Return Value:**
+
+The parsed array.
+
+
+
+---
+
+### parseYml
+
+Transforms a given yaml string into an array.
+
+```php
+Yml::parseYml( string $yml ): array|null
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$yml` | **string** | The yaml string to convert. |
+
+
+**Return Value:**
+
+The transformed array, null on error.
+
+
+
+---
+
+### isYmlFile
+
+Validates if a given file contains yaml syntax.
+
+```php
+Yml::isYmlFile( string $ymlFile ): boolean
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$ymlFile` | **string** | The file to test for yaml syntax. |
+
+
+**Return Value:**
+
+True if the file contains yaml syntax, false otherwise.
+
+
+
+---
+
+### isYml
+
+Tests if the syntax of a given string is yaml.
+
+```php
+Yml::isYml( string $string ): boolean
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$string` | **string** | The string to test for yaml syntax. |
+
+
+**Return Value:**
+
+True if the string is yaml, false otherwise.
 
 
 

@@ -1589,7 +1589,25 @@ Transformes a given array to yaml syntax and puts its content into a given file.
 Yml::toYmlFile( array|object $var, string $filename, integer $indent = 2 ): boolean
 ```
 
+### to_yml_file
+Related global function (description see above).
 
+> #### [( jump back )](#available-php-functions)
+
+```php
+to_yml_file( array $array, string $filename, int $indent = 2 ): boolean
+```
+
+#### Example
+```php
+$array = [
+    'foo' => 'bar'
+];
+
+dump( to_yml_file( $array, '/path/to/file.yml' ) );
+
+// bool(true)
+```
 
 * This method is **static**.
 **Parameters:**

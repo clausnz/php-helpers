@@ -3,7 +3,7 @@
 # About
 
 The library `clausnz/php-helpers`  is a collection of **33** useful php helper functions `(PHP 5.6, 7.*)`.  
-After installation with `composer`, the global functions are accessable from **everywhere** in your code:
+After installation with `composer`, the global functions are accessable from everywhere in your code:
 
 #### Example
 ```php

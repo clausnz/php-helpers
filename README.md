@@ -303,7 +303,7 @@ dump( to_array( $var ) );
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$var` | **** | Array or string. |
+| `$var` | **** | String or object. |
 
 
 **Return Value:**

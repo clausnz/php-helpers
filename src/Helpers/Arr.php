@@ -127,7 +127,7 @@ class Arr
      * ```
      *
      * @param $var
-     * Array or string.
+     * String or object.
      * @return mixed
      * An array representation of the converted string or object.
      * Returns null if $var is no a string or array.

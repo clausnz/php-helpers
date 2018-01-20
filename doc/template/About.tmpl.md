@@ -33,7 +33,7 @@ This library makes use of the following brilliant and well known libraries:
 - https://github.com/JayBizzle/Crawler-Detect
 - https://github.com/mustangostang/spyc
 
-## Unit Tests
+## Tests
 
-Every function is automatically tested against a number of unit-tests and PHP Versions. 
+All functions are tested against a number of unit tests and PHP Versions. 
 [![Build Status](https://travis-ci.org/clausnz/php-helpers.svg?branch=master)](https://travis-ci.org/clausnz/php-helpers)

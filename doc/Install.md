@@ -24,7 +24,7 @@ Also make sure to require your composer autoload file:
 require __DIR__ . '/vendor/autoload.php';
 ```
 
-After installation, the new global PHP functions are immediately available everywhere in your code. To also access the ( almost identical ) static functions in the helper classes, add an approbiate use statement to your file:
+After installation, the new global PHP functions are available everywhere in your code. To access the ( almost identical ) static functions in the helper classes, add the proper use statement to your file:
 
 #### Example
  ```php

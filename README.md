@@ -33,9 +33,9 @@ This library makes use of the following brilliant and well known libraries:
 - https://github.com/JayBizzle/Crawler-Detect
 - https://github.com/mustangostang/spyc
 
-## Unit Tests
+## Tests
 
-Every function is automatically tested against a number of unit-tests and PHP Versions. 
+All functions are tested against a number of unit tests and PHP Versions. 
 [![Build Status](https://travis-ci.org/clausnz/php-helpers.svg?branch=master)](https://travis-ci.org/clausnz/php-helpers)
 # Install
 
@@ -63,7 +63,7 @@ Also make sure to require your composer autoload file:
 require __DIR__ . '/vendor/autoload.php';
 ```
 
-After installation, the new global PHP functions are immediately available everywhere in your code. To also access the ( almost identical ) static functions in the helper classes, add an approbiate use statement to your file:
+After installation, the new global PHP functions are available everywhere in your code. To access the ( almost identical ) static functions in the helper classes, add the proper use statement to your file:
 
 #### Example
  ```php

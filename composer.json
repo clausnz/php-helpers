@@ -10,7 +10,6 @@
   "type": "library",
   "version": "0.1.1",
   "require": {
-    "php": ">=5.6.0",
     "mobiledetect/mobiledetectlib": "^2.8",
     "jaybizzle/crawler-detect": "1.2.*",
     "mustangostang/spyc": "0.6.2"
@@ -35,5 +34,10 @@
     "phpunit/phpunit": "^5",
     "cvuorinen/phpdoc-markdown-public": "0.2.*",
     "mikey179/vfsStream": "^1.5.0"
+  },
+  "config": {
+    "platform": {
+      "php": "5.6.0"
+    }
   }
 }

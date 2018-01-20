@@ -11,7 +11,8 @@ php:
 # Commands to be run before your environment runs.
 before_script:
   - composer self-update
-  - composer install --prefer-source --no-interaction
+  - composer install --prefer-source --no-interaction --no-dev
+  - composer require mikey179/vfsStream:v1.5.0 --no-update
 
 # Commands you want to run that will verify your build.
 script: phpunit

@@ -52,7 +52,7 @@ class Util
      * ```php
      * $email = 'foobar@example.com';
      *
-     * dump( is_email( $email ) );
+     * is_email( $email );
      *
      * // bool(true)
      * ```
@@ -130,7 +130,7 @@ class Util
      * ```php
      * $password = 'foobar';
      *
-     * echo crypt_password( $password );
+     * crypt_password( $password );
      *
      * // $2y$10$6qKwbwTgwQNcmcaw04eSf.QpP3.4T0..bEnY62dd1ozM8L61nb8AC
      * ```
@@ -163,7 +163,7 @@ class Util
      * $password = 'foobar';
      * $cryptedPassword = '$2y$10$6qKwbwTgwQNcmcaw04eSf.QpP3.4T0..bEnY62dd1ozM8L61nb8AC';
      *
-     * dump( is_password( $password, $cryptedPassword ) );
+     * is_password( $password, $cryptedPassword );
      *
      * // bool(true)
      * ```
@@ -203,9 +203,9 @@ class Util
      * dd( $array );
      *
      * // (
-     *      [foo] => bar
-     *      [baz] => qux
-     * )
+     * //     [foo] => bar
+     * //     [baz] => qux
+     * // )
      * ```
      *
      * @codeCoverageIgnore
@@ -241,9 +241,9 @@ class Util
      * dump( $array );
      *
      * // (
-     *      [foo] => bar
-     *      [baz] => qux
-     * )
+     * //     [foo] => bar
+     * //     [baz] => qux
+     * // )
      * ```
      *
      * @codeCoverageIgnore

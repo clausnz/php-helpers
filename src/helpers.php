@@ -130,6 +130,37 @@ if (!function_exists('is_samsung')) {
 
 // @group(Array)
 
+if (!function_exists('array_get')) {
+    /**
+     * Gets a value in an array by dot notation for the keys.
+     *
+     * @param string $key
+     * @param array  $array
+     *
+     * @return mixed
+     */
+    function array_get($key, $array)
+    {
+        return arr::get($key, $array);
+    }
+}
+
+if (!function_exists('array_set')) {
+    /**
+     * Sets a value in an array using the dot notation.
+     *
+     * @param string $key
+     * @param mixed  $value
+     * @param array  $array
+     *
+     * @return bool
+     */
+    function array_set($key, $value, &$array)
+    {
+        return arr::set($key, $value, $array);
+    }
+}
+
 if (!function_exists('array_first')) {
     /**
      * Returns the first element of an array.
@@ -515,14 +546,14 @@ if (!function_exists('to_yml_file')) {
      *
      * @codeCoverageIgnore
      *
-     * @param array  $array
-     * @param string $filename
-     * @param int    $indent
+     * @param array|object $var
+     * @param string       $filename
+     * @param int          $indent
      * @return bool
      */
-    function to_yml_file($array, $filename, $indent = 2)
+    function to_yml_file($var, $filename, $indent = 2)
     {
-        return yml::toYmlFile($array, $filename, $indent);
+        return yml::toYmlfile($var, $filename, $indent);
     }
 }
 
@@ -535,7 +566,7 @@ if (!function_exists('yml_parse')) {
      */
     function yml_parse($yml)
     {
-        return yml::parseYml($yml);
+        return yml::parse($yml);
     }
 }
 
@@ -550,7 +581,7 @@ if (!function_exists('yml_parse_file')) {
      */
     function yml_parse_file($ymlFile)
     {
-        return yml::parseYmlFile($ymlFile);
+        return yml::parseFile($ymlFile);
     }
 }
 
@@ -578,7 +609,66 @@ if (!function_exists('is_yml_file')) {
      */
     function is_yml_file($string)
     {
-        return yml::isYmlFile($string);
+        return yml::isYmlfile($string);
+    }
+}
+
+if (!function_exists('yml_get')) {
+    /**
+     * Gets a value in a yaml string using the dot notation.
+     *
+     * @param string $search
+     * @param string $yml
+     * @return bool
+     */
+    function yml_get($search, $yml)
+    {
+        return yml::get($search, $yml);
+    }
+}
+
+if (!function_exists('yml_get_file')) {
+    /**
+     * Gets a value in a yamlfile using the dot notation.
+     *
+     * @param string $search
+     * @param string $ymlfile
+     * @return bool
+     */
+    function yml_get_file($search, $ymlfile)
+    {
+        return yml::getFile($search, $ymlfile);
+    }
+}
+
+if (!function_exists('yml_set')) {
+    /**
+     * Sets a value in an yml string using the dot notation.
+     *
+     * @param string $key
+     * @param mixed  $value
+     * @param string $yml
+     *
+     * @return bool
+     */
+    function yml_set($key, $value, &$yml)
+    {
+        return yml::set($key, $value, $yml);
+    }
+}
+
+if (!function_exists('yml_set_file')) {
+    /**
+     * Sets a value in an ymlfile using the dot notation.
+     *
+     * @param string $key
+     * @param mixed  $value
+     * @param string $ymlfile
+     * @return bool
+     */
+    function yml_set_file($key, $value, $ymlfile)
+    {
+        return yml::setFile($key, $value, $ymlfile);
     }
 }
 

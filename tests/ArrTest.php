@@ -25,6 +25,80 @@ class ArrTest extends TestCase
         ]
     ];
 
+    public function test_array_set()
+    {
+        $testArrayEqual = [
+            // expected => parameter
+            'value_four' => 'four',
+            'foobar' => 'three.three_one',
+        ];
+
+        foreach ($testArrayEqual as $expected => $parameter) {
+            array_set($parameter, $expected, $this->testArray);
+            $this->assertEquals($expected, array_get($parameter, $this->testArray));
+
+            arr::set($parameter, $expected, $this->testArray);
+            $this->assertEquals($expected, array_get($parameter, $this->testArray));
+        }
+
+        $testArrayTrue = [
+            // key => value
+            'foo' => true,
+            'foo.bar.baz' => ['foo' => 'bar'],
+            'three' => 'foo'
+        ];
+
+        foreach ($testArrayTrue as $key => $value) {
+            $tmpArray = $this->testArray;
+            $this->assertTrue(array_set($key, $value, $tmpArray));
+            $tmpArray = $this->testArray;
+            $this->assertTrue(arr::set($key, $value, $tmpArray));
+        }
+
+        $testArrayfalse = [
+            // key => value
+            true => 'foo',
+            '' => 'foo',
+            1 => 'foo'
+        ];
+
+        foreach ($testArrayfalse as $key => $value) {
+            $this->assertFalse(array_set($key, $value, $this->testArray));
+            $this->assertFalse(arr::set($key, $value, $this->testArray));
+        }
+    }
+
+    public function test_array_get()
+    {
+        $arrayEqual = [
+            // expected => parameter
+            'value_one' => 'one',
+            'value_three_one' => 'three.three_one',
+            'value_three_three_three' => 'three.three_three.three_three_three'
+        ];
+
+        $this->assertEquals('value_three_three_one', array_get('three.three_three', $this->testArray)['three_three_one']);
+        $this->assertEquals('value_three_three_one', arr::get('three.three_three', $this->testArray)['three_three_one']);
+
+        foreach ($arrayEqual as $expected => $parameter) {
+            $this->assertEquals($expected, array_get($parameter, $this->testArray));
+            $this->assertEquals($expected, arr::get($parameter, $this->testArray));
+        }
+
+        $arrayNull = [
+            'four',
+            ['three'],
+            '',
+            true,
+            null
+        ];
+
+        foreach ($arrayNull as $parameter) {
+            $this->assertNull(array_get($parameter, $this->testArray));
+        }
+
+    }
+
     public function test_is_assoc()
     {
         $assocArray = [

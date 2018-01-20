@@ -34,64 +34,115 @@ class Yml
     private static $spycInstance;
 
     /**
-     * Transformes a given array to yaml syntax and puts its content into a given file.
+     * Validates if a given file contains yaml syntax.
      *
-     * ### to_yml_file
+     * ### is_yml_file
      * Related global function (description see above).
      *
      * > #### [( jump back )](#available-php-functions)
      *
      * ```php
-     * to_yml_file( array $array, string $filename, int $indent = 2 ): boolean
+     * is_yml_file( string $file ): boolean
      * ```
      *
      * #### Example
      * ```php
-     * $array = [
-     *     'foo' => 'bar'
-     * ];
+     * $file = /path/to/file.yml
      *
-     * to_yml_file( $array, '/path/to/file.yml' );
+     * is_yml_file( $file );
+     *
+     * // bool(true)
      * ```
      *
-     * @codeCoverageIgnore
-     *
-     * @param     array|object $var
-     * The array to transform.
-     * @param     string       $filename
-     * The path to the file to write the yaml string into.
-     * @param       int        $indent
-     * The indent of the converted yaml. Defaults to 2.
+     * @param string $file
+     * The file to test for yaml syntax.
      * @return bool
-     * True on success, false otherwise.
-     *
+     * True if the file contains yaml syntax, false otherwise.
      */
-    public static function toYmlFile($var, $filename, $indent = 2)
+    public static function isYmlfile($file)
     {
-        return file_put_contents($filename, self::toYml($var, $indent));
+        return self::isYml(file_get_contents($file));
     }
 
     /**
-     * Transformes a given array to a yaml string.
+     * Tests if the syntax of a given string is yaml.
      *
-     * @param array|object $var
-     * The array or object to transform.
-     * @param int          $indent
-     * The indent of the converted yaml. Defaults to 2.
-     * @return string|null
-     * The converted yaml string. If $var is not an array or object, null is returned.
+     * ### is_yml
+     * Related global function (description see above).
+     *
+     * > #### [( jump back )](#available-php-functions)
+     *
+     * ```php
+     * is_yml( string $string ): boolean
+     * ```
+     *
+     * #### Example
+     * ```php
+     * $string = "foo: bar\nbaz: qux\nfoobar:\n  foo: bar\n";
+     *
+     * is_yml( $file );
+     *
+     * // bool(true)
+     * ```
+     *
+     * @param string $string
+     * The string to test for yaml syntax.
+     * @return bool
+     * True if the string is yaml, false otherwise.
      */
-    public static function toYml($var, $indent = 2)
+    public static function isYml($string)
     {
-        if (is_object($var)) {
-            $var = arr::toArray($var);
+        if (is_string($string)) {
+            return is_assoc(self::parse($string));
         }
 
-        if (!is_array($var)) {
+        return false;
+    }
+
+    /**
+     * Transforms a given yaml string into an array.
+     *
+     * ### yml_parse
+     * Related global function (description see above).
+     *
+     * > #### [( jump back )](#available-php-functions)
+     *
+     * ```php
+     * yml_parse( string $yml ): array|null
+     * ```
+     *
+     * #### Example
+     * ```php
+     * $yml = "foo: bar\nbaz: qux\nfoobar:\n  foo: bar\n";
+     *
+     * yml_parse( $yml );
+     *
+     * // (
+     * //       [foo] => bar
+     * //       [baz] => qux
+     * //       [foobar] => (
+     * //           [foo] => bar
+     * //       )
+     * // }
+     * ```
+     *
+     * @param string $yml
+     * The yaml string to parse.
+     * @return array|null
+     * The transformed array, null on error.
+     */
+    public static function parse($yml)
+    {
+        if (!is_string($yml)) {
             return null;
         }
 
-        return self::spyc()->YAMLDump($var, $indent);
+        try {
+            $result = self::spyc()->load($yml);
+            return is_assoc($result) ? $result : null;
+        } catch (\Exception $e) {
+            return null;
+        }
     }
 
     /**
@@ -112,65 +163,259 @@ class Yml
     }
 
     /**
-     * Loads the content of a yaml file into an array.
+     * Gets a value in a yaml string using the dot notation.
      *
-     * @codeCoverageIgnore
+     * ### yml_get
+     * Related global function (description see above).
+     *
+     * > #### [( jump back )](#available-php-functions)
+     *
+     * ```php
+     * yml_get( string $key, string $yml ): string|array|null
+     * ```
+     *
+     * #### Example
+     * ```php
+     * $yml = "foo: bar\nbaz: qux\nfoobar:\n  foo: bar\n";
+     *
+     * yml_get( 'foobar.foo', $yml );
+     *
+     * // bar
+     * ```
+     *
+     * @param string $key
+     * The key to search using dot notation (e.g. 'foo.bar.baz').
+     * @param string $yml
+     * The yml string to search in.
+     * @return string|array|null
+     * The found value (string or array), null otherwise.
+     */
+    public static function get($key, $yml)
+    {
+        return arr::get($key, self::parse($yml));
+    }
+
+    /**
+     * Gets a value in a yaml file using the dot notation.
+     *
+     * ### yml_get_file
+     * Related global function (description see above).
+     *
+     * > #### [( jump back )](#available-php-functions)
+     *
+     * ```php
+     * yml_get_file( string $key, string $ymlfile ): string|array|null
+     * ```
+     *
+     * #### Example
+     * ```php
+     * // $ymlfile = '/path/to/file.yml';
+     *
+     * yml_get_file( 'foobar.foo', $ymlfile );
+     *
+     * // bar
+     * ```
+     *
+     * @param string $key
+     * The key to search using dot notation (e.g. 'foo.bar.baz').
+     * @param string $ymlfile
+     * The ymlfile to search in.
+     * @return string|array|null
+     * The found value (string or array), null otherwise.
+     */
+    public static function getFile($key, $ymlfile)
+    {
+        return arr::get($key, self::parseFile($ymlfile));
+    }
+
+    /**
+     * Loads the content of a yamlfile into an array.
      *
      * @param $ymlFile
      * The path of the file to read from.
      * @return array
      * The parsed array.
      */
-    public static function parseYmlFile($ymlFile)
+    public static function parseFile($ymlFile)
     {
-        return self::parseYml(file_get_contents($ymlFile));
+        return self::parse(file_get_contents($ymlFile));
     }
 
     /**
-     * Transforms a given yaml string into an array.
+     * Sets a value in a yamlfile using the dot notation. Note: all comments in the file will be removed!
      *
-     * @param string $yml
-     * The yaml string to convert.
-     * @return array|null
-     * The transformed array, null on error.
+     * ### yml_set_file
+     * Related global function (description see above).
+     *
+     * > #### [( jump back )](#available-php-functions)
+     *
+     * ```php
+     * yml_set_file( string $key, mixed $value, string $ymlfile ): boolean
+     * ```
+     *
+     * #### Example
+     * ```php
+     * // $ymlfile = '/path/to/file.yml';
+     *
+     * yml_set_file( 'foo.bar', 'baz', $ymlfile );
+     *
+     * // bool(true)
+     * ```
+     *
+     * @param string $key
+     * The string to search with dot notation
+     * @param mixed  $value
+     * The value to set on the specified key.
+     * @param string $ymlfile
+     * The ymlfile to set the value in.
+     * @return bool
+     * True if value was successfully set in yamlfile, false otherwise.
      */
-    public static function parseYml($yml)
+    public static function setFile($key, $value, $ymlfile)
     {
-        if (!is_string($yml)) {
+        // create empty array
+        $ymlArray = [];
+
+        // if file exists, a filled array is given
+        if (file_exists($ymlfile)) {
+            $ymlArray = self::parseFile($ymlfile);
+        }
+
+        // fill array with content
+        $value = arr::set($key, $value, $ymlArray);
+        // write back to ymlfile
+        self::toYmlfile($ymlArray, $ymlfile);
+
+        return $value;
+    }
+
+    /**
+     * Transformes a given array to yaml syntax and puts its content into a given file. Note: if the file exists, it will be overwritten!
+     *
+     * ### to_yml_file
+     * Related global function (description see above).
+     *
+     * > #### [( jump back )](#available-php-functions)
+     *
+     * ```php
+     * to_yml_file( array $array, string $filename, int $indent = 2, int $wordwrap = 0, bool $openingDashes = false ): boolean
+     * ```
+     *
+     * #### Example
+     * ```php
+     * $array = [
+     *     'foo' => 'bar'
+     * ];
+     *
+     * to_yml_file( $array, '/path/to/file.yml' );
+     *
+     * // bool(true)
+     * ```
+     *
+     * @param     array|object $var
+     * The array or object to transform.
+     * @param     string       $filename
+     * The path to the file to write the yaml string into. Note: if the file already exists, it will be overwritten!
+     * @param       int        $indent
+     * The indent of the converted yaml. Defaults to 2.
+     * @return bool
+     * True on success, false otherwise.
+     *
+     */
+    public static function toYmlfile($var, $filename, $indent = 2)
+    {
+        $value = file_put_contents($filename, self::toYml($var, $indent));
+        return $value === 0 ? false : $value;
+    }
+
+    /**
+     * Transformes a given array or object to a yaml string.
+     *
+     * ### to_yml
+     * Related global function (description see above).
+     *
+     * > #### [( jump back )](#available-php-functions)
+     *
+     * ```php
+     * to_yml( array $array, string $filename, int $indent = 2, int $wordwrap = 0, bool $openingDashes = false ): boolean
+     * ```
+     *
+     * #### Example
+     * ```php
+     * $array = [
+     *     'foo' => 'bar'
+     * ];
+     *
+     * to_yml( $array, '/path/to/file.yml' );
+     *
+     * // bool(true)
+     * ```
+     *
+     * @param array|object $var
+     * The array or object to transform.
+     * @param int          $indent
+     * The indent of the converted yaml. Defaults to 2.
+     * @param int          $wordwrap
+     * After the given number a string will be wraped. Default to 0 (no wordwrap).
+     * @param bool         $openingDashes
+     * True if the yaml string should start with opening dashes. Defaults to false.
+     * @return string|null
+     * The converted yaml string. On errors, null is returned.
+     */
+    public static function toYml($var, $indent = 2, $wordwrap = 0, $openingDashes = false)
+    {
+        if (is_object($var)) {
+            $var = arr::toArray($var);
+        }
+
+        if (!is_array($var) || !is_int($wordwrap) || !is_bool($openingDashes)) {
             return null;
         }
 
-        $result = self::spyc()->load($yml);
-        return is_assoc($result) ? $result : null;
+        // clean parameters for ext. library
+        $openingDashes ? $noOpeningDashes = false : $noOpeningDashes = true;
+
+        return self::spyc()->YAMLDump($var, $indent, $wordwrap, $noOpeningDashes);
     }
 
     /**
-     * Validates if a given file contains yaml syntax.
+     * Sets a value in a yaml string using the dot notation.
      *
-     * @codeCoverageIgnore
+     * ### yml_set
+     * Related global function (description see above).
      *
-     * @param string $ymlFile
-     * The file to test for yaml syntax.
+     * > #### [( jump back )](#available-php-functions)
+     *
+     * ```php
+     * yml_set( string $key, mixed $value, string &$yml )
+     * ```
+     *
+     * #### Example
+     * ```php
+     * $yml = "foo: bar\nbaz: qux\nfoobar:\n  foo: bar\n";
+     *
+     * yml_set( 'foobar.foo', 'baz', $yml );
+     *
+     * // bool(true)
+     * ```
+     *
+     * @param string $key
+     * The string to search with dot notation
+     * @param mixed  $value
+     * The value to set on the specified key.
+     * @param string $yml
+     * The yml string to search in. Note: all comments in the string will be removed!
      * @return bool
-     * True if the file contains yaml syntax, false otherwise.
+     * True if value was successfully set, false otherwise.
      */
-    public static function isYmlFile($ymlFile)
+    public static function set($key, $value, &$yml)
     {
-        return self::isYml(file_get_contents($ymlFile));
-    }
+        if (is_string($key) && (is_string($value) || is_array($value))) {
+            $array = yml::parse($yml);
+            $value = arr::set($key, $value, $array);
+            $yml = yml::toYml($array);
 
-    /**
-     * Tests if the syntax of a given string is yaml.
-     *
-     * @param string $string
-     * The string to test for yaml syntax.
-     * @return bool
-     * True if the string is yaml, false otherwise.
-     */
-    public static function isYml($string)
-    {
-        if (is_string($string)) {
-            return is_assoc(self::parseYml($string));
+            return $value;
         }
 
         return false;

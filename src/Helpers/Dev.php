@@ -122,7 +122,7 @@ class Dev
      *
      * #### Example
      * ```php
-     * echo Dev::mobileDetect()->version('Android');
+     * Dev::mobileDetect()->version('Android');
      *
      * // 8.1
      * ```
@@ -230,7 +230,7 @@ class Dev
      *
      * #### Example
      * ```php
-     * echo Dev::crawlerDetect()->getMatches();
+     * Dev::crawlerDetect()->getMatches();
      *
      * // Output the name of the bot that matched (if any)
      * ```

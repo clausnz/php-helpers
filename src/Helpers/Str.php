@@ -38,17 +38,15 @@ class Str
      * ]
      * $string = 'The quick :color fox jumps over the lazy :animal.';
      *
-     * echo str_insert( $array, $string );
+     * str_insert( $array, $string );
      *
      * // The quick brown fox jumps over the lazy dog.
      * ```
      *
      * @param array  $inserts
      * An associative array with key => value pairs.
-     *
      * @param string $string
      * The text with the strings to be replaced.
-     *
      * @return string
      * The replaced string.
      */
@@ -79,24 +77,21 @@ class Str
      * ```php
      * $string = '<tag>foo</tag>foobar<tag>bar</tag>'
      *
-     * dump( str_between( '<tag>', '</tag>' $string ) );
+     * str_between( '<tag>', '</tag>' $string );
      *
      * // (
-     *      [0] => foo
-     *      [1] => bar
-     * )
+     * //     [0] => foo
+     * //     [1] => bar
+     * // )
      * ```
      *
      *
      * @param string $left
      * The left element of the string to search.
-     *
      * @param string $right
      * The right element of the string to search.
-     *
      * @param string $string
      * The string to search in.
-     *
      * @return array
      * A result array with all matches of the search.
      */
@@ -122,17 +117,15 @@ class Str
      * ```php
      * $string = 'The quick brown fox jumps over the lazy dog';
      *
-     * echo str_after( 'fox' $string );
+     * str_after( 'fox' $string );
      *
      * // jumps over the lazy dog
      * ```
      *
      * @param string $search
      * The string to search for.
-     *
      * @param string $string
      * The string to search in.
-     *
      * @return string
      * The found string after the search string. Whitespaces at beginning will be removed.
      */
@@ -157,17 +150,15 @@ class Str
      * ```php
      * $string = 'The quick brown fox jumps over the lazy dog';
      *
-     * echo str_before( 'fox' $string );
+     * str_before( 'fox' $string );
      *
      * // The quick brown
      * ```
      *
      * @param string $search
      * The string to search for.
-     *
      * @param string $string
      * The string to search in.
-     *
      * @return string
      * The found string before the search string. Whitespaces at end will be removed.
      */
@@ -192,20 +183,17 @@ class Str
      * ```php
      * $string = 'The quick brown fox jumps over the lazy dog';
      *
-     * echo str_limit_words( $string, 3 );
+     * str_limit_words( $string, 3 );
      *
      * // The quick brown...
      * ```
      *
      * @param  string $string
      * The string to limit the words.
-     *
      * @param  int    $limit
      * The number of words to limit. Defaults to 10.
-     *
      * @param  string $end
      * The string to end the cut string. Defaults to '...'
-     *
      * @return string
      * The limited string with $end at the end.
      */
@@ -236,20 +224,17 @@ class Str
      * ```php
      * $string = 'The quick brown fox jumps over the lazy dog';
      *
-     * echo str_limit( $string, 15 );
+     * str_limit( $string, 15 );
      *
      * // The quick brown...
      * ```
      *
      * @param  string $string
      * The string to limit the characters.
-     *
      * @param  int    $limit
      * The number of characters to limit. Defaults to 100.
-     *
      * @param  string $end
      * The string to end the cut string. Defaults to '...'
-     *
      * @return string
      * The limited string with $end at the end.
      */
@@ -282,17 +267,15 @@ class Str
      *      'fox'
      * ];
      *
-     * dump( str_contains( $array, $string ) );
+     * str_contains( $array, $string );
      *
      * // bool(true)
      * ```
      *
      * @param string|array $needle
      * A string or an array of strings.
-     *
      * @param string       $haystack
      * The string to search in.
-     *
      * @return bool
      * True if $needle is found, false otherwise.
      */
@@ -327,17 +310,15 @@ class Str
      *      'Fox'
      * ];
      *
-     * dump( str_icontains( $array, $string ) );
+     * str_icontains( $array, $string );
      *
      * // bool(true)
      * ```
      *
      * @param string|array $needle
      * A string or an array of strings.
-     *
      * @param string       $haystack
      * The string to search in.
-     *
      * @return bool
      * True if $needle is found, false otherwise.
      */
@@ -372,17 +353,15 @@ class Str
      *      'The'
      * ];
      *
-     * dump( str_starts_with( $array, $string ) );
+     * str_starts_with( $array, $string );
      *
      * // bool(true)
      * ```
      *
      * @param string|array $needle
      * The string or array of strings to search for.
-     *
      * @param string       $haystack
      * The string to search in.
-     *
      * @return bool
      * True if $needle was found, false otherwise.
      */
@@ -417,17 +396,15 @@ class Str
      *      'the'
      * ];
      *
-     * dump( str_istarts_with( $array, $string ) );
+     * str_istarts_with( $array, $string );
      *
      * // bool(true)
      * ```
      *
      * @param string|array $needle
      * The string or array of strings to search for.
-     *
      * @param string       $haystack
      * The string to search in.
-     *
      * @return bool
      * True if $needle was found, false otherwise.
      */
@@ -465,7 +442,7 @@ class Str
      *      'dog'
      * ];
      *
-     * dump( str_ends_with( $array, $string ) );
+     * str_ends_with( $array, $string );
      *
      * // bool(true)
      * ```
@@ -511,17 +488,15 @@ class Str
      *      'Dog'
      * ];
      *
-     * dump( str_iends_with( $array, $string ) );
+     * str_iends_with( $array, $string );
      *
      * // bool(true)
      * ```
      *
      * @param string|array $needle
      * The string or array of strings to search for.
-     *
      * @param string       $haystack
      * The string to search in.
-     *
      * @return bool
      * True if $needle was found, false otherwise.
      */
@@ -556,17 +531,15 @@ class Str
      * ```php
      * $path = "/var/www/html/public/img/image.jpg";
      *
-     * echo str_after_last( '/' $path );
+     * str_after_last( '/' $path );
      *
      * // image.jpg
      * ```
      *
      * @param string $search
      * The string to search for.
-     *
      * @param string $string
      * The string to search in.
-     *
      * @return string
      * The found string after the last occurrence of the search string. Whitespaces at beginning will be removed.
      */

@@ -12,7 +12,9 @@
     * [is_android](#is_android)
     * [is_iphone](#is_iphone)
     * [is_samsung](#is_samsung)
-* [Array](#array_first)
+* [Array](#array_get)
+    * [array_get](#array_get)
+    * [array_set](#array_set)
     * [array_first](#array_first)
     * [array_last](#array_last)
     * [to_array](#to_array)
@@ -46,6 +48,10 @@
     * [yml_parse_file](#yml_parse_file)
     * [is_yml](#is_yml)
     * [is_yml_file](#is_yml_file)
+    * [yml_get](#yml_get)
+    * [yml_get_file](#yml_get_file)
+    * [yml_set](#yml_set)
+    * [yml_set_file](#yml_set_file)
 # API Documentation
 
 ## Table of Contents
@@ -56,6 +62,8 @@
     * [toArray](#toarray)
     * [first](#first)
     * [last](#last)
+    * [get](#get)
+    * [set](#set)
 * [Dev](#dev)
     * [isSmartphone](#issmartphone)
     * [isMobile](#ismobile)
@@ -90,12 +98,16 @@
     * [dd](#dd)
     * [dump](#dump)
 * [Yml](#yml)
-    * [toYmlFile](#toymlfile)
-    * [toYml](#toyml)
-    * [parseYmlFile](#parseymlfile)
-    * [parseYml](#parseyml)
-    * [isYmlFile](#isymlfile)
+    * [isYmlfile](#isymlfile)
     * [isYml](#isyml)
+    * [parse](#parse)
+    * [get](#get-1)
+    * [getFile](#getfile)
+    * [parseFile](#parsefile)
+    * [setFile](#setfile)
+    * [toYmlfile](#toymlfile)
+    * [toYml](#toyml)
+    * [set](#set-1)
 
 ## Arr
 
@@ -129,7 +141,7 @@ $array = [
     'foo' => 'bar'
 ];
 
-dump( is_assoc( $array ) );
+is_assoc( $array );
 
 // bool(true)
 ```
@@ -217,23 +229,25 @@ to_array( object $object ): array
 #### Example 1 (string)
 ```php
 $var = 'php';
-dump( to_array( $var ) );
+to_array( $var );
 
 // (
-     [0] => p
-     [1] => h
-     [2] => p
-)
+//     [0] => p
+//     [1] => h
+//     [2] => p
+// )
+
 ```
 #### Example 2 (object)
 ```php
 $var = new stdClass;
 $var->foo = 'bar';
-dump( to_array( $var ) );
+
+to_array( $var );
 
 // (
-     [foo] => bar
-)
+//     [foo] => bar
+// )
 ```
 
 * This method is **static**.
@@ -277,7 +291,7 @@ $array = [
      'baz' => 'qux'
 ];
 
-dump( array_first( $array ) )
+array_first( $array )
 
 // bar
 ```
@@ -322,7 +336,7 @@ $array = [
      'baz' => 'qux'
 ];
 
-dump( array_last( $array ) )
+array_last( $array )
 
 // qux
 ```
@@ -338,6 +352,124 @@ dump( array_last( $array ) )
 **Return Value:**
 
 The value of the last element, without key. Mixed type.
+
+
+
+---
+
+### get
+
+Gets a value in an array by dot notation for the keys.
+
+```php
+Arr::get( string $key, array $array ): mixed
+```
+
+### array_get
+Related global function (description see above).
+
+> #### [( jump back )](#available-php-functions)
+
+#### Example
+```php
+$array = [
+     'foo' => 'bar',
+     'baz' => [
+         'qux => 'foobar'
+     ]
+];
+
+array_get( 'baz.qux', $array );
+
+// foobar
+```
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$key` | **string** | The key by dot notation. |
+| `$array` | **array** | The array to search in. |
+
+
+**Return Value:**
+
+The searched value, null otherwise.
+
+
+
+---
+
+### set
+
+Sets a value in an array using the dot notation.
+
+```php
+Arr::set( string $key, mixed $value, array &$array ): boolean
+```
+
+### array_set
+Related global function (description see above).
+
+> #### [( jump back )](#available-php-functions)
+
+```php
+array_set( string key, mixed value, array $array ): boolean
+```
+
+#### Example 1
+```php
+$array = [
+     'foo' => 'bar',
+     'baz' => [
+         'qux => 'foobar'
+     ]
+];
+
+array_set( 'baz.qux', 'bazqux', $array );
+
+// (
+//     [foo] => bar
+//     [baz] => [
+//         [qux] => bazqux
+//     ]
+// )
+```
+
+#### Example 2
+```php
+$array = [
+     'foo' => 'bar',
+     'baz' => [
+         'qux => 'foobar'
+     ]
+];
+
+array_set( 'baz.foo', 'bar', $array );
+
+// (
+//     [foo] => bar
+//     [baz] => [
+//         [qux] => bazqux
+//         [foo] => bar
+//     ]
+// )
+```
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$key` | **string** | The key to set using dot notation. |
+| `$value` | **mixed** | The value to set on the specified key. |
+| `$array` | **array** | The concerned array. |
+
+
+**Return Value:**
+
+True if the new value was successfully set, false otherwise.
 
 
 
@@ -436,7 +568,7 @@ Mobile_Detect doku: https://github.com/serbanghita/Mobile-Detect
 
 #### Example
 ```php
-echo Dev::mobileDetect()->version('Android');
+Dev::mobileDetect()->version('Android');
 
 // 8.1
 ```
@@ -566,7 +698,7 @@ Crawler-Detect doku: https://github.com/JayBizzle/Crawler-Detect
 
 #### Example
 ```php
-echo Dev::crawlerDetect()->getMatches();
+Dev::crawlerDetect()->getMatches();
 
 // Output the name of the bot that matched (if any)
 ```
@@ -747,7 +879,7 @@ $array = [
 ]
 $string = 'The quick :color fox jumps over the lazy :animal.';
 
-echo str_insert( $array, $string );
+str_insert( $array, $string );
 
 // The quick brown fox jumps over the lazy dog.
 ```
@@ -790,12 +922,12 @@ str_between( string $left, string $right, string $string ): array
 ```php
 $string = '<tag>foo</tag>foobar<tag>bar</tag>'
 
-dump( str_between( '<tag>', '</tag>' $string ) );
+str_between( '<tag>', '</tag>' $string );
 
 // (
-     [0] => foo
-     [1] => bar
-)
+//     [0] => foo
+//     [1] => bar
+// )
 ```
 
 * This method is **static**.
@@ -837,7 +969,7 @@ str_after( string $search, string $string ): string
 ```php
 $string = 'The quick brown fox jumps over the lazy dog';
 
-echo str_after( 'fox' $string );
+str_after( 'fox' $string );
 
 // jumps over the lazy dog
 ```
@@ -880,7 +1012,7 @@ str_before( string $search, string $string ): string
 ```php
 $string = 'The quick brown fox jumps over the lazy dog';
 
-echo str_before( 'fox' $string );
+str_before( 'fox' $string );
 
 // The quick brown
 ```
@@ -923,7 +1055,7 @@ str_limit_words( string $string, int $limit = 10, string $end = '...' ): string
 ```php
 $string = 'The quick brown fox jumps over the lazy dog';
 
-echo str_limit_words( $string, 3 );
+str_limit_words( $string, 3 );
 
 // The quick brown...
 ```
@@ -967,7 +1099,7 @@ str_limit( string $string, int $limit = 100, string $end = '...' ): string
 ```php
 $string = 'The quick brown fox jumps over the lazy dog';
 
-echo str_limit( $string, 15 );
+str_limit( $string, 15 );
 
 // The quick brown...
 ```
@@ -1015,7 +1147,7 @@ $array = [
      'fox'
 ];
 
-dump( str_contains( $array, $string ) );
+str_contains( $array, $string );
 
 // bool(true)
 ```
@@ -1062,7 +1194,7 @@ $array = [
      'Fox'
 ];
 
-dump( str_icontains( $array, $string ) );
+str_icontains( $array, $string );
 
 // bool(true)
 ```
@@ -1109,7 +1241,7 @@ $array = [
      'The'
 ];
 
-dump( str_starts_with( $array, $string ) );
+str_starts_with( $array, $string );
 
 // bool(true)
 ```
@@ -1156,7 +1288,7 @@ $array = [
      'the'
 ];
 
-dump( str_istarts_with( $array, $string ) );
+str_istarts_with( $array, $string );
 
 // bool(true)
 ```
@@ -1203,7 +1335,7 @@ $array = [
      'dog'
 ];
 
-dump( str_ends_with( $array, $string ) );
+str_ends_with( $array, $string );
 
 // bool(true)
 ```
@@ -1250,7 +1382,7 @@ $array = [
      'Dog'
 ];
 
-dump( str_iends_with( $array, $string ) );
+str_iends_with( $array, $string );
 
 // bool(true)
 ```
@@ -1293,7 +1425,7 @@ str_after_last( string $search, string $string ): string
 ```php
 $path = "/var/www/html/public/img/image.jpg";
 
-echo str_after_last( '/' $path );
+str_after_last( '/' $path );
 
 // image.jpg
 ```
@@ -1345,7 +1477,7 @@ is_email( string $email ): boolean
 ```php
 $email = 'foobar@example.com';
 
-dump( is_email( $email ) );
+is_email( $email );
 
 // bool(true)
 ```
@@ -1423,7 +1555,7 @@ crypt_password( string $password ): string
 ```php
 $password = 'foobar';
 
-echo crypt_password( $password );
+crypt_password( $password );
 
 // $2y$10$6qKwbwTgwQNcmcaw04eSf.QpP3.4T0..bEnY62dd1ozM8L61nb8AC
 ```
@@ -1466,7 +1598,7 @@ is_password( string $password, string $cryptedPassword ): boolean
 $password = 'foobar';
 $cryptedPassword = '$2y$10$6qKwbwTgwQNcmcaw04eSf.QpP3.4T0..bEnY62dd1ozM8L61nb8AC';
 
-dump( is_password( $password, $cryptedPassword ) );
+is_password( $password, $cryptedPassword );
 
 // bool(true)
 ```
@@ -1511,9 +1643,9 @@ $array = [
 dd( $array );
 
 // (
-     [foo] => bar
-     [baz] => qux
-)
+//     [foo] => bar
+//     [baz] => qux
+// )
 ```
 
 * This method is **static**.
@@ -1555,9 +1687,9 @@ $array = [
 dump( $array );
 
 // (
-     [foo] => bar
-     [baz] => qux
-)
+//     [foo] => bar
+//     [baz] => qux
+// )
 ```
 
 * This method is **static**.
@@ -1581,30 +1713,30 @@ Class Yml
 * Full name: \CNZ\Helpers\Yml
 
 
-### toYmlFile
+### isYmlfile
 
-Transformes a given array to yaml syntax and puts its content into a given file.
+Validates if a given file contains yaml syntax.
 
 ```php
-Yml::toYmlFile( array|object $var, string $filename, integer $indent = 2 ): boolean
+Yml::isYmlfile( string $file ): boolean
 ```
 
-### to_yml_file
+### is_yml_file
 Related global function (description see above).
 
 > #### [( jump back )](#available-php-functions)
 
 ```php
-to_yml_file( array $array, string $filename, int $indent = 2 ): boolean
+is_yml_file( string $file ): boolean
 ```
 
 #### Example
 ```php
-$array = [
-    'foo' => 'bar'
-];
+$file = /path/to/file.yml
 
-to_yml_file( $array, '/path/to/file.yml' );
+is_yml_file( $file );
+
+// bool(true)
 ```
 
 * This method is **static**.
@@ -1612,52 +1744,199 @@ to_yml_file( $array, '/path/to/file.yml' );
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$var` | **array&#124;object** | The array to transform. |
-| `$filename` | **string** | The path to the file to write the yaml string into. |
-| `$indent` | **integer** | The indent of the converted yaml. Defaults to 2. |
+| `$file` | **string** | The file to test for yaml syntax. |
 
 
 **Return Value:**
 
-True on success, false otherwise.
+True if the file contains yaml syntax, false otherwise.
 
 
 
 ---
 
-### toYml
+### isYml
 
-Transformes a given array to a yaml string.
+Tests if the syntax of a given string is yaml.
 
 ```php
-Yml::toYml( array|object $var, integer $indent = 2 ): string|null
+Yml::isYml( string $string ): boolean
 ```
 
+### is_yml
+Related global function (description see above).
 
+> #### [( jump back )](#available-php-functions)
+
+```php
+is_yml( string $string ): boolean
+```
+
+#### Example
+```php
+$string = "foo: bar\nbaz: qux\nfoobar:\n  foo: bar\n";
+
+is_yml( $file );
+
+// bool(true)
+```
 
 * This method is **static**.
 **Parameters:**
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$var` | **array&#124;object** | The array or object to transform. |
-| `$indent` | **integer** | The indent of the converted yaml. Defaults to 2. |
+| `$string` | **string** | The string to test for yaml syntax. |
 
 
 **Return Value:**
 
-The converted yaml string. If $var is not an array or object, null is returned.
+True if the string is yaml, false otherwise.
 
 
 
 ---
 
-### parseYmlFile
+### parse
 
-Loads the content of a yaml file into an array.
+Transforms a given yaml string into an array.
 
 ```php
-Yml::parseYmlFile(  $ymlFile ): array
+Yml::parse( string $yml ): array|null
+```
+
+### yml_parse
+Related global function (description see above).
+
+> #### [( jump back )](#available-php-functions)
+
+```php
+yml_parse( string $yml ): array|null
+```
+
+#### Example
+```php
+$yml = "foo: bar\nbaz: qux\nfoobar:\n  foo: bar\n";
+
+yml_parse( $yml );
+
+// (
+//       [foo] => bar
+//       [baz] => qux
+//       [foobar] => (
+//           [foo] => bar
+//       )
+// }
+```
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$yml` | **string** | The yaml string to parse. |
+
+
+**Return Value:**
+
+The transformed array, null on error.
+
+
+
+---
+
+### get
+
+Gets a value in a yaml string using the dot notation.
+
+```php
+Yml::get( string $key, string $yml ): string|array|null
+```
+
+### yml_get
+Related global function (description see above).
+
+> #### [( jump back )](#available-php-functions)
+
+```php
+yml_get( string $key, string $yml ): string|array|null
+```
+
+#### Example
+```php
+$yml = "foo: bar\nbaz: qux\nfoobar:\n  foo: bar\n";
+
+yml_get( 'foobar.foo', $yml );
+
+// bar
+```
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$key` | **string** | The key to search using dot notation (e.g. 'foo.bar.baz'). |
+| `$yml` | **string** | The yml string to search in. |
+
+
+**Return Value:**
+
+The found value (string or array), null otherwise.
+
+
+
+---
+
+### getFile
+
+Gets a value in a yaml file using the dot notation.
+
+```php
+Yml::getFile( string $key, string $ymlfile ): string|array|null
+```
+
+### yml_get_file
+Related global function (description see above).
+
+> #### [( jump back )](#available-php-functions)
+
+```php
+yml_get_file( string $key, string $ymlfile ): string|array|null
+```
+
+#### Example
+```php
+// $ymlfile = '/path/to/file.yml';
+
+yml_get_file( 'foobar.foo', $ymlfile );
+
+// bar
+```
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$key` | **string** | The key to search using dot notation (e.g. 'foo.bar.baz'). |
+| `$ymlfile` | **string** | The ymlfile to search in. |
+
+
+**Return Value:**
+
+The found value (string or array), null otherwise.
+
+
+
+---
+
+### parseFile
+
+Loads the content of a yamlfile into an array.
+
+```php
+Yml::parseFile(  $ymlFile ): array
 ```
 
 
@@ -1678,79 +1957,182 @@ The parsed array.
 
 ---
 
-### parseYml
+### setFile
 
-Transforms a given yaml string into an array.
+Sets a value in a yamlfile using the dot notation. Note: all comments in the file will be removed!
 
 ```php
-Yml::parseYml( string $yml ): array|null
+Yml::setFile( string $key, mixed $value, string $ymlfile ): boolean
 ```
 
+### yml_set_file
+Related global function (description see above).
 
+> #### [( jump back )](#available-php-functions)
+
+```php
+yml_set_file( string $key, mixed $value, string $ymlfile ): boolean
+```
+
+#### Example
+```php
+// $ymlfile = '/path/to/file.yml';
+
+yml_set_file( 'foo.bar', 'baz', $ymlfile );
+
+// bool(true)
+```
 
 * This method is **static**.
 **Parameters:**
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$yml` | **string** | The yaml string to convert. |
+| `$key` | **string** | The string to search with dot notation |
+| `$value` | **mixed** | The value to set on the specified key. |
+| `$ymlfile` | **string** | The ymlfile to set the value in. |
 
 
 **Return Value:**
 
-The transformed array, null on error.
+True if value was successfully set in yamlfile, false otherwise.
 
 
 
 ---
 
-### isYmlFile
+### toYmlfile
 
-Validates if a given file contains yaml syntax.
+Transformes a given array to yaml syntax and puts its content into a given file. Note: if the file exists, it will be overwritten!
 
 ```php
-Yml::isYmlFile( string $ymlFile ): boolean
+Yml::toYmlfile( array|object $var, string $filename, integer $indent = 2 ): boolean
 ```
 
+### to_yml_file
+Related global function (description see above).
 
+> #### [( jump back )](#available-php-functions)
+
+```php
+to_yml_file( array $array, string $filename, int $indent = 2, int $wordwrap = 0, bool $openingDashes = false ): boolean
+```
+
+#### Example
+```php
+$array = [
+    'foo' => 'bar'
+];
+
+to_yml_file( $array, '/path/to/file.yml' );
+
+// bool(true)
+```
 
 * This method is **static**.
 **Parameters:**
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$ymlFile` | **string** | The file to test for yaml syntax. |
+| `$var` | **array&#124;object** | The array or object to transform. |
+| `$filename` | **string** | The path to the file to write the yaml string into. Note: if the file already exists, it will be overwritten! |
+| `$indent` | **integer** | The indent of the converted yaml. Defaults to 2. |
 
 
 **Return Value:**
 
-True if the file contains yaml syntax, false otherwise.
+True on success, false otherwise.
 
 
 
 ---
 
-### isYml
+### toYml
 
-Tests if the syntax of a given string is yaml.
+Transformes a given array or object to a yaml string.
 
 ```php
-Yml::isYml( string $string ): boolean
+Yml::toYml( array|object $var, integer $indent = 2, integer $wordwrap, boolean $openingDashes = false ): string|null
 ```
 
+### to_yml
+Related global function (description see above).
 
+> #### [( jump back )](#available-php-functions)
+
+```php
+to_yml( array $array, string $filename, int $indent = 2, int $wordwrap = 0, bool $openingDashes = false ): boolean
+```
+
+#### Example
+```php
+$array = [
+    'foo' => 'bar'
+];
+
+to_yml( $array, '/path/to/file.yml' );
+
+// bool(true)
+```
 
 * This method is **static**.
 **Parameters:**
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$string` | **string** | The string to test for yaml syntax. |
+| `$var` | **array&#124;object** | The array or object to transform. |
+| `$indent` | **integer** | The indent of the converted yaml. Defaults to 2. |
+| `$wordwrap` | **integer** | After the given number a string will be wraped. Default to 0 (no wordwrap). |
+| `$openingDashes` | **boolean** | True if the yaml string should start with opening dashes. Defaults to false. |
 
 
 **Return Value:**
 
-True if the string is yaml, false otherwise.
+The converted yaml string. On errors, null is returned.
+
+
+
+---
+
+### set
+
+Sets a value in a yaml string using the dot notation.
+
+```php
+Yml::set( string $key, mixed $value, string &$yml ): boolean
+```
+
+### yml_set
+Related global function (description see above).
+
+> #### [( jump back )](#available-php-functions)
+
+```php
+yml_set( string $key, mixed $value, string &$yml )
+```
+
+#### Example
+```php
+$yml = "foo: bar\nbaz: qux\nfoobar:\n  foo: bar\n";
+
+yml_set( 'foobar.foo', 'baz', $yml );
+
+// bool(true)
+```
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$key` | **string** | The string to search with dot notation |
+| `$value` | **mixed** | The value to set on the specified key. |
+| `$yml` | **string** | The yml string to search in. Note: all comments in the string will be removed! |
+
+
+**Return Value:**
+
+True if value was successfully set, false otherwise.
 
 
 
@@ -1759,4 +2141,4 @@ True if the string is yaml, false otherwise.
 
 
 --------
-> This document was automatically generated from source code comments on 2018-01-18 using [phpDocumentor](http://www.phpdoc.org/) and [cvuorinen/phpdoc-markdown-public](https://github.com/cvuorinen/phpdoc-markdown-public)
+> This document was automatically generated from source code comments on 2018-01-20 using [phpDocumentor](http://www.phpdoc.org/) and [cvuorinen/phpdoc-markdown-public](https://github.com/cvuorinen/phpdoc-markdown-public)

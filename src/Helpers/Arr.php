@@ -37,7 +37,7 @@ class Arr
      *     'foo' => 'bar'
      * ];
      *
-     * dump( is_assoc( $array ) );
+     * is_assoc( $array );
      *
      * // bool(true)
      * ```
@@ -107,23 +107,25 @@ class Arr
      * #### Example 1 (string)
      * ```php
      * $var = 'php';
-     * dump( to_array( $var ) );
+     * to_array( $var );
      *
      * // (
-     *      [0] => p
-     *      [1] => h
-     *      [2] => p
-     * )
+     * //     [0] => p
+     * //     [1] => h
+     * //     [2] => p
+     * // )
+     *
      * ```
      * #### Example 2 (object)
      * ```php
      * $var = new stdClass;
      * $var->foo = 'bar';
-     * dump( to_array( $var ) );
+     *
+     * to_array( $var );
      *
      * // (
-     *      [foo] => bar
-     * )
+     * //     [foo] => bar
+     * // )
      * ```
      *
      * @param $var
@@ -164,7 +166,7 @@ class Arr
      *      'baz' => 'qux'
      * ];
      *
-     * dump( array_first( $array ) )
+     * array_first( $array )
      *
      * // bar
      * ```
@@ -199,7 +201,7 @@ class Arr
      *      'baz' => 'qux'
      * ];
      *
-     * dump( array_last( $array ) )
+     * array_last( $array )
      *
      * // qux
      * ```
@@ -214,5 +216,145 @@ class Arr
         return $array[array_keys($array)[sizeof($array) - 1]];
     }
 
+    /**
+     * Gets a value in an array by dot notation for the keys.
+     *
+     * ### array_get
+     * Related global function (description see above).
+     *
+     * > #### [( jump back )](#available-php-functions)
+     *
+     * #### Example
+     * ```php
+     * $array = [
+     *      'foo' => 'bar',
+     *      'baz' => [
+     *          'qux => 'foobar'
+     *      ]
+     * ];
+     *
+     * array_get( 'baz.qux', $array );
+     *
+     * // foobar
+     * ```
+     *
+     * @param string $key
+     * The key by dot notation.
+     * @param array  $array
+     * The array to search in.
+     * @return mixed
+     * The searched value, null otherwise.
+     */
+    public static function get($key, $array)
+    {
+        if (is_string($key) && is_array($array)) {
+            $keys = explode('.', $key);
 
+            while (sizeof($keys) >= 1) {
+                $k = array_shift($keys);
+
+                if (!isset($array[$k])) {
+                    return null;
+                }
+
+                if (sizeof($keys) === 0) {
+                    return $array[$k];
+                }
+
+                $array = &$array[$k];
+            }
+        }
+
+        return null;
+    }
+
+    /**
+     * Sets a value in an array using the dot notation.
+     *
+     * ### array_set
+     * Related global function (description see above).
+     *
+     * > #### [( jump back )](#available-php-functions)
+     *
+     * ```php
+     * array_set( string key, mixed value, array $array ): boolean
+     * ```
+     *
+     * #### Example 1
+     * ```php
+     * $array = [
+     *      'foo' => 'bar',
+     *      'baz' => [
+     *          'qux => 'foobar'
+     *      ]
+     * ];
+     *
+     * array_set( 'baz.qux', 'bazqux', $array );
+     *
+     * // (
+     * //     [foo] => bar
+     * //     [baz] => [
+     * //         [qux] => bazqux
+     * //     ]
+     * // )
+     * ```
+     *
+     * #### Example 2
+     * ```php
+     * $array = [
+     *      'foo' => 'bar',
+     *      'baz' => [
+     *          'qux => 'foobar'
+     *      ]
+     * ];
+     *
+     * array_set( 'baz.foo', 'bar', $array );
+     *
+     * // (
+     * //     [foo] => bar
+     * //     [baz] => [
+     * //         [qux] => bazqux
+     * //         [foo] => bar
+     * //     ]
+     * // )
+     * ```
+     *
+     * @param string $key
+     * The key to set using dot notation.
+     * @param mixed  $value
+     * The value to set on the specified key.
+     * @param array  $array
+     * The concerned array.
+     * @return bool
+     * True if the new value was successfully set, false otherwise.
+     */
+    public static function set($key, $value, &$array)
+    {
+        if (is_string($key) && !empty($key)) {
+
+            $keys = explode('.', $key);
+            $arrTmp = &$array;
+
+            while (sizeof($keys) >= 1) {
+                $k = array_shift($keys);
+
+                if (!is_array($arrTmp)) {
+                    $arrTmp = [];
+                }
+
+                if (!isset($arrTmp[$k])) {
+                    $arrTmp[$k] = [];
+                }
+
+                if (sizeof($keys) === 0) {
+                    $arrTmp[$k] = $value;
+                    return true;
+                }
+
+                $arrTmp = &$arrTmp[$k];
+            }
+        }
+
+        return false;
+    }
 }

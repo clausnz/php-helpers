@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "80c5cd580b983848aa91056647a28a15",
+    "content-hash": "9fa354d90579ae96abe8fd80232e9e77",
     "packages": [
         {
             "name": "jaybizzle/crawler-detect",
@@ -968,6 +968,54 @@
             "homepage": "http://github.com/kherge/Version",
             "abandoned": true,
             "time": "2013-05-17T14:37:21+00:00"
+        },
+        {
+            "name": "mikey179/vfsStream",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mikey179/vfsStream.git",
+                "reference": "8f11a4175cbc21e468705f563ba681249c50d862"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mikey179/vfsStream/zipball/8f11a4175cbc21e468705f563ba681249c50d862",
+                "reference": "8f11a4175cbc21e468705f563ba681249c50d862",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "bovigo/assert": "^3.1",
+                "bovigo/callmap": "^4.0",
+                "phpunit/phpunit": "^6.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "org\\bovigo\\vfs\\": "src/main/php"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Frank Kleine",
+                    "homepage": "http://frankkleine.de/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Virtual file system to mock the real file system in unit tests.",
+            "homepage": "http://vfs.bovigo.org/",
+            "time": "2017-12-28T15:55:44+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -4303,7 +4351,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "mustangostang/spyc": 20
+        "mustangostang/spyc": 20,
+        "mikey179/vfsstream": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

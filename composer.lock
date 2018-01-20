@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "df50cbf9ceb621e2d288cfbdc099c7ab",
+    "content-hash": "c823d38679cb9e800e13891a7d9ed6c9",
     "packages": [
         {
             "name": "jaybizzle/crawler-detect",

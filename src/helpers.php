@@ -532,7 +532,7 @@ if (!function_exists('to_yml')) {
      *
      * @param array|object $var
      * @param int          $indent
-     * @return bool
+     * @return string|null
      */
     function to_yml($var, $indent = 2)
     {

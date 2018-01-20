@@ -1,15 +1,15 @@
 <?php
 
-define('PROJECT_DIR', __DIR__ . '/../../');
-require PROJECT_DIR . 'vendor/autoload.php';
+define('PROJECT_DIR', __DIR__ . '/../..');
+require PROJECT_DIR . '/vendor/autoload.php';
 
 /*
  * Generate "Table of Content" for global functions.
  */
 
 // define some vars
-$helperFile = PROJECT_DIR . "src/helpers.php";
-$tocFile = PROJECT_DIR . "doc/Table_of_Content_Functions.md";
+$helperFile = PROJECT_DIR . "/src/helpers.php";
+$tocFile = PROJECT_DIR . "/doc/Table_of_Content_Functions.md";
 $helperContent = file_get_contents($helperFile);
 
 // get group name from functions file
@@ -43,26 +43,18 @@ file_put_contents($tocFile, $tocContent);
  * Generate "About" section.
  */
 
-// write number of functions to file
-$fileNumberFunctions = PROJECT_DIR . "tmp/NR_FUNCTIONS";
-file_put_contents($fileNumberFunctions, $functionCounter);
-
 // write About.md
-$fileAbout = PROJECT_DIR . "doc/About.md";
-$fileAboutTemplate = PROJECT_DIR . "doc/template/About.tmpl.md";
+$fileAbout = PROJECT_DIR . "/doc/About.md";
+$fileAboutTemplate = PROJECT_DIR . "/doc/template/About.tmpl.md";
 
-$fileAboutContent = file_get_contents($fileAboutTemplate);
-$nrFunctions = file_get_contents($fileNumberFunctions);
-
-$fileAboutContent = str_insert([':nr_functions' => $nrFunctions], $fileAboutContent);
-
+$fileAboutContent = str_insert([':nr_functions' => $functionCounter], file_get_contents($fileAboutTemplate));
 file_put_contents($fileAbout, $fileAboutContent);
 
 /**
  * Clean README.md from &#039; = '
  */
 
-$readmeFile = PROJECT_DIR . "doc/README.md";
+$readmeFile = PROJECT_DIR . "/doc/README.md";
 $readmeContent = file_get_contents($readmeFile);
 $readmeContent = str_replace('&#039;', '\'', $readmeContent);
 file_put_contents($readmeFile, $readmeContent);

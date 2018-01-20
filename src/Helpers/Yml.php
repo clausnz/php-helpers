@@ -357,7 +357,7 @@ class Yml
      * > #### [( jump back )](#available-php-functions)
      *
      * ```php
-     * to_yml( array $array, string $filename, int $indent = 2, int $wordwrap = 0, bool $openingDashes = false ): boolean
+     * to_yml( array|object $array, string $filename, int $indent = 2, int $wordwrap = 0, bool $openingDashes = false ): string|null
      * ```
      *
      * #### Example
@@ -370,7 +370,7 @@ class Yml
      *      ]
      * ];
      *
-     * to_yml( $array, '/path/to/file.yml' );
+     * to_yml( $array );
      *
      * //   foo: bar
      * //   baz: qux

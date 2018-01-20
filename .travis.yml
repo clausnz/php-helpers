@@ -12,7 +12,7 @@ php:
 before_script:
   - composer self-update
   - composer install --prefer-source --no-interaction --no-dev
-  - composer require mikey179/vfsStream --no-dev
+  - composer require mikey179/vfsStream:v1.5.0
 
 # Commands you want to run that will verify your build.
 script: phpunit

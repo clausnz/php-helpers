@@ -1922,7 +1922,7 @@ yml_get_file( string $key, string $ymlfile ): string|array|null
 
 #### Example
 ```php
-// $ymlfile = '/path/to/file.yml';
+$ymlfile = '/path/to/file.yml';
 
 yml_get_file( 'foobar.foo', $ymlfile );
 
@@ -1954,7 +1954,29 @@ Loads the content of a yamlfile into an array.
 Yml::parseFile(  $ymlFile ): array
 ```
 
+### yml_parse_file
+Related global function (description see above).
 
+> #### [( jump back )](#available-php-functions)
+
+```php
+yml_parse_file( string $ymlfile ): array|null
+```
+
+#### Example
+```php
+$ymlfile = '/path/to/file.yml';
+
+yml_parse_file( $ymlfile );
+
+// (
+//       [foo] => bar
+//       [baz] => qux
+//       [foobar] => (
+//           [foo] => bar
+//       )
+// )
+```
 
 * This method is **static**.
 **Parameters:**
@@ -1991,7 +2013,7 @@ yml_set_file( string $key, mixed $value, string $ymlfile ): boolean
 
 #### Example
 ```php
-// $ymlfile = '/path/to/file.yml';
+$ymlfile = '/path/to/file.yml';
 
 yml_set_file( 'foobar.foo', 'baz', $ymlfile );
 
@@ -2135,7 +2157,7 @@ Related global function (description see above).
 > #### [( jump back )](#available-php-functions)
 
 ```php
-yml_set( string $key, mixed $value, string &$yml )
+yml_set( string $key, mixed $value, string &$yml ): boolean
 ```
 
 #### Example

@@ -31,6 +31,7 @@ This library makes use of the following brilliant and well known libraries:
 
 - https://github.com/serbanghita/Mobile-Detect
 - https://github.com/JayBizzle/Crawler-Detect
+- https://github.com/mustangostang/spyc
 
 ## Unit Tests
 

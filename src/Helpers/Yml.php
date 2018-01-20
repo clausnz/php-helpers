@@ -80,7 +80,7 @@ class Yml
      * ```php
      * $string = "foo: bar\nbaz: qux\nfoobar:\n  foo: bar\n";
      *
-     * is_yml( $file );
+     * is_yml( $string );
      *
      * // bool(true)
      * ```
@@ -123,7 +123,7 @@ class Yml
      * //       [foobar] => (
      * //           [foo] => bar
      * //       )
-     * // }
+     * // )
      * ```
      *
      * @param string $yml

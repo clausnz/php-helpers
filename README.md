@@ -1852,7 +1852,7 @@ is_yml( string $string ): boolean
 ```php
 $string = "foo: bar\nbaz: qux\nfoobar:\n  foo: bar\n";
 
-is_yml( $file );
+is_yml( $string );
 
 // bool(true)
 ```
@@ -1902,7 +1902,7 @@ yml_parse( $yml );
 //       [foobar] => (
 //           [foo] => bar
 //       )
-// }
+// )
 ```
 
 * This method is **static**.

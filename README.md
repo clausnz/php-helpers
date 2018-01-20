@@ -447,6 +447,10 @@ Related global function (description see above).
 
 > #### [( jump back )](#available-php-functions)
 
+```php
+array_get( string key, array $array ): mixed
+```
+
 #### Example
 ```php
 $array = [

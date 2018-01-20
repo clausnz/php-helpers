@@ -224,6 +224,10 @@ class Arr
      *
      * > #### [( jump back )](#available-php-functions)
      *
+     * ```php
+     * array_get( string key, array $array ): mixed
+     * ```
+     *
      * #### Example
      * ```php
      * $array = [

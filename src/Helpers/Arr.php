@@ -134,7 +134,7 @@ class Arr
      * An array representation of the converted string or object.
      * Returns null if $var is no a string or array.
      */
-    public static function toArray($var)
+    public static function dump($var)
     {
         if (is_string($var)) {
             return str_split($var);

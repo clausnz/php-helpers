@@ -59,9 +59,9 @@ class Yml
      * @return bool
      * True if the file contains yaml syntax, false otherwise.
      */
-    public static function isYmlfile($file)
+    public static function isValidFile($file)
     {
-        return self::isYml(file_get_contents($file));
+        return self::isValid(file_get_contents($file));
     }
 
     /**
@@ -95,7 +95,7 @@ class Yml
      * @return bool
      * True if the string is yaml, false otherwise.
      */
-    public static function isYml($string)
+    public static function isValid($string)
     {
         if (is_string($string)) {
             return is_assoc(self::parse($string));
@@ -326,7 +326,7 @@ class Yml
         // fill array with content
         $value = arr::set($key, $value, $ymlArray);
         // write back to ymlfile
-        self::toYmlfile($ymlArray, $ymlfile);
+        self::dumpfile($ymlArray, $ymlfile);
 
         return $value;
     }
@@ -366,9 +366,9 @@ class Yml
      * True on success, false otherwise.
      *
      */
-    public static function toYmlfile($var, $filename, $indent = 2)
+    public static function dumpfile($var, $filename, $indent = 2)
     {
-        $value = file_put_contents($filename, self::toYml($var, $indent));
+        $value = file_put_contents($filename, self::dump($var, $indent));
         return $value === 0 ? false : $value;
     }
 
@@ -413,10 +413,10 @@ class Yml
      * @return string|null
      * The converted yaml string. On errors, null is returned.
      */
-    public static function toYml($var, $indent = 2, $wordwrap = 0, $openingDashes = false)
+    public static function dump($var, $indent = 2, $wordwrap = 0, $openingDashes = false)
     {
         if (is_object($var)) {
-            $var = arr::toArray($var);
+            $var = arr::dump($var);
         }
 
         if (!is_array($var) || !is_int($wordwrap) || !is_bool($openingDashes)) {
@@ -472,7 +472,7 @@ class Yml
         if (is_string($key) && (is_string($value) || is_array($value))) {
             $array = yml::parse($yml);
             $value = arr::set($key, $value, $array);
-            $yml = yml::toYml($array);
+            $yml = yml::dump($array);
 
             return $value;
         }

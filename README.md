@@ -136,7 +136,7 @@ if( dev::isIphone() ) {
 * [Arr](#arr)
     * [isAssoc](#isassoc)
     * [toObject](#toobject)
-    * [toArray](#toarray)
+    * [dump](#dump)
     * [first](#first)
     * [last](#last)
     * [get](#get)
@@ -173,17 +173,17 @@ if( dev::isIphone() ) {
     * [cryptPassword](#cryptpassword)
     * [isPassword](#ispassword)
     * [dd](#dd)
-    * [dump](#dump)
+    * [dump](#dump-1)
 * [Yml](#yml)
-    * [isYmlfile](#isymlfile)
-    * [isYml](#isyml)
+    * [isValidFile](#isvalidfile)
+    * [isValid](#isvalid)
     * [parse](#parse)
     * [get](#get-1)
     * [getFile](#getfile)
     * [parseFile](#parsefile)
     * [setFile](#setfile)
-    * [toYmlfile](#toymlfile)
-    * [toYml](#toyml)
+    * [dumpfile](#dumpfile)
+    * [dump](#dump-2)
     * [set](#set-1)
 
 ## Arr
@@ -286,12 +286,12 @@ A std object representation of the converted array.
 
 ---
 
-### toArray
+### dump
 
 Converts a string or an object to an array.
 
 ```php
-Arr::toArray(  $var ): mixed
+Arr::dump(  $var ): mixed
 ```
 
 ### to_array
@@ -1794,12 +1794,12 @@ Class Yml
 * Full name: \CNZ\Helpers\Yml
 
 
-### isYmlfile
+### isValidFile
 
 Validates if a given file contains yaml syntax.
 
 ```php
-Yml::isYmlfile( string $file ): boolean
+Yml::isValidFile( string $file ): boolean
 ```
 
 ### is_yml_file
@@ -1836,12 +1836,12 @@ True if the file contains yaml syntax, false otherwise.
 
 ---
 
-### isYml
+### isValid
 
 Tests if the syntax of a given string is yaml.
 
 ```php
-Yml::isYml( string $string ): boolean
+Yml::isValid( string $string ): boolean
 ```
 
 ### is_yml
@@ -2122,12 +2122,12 @@ True if value was successfully set in yamlfile, false otherwise.
 
 ---
 
-### toYmlfile
+### dumpfile
 
 Transformes a given array to yaml syntax and puts its content into a given file. Note: if the file exists, it will be overwritten!
 
 ```php
-Yml::toYmlfile( array|object $var, string $filename, integer $indent = 2 ): boolean
+Yml::dumpfile( array|object $var, string $filename, integer $indent = 2 ): boolean
 ```
 
 ### to_yml_file
@@ -2170,12 +2170,12 @@ True on success, false otherwise.
 
 ---
 
-### toYml
+### dump
 
 Transformes a given array or object to a yaml string.
 
 ```php
-Yml::toYml( array|object $var, integer $indent = 2, integer $wordwrap, boolean $openingDashes = false ): string|null
+Yml::dump( array|object $var, integer $indent = 2, integer $wordwrap, boolean $openingDashes = false ): string|null
 ```
 
 ### to_yml

@@ -45,10 +45,10 @@ class YmlTest extends TestCase
 
     public function test_is_yml_file()
     {
-        $this->assertTrue(yml::isYmlfile($this->filesystem->url() . '/valid.yml'));
+        $this->assertTrue(yml::isValidFile($this->filesystem->url() . '/valid.yml'));
         $this->assertTrue(is_yml_file($this->filesystem->url() . '/valid.yml'));
 
-        $this->assertFalse(yml::isYmlfile($this->filesystem->url() . '/notvalid.yml'));
+        $this->assertFalse(yml::isValidFile($this->filesystem->url() . '/notvalid.yml'));
         $this->assertFalse(is_yml_file($this->filesystem->url() . '/notvalid.yml'));
     }
 
@@ -61,7 +61,7 @@ class YmlTest extends TestCase
 
         foreach ($testEqualArray as $testEqual) {
             $this->assertEquals($this->testYmlString, to_yml($testEqual));
-            $this->assertEquals($this->testYmlString, yml::toYml($testEqual));
+            $this->assertEquals($this->testYmlString, yml::dump($testEqual));
         }
 
         $nullArray = [
@@ -73,7 +73,7 @@ class YmlTest extends TestCase
 
         foreach ($nullArray as $item) {
             $this->assertNull(to_yml($item));
-            $this->assertNull(yml::toYml($item));
+            $this->assertNull(yml::dump($item));
         }
     }
 
@@ -82,15 +82,15 @@ class YmlTest extends TestCase
         $path = $this->filesystem->url();
 
         to_yml_file($this->testArray, $path . '/new1.yml');
-        yml::toYmlfile($this->testArray, $path . '/new2.yml');
+        yml::dumpfile($this->testArray, $path . '/new2.yml');
 
         to_yml_file(arr::toObject($this->testArray), $path . '/new3.yml');
-        yml::toYmlfile(arr::toObject($this->testArray), $path . '/new4.yml');
+        yml::dumpfile(arr::toObject($this->testArray), $path . '/new4.yml');
 
-        $this->assertTrue(yml::isYmlfile($path . '/new1.yml'));
-        $this->assertTrue(yml::isYmlfile($path . '/new2.yml'));
-        $this->assertTrue(yml::isYmlfile($path . '/new3.yml'));
-        $this->assertTrue(yml::isYmlfile($path . '/new4.yml'));
+        $this->assertTrue(yml::isValidFile($path . '/new1.yml'));
+        $this->assertTrue(yml::isValidFile($path . '/new2.yml'));
+        $this->assertTrue(yml::isValidFile($path . '/new3.yml'));
+        $this->assertTrue(yml::isValidFile($path . '/new4.yml'));
 
         $this->assertEquals($this->testYmlString, file_get_contents($path . '/new1.yml'));
         $this->assertEquals($this->testYmlString, file_get_contents($path . '/new2.yml'));
@@ -106,14 +106,14 @@ class YmlTest extends TestCase
 
         foreach ($testArrayNull as $item) {
             $this->assertFalse(to_yml_file($item, $path . '/null.yml'));
-            $this->assertFalse(yml::toYmlfile($item, $path . '/null.yml'));
+            $this->assertFalse(yml::dumpFile($item, $path . '/null.yml'));
         }
     }
 
     public function test_is_yml()
     {
         $this->assertTrue(is_yml($this->testYmlString));
-        $this->assertTrue(yml::isYml($this->testYmlString));
+        $this->assertTrue(yml::isValid($this->testYmlString));
 
         $testArrayFalse = [
             $this->testNoYmlString,
@@ -126,7 +126,7 @@ class YmlTest extends TestCase
 
         foreach ($testArrayFalse as $parameter) {
             $this->assertFalse(is_yml($parameter));
-            $this->assertFalse(yml::isYml($parameter));
+            $this->assertFalse(yml::isValid($parameter));
         }
     }
 
@@ -210,14 +210,14 @@ class YmlTest extends TestCase
             $result = yml_set($key, $value, $yml);
             $this->assertEquals($value, yml::get($key, $yml));
             $this->assertTrue($result);
-            $this->assertTrue(yml::isYml($yml));
+            $this->assertTrue(yml::isValid($yml));
 
             $yml = $this->testYmlString;
 
             $result = yml::set($key, $value, $yml);
             $this->assertEquals($value, yml::get($key, $yml));
             $this->assertTrue($result);
-            $this->assertTrue(yml::isYml($yml));
+            $this->assertTrue(yml::isValid($yml));
         }
 
         $testArrayFalse = [

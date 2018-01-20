@@ -199,7 +199,7 @@ if (!function_exists('to_array')) {
      */
     function to_array($var)
     {
-        return arr::toArray($var);
+        return arr::dump($var);
     }
 }
 
@@ -536,7 +536,7 @@ if (!function_exists('to_yml')) {
      */
     function to_yml($var, $indent = 2)
     {
-        return yml::toYml($var, $indent);
+        return yml::dump($var, $indent);
     }
 }
 
@@ -553,7 +553,7 @@ if (!function_exists('to_yml_file')) {
      */
     function to_yml_file($var, $filename, $indent = 2)
     {
-        return yml::toYmlfile($var, $filename, $indent);
+        return yml::dumpfile($var, $filename, $indent);
     }
 }
 
@@ -594,7 +594,7 @@ if (!function_exists('is_yml')) {
      */
     function is_yml($string)
     {
-        return yml::isYml($string);
+        return yml::isValid($string);
     }
 }
 
@@ -609,7 +609,7 @@ if (!function_exists('is_yml_file')) {
      */
     function is_yml_file($string)
     {
-        return yml::isYmlfile($string);
+        return yml::isValidFile($string);
     }
 }
 

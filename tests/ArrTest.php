@@ -218,7 +218,7 @@ class ArrTest extends TestCase
 
         $arrayTest = [
             to_array($object),
-            arr::toArray($object)
+            arr::dump($object)
         ];
 
         foreach ($arrayTest as $test) {
@@ -247,7 +247,7 @@ class ArrTest extends TestCase
         $var = 'test';
 
         $global = to_array($var);
-        $static = arr::toArray($var);
+        $static = arr::dump($var);
 
         for ($i = 0; $i < strlen($var); $i++) {
             $this->assertEquals($global[$i], $static[$i]);
@@ -256,6 +256,6 @@ class ArrTest extends TestCase
         $var = 10;
 
         $this->assertNull(to_array($var));
-        $this->assertNull(arr::toArray($var));
+        $this->assertNull(arr::dump($var));
     }
 }

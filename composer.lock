@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9fa354d90579ae96abe8fd80232e9e77",
+    "content-hash": "5514168a3408b339df78faf6c5000541",
     "packages": [
         {
             "name": "jaybizzle/crawler-detect",
@@ -971,30 +971,28 @@
         },
         {
             "name": "mikey179/vfsStream",
-            "version": "dev-master",
+            "version": "v1.6.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mikey179/vfsStream.git",
-                "reference": "8f11a4175cbc21e468705f563ba681249c50d862"
+                "reference": "d5fec95f541d4d71c4823bb5e30cf9b9e5b96145"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mikey179/vfsStream/zipball/8f11a4175cbc21e468705f563ba681249c50d862",
-                "reference": "8f11a4175cbc21e468705f563ba681249c50d862",
+                "url": "https://api.github.com/repos/mikey179/vfsStream/zipball/d5fec95f541d4d71c4823bb5e30cf9b9e5b96145",
+                "reference": "d5fec95f541d4d71c4823bb5e30cf9b9e5b96145",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1"
+                "php": ">=5.3.0"
             },
             "require-dev": {
-                "bovigo/assert": "^3.1",
-                "bovigo/callmap": "^4.0",
-                "phpunit/phpunit": "^6.4"
+                "phpunit/phpunit": "~4.5"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.0.x-dev"
+                    "dev-master": "1.6.x-dev"
                 }
             },
             "autoload": {
@@ -1015,7 +1013,7 @@
             ],
             "description": "Virtual file system to mock the real file system in unit tests.",
             "homepage": "http://vfs.bovigo.org/",
-            "time": "2017-12-28T15:55:44+00:00"
+            "time": "2017-08-01T08:02:14+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -2923,12 +2921,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/config.git",
-                "reference": "705d1687222c08deabac8993ec2e04ad1a422c52"
+                "reference": "be75a0bc8e21431a1f326f1f4f31a6fa546996b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/config/zipball/705d1687222c08deabac8993ec2e04ad1a422c52",
-                "reference": "705d1687222c08deabac8993ec2e04ad1a422c52",
+                "url": "https://api.github.com/repos/symfony/config/zipball/be75a0bc8e21431a1f326f1f4f31a6fa546996b8",
+                "reference": "be75a0bc8e21431a1f326f1f4f31a6fa546996b8",
                 "shasum": ""
             },
             "require": {
@@ -2971,7 +2969,7 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "https://symfony.com",
-            "time": "2018-01-03T07:36:31+00:00"
+            "time": "2018-01-18T13:56:23+00:00"
         },
         {
             "name": "symfony/console",
@@ -2979,12 +2977,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "64bcecdcdd4e29e53463cd648a81ebda4c4fa064"
+                "reference": "89259665ac2467ed37f43ab2ac16ae5fc65ac652"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/64bcecdcdd4e29e53463cd648a81ebda4c4fa064",
-                "reference": "64bcecdcdd4e29e53463cd648a81ebda4c4fa064",
+                "url": "https://api.github.com/repos/symfony/console/zipball/89259665ac2467ed37f43ab2ac16ae5fc65ac652",
+                "reference": "89259665ac2467ed37f43ab2ac16ae5fc65ac652",
                 "shasum": ""
             },
             "require": {
@@ -3032,7 +3030,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2018-01-13T13:56:42+00:00"
+            "time": "2018-01-18T13:56:23+00:00"
         },
         {
             "name": "symfony/debug",
@@ -3476,12 +3474,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/validator.git",
-                "reference": "3f7e4b6787d3f01e6dc704ce34d2e26b39611f57"
+                "reference": "1f00c4be55fd36b2e562b163093a1493cb02cfa9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/validator/zipball/3f7e4b6787d3f01e6dc704ce34d2e26b39611f57",
-                "reference": "3f7e4b6787d3f01e6dc704ce34d2e26b39611f57",
+                "url": "https://api.github.com/repos/symfony/validator/zipball/1f00c4be55fd36b2e562b163093a1493cb02cfa9",
+                "reference": "1f00c4be55fd36b2e562b163093a1493cb02cfa9",
                 "shasum": ""
             },
             "require": {
@@ -3541,7 +3539,7 @@
             ],
             "description": "Symfony Validator Component",
             "homepage": "https://symfony.com",
-            "time": "2018-01-13T13:56:42+00:00"
+            "time": "2018-01-18T13:56:23+00:00"
         },
         {
             "name": "theseer/tokenizer",
@@ -4351,8 +4349,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "mustangostang/spyc": 20,
-        "mikey179/vfsstream": 20
+        "mustangostang/spyc": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

@@ -28,6 +28,9 @@ class YmlTest extends TestCase
 
     private $filesystem;
 
+    /**
+     * @group 7.1
+     */
     public function setUp()
     {
         // define virtual file system

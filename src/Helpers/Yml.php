@@ -78,7 +78,12 @@ class Yml
      *
      * #### Example
      * ```php
-     * $string = "foo: bar\nbaz: qux\nfoobar:\n  foo: bar\n";
+     * $string = "
+     *      foo: bar
+     *      baz: qux
+     *      foobar:
+     *          foo: bar
+     * ";
      *
      * is_yml( $string );
      *
@@ -113,7 +118,12 @@ class Yml
      *
      * #### Example
      * ```php
-     * $yml = "foo: bar\nbaz: qux\nfoobar:\n  foo: bar\n";
+     * $yml = "
+     *      foo: bar
+     *      baz: qux
+     *      foobar:
+     *          foo: bar
+     * ";
      *
      * yml_parse( $yml );
      *
@@ -176,7 +186,12 @@ class Yml
      *
      * #### Example
      * ```php
-     * $yml = "foo: bar\nbaz: qux\nfoobar:\n  foo: bar\n";
+     * $yml = "
+     *      foo: bar
+     *      baz: qux
+     *      foobar:
+     *          foo: bar
+     * ";
      *
      * yml_get( 'foobar.foo', $yml );
      *
@@ -257,9 +272,12 @@ class Yml
      * ```php
      * // $ymlfile = '/path/to/file.yml';
      *
-     * yml_set_file( 'foo.bar', 'baz', $ymlfile );
+     * yml_set_file( 'foobar.foo', 'baz', $ymlfile );
      *
-     * // bool(true)
+     * //   foo: bar
+     * //   baz: qux
+     * //   foobar:
+     * //       foo: baz
      * ```
      *
      * @param string $key
@@ -304,12 +322,14 @@ class Yml
      * #### Example
      * ```php
      * $array = [
-     *     'foo' => 'bar'
+     *      'foo' => 'bar',
+     *      'baz' => 'qux'
      * ];
      *
      * to_yml_file( $array, '/path/to/file.yml' );
      *
-     * // bool(true)
+     * //   foo: bar
+     * //   baz: qux
      * ```
      *
      * @param     array|object $var
@@ -343,12 +363,19 @@ class Yml
      * #### Example
      * ```php
      * $array = [
-     *     'foo' => 'bar'
+     *      'foo' => 'bar',
+     *      'baz' => 'qux',
+     *      'foobar' => [
+     *          'foo' => 'bar'
+     *      ]
      * ];
      *
      * to_yml( $array, '/path/to/file.yml' );
      *
-     * // bool(true)
+     * //   foo: bar
+     * //   baz: qux
+     * //   foobar:
+     * //     foo: bar
      * ```
      *
      * @param array|object $var
@@ -392,11 +419,19 @@ class Yml
      *
      * #### Example
      * ```php
-     * $yml = "foo: bar\nbaz: qux\nfoobar:\n  foo: bar\n";
+     * $yml = "
+     *      foo: bar
+     *      baz: qux
+     *      foobar:
+     *          foo: bar
+     * ";
      *
      * yml_set( 'foobar.foo', 'baz', $yml );
      *
-     * // bool(true)
+     * //   foo: bar
+     * //   baz: qux
+     * //   foobar:
+     * //       foo: baz
      * ```
      *
      * @param string $key

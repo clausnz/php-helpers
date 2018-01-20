@@ -1774,7 +1774,12 @@ is_yml( string $string ): boolean
 
 #### Example
 ```php
-$string = "foo: bar\nbaz: qux\nfoobar:\n  foo: bar\n";
+$string = "
+     foo: bar
+     baz: qux
+     foobar:
+         foo: bar
+";
 
 is_yml( $string );
 
@@ -1816,7 +1821,12 @@ yml_parse( string $yml ): array|null
 
 #### Example
 ```php
-$yml = "foo: bar\nbaz: qux\nfoobar:\n  foo: bar\n";
+$yml = "
+     foo: bar
+     baz: qux
+     foobar:
+         foo: bar
+";
 
 yml_parse( $yml );
 
@@ -1864,7 +1874,12 @@ yml_get( string $key, string $yml ): string|array|null
 
 #### Example
 ```php
-$yml = "foo: bar\nbaz: qux\nfoobar:\n  foo: bar\n";
+$yml = "
+     foo: bar
+     baz: qux
+     foobar:
+         foo: bar
+";
 
 yml_get( 'foobar.foo', $yml );
 
@@ -1978,9 +1993,12 @@ yml_set_file( string $key, mixed $value, string $ymlfile ): boolean
 ```php
 // $ymlfile = '/path/to/file.yml';
 
-yml_set_file( 'foo.bar', 'baz', $ymlfile );
+yml_set_file( 'foobar.foo', 'baz', $ymlfile );
 
-// bool(true)
+//   foo: bar
+//   baz: qux
+//   foobar:
+//       foo: baz
 ```
 
 * This method is **static**.
@@ -2021,12 +2039,14 @@ to_yml_file( array $array, string $filename, int $indent = 2, int $wordwrap = 0,
 #### Example
 ```php
 $array = [
-    'foo' => 'bar'
+     'foo' => 'bar',
+     'baz' => 'qux'
 ];
 
 to_yml_file( $array, '/path/to/file.yml' );
 
-// bool(true)
+//   foo: bar
+//   baz: qux
 ```
 
 * This method is **static**.
@@ -2067,12 +2087,19 @@ to_yml( array $array, string $filename, int $indent = 2, int $wordwrap = 0, bool
 #### Example
 ```php
 $array = [
-    'foo' => 'bar'
+     'foo' => 'bar',
+     'baz' => 'qux',
+     'foobar' => [
+         'foo' => 'bar'
+     ]
 ];
 
 to_yml( $array, '/path/to/file.yml' );
 
-// bool(true)
+//   foo: bar
+//   baz: qux
+//   foobar:
+//     foo: bar
 ```
 
 * This method is **static**.
@@ -2113,11 +2140,19 @@ yml_set( string $key, mixed $value, string &$yml )
 
 #### Example
 ```php
-$yml = "foo: bar\nbaz: qux\nfoobar:\n  foo: bar\n";
+$yml = "
+     foo: bar
+     baz: qux
+     foobar:
+         foo: bar
+";
 
 yml_set( 'foobar.foo', 'baz', $yml );
 
-// bool(true)
+//   foo: bar
+//   baz: qux
+//   foobar:
+//       foo: baz
 ```
 
 * This method is **static**.

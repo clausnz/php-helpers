@@ -15,7 +15,7 @@ before_script:
   - composer require mikey179/vfsStream:v1.5.0 --no-update
 
 # Commands you want to run that will verify your build.
-script: phpunit
+script: vendor/bin/phpunit
 
 # Customize when the notification emails are sent.
 notifications:

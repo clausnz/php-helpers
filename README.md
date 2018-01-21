@@ -39,7 +39,7 @@ All functions are tested against a number of unit tests and PHP Versions.
 [![Build Status](https://travis-ci.org/clausnz/php-helpers.svg?branch=master)](https://travis-ci.org/clausnz/php-helpers)
 # Install
 
-Please install the latest `clausnz/php-helper` library with composer:
+Install the latest `clausnz/php-helper` library with composer:
 
 ```bash
 composer require clausnz/php-helpers

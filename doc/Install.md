@@ -1,6 +1,6 @@
 # Install
 
-Please install the latest `clausnz/php-helper` library with composer:
+Install the latest `clausnz/php-helper` library with composer:
 
 ```bash
 composer require clausnz/php-helpers

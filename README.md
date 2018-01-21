@@ -39,26 +39,14 @@ All functions are tested against a number of unit tests and PHP Versions.
 [![Build Status](https://travis-ci.org/clausnz/php-helpers.svg?branch=master)](https://travis-ci.org/clausnz/php-helpers)
 # Install
 
-To install the latest `clausnz/php-helper` library, simply add the following lines to your `composer.json` and run `composer update`: 
+Please install the latest `clausnz/php-helper` library with composer:
 
-#### Example
-```json
-{
-  "repositories": [
-    {
-      "url": "https://github.com/clausnz/php-helpers",
-      "type": "git"
-    }
-  ],
-  "require": {
-    "clausnz/php-helpers": "dev-master"
-  }
-}
+```bash
+composer require clausnz/php-helpers
 ```
 
 Also make sure to require your composer autoload file:
 
-#### Example
 ```php
 require __DIR__ . '/vendor/autoload.php';
 ```

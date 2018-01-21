@@ -12,7 +12,7 @@
     "yaml"
   ],
   "type": "library",
-  "version": "0.1.1",
+  "version": "0.2.1",
   "require": {
     "php": ">=5.6",
     "mobiledetect/mobiledetectlib": "^2.8",

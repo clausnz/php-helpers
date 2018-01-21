@@ -105,7 +105,7 @@
     * [getFile](#getfile)
     * [parseFile](#parsefile)
     * [setFile](#setfile)
-    * [dumpfile](#dumpfile)
+    * [dumpFile](#dumpfile)
     * [dump](#dump-2)
     * [set](#set-1)
 
@@ -1955,7 +1955,7 @@ The found value (string or array), null otherwise.
 Loads the content of a yamlfile into an array.
 
 ```php
-Yml::parseFile(  $ymlFile ): array
+Yml::parseFile( string $ymlfile ): array
 ```
 
 ### yml_parse_file
@@ -1987,7 +1987,7 @@ yml_parse_file( $ymlfile );
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$ymlFile` | **** | The path of the file to read from. |
+| `$ymlfile` | **string** | The path of the file to read from. |
 
 
 **Return Value:**
@@ -2045,12 +2045,12 @@ True if value was successfully set in yamlfile, false otherwise.
 
 ---
 
-### dumpfile
+### dumpFile
 
 Transformes a given array to yaml syntax and puts its content into a given file. Note: if the file exists, it will be overwritten!
 
 ```php
-Yml::dumpfile( array|object $var, string $filename, integer $indent = 2 ): boolean
+Yml::dumpFile( array|object $var, string $filename, integer $indent = 2, integer $wordwrap, boolean $openingDashes = false ): boolean
 ```
 
 ### to_yml_file
@@ -2083,6 +2083,8 @@ to_yml_file( $array, '/path/to/file.yml' );
 | `$var` | **array&#124;object** | The array or object to transform. |
 | `$filename` | **string** | The path to the file to write the yaml string into. Note: if the file already exists, it will be overwritten! |
 | `$indent` | **integer** | The indent of the converted yaml. Defaults to 2. |
+| `$wordwrap` | **integer** | After the given number a string will be wraped. Default to 0 (no wordwrap). |
+| `$openingDashes` | **boolean** | True if the yaml string should start with opening dashes. Defaults to false. |
 
 
 **Return Value:**
@@ -2202,4 +2204,4 @@ True if value was successfully set, false otherwise.
 
 
 --------
-> This document was automatically generated from source code comments on 2018-01-20 using [phpDocumentor](http://www.phpdoc.org/) and [cvuorinen/phpdoc-markdown-public](https://github.com/cvuorinen/phpdoc-markdown-public)
+> This document was automatically generated from source code comments on 2018-01-21 using [phpDocumentor](http://www.phpdoc.org/) and [cvuorinen/phpdoc-markdown-public](https://github.com/cvuorinen/phpdoc-markdown-public)

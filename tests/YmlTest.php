@@ -82,10 +82,10 @@ class YmlTest extends TestCase
         $path = $this->filesystem->url();
 
         to_yml_file($this->testArray, $path . '/new1.yml');
-        yml::dumpfile($this->testArray, $path . '/new2.yml');
+        yml::dumpFile($this->testArray, $path . '/new2.yml');
 
         to_yml_file(arr::toObject($this->testArray), $path . '/new3.yml');
-        yml::dumpfile(arr::toObject($this->testArray), $path . '/new4.yml');
+        yml::dumpFile(arr::toObject($this->testArray), $path . '/new4.yml');
 
         $this->assertTrue(yml::isValidFile($path . '/new1.yml'));
         $this->assertTrue(yml::isValidFile($path . '/new2.yml'));

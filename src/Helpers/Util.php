@@ -93,7 +93,13 @@ class Util
     public static function ip()
     {
         if (php_sapi_name() == 'cli' && self::$cli) {
-            return self::LOCALHOST;
+            $ip = gethostbyname(gethostname());
+
+            if (!filter_var($ip, FILTER_VALIDATE_IP)) {
+                $ip = self::LOCALHOST;
+            }
+
+            return $ip;
         }
 
         return isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : null;

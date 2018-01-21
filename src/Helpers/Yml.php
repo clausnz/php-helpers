@@ -270,14 +270,14 @@ class Yml
      * // )
      * ```
      *
-     * @param $ymlFile
+     * @param string $ymlfile
      * The path of the file to read from.
      * @return array
      * The parsed array.
      */
-    public static function parseFile($ymlFile)
+    public static function parseFile($ymlfile)
     {
-        return self::parse(file_get_contents($ymlFile));
+        return self::parse(file_get_contents($ymlfile));
     }
 
     /**
@@ -326,7 +326,7 @@ class Yml
         // fill array with content
         $value = arr::set($key, $value, $ymlArray);
         // write back to ymlfile
-        self::dumpfile($ymlArray, $ymlfile);
+        self::dumpFile($ymlArray, $ymlfile);
 
         return $value;
     }
@@ -362,13 +362,16 @@ class Yml
      * The path to the file to write the yaml string into. Note: if the file already exists, it will be overwritten!
      * @param       int        $indent
      * The indent of the converted yaml. Defaults to 2.
+     * @param int              $wordwrap
+     * After the given number a string will be wraped. Default to 0 (no wordwrap).
+     * @param bool             $openingDashes
+     * True if the yaml string should start with opening dashes. Defaults to false.
      * @return bool
      * True on success, false otherwise.
-     *
      */
-    public static function dumpfile($var, $filename, $indent = 2)
+    public static function dumpFile($var, $filename, $indent = 2, $wordwrap = 0, $openingDashes = false)
     {
-        $value = file_put_contents($filename, self::dump($var, $indent));
+        $value = file_put_contents($filename, self::dump($var, $indent, $wordwrap, $openingDashes));
         return $value === 0 ? false : $value;
     }
 

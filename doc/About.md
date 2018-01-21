@@ -14,7 +14,7 @@ dump( 'any content' );
 
 If a function with the same name already exists in the list of your project's defined functions ( built-in and user-defined ), it will simply not be registered in your environment. Therefore, **no conflicts** with existing functions will appear.  
 
-Nevertheless, every function is still accessable it in a static way with the appropriate use-statement:
+Nevertheless, every function is still accessable it in a static way with the proper use-statement:
 
 #### Example
 ```php

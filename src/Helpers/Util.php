@@ -34,7 +34,7 @@ class Util
      * @codeCoverageIgnore
      * @ignore
      */
-    private static $cli;
+    private static $isCli;
 
     /**
      * Validate a given email address.
@@ -60,7 +60,7 @@ class Util
      * @param string $email
      * The email address to test.
      *
-     * @return boolean
+     * @return bool
      * True if given string is a valid email address, false otherwise.
      */
     public static function isEmail($email)
@@ -87,12 +87,12 @@ class Util
      * // 127.0.0.1
      * ```
      *
-     * @return null|string
+     * @return string|null
      * The detected ip address, null if the ip was not detected.
      */
     public static function ip()
     {
-        if (php_sapi_name() == 'cli' && self::$cli) {
+        if (php_sapi_name() == 'cli' && self::$isCli) {
             $ip = gethostbyname(gethostname());
 
             if (!filter_var($ip, FILTER_VALIDATE_IP)) {
@@ -111,12 +111,12 @@ class Util
      * @codeCoverageIgnore
      * @ignore
      *
-     * @param bool $cli
+     * @param bool $isCli
      * True or false.
      */
-    public static function setCli($cli = true)
+    public static function setIsCli($isCli = true)
     {
-        self::$cli = $cli;
+        self::$isCli = $isCli;
     }
 
     /**
@@ -180,7 +180,7 @@ class Util
      * @param string $cryptedPassword
      * The crypted password (e.g. stored in the database).
      *
-     * @return boolean
+     * @return bool
      */
     public static function isPassword($password, $cryptedPassword)
     {
@@ -217,7 +217,7 @@ class Util
      * @codeCoverageIgnore
      *
      * @param mixed $var
-     * The var to dump out.
+     * The var to dump.
      */
     public static function dd($var)
     {
@@ -255,7 +255,7 @@ class Util
      * @codeCoverageIgnore
      *
      * @param mixed $var
-     * The var to dump out.
+     * The var to dump.
      */
     public static function dump($var)
     {
@@ -263,7 +263,7 @@ class Util
             $var = 'bool(' . ($var ? 'true' : 'false') . ')';
         }
 
-        if (php_sapi_name() == 'cli') {
+        if (php_sapi_name() === 'cli') {
             print_r($var);
         } else {
             highlight_string("<?php\n" . var_export($var, true));

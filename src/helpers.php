@@ -193,9 +193,9 @@ if (!function_exists('to_array')) {
     /**
      * Converts a string or an object to an array.
      *
-     * @param $var
+     * @param string|object $var
      *
-     * @return mixed
+     * @return array|null
      */
     function to_array($var)
     {
@@ -209,7 +209,7 @@ if (!function_exists('to_object')) {
      *
      * @param array $array
      *
-     * @return object
+     * @return object|null
      */
     function to_object($array)
     {
@@ -300,14 +300,14 @@ if (!function_exists('str_insert')) {
     /**
      * Inserts one or more strings into another string on a defined position.
      *
-     * @param array  $inserts
+     * @param array  $keyValue
      * @param string $string
      *
      * @return string
      */
-    function str_insert($inserts, $string)
+    function str_insert($keyValue, $string)
     {
-        return str::insert($inserts, $string);
+        return str::insert($keyValue, $string);
     }
 }
 
@@ -619,7 +619,7 @@ if (!function_exists('yml_get')) {
      *
      * @param string $search
      * @param string $yml
-     * @return bool
+     * @return mixed
      */
     function yml_get($search, $yml)
     {
@@ -633,7 +633,7 @@ if (!function_exists('yml_get_file')) {
      *
      * @param string $search
      * @param string $ymlfile
-     * @return bool
+     * @return mixed
      */
     function yml_get_file($search, $ymlfile)
     {

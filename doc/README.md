@@ -167,7 +167,7 @@ True if the array is associative, false otherwise.
 Converts an array to an object.
 
 ```php
-Arr::toObject( array $array ): object
+Arr::toObject( array $array ): object|null
 ```
 
 ### to_object
@@ -176,7 +176,7 @@ Related global function (description see above).
 > #### [( jump back )](#available-php-functions)
 
 ```php
-to_object( array $array ): object
+to_object( array $array ): object|null
 ```
 
 #### Example
@@ -214,7 +214,7 @@ A std object representation of the converted array.
 Converts a string or an object to an array.
 
 ```php
-Arr::dump(  $var ): mixed
+Arr::dump( string|object $var ): array|null
 ```
 
 ### to_array
@@ -223,7 +223,7 @@ Related global function (description see above).
 > #### [( jump back )](#available-php-functions)
 
 ```php
-to_array( object $object ): array
+to_array( string|object $var ): array|null
 ```
 
 #### Example 1 (string)
@@ -255,13 +255,13 @@ to_array( $var );
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$var` | **** | String or object. |
+| `$var` | **string&#124;object** | String or object. |
 
 
 **Return Value:**
 
 An array representation of the converted string or object.
-Returns null if $var is no a string or array.
+Returns null on error.
 
 
 
@@ -681,6 +681,10 @@ if ( is_robot() ) {
 
 * This method is **static**.
 
+**Return Value:**
+
+True if the current visitor is a search engine/bot/crawler/spider, false otherwise.
+
 
 
 ---
@@ -863,7 +867,7 @@ Class Str
 Inserts one or more strings into another string on a defined position.
 
 ```php
-Str::insert( array $inserts, string $string ): string
+Str::insert( array $keyValue, string $string ): string
 ```
 
 ### str_insert
@@ -872,18 +876,18 @@ Related global function (description see above).
 > #### [( jump back )](#available-php-functions)
 
 ```php
-str_insert( $string, $inserts ): array
+str_insert( array $keyValue, string $string ): string
 ```
 
 #### Example
 ```php
-$array = [
+$keyValue = [
      ':color' => 'brown',
      ':animal' => 'dog'
 ]
 $string = 'The quick :color fox jumps over the lazy :animal.';
 
-str_insert( $array, $string );
+str_insert( $keyValue, $string );
 
 // The quick brown fox jumps over the lazy dog.
 ```
@@ -893,7 +897,7 @@ str_insert( $array, $string );
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$inserts` | **array** | An associative array with key => value pairs. |
+| `$keyValue` | **array** | An associative array with key => value pairs. |
 | `$string` | **string** | The text with the strings to be replaced. |
 
 
@@ -1507,7 +1511,7 @@ True if given string is a valid email address, false otherwise.
 Get the current ip address of the user.
 
 ```php
-Util::ip(  ): null|string
+Util::ip(  ): string|null
 ```
 
 ### user_ip
@@ -1657,7 +1661,7 @@ dd( $array );
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$var` | **mixed** | The var to dump out. |
+| `$var` | **mixed** | The var to dump. |
 
 
 
@@ -1701,7 +1705,7 @@ dump( $array );
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$var` | **mixed** | The var to dump out. |
+| `$var` | **mixed** | The var to dump. |
 
 
 
@@ -1864,7 +1868,7 @@ The transformed array, null on error.
 Gets a value in a yaml string using the dot notation.
 
 ```php
-Yml::get( string $key, string $yml ): string|array|null
+Yml::get( string $key, string $yml ): mixed
 ```
 
 ### yml_get
@@ -1873,7 +1877,7 @@ Related global function (description see above).
 > #### [( jump back )](#available-php-functions)
 
 ```php
-yml_get( string $key, string $yml ): string|array|null
+yml_get( string $key, string $yml ): mixed
 ```
 
 #### Example
@@ -1901,7 +1905,7 @@ yml_get( 'foobar.foo', $yml );
 
 **Return Value:**
 
-The found value (string or array), null otherwise.
+The found value, null otherwise.
 
 
 
@@ -1912,7 +1916,7 @@ The found value (string or array), null otherwise.
 Gets a value in a yaml file using the dot notation.
 
 ```php
-Yml::getFile( string $key, string $ymlfile ): string|array|null
+Yml::getFile( string $key, string $ymlfile ): mixed
 ```
 
 ### yml_get_file
@@ -1921,7 +1925,7 @@ Related global function (description see above).
 > #### [( jump back )](#available-php-functions)
 
 ```php
-yml_get_file( string $key, string $ymlfile ): string|array|null
+yml_get_file( string $key, string $ymlfile ): mixed
 ```
 
 #### Example
@@ -1944,7 +1948,7 @@ yml_get_file( 'foobar.foo', $ymlfile );
 
 **Return Value:**
 
-The found value (string or array), null otherwise.
+The found value, null otherwise.
 
 
 
@@ -2059,7 +2063,7 @@ Related global function (description see above).
 > #### [( jump back )](#available-php-functions)
 
 ```php
-to_yml_file( array $array, string $filename, int $indent = 2, int $wordwrap = 0, bool $openingDashes = false ): boolean
+to_yml_file( array|object $var, string $filename, int $indent = 2, int $wordwrap = 0, bool $openingDashes = false ): boolean
 ```
 
 #### Example
@@ -2204,4 +2208,4 @@ True if value was successfully set, false otherwise.
 
 
 --------
-> This document was automatically generated from source code comments on 2018-01-21 using [phpDocumentor](http://www.phpdoc.org/) and [cvuorinen/phpdoc-markdown-public](https://github.com/cvuorinen/phpdoc-markdown-public)
+> This document was automatically generated from source code comments on 2018-01-22 using [phpDocumentor](http://www.phpdoc.org/) and [cvuorinen/phpdoc-markdown-public](https://github.com/cvuorinen/phpdoc-markdown-public)

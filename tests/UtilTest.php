@@ -58,7 +58,7 @@ class UtilTest extends TestCase
 
     public function test_ip()
     {
-        util::setCli();
+        util::setIsCli();
 
         $ips = [
             ip(),
@@ -73,7 +73,7 @@ class UtilTest extends TestCase
             $this->assertFalse(is_array($ip));
         }
 
-        util::setCli(false);
+        util::setIsCli(false);
 
         $this->assertNull(ip());
         $this->assertNull(util::ip());

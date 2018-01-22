@@ -61,6 +61,10 @@ class Yml
      */
     public static function isValidFile($file)
     {
+        if (!is_file($file)) {
+            return false;
+        }
+
         return self::isValid(file_get_contents($file));
     }
 
@@ -181,7 +185,7 @@ class Yml
      * > #### [( jump back )](#available-php-functions)
      *
      * ```php
-     * yml_get( string $key, string $yml ): string|array|null
+     * yml_get( string $key, string $yml ): mixed
      * ```
      *
      * #### Example
@@ -202,8 +206,8 @@ class Yml
      * The key to search using dot notation (e.g. 'foo.bar.baz').
      * @param string $yml
      * The yml string to search in.
-     * @return string|array|null
-     * The found value (string or array), null otherwise.
+     * @return mixed
+     * The found value, null otherwise.
      */
     public static function get($key, $yml)
     {
@@ -219,7 +223,7 @@ class Yml
      * > #### [( jump back )](#available-php-functions)
      *
      * ```php
-     * yml_get_file( string $key, string $ymlfile ): string|array|null
+     * yml_get_file( string $key, string $ymlfile ): mixed
      * ```
      *
      * #### Example
@@ -235,8 +239,8 @@ class Yml
      * The key to search using dot notation (e.g. 'foo.bar.baz').
      * @param string $ymlfile
      * The ymlfile to search in.
-     * @return string|array|null
-     * The found value (string or array), null otherwise.
+     * @return mixed
+     * The found value, null otherwise.
      */
     public static function getFile($key, $ymlfile)
     {
@@ -277,6 +281,10 @@ class Yml
      */
     public static function parseFile($ymlfile)
     {
+        if (!is_file($ymlfile)) {
+            return null;
+        }
+
         return self::parse(file_get_contents($ymlfile));
     }
 
@@ -325,8 +333,11 @@ class Yml
 
         // fill array with content
         $value = arr::set($key, $value, $ymlArray);
+
         // write back to ymlfile
-        self::dumpFile($ymlArray, $ymlfile);
+        if ($value) {
+            self::dumpFile($ymlArray, $ymlfile);
+        }
 
         return $value;
     }
@@ -340,7 +351,7 @@ class Yml
      * > #### [( jump back )](#available-php-functions)
      *
      * ```php
-     * to_yml_file( array $array, string $filename, int $indent = 2, int $wordwrap = 0, bool $openingDashes = false ): boolean
+     * to_yml_file( array|object $var, string $filename, int $indent = 2, int $wordwrap = 0, bool $openingDashes = false ): boolean
      * ```
      *
      * #### Example

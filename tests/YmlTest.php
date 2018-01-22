@@ -50,6 +50,9 @@ class YmlTest extends TestCase
 
         $this->assertFalse(yml::isValidFile($this->filesystem->url() . '/notvalid.yml'));
         $this->assertFalse(is_yml_file($this->filesystem->url() . '/notvalid.yml'));
+
+        $this->assertFalse(yml::isValidFile('nofile.txt'));
+        $this->assertFalse(is_yml_file('nofile.txt'));
     }
 
     public function test_to_yml()
@@ -152,6 +155,9 @@ class YmlTest extends TestCase
 
         $this->assertFalse(is_assoc(yml::parseFile($this->filesystem->url() . '/notvalid.yml')));
         $this->assertFalse(is_assoc(yml_parse_file($this->filesystem->url() . '/notvalid.yml')));
+
+        $this->assertFalse(is_assoc(yml::parseFile('nofile.yml')));
+        $this->assertFalse(is_assoc(yml_parse_file('nofile.yml')));
     }
 
     public function test_yml_get()

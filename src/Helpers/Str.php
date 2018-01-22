@@ -27,33 +27,33 @@ class Str
      * > #### [( jump back )](#available-php-functions)
      *
      * ```php
-     * str_insert( $string, $inserts ): array
+     * str_insert( array $keyValue, string $string ): string
      * ```
      *
      * #### Example
      * ```php
-     * $array = [
+     * $keyValue = [
      *      ':color' => 'brown',
      *      ':animal' => 'dog'
      * ]
      * $string = 'The quick :color fox jumps over the lazy :animal.';
      *
-     * str_insert( $array, $string );
+     * str_insert( $keyValue, $string );
      *
      * // The quick brown fox jumps over the lazy dog.
      * ```
      *
-     * @param array  $inserts
+     * @param array  $keyValue
      * An associative array with key => value pairs.
      * @param string $string
      * The text with the strings to be replaced.
      * @return string
      * The replaced string.
      */
-    public static function insert($inserts, $string)
+    public static function insert($keyValue, $string)
     {
-        if (is_assoc($inserts)) {
-            foreach ($inserts as $search => $replace) {
+        if (is_assoc($keyValue)) {
+            foreach ($keyValue as $search => $replace) {
                 $string = str_replace($search, $replace, $string);
             }
         }

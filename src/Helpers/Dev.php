@@ -212,7 +212,8 @@ class Dev
      * }
      * ```
      *
-     * @return boolean
+     * @return bool
+     * True if the current visitor is a search engine/bot/crawler/spider, false otherwise.
      */
     public static function isRobot()
     {

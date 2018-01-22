@@ -65,7 +65,7 @@ class Arr
      * > #### [( jump back )](#available-php-functions)
      *
      * ```php
-     * to_object( array $array ): object
+     * to_object( array $array ): object|null
      * ```
      *
      * #### Example
@@ -84,12 +84,13 @@ class Arr
      *
      * @param array $array
      * The array to be converted.
-     * @return object
+     * @return object|null
      * A std object representation of the converted array.
      */
     public static function toObject($array)
     {
-        return json_decode(json_encode($array), false);
+        $result = json_decode(json_encode($array), false);
+        return is_object($result) ? $result : null;
     }
 
     /**
@@ -101,7 +102,7 @@ class Arr
      * > #### [( jump back )](#available-php-functions)
      *
      * ```php
-     * to_array( object $object ): array
+     * to_array( string|object $var ): array|null
      * ```
      *
      * #### Example 1 (string)
@@ -128,11 +129,11 @@ class Arr
      * // )
      * ```
      *
-     * @param $var
+     * @param string|object $var
      * String or object.
-     * @return mixed
+     * @return array|null
      * An array representation of the converted string or object.
-     * Returns null if $var is no a string or array.
+     * Returns null on error.
      */
     public static function dump($var)
     {
